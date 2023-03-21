@@ -1,0 +1,54 @@
+{
+  "name": "@qlik/eslint-config-react",
+  "version": "0.0.1",
+  "description": "Qlik's ESLint config for react projects",
+  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
+  "license": "ISC",
+  "main": "index.js",
+  "files": [
+    "typescript.js",
+    "jest.js",
+    "playwright.js",
+    "vitest.js"
+  ],
+  "scripts": {
+    "format:check": "prettier --check '**' --ignore-unknown",
+    "format:write": "prettier --write '**' --ignore-unknown",
+    "lint": "eslint ."
+  },
+  "prettier": "@qlik/prettier-config",
+  "eslintConfig": {
+    "extends": "@qlik/eslint-config/node"
+  },
+  "dependencies": {
+    "@qlik/eslint-config-base": "workspace:*",
+    "@typescript-eslint/eslint-plugin": "5.55.0",
+    "@typescript-eslint/parser": "5.55.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-config-prettier": "8.7.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0"
+  },
+  "devDependencies": {
+    "@qlik/eslint-config": "workspace:*",
+    "@qlik/prettier-config": "workspace:*",
+    "eslint": "8.36.0",
+    "prettier": "2.8.6"
+  },
+  "peerDependencies": {
+    "eslint": "*"
+  },
+  "optionalDependencies": {
+    "typescript": "*"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

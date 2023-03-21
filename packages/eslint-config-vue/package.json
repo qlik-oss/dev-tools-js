@@ -1,0 +1,52 @@
+{
+  "name": "@qlik/eslint-config-vue",
+  "version": "0.0.1",
+  "description": "Qlik's ESLint config for vue projects",
+  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
+  "license": "ISC",
+  "main": "index.js",
+  "files": [
+    "typescript.js",
+    "jest.js",
+    "playwright.js",
+    "vitest.js"
+  ],
+  "scripts": {
+    "format:check": "prettier --check '**' --ignore-unknown",
+    "format:write": "prettier --write '**' --ignore-unknown",
+    "lint": "eslint ."
+  },
+  "prettier": "@qlik/prettier-config",
+  "eslintConfig": {
+    "extends": "@qlik/eslint-config/node"
+  },
+  "dependencies": {
+    "@qlik/eslint-config": "workspace:*",
+    "@typescript-eslint/eslint-plugin": "5.55.0",
+    "@typescript-eslint/parser": "5.55.0",
+    "@vue/eslint-config-prettier": "7.1.0",
+    "@vue/eslint-config-typescript": "11.0.2",
+    "eslint-import-resolver-alias": "1.1.2",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-vue": "9.9.0",
+    "vue-eslint-parser": "9.1.0"
+  },
+  "devDependencies": {
+    "@qlik/prettier-config": "workspace:*",
+    "eslint": "8.36.0",
+    "prettier": "2.8.4"
+  },
+  "peerDependencies": {
+    "eslint": "*"
+  },
+  "optionalDependencies": {
+    "typescript": "4.9.5"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

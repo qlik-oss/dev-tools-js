@@ -1,0 +1,29 @@
+{
+  "name": "@qlik/tsconfig",
+  "version": "0.0.1",
+  "description": "Useful compiler options for compiling a TypeScript project",
+  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
+  "license": "ISC",
+  "files": [
+    "base.json",
+    "bundler.json",
+    "react.json",
+    "vue.json"
+  ],
+  "scripts": {
+    "format:check": "prettier --check '**' --ignore-unknown",
+    "format:write": "prettier --write '**' --ignore-unknown"
+  },
+  "prettier": "@qlik/prettier-config",
+  "dependencies": {
+    "@tsconfig/recommended": "1.0.2"
+  },
+  "devDependencies": {
+    "@qlik/prettier-config": "workspace:*",
+    "prettier": "2.8.6"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

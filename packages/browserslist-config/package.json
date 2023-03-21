@@ -1,0 +1,19 @@
+{
+  "name": "@qlik/browserslist-config",
+  "version": "0.0.1",
+  "description": "Qlik supported browsers",
+  "keywords": [
+    "browserslist",
+    "web"
+  ],
+  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
+  "license": "ISC",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

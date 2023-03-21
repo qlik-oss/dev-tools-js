@@ -1,0 +1,44 @@
+name: "CI"
+on:
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  skip-check:
+    if: ${{ !contains(github.event.pull_request.title, 'chore(release):') }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "run only on non-release commits"
+
+  validate:
+    needs: [skip-check]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 ## Needed for Changesets to find `main` branch
+
+      ## https://github.com/changesets/changesets/issues/517
+      - name: Create git reference to main branch (for Changesets)
+        if: ${{ github.event.pull_request.title != 'Version Packages' }}
+        run: git pull --force --no-tags origin main:main
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - run: pnpm install
+
+      - run: pnpm exec changeset status --since=main
+
+      - run: pnpm format:check
+
+      - run: pnpm lint

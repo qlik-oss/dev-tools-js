@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "React Component",
+  "extends": "./bundler.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "noImplicitReturns": true
+  }
+}

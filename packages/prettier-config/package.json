@@ -1,0 +1,30 @@
+{
+  "name": "@qlik/prettier-config",
+  "version": "0.0.1",
+  "description": "Qlik's shared Prettier config",
+  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
+  "license": "ISC",
+  "main": "./prettier-config.json",
+  "scripts": {
+    "format:check": "prettier --check '**' --ignore-unknown",
+    "format:write": "prettier --write '**' --ignore-unknown"
+  },
+  "dependencies": {
+    "prettier-plugin-organize-imports": "3.2.2",
+    "prettier-plugin-packagejson": "2.4.3"
+  },
+  "peerDependencies": {
+    "prettier": "*"
+  },
+  "optionalDependencies": {
+    "prettier": "*",
+    "typescript": "*"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

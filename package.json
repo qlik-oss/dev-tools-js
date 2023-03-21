@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "empty-changeset": "changeset add --empty",
+    "format:check": "turbo run format:check",
+    "format:write": "turbo run format:write",
+    "lint": "turbo run lint",
+    "prepare-release": "changeset",
+    "publish-packages": "changeset publish"
+  },
+  "prettier": "@qlik/prettier-config",
+  "dependencies": {},
+  "devDependencies": {
+    "@changesets/cli": "2.26.0",
+    "@qlik/prettier-config": "workspace:*",
+    "prettier": "2.8.6",
+    "turbo": "1.8.5"
+  },
+  "packageManager": "pnpm@7.28.0",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
