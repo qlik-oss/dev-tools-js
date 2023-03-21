@@ -1,0 +1,45 @@
+{
+  "name": "@qlik/eslint-config-svelte",
+  "version": "0.0.0",
+  "description": "Qlik's ESLint config for svelte projects",
+  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
+  "license": "ISC",
+  "main": "index.js",
+  "files": [
+    "typescript.js",
+    "jest.js",
+    "playwright.js",
+    "vitest.js"
+  ],
+  "scripts": {
+    "format:check": "prettier --check '**' --ignore-unknown",
+    "format:write": "prettier --write '**' --ignore-unknown",
+    "lint": "eslint ."
+  },
+  "prettier": "@qlik/prettier-config",
+  "eslintConfig": {
+    "extends": "@qlik/eslint-config/node"
+  },
+  "dependencies": {
+    "@qlik/eslint-config": "workspace:*",
+    "@qlik/eslint-config-base": "workspace:*",
+    "eslint-config-prettier": "8.7.0",
+    "eslint-plugin-svelte3": "4.0.0",
+    "svelte": "3.57.0"
+  },
+  "devDependencies": {
+    "@qlik/prettier-config": "workspace:*",
+    "eslint": "8.36.0",
+    "prettier": "2.8.6"
+  },
+  "peerDependencies": {
+    "eslint": "*"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "@qlik/eslint-config-base",
+  "version": "0.0.0",
+  "description": "Base ESLint config for other configs to build on",
+  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
+  "license": "ISC",
+  "main": "index.js",
+  "files": [
+    "jest.js",
+    "playwright.js",
+    "typescript.js",
+    "vitest.js"
+  ],
+  "scripts": {
+    "format:check": "prettier --check '**' --ignore-unknown",
+    "format:write": "prettier --write '**' --ignore-unknown",
+    "lint": "eslint ."
+  },
+  "prettier": "@qlik/prettier-config",
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "extends": "./index.js"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "5.55.0",
+    "@typescript-eslint/parser": "5.55.0",
+    "eslint-plugin-jest": "27.2.1",
+    "eslint-plugin-playwright": "0.12.0",
+    "eslint-plugin-testing-library": "5.10.2",
+    "eslint-plugin-vitest": "0.0.54"
+  },
+  "devDependencies": {
+    "@qlik/prettier-config": "workspace:*",
+    "eslint": "8.36.0",
+    "prettier": "2.8.6"
+  },
+  "peerDependencies": {
+    "eslint": "*"
+  },
+  "optionalDependencies": {
+    "typescript": "*"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  }
+}
