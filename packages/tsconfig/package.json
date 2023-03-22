@@ -15,9 +15,6 @@
     "format:write": "prettier --write '**' --ignore-unknown"
   },
   "prettier": "@qlik/prettier-config",
-  "dependencies": {
-    "@tsconfig/recommended": "1.0.2"
-  },
   "devDependencies": {
     "@qlik/prettier-config": "workspace:*",
     "prettier": "2.8.6"

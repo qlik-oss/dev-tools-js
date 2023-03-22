@@ -176,10 +176,7 @@ importers:
   packages/tsconfig:
     specifiers:
       '@qlik/prettier-config': workspace:*
-      '@tsconfig/recommended': 1.0.2
       prettier: 2.8.6
-    dependencies:
-      '@tsconfig/recommended': 1.0.2
     devDependencies:
       '@qlik/prettier-config': link:../prettier-config
       prettier: 2.8.6
@@ -495,10 +492,6 @@ packages:
       picocolors: 1.0.0
       tiny-glob: 0.2.9
       tslib: 2.5.0
-    dev: false
-
-  /@tsconfig/recommended/1.0.2:
-    resolution: {integrity: sha512-dbHBtbWBOjq0/otpopAE02NT2Cm05Qe2JsEKeCf/wjSYbI2hz8nCqnpnOJWHATgjDz4fd3dchs3Wy1gQGjfN6w==}
     dev: false
 
   /@types/is-ci/3.0.0:
