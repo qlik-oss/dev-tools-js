@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.0.7
+
+### Patch Changes
+
+- 358f418: Add lib options for browser environment
+
 ## 0.0.6
 
 ### Patch Changes
