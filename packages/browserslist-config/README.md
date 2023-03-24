@@ -1,20 +1,20 @@
-# @qlik-trial/browserslist-config
+# @qlik/browserslist-config
 
 A [browserslist](https://github.com/browserslist/browserslist) config we can use across the org.
 
 ## Installation and usage
 
 ```sh
-npm install -D @qlik-trial/browserslist-config
+npm install -D @qlik/browserslist-config
 # or
-yarn add -D @qlik-trial/browserslist-config
+yarn add -D @qlik/browserslist-config
 ```
 
 Then use it in your `package.json`
 
 ```json
 "browserslist": [
-  "extends @qlik-trial/browserslist-config"
+  "extends @qlik/browserslist-config"
 ]
 ```
 
