@@ -19,5 +19,13 @@ module.exports = {
 
     // https://typescript-eslint.io/rules/prefer-ts-expect-error/
     "@typescript-eslint/prefer-ts-expect-error": "error",
+
+    // https://typescript-eslint.io/rules/no-misused-promises/
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        checksConditionals: false,
+      },
+    ],
   },
 };
