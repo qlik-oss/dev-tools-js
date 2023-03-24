@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.0.4
+
+### Patch Changes
+
+- 312bfb2: Fix bug in tsconfigs
+
 ## 0.0.3
 
 ### Patch Changes
