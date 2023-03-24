@@ -1,20 +1,20 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Vue Component",
+  "display": "Vue",
   "compilerOptions": {
-    "target": "ESNext",
     "module": "ESNext",
-    "isolatedModules": true,
-    "moduleResolution": "bundler",
-    "preserveWatchOutput": true,
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "noEmit": true,
     "useDefineForClassFields": true,
     "jsx": "preserve",
+    "noImplicitThis": true,
     "strict": true,
+    "isolatedModules": true,
+    "preserveValueImports": true,
+    "importsNotUsedAsValues": "error",
+    "target": "ESNext",
     "esModuleInterop": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "allowJs": true
+    "skipLibCheck": true
   }
 }

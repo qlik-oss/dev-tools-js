@@ -4,9 +4,12 @@
   "description": "Useful compiler options for compiling a TypeScript project",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
+  "main": "recommended.json",
   "files": [
-    "recommended.json",
     "react.json",
+    "recommended.json",
+    "svelte.json",
+    "strictest.json",
     "vue.json"
   ],
   "scripts": {

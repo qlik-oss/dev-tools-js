@@ -1,21 +1,21 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "React Component",
+  "display": "React",
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
-    "target": "ESNext",
-    "module": "ESNext",
-    "isolatedModules": true,
+    "module": "esnext",
+    "target": "es2015",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "noImplicitReturns": true,
-    "moduleResolution": "nodenext",
-    "preserveWatchOutput": true,
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "strict": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "allowJs": true
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true
   }
 }
