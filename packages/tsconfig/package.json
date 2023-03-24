@@ -5,8 +5,7 @@
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
   "files": [
-    "base.json",
-    "bundler.json",
+    "recommended.json",
     "react.json",
     "vue.json"
   ],

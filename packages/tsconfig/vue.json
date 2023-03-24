@@ -3,7 +3,19 @@
   "display": "Vue Component",
   "extends": "./bundler.json",
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "isolatedModules": true,
+    "moduleResolution": "bundler",
+    "preserveWatchOutput": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
     "useDefineForClassFields": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true
   }
 }
