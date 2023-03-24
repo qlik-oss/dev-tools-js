@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.0.6
+
+### Patch Changes
+
+- 17a12f2: Set moduleResolution to nodenext
+
 ## 0.0.5
 
 ### Patch Changes
