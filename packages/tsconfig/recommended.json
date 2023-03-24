@@ -4,6 +4,7 @@
   "compilerOptions": {
     "target": "ES2015",
     "module": "commonjs",
+    "moduleResolution": "nodenext",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,

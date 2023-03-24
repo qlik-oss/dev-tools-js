@@ -3,7 +3,7 @@
   "display": "Vue",
   "compilerOptions": {
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "useDefineForClassFields": true,
     "jsx": "preserve",
