@@ -27,6 +27,9 @@ module.exports = {
     // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/prefer-default-export.md
     "import/prefer-default-export": "off",
 
+    // https://typescript-eslint.io/rules/dot-notation/
+    "dot-notation": "off",
+
     // allows for..in and for..of
     // https://eslint.org/docs/rules/no-restricted-syntax
     "no-restricted-syntax": [
