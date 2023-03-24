@@ -2,7 +2,9 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Vue",
   "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
+    "target": "ESNext",
     "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "useDefineForClassFields": true,
@@ -12,7 +14,6 @@
     "isolatedModules": true,
     "preserveValueImports": true,
     "importsNotUsedAsValues": "error",
-    "target": "ESNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true

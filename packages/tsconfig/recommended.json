@@ -2,8 +2,9 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Recommended",
   "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "target": "ES2015",
-    "module": "commonjs",
+    "module": "CommonJS",
     "moduleResolution": "nodenext",
     "strict": true,
     "esModuleInterop": true,
