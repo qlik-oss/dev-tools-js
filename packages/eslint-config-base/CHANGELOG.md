@@ -1,5 +1,11 @@
 # @qlik/eslint-config-base
 
+## 0.0.3
+
+### Patch Changes
+
+- 0ae660e: disable dot-notation rule
+
 ## 0.0.2
 
 ### Patch Changes

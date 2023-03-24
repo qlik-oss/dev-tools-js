@@ -1,6 +1,6 @@
 {
   "name": "@qlik/eslint-config-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Qlik's ESLint config for react projects",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
