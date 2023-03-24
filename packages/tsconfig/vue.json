@@ -1,7 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Vue Component",
-  "extends": "./bundler.json",
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
