@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.0.5
+
+### Patch Changes
+
+- 58ce832: Add strictest config, updating recommended, vue, react and svelte configs
+
 ## 0.0.4
 
 ### Patch Changes
