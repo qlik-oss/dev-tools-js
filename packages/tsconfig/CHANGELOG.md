@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.0.3
+
+### Patch Changes
+
+- e73e27b: Stop extending each other
+
 ## 0.0.2
 
 ### Patch Changes
