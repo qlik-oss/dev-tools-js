@@ -1,5 +1,14 @@
 # @qlik/eslint-config-svelte
 
+## 0.0.4
+
+### Patch Changes
+
+- fcccc37: update npm dependencies
+- Updated dependencies [fcccc37]
+  - @qlik/eslint-config-base@0.0.4
+  - @qlik/eslint-config@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes
