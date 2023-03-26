@@ -12,11 +12,10 @@
     "publish-packages": "changeset publish"
   },
   "prettier": "@qlik/prettier-config",
-  "dependencies": {},
   "devDependencies": {
-    "@changesets/cli": "2.26.0",
+    "@changesets/cli": "2.26.1",
     "@qlik/prettier-config": "workspace:*",
-    "prettier": "2.8.6",
+    "prettier": "2.8.7",
     "turbo": "1.8.5"
   },
   "packageManager": "pnpm@7.28.0",
