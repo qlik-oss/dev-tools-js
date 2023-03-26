@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.0.8
+
+### Patch Changes
+
+- fcccc37: update npm dependencies
+
 ## 0.0.7
 
 ### Patch Changes
