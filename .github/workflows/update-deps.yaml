@@ -30,7 +30,7 @@ jobs:
         run: pnpm install
 
       - name: Update Dependencies
-        run: pnpm update-deps
+        run: pnpm update --latest --recursive
 
       - name: Create Pull Request
         id: cpr
