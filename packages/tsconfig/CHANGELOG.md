@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.0.9
+
+### Patch Changes
+
+- 2cf1a8e: Add allowjs to tsconfigs
+
 ## 0.0.8
 
 ### Patch Changes
