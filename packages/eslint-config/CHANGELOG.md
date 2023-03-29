@@ -1,5 +1,13 @@
 # @qlik/eslint-config
 
+## 0.0.5
+
+### Patch Changes
+
+- 52bcc1f: Fix package.json's
+- Updated dependencies [52bcc1f]
+  - @qlik/eslint-config-base@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes
