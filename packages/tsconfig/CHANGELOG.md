@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.0.11
+
+### Patch Changes
+
+- 91a3abd: set moduleResolution to node
+
 ## 0.0.10
 
 ### Patch Changes
