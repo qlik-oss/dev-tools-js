@@ -24,8 +24,8 @@
     "extends": "./index.js"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "5.56.0",
-    "@typescript-eslint/parser": "5.56.0",
+    "@typescript-eslint/eslint-plugin": "5.57.0",
+    "@typescript-eslint/parser": "5.57.0",
     "eslint-plugin-jest": "27.2.1",
     "eslint-plugin-playwright": "0.12.0",
     "eslint-plugin-testing-library": "5.10.2",
@@ -33,14 +33,14 @@
   },
   "devDependencies": {
     "@qlik/prettier-config": "workspace:*",
-    "eslint": "8.36.0",
+    "eslint": "8.37.0",
     "prettier": "2.8.7"
   },
   "peerDependencies": {
     "eslint": "*"
   },
   "optionalDependencies": {
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.3"
   },
   "engines": {
     "node": ">=16",

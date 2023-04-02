@@ -22,25 +22,25 @@
   },
   "dependencies": {
     "@qlik/eslint-config": "workspace:*",
-    "@typescript-eslint/eslint-plugin": "5.56.0",
-    "@typescript-eslint/parser": "5.56.0",
+    "@typescript-eslint/eslint-plugin": "5.57.0",
+    "@typescript-eslint/parser": "5.57.0",
     "@vue/eslint-config-prettier": "7.1.0",
     "@vue/eslint-config-typescript": "11.0.2",
     "eslint-import-resolver-alias": "1.1.2",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-vue": "9.10.0",
-    "vue-eslint-parser": "9.1.0"
+    "vue-eslint-parser": "9.1.1"
   },
   "devDependencies": {
     "@qlik/prettier-config": "workspace:*",
-    "eslint": "8.36.0",
+    "eslint": "8.37.0",
     "prettier": "2.8.7"
   },
   "peerDependencies": {
     "eslint": "*"
   },
   "optionalDependencies": {
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.3"
   },
   "engines": {
     "node": ">=16",
