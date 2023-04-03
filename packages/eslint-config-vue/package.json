@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "@qlik/eslint-config": "workspace:*",
-    "@typescript-eslint/eslint-plugin": "5.57.0",
-    "@typescript-eslint/parser": "5.57.0",
+    "@typescript-eslint/eslint-plugin": "5.57.1",
+    "@typescript-eslint/parser": "5.57.1",
     "@vue/eslint-config-prettier": "7.1.0",
     "@vue/eslint-config-typescript": "11.0.2",
     "eslint-import-resolver-alias": "1.1.2",
