@@ -1,5 +1,11 @@
 # @qlik/eslint-config-base
 
+## 0.0.8
+
+### Patch Changes
+
+- 9027474: Update dependencies
+
 ## 0.0.7
 
 ### Patch Changes

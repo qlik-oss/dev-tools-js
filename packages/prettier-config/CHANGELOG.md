@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.1.1
+
+### Patch Changes
+
+- 9027474: Update dependencies
+
 ## 0.1.0
 
 ### Minor Changes
