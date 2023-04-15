@@ -1,5 +1,13 @@
 # @qlik/eslint-config-react
 
+## 0.0.9
+
+### Patch Changes
+
+- 7cadb4e: chore: update all dependencies
+- Updated dependencies [7cadb4e]
+  - @qlik/eslint-config-base@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes
