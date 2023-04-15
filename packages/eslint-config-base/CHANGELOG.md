@@ -1,5 +1,11 @@
 # @qlik/eslint-config-base
 
+## 0.0.9
+
+### Patch Changes
+
+- 7cadb4e: chore: update all dependencies
+
 ## 0.0.8
 
 ### Patch Changes
