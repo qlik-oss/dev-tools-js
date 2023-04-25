@@ -1,6 +1,6 @@
 {
   "name": "@qlik/eslint-config-vue",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Qlik's ESLint config for vue projects",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
