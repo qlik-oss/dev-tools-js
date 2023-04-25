@@ -1,5 +1,13 @@
 # @qlik/eslint-config-vue
 
+## 0.0.10
+
+### Patch Changes
+
+- 28980c9: update npm dependencies
+- Updated dependencies [28980c9]
+  - @qlik/eslint-config@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes
