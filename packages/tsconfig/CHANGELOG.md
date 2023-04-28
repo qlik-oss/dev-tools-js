@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.1.0
+
+### Minor Changes
+
+- bd638e9: Add --verbatimModuleSyntax option to configs
+
 ## 0.0.11
 
 ### Patch Changes
