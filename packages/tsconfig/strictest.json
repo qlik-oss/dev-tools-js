@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "module": "CommonJS",
-    "target": "ES2015",
+    "module": "ESNext",
+    "target": "ESNext",
     "strict": true,
+    "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,

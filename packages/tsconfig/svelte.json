@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "target": "ES2017",
-    "moduleResolution": "node",
+    "target": "ESNext",
+    "moduleResolution": "nodenext",
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "sourceMap": true,
