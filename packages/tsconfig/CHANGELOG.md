@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.1.1
+
+### Patch Changes
+
+- 26ed3e5: Fix typescript 5 support
+
 ## 0.1.0
 
 ### Minor Changes
