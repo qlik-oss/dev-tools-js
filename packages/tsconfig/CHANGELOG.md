@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.1.2
+
+### Patch Changes
+
+- a891a6b: use noderesolution "node"
+
 ## 0.1.1
 
 ### Patch Changes
