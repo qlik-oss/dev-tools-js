@@ -9,7 +9,6 @@
     "jsx": "preserve",
     "noImplicitThis": true,
     "strict": true,
-    "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
