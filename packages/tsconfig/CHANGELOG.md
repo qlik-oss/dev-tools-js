@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.1.3
+
+### Patch Changes
+
+- 6f31a2f: Remove isolatedModules setting from tsconfig
+
 ## 0.1.2
 
 ### Patch Changes
