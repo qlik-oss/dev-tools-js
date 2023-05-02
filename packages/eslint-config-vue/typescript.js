@@ -2,7 +2,7 @@ module.exports = {
   extends: ["@qlik/eslint-config/typescript"],
   overrides: [
     {
-      files: ["**.vue"],
+      files: ["**/*.vue"],
       parser: "vue-eslint-parser",
       parserOptions: {
         parser: "@typescript-eslint/parser",

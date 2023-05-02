@@ -2,7 +2,7 @@ module.exports = {
   extends: ["@qlik/eslint-config/typescript"],
   overrides: [
     {
-      files: ["**.svelte"],
+      files: ["**/*.svelte"],
       processor: "svelte3/svelte3",
       parserOptions: {
         project: ["**/tsconfig.json"],

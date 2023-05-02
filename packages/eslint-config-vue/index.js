@@ -2,7 +2,7 @@ module.exports = {
   extends: ["@qlik/eslint-config"],
   overrides: [
     {
-      files: ["*.vue"],
+      files: ["**/*.vue"],
       extends: ["eslint:recommended", "plugin:vue/vue3-recommended", "@vue/prettier"],
     },
   ],

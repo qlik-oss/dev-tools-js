@@ -2,7 +2,7 @@ module.exports = {
   extends: ["@qlik/eslint-config"],
   overrides: [
     {
-      files: ["*.svelte"],
+      files: ["**/*.svelte"],
       processor: "svelte3/svelte3",
       plugins: ["svelte3"],
       rules: {
