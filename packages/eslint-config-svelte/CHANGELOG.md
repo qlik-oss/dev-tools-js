@@ -1,5 +1,11 @@
 # @qlik/eslint-config-svelte
 
+## 0.0.12
+
+### Patch Changes
+
+- d7f7bc0: Fix file patterns from _.svelte to \*\*/_.svelte
+
 ## 0.0.11
 
 ### Patch Changes
