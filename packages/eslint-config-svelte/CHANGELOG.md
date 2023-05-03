@@ -1,5 +1,11 @@
 # @qlik/eslint-config-svelte
 
+## 0.0.13
+
+### Patch Changes
+
+- ea0079f: Add support for svelte.config.js
+
 ## 0.0.12
 
 ### Patch Changes
