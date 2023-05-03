@@ -20,5 +20,11 @@ module.exports = {
         "no-restricted-syntax": ["error", "ForInStatement", "ForOfStatement", "WithStatement"], // remove LabeledStatement from the list
       },
     },
+    {
+      files: ["svelte.config.js"],
+      rules: {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
   ],
 };
