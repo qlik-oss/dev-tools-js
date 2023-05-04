@@ -31,13 +31,13 @@ To enable linting on typescript (.ts, .tsx):
 > for linting typescript (.ts, .tsx)
 > , thereby, you need to create such file using:
 >
->```json
->// tsconfig.eslint.json
->{
->  "extends": "./tsconfig.json", // your tsconfig file
->  "include": [".*", "./**/*"], // files you would like to lint
->}
->```
+> ```json
+> // tsconfig.eslint.json
+> {
+>   "extends": "./tsconfig.json", // your tsconfig file
+>   "include": [".*", "./**/*"] // files you would like to lint
+> }
+> ```
 >
 > Read more from <https://typescript-eslint.io/architecture/parser/#project>
 
