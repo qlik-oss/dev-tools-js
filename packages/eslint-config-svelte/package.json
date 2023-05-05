@@ -1,6 +1,6 @@
 {
   "name": "@qlik/eslint-config-svelte",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Qlik's ESLint config for svelte projects",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",

@@ -1,5 +1,12 @@
 # @qlik/eslint-config-react
 
+## 0.0.12
+
+### Patch Changes
+
+- Updated dependencies [f4ba2ca]
+  - @qlik/eslint-config-base@0.0.12
+
 ## 0.0.11
 
 ### Patch Changes

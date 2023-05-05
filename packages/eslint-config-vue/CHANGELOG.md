@@ -1,5 +1,12 @@
 # @qlik/eslint-config-vue
 
+## 0.0.13
+
+### Patch Changes
+
+- Updated dependencies [f4ba2ca]
+  - @qlik/eslint-config@0.0.12
+
 ## 0.0.12
 
 ### Patch Changes
