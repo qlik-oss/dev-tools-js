@@ -1,5 +1,11 @@
 # @qlik/eslint-config-base
 
+## 0.0.12
+
+### Patch Changes
+
+- f4ba2ca: Update eslint `ecmaVersion` to 2022 to enable using latest syntax everywhere
+
 ## 0.0.11
 
 ### Patch Changes

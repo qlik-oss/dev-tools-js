@@ -1,5 +1,13 @@
 # @qlik/eslint-config-svelte
 
+## 0.0.14
+
+### Patch Changes
+
+- Updated dependencies [f4ba2ca]
+  - @qlik/eslint-config-base@0.0.12
+  - @qlik/eslint-config@0.0.12
+
 ## 0.0.13
 
 ### Patch Changes
