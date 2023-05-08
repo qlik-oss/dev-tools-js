@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.1.2
+
+### Patch Changes
+
+- 1163914: Skip destructive code actions (like removing unused imports)
+
 ## 0.1.1
 
 ### Patch Changes
