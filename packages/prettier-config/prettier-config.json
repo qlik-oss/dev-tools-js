@@ -1,5 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/prettierrc",
   "printWidth": 120,
-  "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-packagejson", "prettier-plugin-svelte"]
+  "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-packagejson", "prettier-plugin-svelte"],
+  "organizeImportsSkipDestructiveCodeActions": true
 }
