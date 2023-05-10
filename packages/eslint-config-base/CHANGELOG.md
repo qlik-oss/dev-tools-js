@@ -1,5 +1,11 @@
 # @qlik/eslint-config-base
 
+## 0.0.13
+
+### Patch Changes
+
+- 007f2eb: chore: update all dependencies
+
 ## 0.0.12
 
 ### Patch Changes
