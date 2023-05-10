@@ -25,11 +25,11 @@
     "@qlik/eslint-config-base": "workspace:*",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-svelte3": "4.0.0",
-    "svelte": "3.58.0"
+    "svelte": "3.59.0"
   },
   "devDependencies": {
     "@qlik/prettier-config": "workspace:*",
-    "eslint": "8.39.0",
+    "eslint": "8.40.0",
     "prettier": "2.8.8"
   },
   "peerDependencies": {
