@@ -1,5 +1,14 @@
 # @qlik/eslint-config-svelte
 
+## 0.0.16
+
+### Patch Changes
+
+- 87953c0: chore: update all dependencies
+- Updated dependencies [87953c0]
+  - @qlik/eslint-config-base@0.0.14
+  - @qlik/eslint-config@0.0.14
+
 ## 0.0.15
 
 ### Patch Changes
