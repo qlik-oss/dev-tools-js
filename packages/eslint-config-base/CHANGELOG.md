@@ -1,5 +1,11 @@
 # @qlik/eslint-config-base
 
+## 0.0.15
+
+### Patch Changes
+
+- 0c274b9: Disable poorly working @typescript-eslint/no-unsafe-\* rules
+
 ## 0.0.14
 
 ### Patch Changes
