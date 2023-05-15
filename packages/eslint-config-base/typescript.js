@@ -30,5 +30,17 @@ module.exports = {
         checksConditionals: false,
       },
     ],
+
+    // no-unsafe-* does not work correctly
+    // https://typescript-eslint.io/rules/no-unsafe-call/
+    // https://typescript-eslint.io/rules/no-unsafe-member-access/
+    // https://typescript-eslint.io/rules/no-unsafe-return/
+    // https://typescript-eslint.io/rules/no-unsafe-argument/
+    // https://typescript-eslint.io/rules/no-unsafe-assignment/
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
   },
 };
