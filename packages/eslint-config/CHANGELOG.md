@@ -1,5 +1,13 @@
 # @qlik/eslint-config
 
+## 0.0.14
+
+### Patch Changes
+
+- 87953c0: chore: update all dependencies
+- Updated dependencies [87953c0]
+  - @qlik/eslint-config-base@0.0.14
+
 ## 0.0.13
 
 ### Patch Changes

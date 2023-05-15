@@ -1,5 +1,13 @@
 # @qlik/eslint-config-vue
 
+## 0.0.15
+
+### Patch Changes
+
+- 87953c0: chore: update all dependencies
+- Updated dependencies [87953c0]
+  - @qlik/eslint-config@0.0.14
+
 ## 0.0.14
 
 ### Patch Changes
