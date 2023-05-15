@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.0.16
+
+### Patch Changes
+
+- df9a91e: turn off prefer-default-export for node-esm
+
 ## 0.0.15
 
 ### Patch Changes
