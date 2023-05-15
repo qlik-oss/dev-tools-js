@@ -1,5 +1,13 @@
 # @qlik/eslint-config-react
 
+## 0.0.15
+
+### Patch Changes
+
+- 0c274b9: Disable poorly working @typescript-eslint/no-unsafe-\* rules
+- Updated dependencies [0c274b9]
+  - @qlik/eslint-config-base@0.0.15
+
 ## 0.0.14
 
 ### Patch Changes
