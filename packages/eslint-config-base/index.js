@@ -27,9 +27,6 @@ module.exports = {
     // https://typescript-eslint.io/rules/lines-between-class-members
     "lines-between-class-members": "off",
 
-    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/prefer-default-export.md
-    "import/prefer-default-export": "off",
-
     // https://typescript-eslint.io/rules/dot-notation/
     "dot-notation": "off",
 
