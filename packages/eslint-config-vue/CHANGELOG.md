@@ -1,5 +1,12 @@
 # @qlik/eslint-config-vue
 
+## 0.0.17
+
+### Patch Changes
+
+- Updated dependencies [df9a91e]
+  - @qlik/eslint-config@0.0.16
+
 ## 0.0.16
 
 ### Patch Changes
