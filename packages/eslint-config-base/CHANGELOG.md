@@ -1,5 +1,11 @@
 # @qlik/eslint-config-base
 
+## 0.1.0
+
+### Minor Changes
+
+- e3e89db: Add support for all use cases in @qlik/eslint-config and deprecate the others
+
 ## 0.0.15
 
 ### Patch Changes

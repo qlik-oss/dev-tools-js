@@ -1,6 +1,6 @@
 {
   "name": "@qlik/tsconfig",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Useful compiler options for compiling a TypeScript project",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
