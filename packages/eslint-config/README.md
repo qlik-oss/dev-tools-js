@@ -1,67 +1,110 @@
 # @qlik/eslint-config
 
-ESlint config for pure javascript/typescript environments. Based on airbnb-base/prettier config with some modifications.
+Qlik's ESlint config for pure javascript/typescript environments. Based on airbnb-base/prettier config with some modifications.
 
 ## usage
 
+These configs assumes that you are using typescript. It is still possible to write .js files and get linting on those.
+
 Simplest approach is to add one of the following field in `package.json`:
 
-For a pure javascript environment use:
+For a pure environment with no specific frameworks use:
 
 ```json
 "eslintConfig": {
-    "extends": [
-      "@qlik/eslint-config"
-    ],
-    "root": true
+  "root": true,
+  "parserOptions": {
+    "project": "path/to/tsconfig.json"
   },
+  "extends": [
+    "@qlik/eslint-config"
+  ]
+},
 ```
 
-To enable linting on typescript (.ts, .tsx):
+Using react:
 
 ```json
 "eslintConfig": {
-    "extends": [
-      "@qlik/eslint-config/typescript"
-    ],
-    "root": true
+  "root": true,
+  "parserOptions": {
+    "project": "path/to/tsconfig.json"
   },
+  "extends": [
+    "@qlik/eslint-config/react"
+  ]
+},
+```
+
+Using svelte:
+
+```json
+"eslintConfig": {
+  "root": true,
+  "parserOptions": {
+    "project": "path/to/tsconfig.json"
+  },
+  "extends": [
+    "@qlik/eslint-config/svelte"
+  ]
+},
+```
+
+Using react AND svelte (rare occasion):
+
+```json
+"eslintConfig": {
+  "root": true,
+  "parserOptions": {
+    "project": "path/to/tsconfig.json"
+  },
+  "extends": [
+    "@qlik/eslint-config/react-svelte"
+  ]
+},
 ```
 
 For a node environment with commonjs modules use:
 
 ```json
 "eslintConfig": {
-    "extends": [
-      "@qlik/eslint-config/node"
-    ],
-    "root": true
+  "root": true,
+  "parserOptions": {
+    "project": "path/to/tsconfig.json"
   },
+  "extends": [
+    "@qlik/eslint-config/node"
+  ]
+},
 ```
 
 For a node environment with ES modules use:
 
 ```json
 "eslintConfig": {
-    "extends": [
-      "@qlik/eslint-config/node-esm"
-    ],
-    "root": true
+  "root": true,
+  "parserOptions": {
+    "project": "path/to/tsconfig.json"
   },
+  "extends": [
+    "@qlik/eslint-config/esm"
+  ]
+},
 ```
 
 Additional configs that can be used in conjunction with the above:
 
 ```json
 "eslintConfig": {
-    "extends": [
-      "...",
-      "@qlik/eslint-config/jest" // adds linting on jest test and config files
-      // OR
-      "@qlik/eslint-config/vitest" // adds linting on vitest test and config files
-      // AND/OR
-      "@qlik/eslint-config/playwright" // adds linting on playwright test and config files
-    ],
-    "root": true
+  "root": true,
+  "parserOptions": {
+    "project": "path/to/tsconfig.json"
   },
+  "extends": [
+    "...",
+    "@qlik/eslint-config/vitest", // adds linting on vitest test and config files
+    // AND/OR
+    "@qlik/eslint-config/playwright" // adds linting on playwright test and config files
+  ]
+},
 ```
