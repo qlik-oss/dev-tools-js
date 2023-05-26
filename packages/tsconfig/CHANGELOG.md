@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.1.4
+
+### Patch Changes
+
+- e3e89db: Fix svelte settings
+
 ## 0.1.3
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @qlik/eslint-config-vue
 
+## 0.1.0
+
+### Minor Changes
+
+- e3e89db: Add support for all use cases in @qlik/eslint-config and deprecate the others
+
+### Patch Changes
+
+- Updated dependencies [e3e89db]
+  - @qlik/eslint-config@0.1.0
+
 ## 0.0.17
 
 ### Patch Changes
