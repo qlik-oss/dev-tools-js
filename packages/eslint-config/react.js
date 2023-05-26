@@ -3,9 +3,9 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "airbnb-base",
+    "airbnb",
     "airbnb-typescript",
-    "./mods/airbnb-base",
+    "./mods/airbnb",
     "prettier",
   ],
   env: {
