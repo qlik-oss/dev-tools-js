@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.1.1
+
+### Patch Changes
+
+- 85bdac8: Fix airbnb-base bug in @qlik/eslint-config index.js
+
 ## 0.1.0
 
 ### Minor Changes
