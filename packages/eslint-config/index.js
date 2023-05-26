@@ -4,7 +4,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "airbnb-base",
-    "airbnb-typescript",
+    "airbnb-typescript/base",
     "./mods/airbnb-base",
     "prettier",
   ],
