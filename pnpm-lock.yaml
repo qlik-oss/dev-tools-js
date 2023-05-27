@@ -55,8 +55,8 @@ importers:
         specifier: 2.29.0
         version: 2.29.0(eslint@8.41.0)(svelte@3.59.1)
       eslint-plugin-vitest:
-        specifier: 0.2.3
-        version: 0.2.3(eslint@8.41.0)(typescript@5.0.4)
+        specifier: 0.2.5
+        version: 0.2.5(eslint@8.41.0)(typescript@5.0.4)
       svelte-eslint-parser:
         specifier: 0.29.0
         version: 0.29.0(svelte@3.59.1)
@@ -1367,8 +1367,8 @@ packages:
       - ts-node
     dev: false
 
-  /eslint-plugin-vitest@0.2.3(eslint@8.41.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-eqyiIY0Hhyp/2+AgNDDFrVhVT0hSXMbAyjFLB87E5CCHxelH9eNrJZe9qVElPPVpuJ201nQ/wmUupaO5EguxKQ==}
+  /eslint-plugin-vitest@0.2.5(eslint@8.41.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-b15PJg7pzGd2X/RK6yRIHhA0sPJnjwNHytMFpqL8Xhil4C7sMz3bVhsTSisBsZR7AvYcJZotVgwQoVGgk8Sm3Q==}
     engines: {node: 14.x || >= 16}
     peerDependencies:
       eslint: '>=8.0.0'
