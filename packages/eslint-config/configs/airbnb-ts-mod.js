@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["./airbnb-base.js"],
+  extends: ["./airbnb-ts-base-mod.js"],
   rules: {
     // modifies airbnb rules for react
     "react/jsx-props-no-spreading": "off",

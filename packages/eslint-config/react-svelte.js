@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["./react", "./mods/svelte"],
+  extends: ["./index", "./overrides/react", "./overrides/svelte"],
 };

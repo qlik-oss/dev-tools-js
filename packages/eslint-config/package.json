@@ -6,7 +6,8 @@
   "license": "ISC",
   "main": "index.js",
   "files": [
-    "mods",
+    "configs",
+    "overrides",
     "index.js",
     "node.js",
     "esm.js",
