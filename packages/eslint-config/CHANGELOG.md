@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.2.0
+
+### Minor Changes
+
+- a83aac8: Better override support for supporting .js(x), .ts(s), .svelte mixed together
+
 ## 0.1.1
 
 ### Patch Changes
