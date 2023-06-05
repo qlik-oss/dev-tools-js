@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.1.3
+
+### Patch Changes
+
+- 092249d: chore: update all dependencies
+
 ## 0.1.2
 
 ### Patch Changes
