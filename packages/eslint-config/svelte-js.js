@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["./index", "./overrides/sveltets"],
+  extends: ["./index", "./overrides/sveltejs"],
 };
