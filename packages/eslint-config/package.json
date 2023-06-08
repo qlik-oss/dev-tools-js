@@ -14,6 +14,7 @@
     "esm.js",
     "react.js",
     "svelte.js",
+    "svelte-js.js",
     "vitest.js",
     "playwright.js",
     "react-svelte.js"
