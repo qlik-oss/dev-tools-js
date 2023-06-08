@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- 327d39e: Adding svelte-js config (javascript only)
+
 ## 0.3.0
 
 ### Minor Changes
