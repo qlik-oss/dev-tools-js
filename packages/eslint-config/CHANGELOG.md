@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.3.0
+
+### Minor Changes
+
+- d44aa7e: Add jest config
+
 ## 0.2.1
 
 ### Patch Changes
