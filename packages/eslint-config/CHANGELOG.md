@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.1
+
+### Patch Changes
+
+- adb006c: Fix svelte-js config
+
 ## 0.4.0
 
 ### Minor Changes
