@@ -1,8 +1,6 @@
 module.exports = {
   extends: ["./airbnb-base-mod"],
   rules: {
-    // modifies airbnb default rules
-    "no-undef": "off", // typescript handles these checks
     // modifies airbnb ts default rules
     "lines-between-class-members": "off",
     "@typescript-eslint/lines-between-class-members": "off",

@@ -1,7 +1,6 @@
 module.exports = {
   rules: {
     // modifies airbnb default rules
-    "no-undef": "off", // typescript handles these checks
     "no-underscore-dangle": "off",
     "class-methods-use-this": "off",
     "no-plusplus": "off",
