@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.3
+
+### Patch Changes
+
+- a8d616c: turn on no-undef (typescript did not handle that)
+
 ## 0.4.2
 
 ### Patch Changes
