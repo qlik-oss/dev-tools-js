@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.5
+
+### Patch Changes
+
+- df30e12: Remove optional dependencies
+
 ## 0.4.4
 
 ### Patch Changes
