@@ -60,7 +60,7 @@ importers:
         version: 4.6.0(eslint@8.43.0)
       eslint-plugin-svelte:
         specifier: 2.30.0
-        version: 2.30.0(eslint@8.43.0)(svelte@3.59.1)
+        version: 2.30.0(eslint@8.43.0)
       eslint-plugin-testing-library:
         specifier: 5.11.0
         version: 5.11.0(eslint@8.43.0)(typescript@5.1.3)
@@ -69,14 +69,7 @@ importers:
         version: 0.2.6(eslint@8.43.0)(typescript@5.1.3)
       svelte-eslint-parser:
         specifier: 0.31.0
-        version: 0.31.0(svelte@3.59.1)
-    optionalDependencies:
-      svelte:
-        specifier: ^3.59.1
-        version: 3.59.1
-      typescript:
-        specifier: ^5.1.3
-        version: 5.1.3
+        version: 0.31.0
     devDependencies:
       '@qlik/prettier-config':
         specifier: workspace:*
@@ -1341,7 +1334,7 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: false
 
-  /eslint-plugin-svelte@2.30.0(eslint@8.43.0)(svelte@3.59.1):
+  /eslint-plugin-svelte@2.30.0(eslint@8.43.0):
     resolution: {integrity: sha512-2/qj0BJsfM0U2j4EjGb7iC/0nbUvXx1Gn78CdtyuXpi/rSomLPCPwnsZsloXMzlt6Xwe8LBlpRvZObSKEHLP5A==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1360,8 +1353,7 @@ packages:
       postcss: 8.4.24
       postcss-load-config: 3.1.4(postcss@8.4.24)
       postcss-safe-parser: 6.0.0(postcss@8.4.24)
-      svelte: 3.59.1
-      svelte-eslint-parser: 0.30.0(svelte@3.59.1)
+      svelte-eslint-parser: 0.30.0
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -2977,7 +2969,7 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /svelte-eslint-parser@0.30.0(svelte@3.59.1):
+  /svelte-eslint-parser@0.30.0:
     resolution: {integrity: sha512-H0Cn2TKr70DU9p/Gb04CfwtS7eK28MYumrHYPaDNkIFbfwGDLADpbERBn7u8G1Rcm2RMr2/mL6mq0J2e8iKFlA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -2989,10 +2981,9 @@ packages:
       eslint-scope: 7.2.0
       eslint-visitor-keys: 3.4.1
       espree: 9.5.2
-      svelte: 3.59.1
     dev: false
 
-  /svelte-eslint-parser@0.31.0(svelte@3.59.1):
+  /svelte-eslint-parser@0.31.0:
     resolution: {integrity: sha512-/31RpBf/e3YjoFphjsyo3JRyN1r4UalGAGafXrZ6EJK4h4COOO0rbfBoen5byGsXnIJKsrlC1lkEd2Vzpq2IDg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -3006,7 +2997,6 @@ packages:
       espree: 9.5.2
       postcss: 8.4.24
       postcss-scss: 4.0.6(postcss@8.4.24)
-      svelte: 3.59.1
     dev: false
 
   /svelte@3.59.1:
