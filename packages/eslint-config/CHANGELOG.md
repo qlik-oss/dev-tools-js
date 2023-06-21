@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.6
+
+### Patch Changes
+
+- 54d0e4e: Fix react-svelte config to reference the correct file
+
 ## 0.4.5
 
 ### Patch Changes
