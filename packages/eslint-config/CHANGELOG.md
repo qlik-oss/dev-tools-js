@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.8
+
+### Patch Changes
+
+- 69b12c9: chore: update all dependencies
+
 ## 0.4.7
 
 ### Patch Changes
