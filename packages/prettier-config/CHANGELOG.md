@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.2.0
+
+### Minor Changes
+
+- f02e5ff: Support for prettier 3
+
 ## 0.1.4
 
 ### Patch Changes
