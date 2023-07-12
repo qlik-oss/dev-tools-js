@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.2.1
+
+### Patch Changes
+
+- e974283: Downgrade prettier 3 support. Plugins needs to upgrade first
+
 ## 0.2.0
 
 ### Minor Changes
