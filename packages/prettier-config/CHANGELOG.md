@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.2.2
+
+### Patch Changes
+
+- 62b9b0d: Make sure all prettier-plugins are still on 2.x
+
 ## 0.2.1
 
 ### Patch Changes
