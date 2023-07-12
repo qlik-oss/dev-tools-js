@@ -87,7 +87,7 @@ importers:
   packages/prettier-config:
     dependencies:
       prettier:
-        specifier: '*'
+        specifier: 2.x
         version: 2.8.8
       prettier-plugin-organize-imports:
         specifier: 3.2.2
