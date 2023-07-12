@@ -11,12 +11,11 @@
     "prepare-release": "changeset",
     "publish-packages": "changeset publish"
   },
-  "prettier": {
-    "printWidth": 120
-  },
+  "prettier": "@qlik/prettier-config",
   "devDependencies": {
     "@changesets/cli": "2.26.2",
-    "prettier": "3.0.0",
+    "@qlik/prettier-config": "workspace:*",
+    "prettier": "2.8.8",
     "turbo": "1.10.7"
   },
   "engines": {
