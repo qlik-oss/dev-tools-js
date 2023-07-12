@@ -93,8 +93,8 @@ importers:
         specifier: 3.2.2
         version: 3.2.2(prettier@2.8.8)(typescript@5.1.6)
       prettier-plugin-packagejson:
-        specifier: 2.4.5
-        version: 2.4.5(prettier@2.8.8)
+        specifier: 2.4.4
+        version: 2.4.4(prettier@2.8.8)
       prettier-plugin-svelte:
         specifier: 2.10.1
         version: 2.10.1(prettier@2.8.8)(svelte@4.0.5)
@@ -2689,8 +2689,8 @@ packages:
       typescript: 5.1.6
     dev: false
 
-  /prettier-plugin-packagejson@2.4.5(prettier@2.8.8):
-    resolution: {integrity: sha512-glG71jE1gO3y5+JNAhC8X+4yrlN28rub6Aj461SKbaPie9RgMiHKcInH2Moi2VGOfkTXaEHBhg4uVMBqa+kBUA==}
+  /prettier-plugin-packagejson@2.4.4(prettier@2.8.8):
+    resolution: {integrity: sha512-Xk74PATiZDW+kELIh8e8EY0JpwHo9xbSGc4YfIfxmITWAF8yqHa7A+yAQLLMRoQEkKNi+xaMnR8BX2F9zrsczg==}
     peerDependencies:
       prettier: '>= 1.16.0'
     peerDependenciesMeta:
@@ -2698,7 +2698,7 @@ packages:
         optional: true
     dependencies:
       prettier: 2.8.8
-      sort-package-json: 2.5.1
+      sort-package-json: 2.5.0
       synckit: 0.8.5
     dev: false
 
@@ -2940,8 +2940,8 @@ packages:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
     dev: false
 
-  /sort-package-json@2.5.1:
-    resolution: {integrity: sha512-vx/KoZxm8YNMUqdlw7SGTfqR5pqZ/sUfgOuRtDILiOy/3AvzhAibyUe2cY3OpLs3oRSow9up4yLVtQaM24rbDQ==}
+  /sort-package-json@2.5.0:
+    resolution: {integrity: sha512-KIsqEi/ameVyhhatpzwialQVSMP1mFzRLJgTBKJDz0duQmhnBDjf8MFyFoIoVnW69SqjH3/bziCSlgiuz2KbHg==}
     hasBin: true
     dependencies:
       detect-indent: 7.0.1
