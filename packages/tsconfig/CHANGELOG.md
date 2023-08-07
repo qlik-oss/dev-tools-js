@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.1.6
+
+### Patch Changes
+
+- e9d5bbf: Fix prettier peerDeps
+
 ## 0.1.5
 
 ### Patch Changes

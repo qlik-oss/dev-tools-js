@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.11
+
+### Patch Changes
+
+- e9d5bbf: Fix prettier peerDeps
+
 ## 0.4.10
 
 ### Patch Changes
