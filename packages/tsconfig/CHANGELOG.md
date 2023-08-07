@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.1.5
+
+### Patch Changes
+
+- bde8f0f: chore: update all dependencies
+
 ## 0.1.4
 
 ### Patch Changes
