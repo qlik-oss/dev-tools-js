@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.2.4
+
+### Patch Changes
+
+- e9d5bbf: Fix prettier peerDeps
+
 ## 0.2.3
 
 ### Patch Changes
