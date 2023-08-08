@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.12
+
+### Patch Changes
+
+- ae3f42f: Turn off import/order rule because it's inconsistent with prettier-plugin-organize-imports
+
 ## 0.4.11
 
 ### Patch Changes
