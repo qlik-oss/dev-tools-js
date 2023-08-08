@@ -7,6 +7,9 @@ module.exports = {
     "prefer-destructuring": ["error", { object: true, array: false }],
     "guard-for-in": "off",
 
+    // eslint import/order and prettier-plugin-organize-imports are currently incompatible
+    "import/order": "off",
+
     // allows for..in and for..of
     "no-restricted-syntax": [
       "error",
