@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.3.0
+
+### Minor Changes
+
+- 05a1a06: Use default value ("all") for prettier's trailingComma setting
+
 ## 0.2.4
 
 ### Patch Changes
