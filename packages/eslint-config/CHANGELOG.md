@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.14
+
+### Patch Changes
+
+- 1ca0aa9: Adding react/hooks to config
+
 ## 0.4.13
 
 ### Patch Changes
