@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.4.0
+
+### Minor Changes
+
+- 2fc2d84: Add prettier-plugin-sh
+
 ## 0.3.0
 
 ### Minor Changes
