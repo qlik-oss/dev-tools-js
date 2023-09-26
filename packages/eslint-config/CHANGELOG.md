@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.21
+
+### Patch Changes
+
+- f3accdd: Fixes a bug in react-svelte config where .svelte files were not found correctly if any other file was linted first
+
 ## 0.4.20
 
 ### Patch Changes
