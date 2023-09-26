@@ -100,7 +100,7 @@ importers:
         version: 0.13.1(prettier@3.0.3)
       prettier-plugin-svelte:
         specifier: 3.0.3
-        version: 3.0.3(prettier@3.0.3)(svelte@4.2.1)
+        version: 3.0.3(prettier@3.0.3)(svelte@4.2.0)
 
   packages/tsconfig:
     devDependencies:
@@ -110,6 +110,53 @@ importers:
       prettier:
         specifier: 3.0.3
         version: 3.0.3
+
+  test/test-react:
+    dependencies:
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+    devDependencies:
+      '@qlik/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@qlik/prettier-config':
+        specifier: workspace:*
+        version: link:../../packages/prettier-config
+      '@qlik/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      '@types/react':
+        specifier: 18.2.22
+        version: 18.2.22
+      eslint:
+        specifier: 8.50.0
+        version: 8.50.0
+
+  test/test-react-svelte:
+    dependencies:
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      svelte:
+        specifier: 4.2.0
+        version: 4.2.0
+    devDependencies:
+      '@qlik/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@qlik/prettier-config':
+        specifier: workspace:*
+        version: link:../../packages/prettier-config
+      '@qlik/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      '@types/react':
+        specifier: 18.2.22
+        version: 18.2.22
+      eslint:
+        specifier: 8.50.0
+        version: 8.50.0
 
 packages:
 
@@ -718,6 +765,22 @@ packages:
 
   /@types/normalize-package-data@2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
+    dev: true
+
+  /@types/prop-types@15.7.7:
+    resolution: {integrity: sha512-FbtmBWCcSa2J4zL781Zf1p5YUBXQomPEcep9QZCfRfQgTxz3pJWiDFLebohZ9fFntX5ibzOkSsrJ0TEew8cAog==}
+    dev: true
+
+  /@types/react@18.2.22:
+    resolution: {integrity: sha512-60fLTOLqzarLED2O3UQImc/lsNRgG0jE/a1mPW9KjMemY0LMITWEsbS4VvZ4p6rorEHd5YKxxmMKSDK505GHpA==}
+    dependencies:
+      '@types/prop-types': 15.7.7
+      '@types/scheduler': 0.16.4
+      csstype: 3.1.2
+    dev: true
+
+  /@types/scheduler@0.16.4:
+    resolution: {integrity: sha512-2L9ifAGl7wmXwP4v3pN4p2FLhD0O1qsJpvKmNin5VA8+UvNVb447UDaAEV6UdrkA+m/Xs58U1RFps44x6TFsVQ==}
     dev: true
 
   /@types/semver@7.5.2:
@@ -1333,6 +1396,10 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
     dev: false
+
+  /csstype@3.1.2:
+    resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
+    dev: true
 
   /csv-generate@3.4.3:
     resolution: {integrity: sha512-w/T+rqR0vwvHqWs/1ZyMDWtHHSJaN06klRqJXBEpDJaM/+dZkso0OKh1VcuuYvK3XM53KysVNq8Ko/epCK8wOw==}
@@ -3311,14 +3378,14 @@ packages:
       sh-syntax: 0.4.1
     dev: false
 
-  /prettier-plugin-svelte@3.0.3(prettier@3.0.3)(svelte@4.2.1):
+  /prettier-plugin-svelte@3.0.3(prettier@3.0.3)(svelte@4.2.0):
     resolution: {integrity: sha512-dLhieh4obJEK1hnZ6koxF+tMUrZbV5YGvRpf2+OADyanjya5j0z1Llo8iGwiHmFWZVG/hLEw/AJD5chXd9r3XA==}
     peerDependencies:
       prettier: ^3.0.0
       svelte: ^3.2.0 || ^4.0.0-next.0
     dependencies:
       prettier: 3.0.3
-      svelte: 4.2.1
+      svelte: 4.2.0
     dev: false
 
   /prettier@2.8.8:
@@ -3371,6 +3438,13 @@ packages:
 
   /react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
+    dev: false
+
+  /react@18.2.0:
+    resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
     dev: false
 
   /read-pkg-up@7.0.1:
@@ -3796,8 +3870,8 @@ packages:
       postcss-scss: 4.0.8(postcss@8.4.30)
     dev: false
 
-  /svelte@4.2.1:
-    resolution: {integrity: sha512-LpLqY2Jr7cRxkrTc796/AaaoMLF/1ax7cto8Ot76wrvKQhrPmZ0JgajiWPmg9mTSDqO16SSLiD17r9MsvAPTmw==}
+  /svelte@4.2.0:
+    resolution: {integrity: sha512-kVsdPjDbLrv74SmLSUzAsBGquMs4MPgWGkGLpH+PjOYnFOziAvENVzgJmyOCV2gntxE32aNm8/sqNKD6LbIpeQ==}
     engines: {node: '>=16'}
     dependencies:
       '@ampproject/remapping': 2.2.1
