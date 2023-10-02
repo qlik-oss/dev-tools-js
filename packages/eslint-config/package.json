@@ -1,6 +1,6 @@
 {
   "name": "@qlik/eslint-config",
-  "version": "0.4.21",
+  "version": "0.4.22",
   "description": "Qlik's ESLint config for typescript",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
@@ -33,20 +33,20 @@
     "extends": "eslint:recommended"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "6.7.2",
-    "@typescript-eslint/parser": "6.7.2",
+    "@typescript-eslint/eslint-plugin": "6.7.3",
+    "@typescript-eslint/parser": "6.7.3",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-airbnb-typescript": "17.1.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-import": "2.28.1",
-    "eslint-plugin-jest": "27.4.0",
+    "eslint-plugin-jest": "27.4.2",
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-playwright": "0.16.0",
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-svelte": "2.33.2",
-    "eslint-plugin-testing-library": "6.0.1",
+    "eslint-plugin-testing-library": "6.0.2",
     "eslint-plugin-vitest": "0.3.1",
     "svelte-eslint-parser": "0.33.0"
   },
