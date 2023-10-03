@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.2.0
+
+### Minor Changes
+
+- a925f1e: Breaking change: Sets `moduleResolution` to "Bundler"
+
 ## 0.1.6
 
 ### Patch Changes

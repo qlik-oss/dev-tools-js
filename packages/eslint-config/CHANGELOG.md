@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.23
+
+### Patch Changes
+
+- a925f1e: Fix svelte config for .svelte files in typescript
+
 ## 0.4.22
 
 ### Patch Changes
