@@ -6,6 +6,7 @@
   "license": "ISC",
   "main": "recommended.json",
   "files": [
+    "node.json",
     "react.json",
     "recommended.json",
     "svelte.json",
