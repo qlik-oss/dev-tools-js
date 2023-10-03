@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.2.1
+
+### Patch Changes
+
+- 6e66acc: Add tsconfig for modern node environment
+
 ## 0.2.0
 
 ### Minor Changes
