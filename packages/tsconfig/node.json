@@ -3,16 +3,15 @@
     "allowJs": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "target": "ESNext",
-    "moduleResolution": "Bundler",
-    "noEmit": true,
+    "lib": ["ES2021"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
-    "sourceMap": true,
+    "strict": true,
     "skipLibCheck": true,
-    "strict": false,
+    "target": "ES2021",
     "verbatimModuleSyntax": true
   },
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Svelte"
+  "display": "Node"
 }

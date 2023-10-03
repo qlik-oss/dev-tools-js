@@ -1,15 +1,13 @@
 {
   "compilerOptions": {
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "checkJs": true,
+    "esModuleInterop": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
-    "target": "ESNext",
-    "strict": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+    "moduleResolution": "Bundler",
     "forceConsistentCasingInFileNames": true,
-    "allowUnusedLabels": false,
-    "allowUnreachableCode": false,
     "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
@@ -18,8 +16,11 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "verbatimModuleSyntax": true,
-    "checkJs": true
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext",
+    "verbatimModuleSyntax": true
   },
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Strictest"
