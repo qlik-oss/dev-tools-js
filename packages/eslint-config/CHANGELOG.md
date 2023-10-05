@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.24
+
+### Patch Changes
+
+- bd72505: Fix import/no-unresolved for .svelte files
+
 ## 0.4.23
 
 ### Patch Changes
