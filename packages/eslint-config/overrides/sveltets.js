@@ -24,6 +24,8 @@ module.exports = {
         "no-unused-vars": "off",
         "@typescript-eslint/no-unused-vars": "off",
         "import/no-mutable-exports": "off",
+        // import/no-unresolved doesn't work properly in .svelte files, but ts takes care of this
+        "import/no-unresolved": "off",
       },
     },
   ],
