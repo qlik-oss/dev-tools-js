@@ -12,6 +12,7 @@ module.exports = {
     "dot-notation": "off",
     "@typescript-eslint/dot-notation": "off",
 
+    "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/prefer-ts-expect-error": "error",
     "@typescript-eslint/no-misused-promises": [
       "error",
