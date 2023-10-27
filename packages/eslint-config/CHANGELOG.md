@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.27
+
+### Patch Changes
+
+- e79deba: Disable @typescript-eslint/no-namespace rule
+
 ## 0.4.26
 
 ### Patch Changes
