@@ -1,6 +1,7 @@
 module.exports = {
   rules: {
     // modifies airbnb default rules
+    "no-void": "off",
     "no-underscore-dangle": "off",
     "class-methods-use-this": "off",
     "no-plusplus": "off",
