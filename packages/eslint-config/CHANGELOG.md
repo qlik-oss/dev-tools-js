@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.29
+
+### Patch Changes
+
+- b88d7a1: disable the `no-void` rule in the base configuration. This rule is not relevant for es2015+ code and it is incompatible with `@typescript-eslint/no-floating-promises` where you can use the void operator to make an intentional floating-promise.
+
 ## 0.4.28
 
 ### Patch Changes
