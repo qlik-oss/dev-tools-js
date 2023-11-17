@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.4.32
+
+### Patch Changes
+
+- 834fe37: Turn off react/prop-types and react/require-default-props for typescript
+
 ## 0.4.31
 
 ### Patch Changes
