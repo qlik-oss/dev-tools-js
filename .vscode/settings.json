@@ -1,0 +1,3 @@
+{
+  "eslint.workingDirectories": ["test/react-svelte", "test/react"]
+}

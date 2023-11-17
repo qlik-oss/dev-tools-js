@@ -18,6 +18,10 @@ module.exports = {
       ],
       plugins: ["@typescript-eslint"],
       parser: "@typescript-eslint/parser",
+      rules: {
+        "react/require-default-props": "off",
+        "react/prop-types": "off",
+      },
     },
   ],
 };
