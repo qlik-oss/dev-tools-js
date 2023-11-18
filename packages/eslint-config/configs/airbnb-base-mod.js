@@ -12,7 +12,20 @@ module.exports = {
       "error",
       {
         props: true,
-        ignorePropertyModificationsFor: ["prev"],
+        ignorePropertyModificationsFor: [
+          "prev", // for reduce accumulators
+          "acc", // for reduce accumulators
+          "accumulator", // for reduce accumulators
+          "e", // for e.returnvalue
+          "ctx", // for Koa routing
+          "context", // for Koa routing
+          "req", // for Express requests
+          "request", // for Express requests
+          "res", // for Express responses
+          "response", // for Express responses
+          "$scope", // for Angular 1 scopes
+          "staticContext", // for ReactRouter context
+        ],
       },
     ],
 
