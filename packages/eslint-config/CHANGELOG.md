@@ -1,5 +1,15 @@
 # @qlik/eslint-config
 
+## 0.5.0
+
+### Minor Changes
+
+- 90a2184: Improve no-param-reassign to not complain on "prev" property which is a normal use case in reducers
+
+### Patch Changes
+
+- 2a43c6f: chore: update npm dependencies
+
 ## 0.4.32
 
 ### Patch Changes
