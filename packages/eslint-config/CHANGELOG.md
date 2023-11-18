@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.5.1
+
+### Patch Changes
+
+- 05f3b77: Add the default allowed property modifiers from airbnb on `no-param-reassign`
+
 ## 0.5.0
 
 ### Minor Changes
