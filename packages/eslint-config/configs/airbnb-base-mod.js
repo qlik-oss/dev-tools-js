@@ -7,6 +7,14 @@ module.exports = {
     "no-plusplus": "off",
     "prefer-destructuring": ["error", { object: true, array: false }],
     "guard-for-in": "off",
+    // allow prev to be re-assigned in reducers
+    "no-param-reassign": [
+      "error",
+      {
+        props: true,
+        ignorePropertyModificationsFor: ["prev"],
+      },
+    ],
 
     // eslint import/order and prettier-plugin-organize-imports are currently incompatible
     "import/order": "off",
