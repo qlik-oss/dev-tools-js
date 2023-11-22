@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { wrapper } from "./Wrapper";
+  import OtherComponent from "./OtherComponent.svelte";
+  import { wrapper } from "./Wrapper.tsx";
 
   const wrapped = wrapper();
 
@@ -8,6 +9,7 @@
 
 <main>
   <section class="my-pink-section">Props: {`{ name: "${name}" }`}</section>
+  <OtherComponent />
 </main>
 
 <style>
