@@ -1,4 +1,8 @@
 <script lang="ts">
+  import { wrapper } from "./Wrapper";
+
+  const wrapped = wrapper();
+
   export let name: string;
 </script>
 
