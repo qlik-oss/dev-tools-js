@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.2.2
+
+### Patch Changes
+
+- e1247fa: Add allowImportingTsExtensions to svelte config
+
 ## 0.2.1
 
 ### Patch Changes
