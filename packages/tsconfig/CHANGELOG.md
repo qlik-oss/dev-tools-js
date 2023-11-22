@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.2.3
+
+### Patch Changes
+
+- 706ad74: Align svelte settings with recommended for svelte
+
 ## 0.2.2
 
 ### Patch Changes
