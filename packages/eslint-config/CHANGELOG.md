@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.5.2
+
+### Patch Changes
+
+- 4d5ee96: Turn off assignment rule for `prefer-destructuring`
+
 ## 0.5.1
 
 ### Patch Changes
