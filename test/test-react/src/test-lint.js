@@ -7,3 +7,17 @@ const envKeys = parsed
   : {};
 
 console.log(envKeys); // eslint-disable-line no-console
+
+const obj = {
+  one: "one",
+  two: 2,
+};
+
+const { one } = obj;
+
+let two;
+if (one === "one") {
+  two = obj.two;
+}
+
+console.log(one, two); // eslint-disable-line no-console
