@@ -1,5 +1,15 @@
 # @qlik/eslint-config
 
+## 0.6.0
+
+### Minor Changes
+
+- 37fd59d: Changed glob pattern for playwright lint config to match everything insde either `test` or `tests` folder. Also include playwright.config file.
+
+### Patch Changes
+
+- 68f05a4: chore: update npm dependencies
+
 ## 0.5.3
 
 ### Patch Changes
