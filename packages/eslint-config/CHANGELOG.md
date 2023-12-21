@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.6.3
+
+### Patch Changes
+
+- 1345829: Fix glob pattern for test files
+
 ## 0.6.2
 
 ### Patch Changes
