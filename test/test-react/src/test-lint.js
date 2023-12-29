@@ -21,3 +21,9 @@ if (one === "one") {
 }
 
 console.log(one, two); // eslint-disable-line no-console
+
+async function returnsPromise() {
+  return "value";
+}
+
+returnsPromise();

@@ -20,6 +20,12 @@ module.exports = {
         checksConditionals: false,
       },
     ],
+    "@typescript-eslint/no-floating-promises": [
+      "error",
+      {
+        ignoreIIFE: true,
+      },
+    ],
 
     // no-unsafe-* does not work good
     "@typescript-eslint/no-unsafe-call": "off",
