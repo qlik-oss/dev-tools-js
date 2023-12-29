@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.6.5
+
+### Patch Changes
+
+- 000ffe4: Allow IIFE for no-floating-promises
+
 ## 0.6.4
 
 ### Patch Changes
