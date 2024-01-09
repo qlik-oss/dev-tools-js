@@ -5,6 +5,7 @@ module.exports = {
       extends: ["plugin:playwright/playwright-test"],
       rules: {
         "import/no-extraneous-dependencies": "off",
+        "playwright/no-networkidle": "off",
       },
     },
   ],
