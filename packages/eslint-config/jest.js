@@ -2,9 +2,9 @@ module.exports = {
   overrides: [
     {
       files: [
-        "test/**/*",
-        "**/__test__/**",
-        "**/__tests__/**",
+        "test/**/*.{js,ts,jsx,tsx}",
+        "**/__test__/**/*.{js,ts,jsx,tsx}",
+        "**/__tests__/**/*.{js,ts,jsx,tsx}",
         "**/*.spec.{js,ts,jsx,tsx}",
         "**/*.test.{js,ts,jsx,tsx}",
       ],
