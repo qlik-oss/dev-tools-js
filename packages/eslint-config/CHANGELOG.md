@@ -1,5 +1,15 @@
 # @qlik/eslint-config
 
+## 0.7.0
+
+### Minor Changes
+
+- 35141b9: Turn off `playwright/no-networkidle` rule for playwright config
+
+### Patch Changes
+
+- a9babba: Fix playwright matchers to match only js and ts files
+
 ## 0.6.7
 
 ### Patch Changes
