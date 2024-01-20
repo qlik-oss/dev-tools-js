@@ -8,13 +8,13 @@
   "prettier": "@qlik/prettier-config",
   "dependencies": {
     "react": "18.2.0",
-    "svelte": "4.2.8"
+    "svelte": "4.2.9"
   },
   "devDependencies": {
     "@qlik/eslint-config": "workspace:*",
     "@qlik/prettier-config": "workspace:*",
     "@qlik/tsconfig": "workspace:*",
-    "@types/react": "18.2.47",
+    "@types/react": "18.2.48",
     "eslint": "8.56.0"
   }
 }
