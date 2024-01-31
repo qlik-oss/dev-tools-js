@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.7.3
+
+### Patch Changes
+
+- 366848a: Add eslint-import-resolver-typescript for resolving paths configuration from tsconfig
+
 ## 0.7.2
 
 ### Patch Changes
