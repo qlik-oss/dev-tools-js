@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.7.4
+
+### Patch Changes
+
+- 948f939: Turn of @typescript-eslint/unbound-method in favor for jest/unbound-method for jest config
+
 ## 0.7.3
 
 ### Patch Changes
