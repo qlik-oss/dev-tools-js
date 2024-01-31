@@ -11,6 +11,11 @@ module.exports = {
         "prettier",
         "../configs/env",
       ],
+      settings: {
+        "import/resolver": {
+          typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
+        },
+      },
       plugins: ["@typescript-eslint"],
       parser: "@typescript-eslint/parser",
     },

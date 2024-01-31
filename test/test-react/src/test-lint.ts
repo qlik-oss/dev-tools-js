@@ -1,3 +1,9 @@
+import mod from "~/subfolder/submodule";
+import otherMod from "./normal/submodule";
+
+mod();
+otherMod();
+
 const obj = {
   one: "one",
   two: 2,
