@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@qlik/prettier-config": "workspace:*",
-    "prettier": "3.2.4"
+    "prettier": "3.2.5"
   },
   "publishConfig": {
     "access": "public",
