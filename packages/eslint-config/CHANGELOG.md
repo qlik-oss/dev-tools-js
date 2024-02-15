@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.7.8
+
+### Patch Changes
+
+- 8e70bab: Turn off unbound-method for test files
+
 ## 0.7.7
 
 ### Patch Changes
