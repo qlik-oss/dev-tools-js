@@ -2,10 +2,11 @@
 
 ## Usage
 
-- `@qlik/tsconfig/base.json` Typescript recommended options. Suitable for node.
-- `@qlik/tsconfig/bundler.json` Extends `base.json`. Suitable for a project using a bundler.
-- `@qlik/tsconfig/react.json` extends `bundler.json` and can be used for a TypeScript React project.
-- `@qlik/tsconfig/vue.json` extends `bundler.json` and can be used for a TypeScript Vue project.
+- `@qlik/tsconfig/recommended.json` Typescript recommended options. Suitable for typescript projectes using a bundler.
+- `@qlik/tsconfig/strictest.json` Typescript recommended options, but with stricter checks.
+- `@qlik/tsconfig/node.js` Typescript recommended options for typescript projects targeted towards NodeJS.
+- `@qlik/tsconfig/react.json` Same as recommended with React support.
+- `@qlik/tsconfig/svelte.json` Same as recommended with Svelte support.
 
 For example, in a Parcel project, create a tsconfig.json:
 
@@ -19,3 +20,5 @@ For example, in a Parcel project, create a tsconfig.json:
 ## What is a tsconfig.json
 
 Read here <https://www.typescriptlang.org/docs/handbook/tsconfig-json.html>
+
+Examples of other tsconfig.json's can be found here <https://github.com/tsconfig/bases?tab=readme-ov-file>
