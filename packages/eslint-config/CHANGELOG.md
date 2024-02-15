@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.7.7
+
+### Patch Changes
+
+- 687de01: Add testing-library plugin to vitest eslint config
+
 ## 0.7.6
 
 ### Patch Changes
