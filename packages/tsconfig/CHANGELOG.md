@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.2.4
+
+### Patch Changes
+
+- 59bce61: Update documentation in README.md
+
 ## 0.2.3
 
 ### Patch Changes
