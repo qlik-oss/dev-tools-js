@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.7.10
+
+### Patch Changes
+
+- 760b48a: Downgrade @typescript-eslint/\*\* to be compatible with eslint-config-airbnb-typescript
+
 ## 0.7.9
 
 ### Patch Changes
