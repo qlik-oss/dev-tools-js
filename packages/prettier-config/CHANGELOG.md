@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.4.10
+
+### Patch Changes
+
+- ab7a82c: update npm dependencies
+
 ## 0.4.9
 
 ### Patch Changes
