@@ -19,7 +19,7 @@
   },
   "prettier": "@qlik/prettier-config",
   "dependencies": {
-    "@tsconfig/node18": "18.2.2"
+    "@tsconfig/node18": "18.2.4"
   },
   "devDependencies": {
     "@qlik/prettier-config": "workspace:*",
