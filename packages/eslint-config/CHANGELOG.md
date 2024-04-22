@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.7.18
+
+### Patch Changes
+
+- eed3ca3: Fix problem with vitest-plugin
+
 ## 0.7.17
 
 ### Patch Changes
