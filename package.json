@@ -21,5 +21,10 @@
   "engines": {
     "node": ">=16",
     "pnpm": ">=8"
+  },
+  "updateConfig": {
+    "ignoreDependencies": [
+      "eslint"
+    ]
   }
 }
