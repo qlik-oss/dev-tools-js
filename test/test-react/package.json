@@ -13,7 +13,7 @@
     "@qlik/eslint-config": "workspace:*",
     "@qlik/prettier-config": "workspace:*",
     "@qlik/tsconfig": "workspace:*",
-    "@types/react": "18.2.73",
+    "@types/react": "18.2.79",
     "eslint": "8.57.0"
   }
 }
