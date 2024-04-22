@@ -24,7 +24,8 @@
   },
   "updateConfig": {
     "ignoreDependencies": [
-      "eslint"
+      "eslint",
+      "eslint-plugin-vitest"
     ]
   }
 }
