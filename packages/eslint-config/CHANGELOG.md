@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.7.17
+
+### Patch Changes
+
+- 5e9e2e9: update npm dependencies
+
 ## 0.7.16
 
 ### Patch Changes
