@@ -22,10 +22,12 @@
     "node": ">=16",
     "pnpm": ">=8"
   },
-  "updateConfig": {
-    "ignoreDependencies": [
-      "eslint",
-      "eslint-plugin-vitest"
-    ]
+  "pnpm": {
+    "updateConfig": {
+      "ignoreDependencies": [
+        "eslint",
+        "eslint-plugin-vitest"
+      ]
+    }
   }
 }
