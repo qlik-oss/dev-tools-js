@@ -48,7 +48,7 @@
     "eslint-plugin-react-hooks": "4.6.2",
     "eslint-plugin-svelte": "2.38.0",
     "eslint-plugin-testing-library": "6.2.2",
-    "eslint-plugin-vitest": "0.5.4",
+    "eslint-plugin-vitest": "0.4.1",
     "svelte-eslint-parser": "0.35.0"
   },
   "devDependencies": {
