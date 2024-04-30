@@ -16,16 +16,18 @@
     "@changesets/cli": "2.27.1",
     "@qlik/prettier-config": "workspace:*",
     "prettier": "3.2.5",
-    "turbo": "1.13.2"
+    "turbo": "1.13.3"
   },
   "engines": {
     "node": ">=16",
     "pnpm": ">=8"
   },
-  "updateConfig": {
-    "ignoreDependencies": [
-      "eslint",
-      "eslint-plugin-vitest"
-    ]
+  "pnpm": {
+    "updateConfig": {
+      "ignoreDependencies": [
+        "eslint",
+        "eslint-plugin-vitest"
+      ]
+    }
   }
 }
