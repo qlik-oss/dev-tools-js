@@ -4,9 +4,7 @@
 
 ### Major Changes
 
-- 61172c7: Breaking Change
-
-  Supported browsers for iOS and Safari has been updated to reflect the official documented support [here](https://help.qlik.com/en-US/sense-admin/February2024/Subsystems/DeployAdministerQSE/Content/Sense_DeployAdminister/Common/supported-browsers.htm)
+- 61172c7: Supported browsers for iOS and Safari has been updated to reflect the official documented support [here](https://help.qlik.com/en-US/sense-admin/February2024/Subsystems/DeployAdministerQSE/Content/Sense_DeployAdminister/Common/supported-browsers.htm)
 
   #### What's changed
 
