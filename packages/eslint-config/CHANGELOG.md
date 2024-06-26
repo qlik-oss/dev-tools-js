@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.7.25
+
+### Patch Changes
+
+- 7e39a7d: clean up dependencies and mark them with `^`
+
 ## 0.7.24
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.4.15
+
+### Patch Changes
+
+- 7e39a7d: clean up dependencies and mark them with `^`
+
 ## 0.4.14
 
 ### Patch Changes
