@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.2.6
+
+### Patch Changes
+
+- 7e39a7d: clean up dependencies and mark them with `^`
+
 ## 0.2.5
 
 ### Patch Changes
