@@ -18,12 +18,9 @@
     "format:write": "prettier --write '**' --ignore-unknown"
   },
   "prettier": "@qlik/prettier-config",
-  "dependencies": {
-    "@tsconfig/node18": "18.2.4"
-  },
   "devDependencies": {
     "@qlik/prettier-config": "workspace:*",
-    "prettier": "3.3.2"
+    "prettier": "^3.3.2"
   },
   "publishConfig": {
     "access": "public",
