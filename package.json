@@ -16,8 +16,8 @@
   "devDependencies": {
     "@changesets/cli": "2.27.7",
     "@qlik/prettier-config": "workspace:*",
-    "prettier": "3.3.2",
-    "turbo": "2.0.6"
+    "prettier": "3.3.3",
+    "turbo": "2.0.9"
   },
   "packageManager": "pnpm@9.4.0",
   "engines": {
