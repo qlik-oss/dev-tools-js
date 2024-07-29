@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.4.17
+
+### Patch Changes
+
+- 2332cdc: chore: update npm dependencies
+
 ## 0.4.16
 
 ### Patch Changes
