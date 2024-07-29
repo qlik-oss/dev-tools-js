@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.2.7
+
+### Patch Changes
+
+- 2332cdc: chore: update npm dependencies
+
 ## 0.2.6
 
 ### Patch Changes
