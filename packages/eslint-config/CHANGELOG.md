@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.8.0
+
+### Minor Changes
+
+- 0c3f6c2: Turn off prefer-destructuring
+
 ## 0.7.28
 
 ### Patch Changes
