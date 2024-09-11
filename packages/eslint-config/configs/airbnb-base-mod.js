@@ -5,22 +5,7 @@ module.exports = {
     "no-underscore-dangle": "off",
     "class-methods-use-this": "off",
     "no-plusplus": "off",
-    "prefer-destructuring": [
-      "error",
-      {
-        VariableDeclarator: {
-          array: false,
-          object: true,
-        },
-        AssignmentExpression: {
-          array: false,
-          object: false,
-        },
-      },
-      {
-        enforceForRenamedProperties: false,
-      },
-    ],
+    "prefer-destructuring": "off",
     "guard-for-in": "off",
     // allow prev to be re-assigned in reducers
     "no-param-reassign": [

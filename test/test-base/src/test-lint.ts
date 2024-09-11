@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import mod from "~/subfolder/submodule";
 import otherMod from "./normal/submodule";
 
@@ -16,9 +17,15 @@ if (one === "one") {
   two = obj.two;
 }
 
-console.log(one, two); // eslint-disable-line no-console
+console.log(one, two);
 
 // IIFE functions is ok for no-floating-promises
 (async function returnsPromise() {
   return "value";
 })();
+
+// prefer-destructuring
+const { one: renamed } = obj;
+console.log(renamed);
+const renamed2 = obj.one;
+console.log(renamed2);
