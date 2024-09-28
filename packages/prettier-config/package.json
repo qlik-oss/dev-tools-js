@@ -10,10 +10,10 @@
     "format:write": "prettier --write '**' --ignore-unknown"
   },
   "dependencies": {
-    "prettier-plugin-organize-imports": "^4.0.0",
-    "prettier-plugin-packagejson": "^2.5.1",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-packagejson": "^2.5.2",
     "prettier-plugin-sh": "^0.14.0",
-    "prettier-plugin-svelte": "^3.2.6"
+    "prettier-plugin-svelte": "^3.2.7"
   },
   "peerDependencies": {
     "prettier": "^3.0.0"
