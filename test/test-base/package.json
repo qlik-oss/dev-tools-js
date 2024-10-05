@@ -2,19 +2,19 @@
   "name": "test-base",
   "private": true,
   "description": "Test project for react linting",
+  "type": "module",
   "scripts": {
     "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ."
   },
   "prettier": "@qlik/prettier-config",
-  "dependencies": {
-    "react": "^18.3.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@qlik/eslint-config": "workspace:*",
     "@qlik/prettier-config": "workspace:*",
     "@qlik/tsconfig": "workspace:*",
-    "@types/react": "^18.3.10",
-    "eslint": "^8.57.0",
-    "vitest": "^2.1.1"
+    "@types/react": "^18.3.11",
+    "eslint": "^9.12.0",
+    "jiti": "^2.4.0",
+    "vitest": "^2.1.2"
   }
 }

@@ -6,4 +6,13 @@ const ReactComponent = ({ name }: ReactComponentProps): React.ReactNode => (
   <section>Props: {`{ this name: "${name}" }`}</section>
 );
 
-export default ReactComponent;
+const ReactComponent2 = ({ name }: ReactComponentProps): React.ReactNode => {
+  return <section>Props: {`{ this name: "${name}" }`}</section>;
+};
+
+function reactComponent({ name }: ReactComponentProps): React.ReactNode {
+  return <section>Props: {`{ this name: "${name}" }`}</section>;
+}
+var shouldUseFlatConfig = "hej";
+
+export { ReactComponent, ReactComponent2, reactComponent };

@@ -2,6 +2,7 @@
   "name": "test-react",
   "private": true,
   "description": "Test project for react linting",
+  "type": "module",
   "scripts": {
     "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ."
   },
@@ -13,7 +14,7 @@
     "@qlik/eslint-config": "workspace:*",
     "@qlik/prettier-config": "workspace:*",
     "@qlik/tsconfig": "workspace:*",
-    "@types/react": "^18.3.10",
-    "eslint": "^8.57.0"
+    "@types/react": "^18.3.11",
+    "eslint": "^9.12.0"
   }
 }
