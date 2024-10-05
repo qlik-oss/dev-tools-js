@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.8.1
+
+### Patch Changes
+
+- feb2d5a: chore: update npm dependencies
+
 ## 0.8.0
 
 ### Minor Changes
