@@ -1,38 +1,45 @@
 // @ts-check
 import globals from "globals";
 import { mergeConfigs } from "../utils/config.js";
-import { formatting } from "./formatting.js";
 import { recommendedJS, recommendedTS } from "./recommended.js";
 
 /**
  * @satisfies {import("../types/index.js").ESLintFlatConfig['rules']}
  */
-const nodeRules = {
+const cjsRules = {
   // modify rules for node here
 };
 
-const nodeJS = mergeConfigs(recommendedJS, {
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
+const cjsJS = mergeConfigs(recommendedJS, {
   name: "node-cjs-js",
+  files: ["**/*.{js,cjs}"],
   languageOptions: {
     globals: globals.node,
     sourceType: "commonjs",
   },
   rules: {
-    ...nodeRules,
+    ...cjsRules,
   },
 });
 
-const nodeTS = mergeConfigs(recommendedTS, {
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
+const cjsTS = mergeConfigs(recommendedTS, {
   name: "node-cjs-ts",
+  files: ["**/*.{ts,cts}"],
   languageOptions: {
     globals: globals.node,
     sourceType: "commonjs",
   },
   rules: {
-    ...nodeRules,
+    ...cjsRules,
     // modify ts specific rules for node here
   },
 });
 
-export default [nodeJS, nodeTS, formatting];
-export { nodeJS, nodeTS };
+export default [cjsJS, cjsTS];
+export { cjsJS, cjsTS };

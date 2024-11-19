@@ -224,7 +224,7 @@ const rules = {
       arrow: "parens-new-line",
       condition: "parens-new-line",
       logical: "parens-new-line",
-      prop: "parens-new-line",
+      prop: "ignore",
     },
   ],
 
@@ -232,13 +232,15 @@ const rules = {
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-first-prop-new-line.md
   "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
 
+  // Stylistic, Prettier handles this.
   // Enforce spacing around jsx equals signs
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md
-  "react/jsx-equals-spacing": ["error", "never"],
+  "react/jsx-equals-spacing": "off",
 
+  // Stylistic, Prettier handles this.
   // Enforce JSX indentation
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md
-  "react/jsx-indent": ["error", 2],
+  "react/jsx-indent": "off",
 
   // Disallow target="_blank" on links
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md
@@ -302,14 +304,10 @@ const rules = {
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
   "react/no-array-index-key": "error",
 
+  // We dont use `.defaultProps` any more, we use fallbacks on props (`{ foo = "bar" }`)
   // Enforce a defaultProps definition for every prop that is not a required prop
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
-  "react/require-default-props": [
-    "error",
-    {
-      forbidDefaultForRequired: true,
-    },
-  ],
+  "react/require-default-props": "off",
 
   // Forbids using non-exported propTypes
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md
@@ -341,9 +339,10 @@ const rules = {
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md
   "react/jsx-curly-brace-presence": ["error", { props: "never", children: "never" }],
 
+  // Stylistic, Prettier handles this.
   // One JSX Element Per Line
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-one-expression-per-line.md
-  "react/jsx-one-expression-per-line": ["error", { allow: "single-child" }],
+  "react/jsx-one-expression-per-line": "off",
 
   // Enforce consistent usage of destructuring assignment of props, state, and context
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
@@ -396,10 +395,11 @@ const rules = {
   // TODO: set to "static public field" once babel-preset-airbnb supports public class fields
   "react/static-property-placement": ["error", "property assignment"],
 
+  // This has valid cases but best practice to be explicit about the props
   // Disallow JSX props spreading
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
   "react/jsx-props-no-spreading": [
-    "error",
+    "off",
     {
       html: "enforce",
       custom: "enforce",
@@ -424,15 +424,10 @@ const rules = {
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-useless-fragment.md
   "react/jsx-no-useless-fragment": "error",
 
+  // Stylistic rule
   // Enforce a specific function type for function components
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
-  "react/function-component-definition": [
-    "error",
-    {
-      namedComponents: "arrow-function",
-      unnamedComponents: "arrow-function",
-    },
-  ],
+  "react/function-component-definition": "off",
 
   // Prevent react contexts from taking non-stable values
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-constructed-context-values.md

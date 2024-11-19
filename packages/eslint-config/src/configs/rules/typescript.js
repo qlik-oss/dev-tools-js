@@ -25,7 +25,7 @@ const rules = {
 
   // enforce exported functions to have return types
   // https://typescript-eslint.io/rules/explicit-module-boundary-types
-  "@typescript-eslint/explicit-module-boundary-types": "error",
+  "@typescript-eslint/explicit-module-boundary-types": "off",
 
   // enforce method signatures has the same style
   // https://typescript-eslint.io/rules/method-signature-style
@@ -148,9 +148,10 @@ const rules = {
   // https://typescript-eslint.io/rules/no-unnecessary-boolean-literal-compare
   "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
 
+  // Lots of false/iffy positives
   // watch out for always truthy conditions
   // https://typescript-eslint.io/rules/no-unnecessary-condition
-  "@typescript-eslint/no-unnecessary-condition": "error",
+  "@typescript-eslint/no-unnecessary-condition": "off",
 
   // no unnecessary namespace qualifiers.
   // https://typescript-eslint.io/rules/no-unnecessary-qualifier
@@ -164,9 +165,10 @@ const rules = {
   // https://typescript-eslint.io/rules/no-unnecessary-type-arguments
   "@typescript-eslint/no-unnecessary-type-arguments": "error",
 
+  // Not working 100%
   // don't use type parameters when they're not needed
   // https://typescript-eslint.io/rules/no-unnecessary-type-parameters
-  "@typescript-eslint/no-unnecessary-type-parameters": "error",
+  "@typescript-eslint/no-unnecessary-type-parameters": "off",
 
   // reducers should be typed correctly
   // https://typescript-eslint.io/rules/prefer-reduce-type-parameter
@@ -175,8 +177,8 @@ const rules = {
   // https://typescript-eslint.io/rules/prefer-return-this-type
   "@typescript-eslint/prefer-return-this-type": "error",
 
-  // https://typescript-eslint.io/rules/prefer-ts-expect-error
-  "@typescript-eslint/prefer-ts-expect-error": "error",
+  // https://typescript-eslint.io/rules/ban-ts-comment
+  "@typescript-eslint/ban-ts-comment": "error",
 
   // https://typescript-eslint.io/rules/require-array-sort-compare
   "@typescript-eslint/require-array-sort-compare": "error",
@@ -184,11 +186,12 @@ const rules = {
   // not sure about this one
   // https://typescript-eslint.io/rules/return-await
   "no-return-await": "off",
-  "@typescript-eslint/return-await": eslintCoreRules["no-return-await"],
+  "@typescript-eslint/return-await": "error",
 
+  // Not sure about this one
   // disallow certain types in boolean expressions.
   // https://typescript-eslint.io/rules/strict-boolean-expressions
-  "@typescript-eslint/strict-boolean-expressions": "error",
+  "@typescript-eslint/strict-boolean-expressions": "off",
 
   // make sure switch statements are exhaustive
   // https://typescript-eslint.io/rules/switch-exhaustiveness-check

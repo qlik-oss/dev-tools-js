@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 /* eslint-disable no-var */
 // incorrect
 

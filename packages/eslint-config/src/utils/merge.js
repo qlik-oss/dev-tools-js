@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 // these ones will only do shallow merge, but the merge function will do deep merge
 const noNeedToDeepMerge = ["plugins", "rules", "parser"];
 

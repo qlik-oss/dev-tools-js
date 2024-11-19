@@ -28,17 +28,14 @@ function baz({ no_camelcased = "default value" }) {
 }
 
 const obj = {
-  // eslint-disable-next-line camelcase
   my_pref: 1,
 };
 
-// eslint-disable-next-line camelcase
-obj.do_something = function () {
+obj.do_something = function named() {
   // ...
 };
 
 const query = {
-  // eslint-disable-next-line camelcase
   category_id: 15,
 };
 

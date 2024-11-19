@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 /* eslint-disable no-unused-vars */
 /* eslint-disable block-scoped-var */
 /* eslint-disable prefer-const */

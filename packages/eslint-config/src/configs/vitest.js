@@ -10,7 +10,10 @@ import rules from "./rules/index.js";
  */
 const vitestCommon = {};
 
-// config for jest https://github.com/jest-community/eslint-plugin-jest
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ * config for jest https://github.com/jest-community/eslint-plugin-jest
+ */
 const vitest = mergeConfigs(vitestCommon, {
   name: "vitest-js",
   plugins: {
@@ -19,7 +22,7 @@ const vitest = mergeConfigs(vitestCommon, {
   },
 
   files: ["**/__test__/**/*.{js,jsx,ts,tsx}", "**/__tests__/**/*.{js,jsx,ts,tsx}"],
-  // ...testingLibrary.configs["flat/react"],
+
   rules: {
     // modify rules from eslint-plugin-vitest here
     ...vitestPlugin.configs.recommended.rules, // you can also use vitest.configs.all.rules to enable all rules

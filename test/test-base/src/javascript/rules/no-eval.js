@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 
-const obj = { x: "foo" },
-  key = "x",
-  // eslint-disable-next-line no-eval
-  value = eval(`obj.${key}`);
+const obj = { x: "foo" };
+const key = "x";
+
+// eslint-disable-next-line no-eval
+const value = eval(`obj.${key}`);
 
 // eslint-disable-next-line no-eval
 (0, eval)("var a = 0");

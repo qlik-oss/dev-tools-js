@@ -24,7 +24,6 @@ const bar = foo.filter((x) => {
   if (x) {
     return true;
   } else {
-    // eslint-disable-next-line array-callback-return
     return;
   }
 });

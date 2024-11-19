@@ -1,7 +1,6 @@
 // @ts-check
 import { mergeConfigs } from "../utils/config.js";
-import { formatting } from "./formatting.js";
-import { nodeJS, nodeTS } from "./node.js";
+import { cjsJS, cjsTS } from "./cjs.js";
 
 /**
  * @satisfies {import("../types/index.js").ESLintFlatConfig["rules"]}
@@ -11,8 +10,12 @@ const nodeEsmRules = {
   "import-x/extensions": ["error", "ignorePackages"],
 };
 
-const esmJS = mergeConfigs(nodeJS, {
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
+const esmJS = mergeConfigs(cjsJS, {
   name: "node-esm-js",
+  files: ["**/*.{js,mjs}"],
   languageOptions: {
     sourceType: "module",
   },
@@ -21,8 +24,12 @@ const esmJS = mergeConfigs(nodeJS, {
   },
 });
 
-const esmTS = mergeConfigs(nodeTS, {
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
+const esmTS = mergeConfigs(cjsTS, {
   name: "node-esm-ts",
+  files: ["**/*.{ts,mts}"],
   languageOptions: {
     sourceType: "module",
   },
@@ -32,10 +39,5 @@ const esmTS = mergeConfigs(nodeTS, {
   },
 });
 
-/**
- * @satisfies {import("../types/index.js").ESLintFlatConfig[]}
- */
-const ruleset = [esmJS, esmTS, formatting];
-
-export default ruleset;
+export default [esmJS, esmTS];
 export { esmJS, esmTS };

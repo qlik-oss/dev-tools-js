@@ -13,7 +13,6 @@ const rules = {
   // ensure imports point to files/modules that can be resolved
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-unresolved.md
   "import-x/no-unresolved": ["error", { commonjs: true, caseSensitive: true }],
-
   // ensure named imports coupled with named exports
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/named.md#when-not-to-use-it
   "import-x/named": "error",
@@ -32,13 +31,18 @@ const rules = {
   // disallow use of jsdoc-marked-deprecated imports
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-deprecated.md
   "import-x/no-deprecated": "warn",
+
+  // Can depend on bundler setup, and other things. Disabling for now.
   // Forbid the use of extraneous packages
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-extraneous-dependencies.md
   // paths are treated both as absolute paths, and relative to process.cwd()
   "import-x/no-extraneous-dependencies": [
-    "error",
+    "off",
     {
       devDependencies: [
+        "**/test*/**",
+        "**/mocks/**",
+        "**/mock/**",
         "test/**", // tape, common npm pattern
         "tests/**", // also common npm pattern
         "spec/**", // mocha, rspec-like pattern
@@ -47,21 +51,22 @@ const rules = {
         "test.{js,jsx,ts,tsx}", // repos with a single test file
         "test-*.{js,jsx,ts,tsx}", // repos with multiple top-level test files
         "**/*{.,_}{test,spec}.{js,jsx,ts,tsx}", // tests where the extension or filename suffix denotes that it is a test
-        "**/jest.config.{js,ts}", // jest config
-        "**/jest.setup.{js,ts}", // jest setup
-        "**/vitest.config.{js,ts}", // vitest config
-        "**/vue.config.{js,ts}", // vue-cli config
-        "**/svelte.config.{js,ts}", // svelte config
-        "**/playwright.config.{js,ts}", // playwright config
-        "**/webpack.config.{js,ts}", // webpack config
-        "**/webpack.config.*.{js,ts}", // webpack config
-        "**/rollup.config.{js,ts}", // rollup config
-        "**/rollup.config.*.{js,ts}", // rollup config
-        "**/protractor.conf.{js,ts}", // protractor config
-        "**/protractor.conf.*.{js,ts}", // protractor config
-        "**/.eslintrc.{js,ts}", // eslint config
-        "**/eslint.config.{js,ts}", // eslint config
-        "**/.prettierrc.{js,ts}", // prettier config
+        "**/jest.config.{cjs,mjs,js,ts}", // jest config
+        "**/jest.setup.{cjs,mjs,js,ts}", // jest setup
+        "**/vitest.config.{cjs,mjs,js,ts}", // vitest config
+        "**/vue.config.{cjs,mjs,js,ts}", // vue-cli config
+        "**/svelte.config.{cjs,mjs,js,ts}", // svelte config
+        "**/tsup.config.{cjs,mjs,js,ts}", // tsup config
+        "**/playwright.config.{cjs,mjs,js,ts}", // playwright config
+        "**/webpack.config.{cjs,mjs,js,ts}", // webpack config
+        "**/webpack.mod.{cjs,mjs,js,ts}", // webpack config
+        "**/rollup.config.{cjs,mjs,js,ts}", // rollup config
+        "**/rollup.config.*cjs,mjs,.{js,ts}", // rollup config
+        "**/protractor.conf.{cjs,mjs,js,ts}", // protractor config
+        "**/protractor.conf.*.{cjs,mjs,js,ts}", // protractor config
+        "**/.eslintrc.{cjs,mjs,js,ts}", // eslint config
+        "**/eslint.config.{cjs,mjs,js,ts}", // eslint config
+        "**/.prettierrc.{cjs,mjs,js,ts}", // prettier config
         "**/.prettierrc", // prettier config
       ],
       optionalDependencies: false,
@@ -141,12 +146,14 @@ const rules = {
   // Use this rule to prevent importing packages through relative paths.
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-relative-packages-exports.md
   "import-x/no-relative-packages": "error",
+  // This seems conflicting with @typescript-eslint/no-import-type-side-effects
   // enforce a consistent style for type specifiers (inline or top-level)
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/consistent-type-specifier-style.md
-  "import-x/consistent-type-specifier-style": ["error", "prefer-inline"],
+  "import-x/consistent-type-specifier-style": "off",
+  // Makes importing runtime (`import type {} from ...`) types annoying
   // Reports the use of empty named import blocks.
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-empty-named-blocks.md
-  "import-x/no-empty-named-blocks": "error",
+  "import-x/no-empty-named-blocks": "off",
 };
 
 export default rules;

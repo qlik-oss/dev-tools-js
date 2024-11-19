@@ -1,9 +1,9 @@
-import qlik from "@qlik/eslint-config";
+import qlikEslint from "@qlik/eslint-config";
 
-const config = qlik.compose(
+const config = qlikEslint.compose(
   // adds the base config for both JS and TS
-  ...qlik.configs.recommended,
-  ...qlik.configs.vitest,
+  ...qlikEslint.configs.recommended,
+  ...qlikEslint.configs.vitest,
   {
     rules: {
       "no-undef": "off",
