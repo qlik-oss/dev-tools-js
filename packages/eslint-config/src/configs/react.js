@@ -1,14 +1,18 @@
+// @ts-check
 import jsxA11y from "eslint-plugin-jsx-a11y";
-import reactPlugin from "eslint-plugin-react";
+import eslintPluginReact from "eslint-plugin-react";
 // @ts-expect-error no types for this plugin yet
 import reactHooks from "eslint-plugin-react-hooks";
-import type { ESLintFlatConfig, ESLintPlugin } from "../types/index.js";
+// import type { ESLintFlatConfig, ESLintPlugin } from "../types/index.js";
 import { mergeConfigs } from "../utils/config.js";
 import { formatting } from "./formatting.js";
 import { recommendedJS, recommendedTS } from "./recommended.js";
 import rules from "./rules/index.js";
 
-const reactConfig: ESLintFlatConfig = mergeConfigs({
+/** @type {any} */
+const reactPlugin = eslintPluginReact;
+
+const reactConfig = mergeConfigs({
   languageOptions: {
     parserOptions: {
       ecmaFeatures: {
@@ -18,7 +22,7 @@ const reactConfig: ESLintFlatConfig = mergeConfigs({
     },
   },
 
-  plugins: { react: reactPlugin as unknown as ESLintPlugin, "jsx-a11y": jsxA11y, "react-hooks": reactHooks },
+  plugins: { react: reactPlugin, "jsx-a11y": jsxA11y, "react-hooks": reactHooks },
 
   settings: {
     react: {
@@ -28,7 +32,7 @@ const reactConfig: ESLintFlatConfig = mergeConfigs({
 
   rules: {
     // react plugin
-    ...reactPlugin.configs.flat!.recommended.rules,
+    ...reactPlugin.configs.flat.recommended.rules,
     ...rules.reactRules,
     // jsx-a11y plugin
     ...jsxA11y.flatConfigs.recommended.rules,
@@ -64,5 +68,5 @@ const reactTS = mergeConfigs(reactConfig, {
   },
 });
 
-export default [recommendedJS, reactTS, recommendedTS, reactTS, formatting] satisfies ESLintFlatConfig[];
+export default [recommendedJS, reactTS, recommendedTS, reactTS, formatting];
 export { reactJS, reactTS };

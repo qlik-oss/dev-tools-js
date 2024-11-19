@@ -3,7 +3,13 @@
 // these ones will only do shallow merge, but the merge function will do deep merge
 const noNeedToDeepMerge = ["plugins", "rules", "parser"];
 
-export const merge = (obj1: any, obj2: any) => {
+/**
+ *
+ * @param {any} obj1
+ * @param {any} obj2
+ * @returns
+ */
+export const merge = (obj1, obj2) => {
   // add error handling
   if (typeof obj1 !== "object" || typeof obj2 !== "object") {
     throw new Error("Both arguments must be objects");

@@ -1,6 +1,9 @@
-import type { ESLintFlatConfig } from "../../types/index.js";
+// @ts-check
 
-export default {
+/**
+ * @satisfies {import("../../types/index.js").ESLintFlatConfig["rules"]}
+ */
+const rules = {
   "class-methods-use-this": [
     "warn",
     {
@@ -476,4 +479,6 @@ export default {
 
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spread-multi.md
   "react/jsx-props-no-spread-multi": "error",
-} satisfies ESLintFlatConfig["rules"];
+};
+
+export default rules;

@@ -1,8 +1,13 @@
 import tsEslint from "typescript-eslint";
-import type { ESLintFlatConfig } from "../types/index.js";
 import { merge } from "./merge.js";
 
-export function mergeConfigs(...configs: ESLintFlatConfig[]): ESLintFlatConfig {
+/**
+ * Merges multiple configs into one.
+ *
+ * @param {...(import("../types/index.js").ESLintFlatConfig)} configs
+ * @returns {import("../types/index.js").ESLintFlatConfig}
+ */
+export function mergeConfigs(...configs) {
   // merge all configs into one
   const mergedConfig = configs.reduce((acc, conf) => {
     return merge(acc, conf);

@@ -1,11 +1,11 @@
-import type { ESLintFlatConfig, ESLintFlatConfigWithExtend } from "../types/index.js";
-
 /**
  * Utility function to make it easy to strictly type your "Flat" config file
+ *
+ * @param {...(import("../types/index.js").ESLintFlatConfigWithExtend)} configs
+ * @returns {import("../types/index.js").ESLintFlatConfig[]}
+ *
  * @example
  * ```js
- * // @ts-check
- *
  * import eslint from '@eslint/js';
  * import tseslint from 'typescript-eslint';
  *
@@ -20,7 +20,7 @@ import type { ESLintFlatConfig, ESLintFlatConfigWithExtend } from "../types/inde
  * );
  * ```
  */
-export default function compose(...configs: ESLintFlatConfigWithExtend[]): ESLintFlatConfig[] {
+export default function compose(...configs) {
   return configs.flatMap((configWithExtends, configIndex) => {
     const { extend: extendArr, ...config } = configWithExtends;
     if (extendArr && !Array.isArray(extendArr)) {
@@ -29,13 +29,13 @@ export default function compose(...configs: ESLintFlatConfigWithExtend[]): ESLin
     if (extendArr == null || extendArr.length === 0) {
       return config;
     }
-    const undefinedExtensions = extendArr.reduce<number[]>((acc, extension, extensionIndex) => {
-      const maybeExtension = extension as ESLintFlatConfig | undefined;
+    const undefinedExtensions = extendArr.reduce((acc, extension, extensionIndex) => {
+      const maybeExtension = extension;
       if (maybeExtension == null) {
         acc.push(extensionIndex);
       }
       return acc;
-    }, []);
+    }, /** @type {number[]} */ ([]));
     if (undefinedExtensions.length) {
       const configName = configWithExtends.name != null ? `, named "${configWithExtends.name}",` : " (anonymous)";
       const extensionIndices = undefinedExtensions.join(", ");

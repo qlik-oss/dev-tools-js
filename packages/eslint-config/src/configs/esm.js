@@ -1,9 +1,12 @@
-import type { ESLintFlatConfig } from "../types/index.js";
+// @ts-check
 import { mergeConfigs } from "../utils/config.js";
 import { formatting } from "./formatting.js";
 import { nodeJS, nodeTS } from "./node.js";
 
-const nodeEsmRules: ESLintFlatConfig["rules"] = {
+/**
+ * @satisfies {import("../types/index.js").ESLintFlatConfig["rules"]}
+ */
+const nodeEsmRules = {
   // modify rules for node esm here
   "import-x/extensions": ["error", "ignorePackages"],
 };
@@ -29,5 +32,10 @@ const esmTS = mergeConfigs(nodeTS, {
   },
 });
 
-export default [esmJS, esmTS, formatting] satisfies ESLintFlatConfig[];
+/**
+ * @satisfies {import("../types/index.js").ESLintFlatConfig[]}
+ */
+const ruleset = [esmJS, esmTS, formatting];
+
+export default ruleset;
 export { esmJS, esmTS };

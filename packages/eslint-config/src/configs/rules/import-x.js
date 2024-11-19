@@ -1,7 +1,11 @@
-import type { ESLintFlatConfig } from "../../types/index.js";
+// @ts-check
 
-// eslint-plugin-import-x package https://github.com/un-ts/eslint-plugin-import-x/blob/master/README.md
-export default {
+/**
+ * @satisfies {import("../../types/index.js").ESLintFlatConfig["rules"]}
+ *
+ * eslint-plugin-import-x package https://github.com/un-ts/eslint-plugin-import-x/blob/master/README.md
+ */
+const rules = {
   // modify rules from eslint-plugin-import-x here
   /* -------------------------------------------------------------------------- */
   /*                              Static analysis:                              */
@@ -9,6 +13,7 @@ export default {
   // ensure imports point to files/modules that can be resolved
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-unresolved.md
   "import-x/no-unresolved": ["error", { commonjs: true, caseSensitive: true }],
+
   // ensure named imports coupled with named exports
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/named.md#when-not-to-use-it
   "import-x/named": "error",
@@ -142,4 +147,6 @@ export default {
   // Reports the use of empty named import blocks.
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-empty-named-blocks.md
   "import-x/no-empty-named-blocks": "error",
-} satisfies ESLintFlatConfig["rules"];
+};
+
+export default rules;

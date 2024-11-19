@@ -1,11 +1,14 @@
+// @ts-check
 import vitestPlugin from "@vitest/eslint-plugin";
 // @ts-expect-error no types yet
 import testingLibraryPlugin from "eslint-plugin-testing-library";
-import type { ESLintFlatConfig } from "../types/index.js";
 import { mergeConfigs } from "../utils/config.js";
 import rules from "./rules/index.js";
 
-const vitestCommon: ESLintFlatConfig = {};
+/**
+ * @satisfies {import("../types/index.js").ESLintFlatConfig["rules"]}
+ */
+const vitestCommon = {};
 
 // config for jest https://github.com/jest-community/eslint-plugin-jest
 const vitest = mergeConfigs(vitestCommon, {

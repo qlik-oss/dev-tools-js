@@ -1,8 +1,12 @@
+// @ts-check
 import confusingBrowserGlobals from "confusing-browser-globals";
-import type { ESLintFlatConfig } from "../../types/index.js";
 
-// eslint core package https://eslint.org/docs/latest/rules/
-export default {
+/**
+ * @satisfies {import("../../types/index.js").ESLintFlatConfig["rules"]}
+ *
+ * eslint core package https://eslint.org/docs/latest/rules/
+ */
+const rules = {
   // modify/add rules from eslint core package here additionally to the recommended rules
 
   // enforces return statements in callbacks of array's methods
@@ -981,4 +985,6 @@ export default {
   // require or disallow the Unicode Byte Order Mark
   // https://eslint.org/docs/rules/unicode-bom
   "unicode-bom": ["error", "never"],
-} satisfies ESLintFlatConfig["rules"];
+};
+
+export default rules;

@@ -1,8 +1,12 @@
-import type { ESLintFlatConfig } from "../../types/index.js";
+// @ts-check
 import eslintCoreRules from "./eslint-core.js";
 
-// typescript-eslint package https://typescript-eslint.io/rules/
-export default {
+/**
+ * @satisfies {import("../../types/index.js").ESLintFlatConfig["rules"]}
+ *
+ * typescript-eslint package https://typescript-eslint.io/rules/
+ */
+const rules = {
   // note some eslint core rules are disabled by tsconfig https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/eslint-recommended-raw.ts
 
   // class methods don't have to use this, but should maybe be turned into static methods
@@ -216,4 +220,6 @@ export default {
       format: ["PascalCase"],
     },
   ],
-} satisfies ESLintFlatConfig["rules"];
+};
+
+export default rules;

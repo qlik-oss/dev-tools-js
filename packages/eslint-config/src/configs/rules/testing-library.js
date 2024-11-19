@@ -1,6 +1,9 @@
-import type { ESLintFlatConfig } from "../../types/index.js";
+// @ts-check
 
-export default {
+/**
+ * @satisfies {import("../../types/index.js").ESLintFlatConfig["rules"]}
+ */
+const rules = {
   // https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/await-async-events.md
   "testing-library/await-async-events": ["error", { eventModule: "userEvent" }],
 
@@ -66,4 +69,6 @@ export default {
 
   // https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/render-result-naming-convention.md
   "testing-library/render-result-naming-convention": "error",
-} satisfies ESLintFlatConfig["rules"];
+};
+
+export default rules;

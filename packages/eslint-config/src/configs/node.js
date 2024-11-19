@@ -1,10 +1,13 @@
+// @ts-check
 import globals from "globals";
-import type { ESLintFlatConfig } from "../types/index.js";
 import { mergeConfigs } from "../utils/config.js";
 import { formatting } from "./formatting.js";
 import { recommendedJS, recommendedTS } from "./recommended.js";
 
-const nodeRules: ESLintFlatConfig["rules"] = {
+/**
+ * @satisfies {import("../types/index.js").ESLintFlatConfig['rules']}
+ */
+const nodeRules = {
   // modify rules for node here
 };
 
@@ -31,5 +34,5 @@ const nodeTS = mergeConfigs(recommendedTS, {
   },
 });
 
-export default [nodeJS, nodeTS, formatting] satisfies ESLintFlatConfig[];
+export default [nodeJS, nodeTS, formatting];
 export { nodeJS, nodeTS };

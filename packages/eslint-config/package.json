@@ -6,17 +6,18 @@
   "license": "ISC",
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.js"
   },
   "files": [
-    "lib"
+    "src",
+    "!**/__tests__"
   ],
   "scripts": {
-    "build": "rimraf lib/* && tsc --project tsconfig.build.json",
     "check-types": "tsc --noEmit",
     "format:check": "prettier --check '**' --ignore-unknown",
     "format:write": "prettier --write '**' --ignore-unknown",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "vitest run"
   },
   "prettier": "@qlik/prettier-config",
   "dependencies": {
@@ -44,7 +45,6 @@
     "@types/eslint__js": "^8.42.3",
     "eslint": "^9.11.1",
     "prettier": "^3.3.3",
-    "rimraf": "^6.0.1",
     "vitest": "^2.1.4"
   },
   "peerDependencies": {

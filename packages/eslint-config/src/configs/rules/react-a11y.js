@@ -1,6 +1,9 @@
-import type { ESLintFlatConfig } from "../../types/index.js";
+// @ts-check
 
-export default {
+/**
+ * @satisfies {import("../../types/index.js").ESLintFlatConfig["rules"]}
+ */
+const rules = {
   // Enforce that all elements that require alternative text have meaningful information
   // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md
   "jsx-a11y/alt-text": [
@@ -224,4 +227,6 @@ export default {
   // Enforce tabIndex value is not greater than zero.
   // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/tabindex-no-positive.md
   "jsx-a11y/tabindex-no-positive": "error",
-} satisfies ESLintFlatConfig["rules"];
+};
+
+export default rules;
