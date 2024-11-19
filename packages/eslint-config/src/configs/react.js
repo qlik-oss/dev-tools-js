@@ -10,6 +10,9 @@ import rules from "./rules/index.js";
 /** @type {any} */
 const reactPlugin = eslintPluginReact;
 
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
 const reactConfig = mergeConfigs({
   languageOptions: {
     parserOptions: {
@@ -41,6 +44,9 @@ const reactConfig = mergeConfigs({
   },
 });
 
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
 const reactJS = mergeConfigs(reactConfig, recommendedJS, {
   name: "react-js",
   files: ["**/*.jsx"],
@@ -50,6 +56,9 @@ const reactJS = mergeConfigs(reactConfig, recommendedJS, {
   },
 });
 
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
 const reactTS = mergeConfigs(reactConfig, recommendedTS, {
   name: "react-ts",
   files: ["**/*.tsx"],

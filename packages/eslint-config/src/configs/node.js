@@ -10,6 +10,9 @@ const nodeRules = {
   // modify rules for node here
 };
 
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
 const nodeJS = mergeConfigs(recommendedJS, {
   name: "node-cjs-js",
   languageOptions: {
@@ -21,6 +24,9 @@ const nodeJS = mergeConfigs(recommendedJS, {
   },
 });
 
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
 const nodeTS = mergeConfigs(recommendedTS, {
   name: "node-cjs-ts",
   languageOptions: {

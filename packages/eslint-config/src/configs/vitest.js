@@ -10,7 +10,10 @@ import rules from "./rules/index.js";
  */
 const vitestCommon = {};
 
-// config for jest https://github.com/jest-community/eslint-plugin-jest
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ * config for jest https://github.com/jest-community/eslint-plugin-jest
+ */
 const vitest = mergeConfigs(vitestCommon, {
   name: "vitest-js",
   plugins: {

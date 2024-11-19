@@ -6,6 +6,9 @@ import tsconfig from "typescript-eslint";
 import { mergeConfigs } from "../utils/config.js";
 import rules from "./rules/index.js";
 
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
 const recommendedJS = mergeConfigs(
   {
     languageOptions: {
@@ -30,6 +33,9 @@ const recommendedJS = mergeConfigs(
   },
 );
 
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
 const recommendedTS = mergeConfigs(
   recommendedJS,
   {

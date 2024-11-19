@@ -10,6 +10,9 @@ const nodeEsmRules = {
   "import-x/extensions": ["error", "ignorePackages"],
 };
 
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
 const esmJS = mergeConfigs(nodeJS, {
   name: "node-esm-js",
   languageOptions: {
@@ -20,6 +23,9 @@ const esmJS = mergeConfigs(nodeJS, {
   },
 });
 
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
 const esmTS = mergeConfigs(nodeTS, {
   name: "node-esm-ts",
   languageOptions: {
