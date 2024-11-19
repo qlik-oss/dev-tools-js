@@ -175,8 +175,8 @@ const rules = {
   // https://typescript-eslint.io/rules/prefer-return-this-type
   "@typescript-eslint/prefer-return-this-type": "error",
 
-  // https://typescript-eslint.io/rules/prefer-ts-expect-error
-  "@typescript-eslint/prefer-ts-expect-error": "error",
+  // https://typescript-eslint.io/rules/ban-ts-comment
+  "@typescript-eslint/ban-ts-comment": "error",
 
   // https://typescript-eslint.io/rules/require-array-sort-compare
   "@typescript-eslint/require-array-sort-compare": "error",
@@ -184,7 +184,7 @@ const rules = {
   // not sure about this one
   // https://typescript-eslint.io/rules/return-await
   "no-return-await": "off",
-  "@typescript-eslint/return-await": eslintCoreRules["no-return-await"],
+  "@typescript-eslint/return-await": "error",
 
   // disallow certain types in boolean expressions.
   // https://typescript-eslint.io/rules/strict-boolean-expressions

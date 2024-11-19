@@ -8,23 +8,7 @@ import vitest from "./configs/vitest.js";
 import compose from "./utils/compose.js";
 
 /**
- * @typedef {Object} ESLintFlatConfig
- * Represents a flat ESLint configuration object.
- */
-
-/**
- * @typedef {Object} ESLintFlatConfigWithExtend
- * Represents an ESLint configuration that may extend other configurations.
- */
-
-/**
- * @typedef {Object} QlikEslintConfig
- * @property {Record<string, ESLintFlatConfig[]>} configs - The collection of ESLint configuration modules.
- * @property {function(...(import("./types/index.js").ESLintFlatConfigWithExtend)): ESLintFlatConfig[]} compose - Function to compose configurations.
- */
-
-/**
- * @satisfies {QlikEslintConfig}
+ * @satisfies {import("./types/index.js").QlikEslintConfig}
  */
 const qlikEslintConfig = {
   configs: {

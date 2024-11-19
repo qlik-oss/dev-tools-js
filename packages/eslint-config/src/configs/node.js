@@ -1,7 +1,6 @@
 // @ts-check
 import globals from "globals";
 import { mergeConfigs } from "../utils/config.js";
-import { formatting } from "./formatting.js";
 import { recommendedJS, recommendedTS } from "./recommended.js";
 
 /**
@@ -34,5 +33,5 @@ const nodeTS = mergeConfigs(recommendedTS, {
   },
 });
 
-export default [nodeJS, nodeTS, formatting];
+export default [nodeJS, nodeTS];
 export { nodeJS, nodeTS };

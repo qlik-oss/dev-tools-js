@@ -44,4 +44,9 @@ interface ESLintFlatConfigWithExtend extends ESLintFlatConfig {
   extend?: ESLintFlatConfig[];
 }
 
+export type QlikEslintConfig = {
+  configs: Record<string, ESLintFlatConfig[]>;
+  compose: (...configs: ESLintFlatConfigWithExtend[]) => ESLintFlatConfig[];
+};
+
 export type { ESLintFlatConfig, ESLintFlatConfigWithExtend, ESLintLanguageOptions, ESLintPlugin };

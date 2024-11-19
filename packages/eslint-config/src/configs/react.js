@@ -3,9 +3,7 @@ import jsxA11y from "eslint-plugin-jsx-a11y";
 import eslintPluginReact from "eslint-plugin-react";
 // @ts-expect-error no types for this plugin yet
 import reactHooks from "eslint-plugin-react-hooks";
-// import type { ESLintFlatConfig, ESLintPlugin } from "../types/index.js";
 import { mergeConfigs } from "../utils/config.js";
-import { formatting } from "./formatting.js";
 import { recommendedJS, recommendedTS } from "./recommended.js";
 import rules from "./rules/index.js";
 
@@ -43,19 +41,21 @@ const reactConfig = mergeConfigs({
   },
 });
 
-const reactJS = mergeConfigs(reactConfig, {
+const reactJS = mergeConfigs(reactConfig, recommendedJS, {
   name: "react-js",
   files: ["**/*.jsx"],
   rules: {
     // turn on/off or modify js rules necessary for react
+    "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx"] }],
   },
 });
 
-const reactTS = mergeConfigs(reactConfig, {
+const reactTS = mergeConfigs(reactConfig, recommendedTS, {
   name: "react-ts",
   files: ["**/*.tsx"],
   rules: {
     // turn on/off or modify js/ts rules necessary for react
+    "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
 
     // allow PascalCase for JSX components
     "@typescript-eslint/naming-convention": [
@@ -68,5 +68,5 @@ const reactTS = mergeConfigs(reactConfig, {
   },
 });
 
-export default [recommendedJS, reactTS, recommendedTS, reactTS, formatting];
+export default [recommendedJS, reactTS, recommendedTS, reactTS];
 export { reactJS, reactTS };

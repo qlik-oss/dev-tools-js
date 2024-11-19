@@ -1,6 +1,5 @@
 // @ts-check
 import { mergeConfigs } from "../utils/config.js";
-import { formatting } from "./formatting.js";
 import { nodeJS, nodeTS } from "./node.js";
 
 /**
@@ -32,10 +31,5 @@ const esmTS = mergeConfigs(nodeTS, {
   },
 });
 
-/**
- * @satisfies {import("../types/index.js").ESLintFlatConfig[]}
- */
-const ruleset = [esmJS, esmTS, formatting];
-
-export default ruleset;
+export default [esmJS, esmTS];
 export { esmJS, esmTS };

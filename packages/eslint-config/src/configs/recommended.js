@@ -4,7 +4,6 @@ import eslintPluginImportX from "eslint-plugin-import-x";
 import globals from "globals";
 import tsconfig from "typescript-eslint";
 import { mergeConfigs } from "../utils/config.js";
-import { formatting } from "./formatting.js";
 import rules from "./rules/index.js";
 
 const recommendedJS = mergeConfigs(
@@ -49,5 +48,5 @@ const recommendedTS = mergeConfigs(
   },
 );
 
-export default [recommendedJS, recommendedTS, formatting];
+export default [recommendedJS, recommendedTS];
 export { recommendedJS, recommendedTS };

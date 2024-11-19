@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * Utility function to make it easy to strictly type your "Flat" config file
  *

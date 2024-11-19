@@ -13,7 +13,6 @@ const rules = {
   // ensure imports point to files/modules that can be resolved
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-unresolved.md
   "import-x/no-unresolved": ["error", { commonjs: true, caseSensitive: true }],
-
   // ensure named imports coupled with named exports
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/named.md#when-not-to-use-it
   "import-x/named": "error",
