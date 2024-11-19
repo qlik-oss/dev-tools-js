@@ -140,9 +140,10 @@ const rules = {
   // Use this rule to prevent importing packages through relative paths.
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-relative-packages-exports.md
   "import-x/no-relative-packages": "error",
+  // This seems conflicting with @typescript-eslint/no-import-type-side-effects
   // enforce a consistent style for type specifiers (inline or top-level)
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/consistent-type-specifier-style.md
-  "import-x/consistent-type-specifier-style": ["error", "prefer-inline"],
+  "import-x/consistent-type-specifier-style": "off",
   // Reports the use of empty named import blocks.
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-empty-named-blocks.md
   "import-x/no-empty-named-blocks": "error",

@@ -144,15 +144,7 @@ const rules = {
 
   // don't use magic numbers
   // https://eslint.org/docs/rules/no-magic-numbers
-  "no-magic-numbers": [
-    "warn",
-    {
-      ignore: [1, 12, 60, 3600],
-      ignoreArrayIndexes: true,
-      enforceConst: true,
-      detectObjects: false,
-    },
-  ],
+  "no-magic-numbers": "off",
 
   // DEPRECATED. disallow use of multiple spaces
   // https://eslint.org/docs/rules/no-multi-spaces

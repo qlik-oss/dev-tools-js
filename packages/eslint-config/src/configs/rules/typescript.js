@@ -25,7 +25,7 @@ const rules = {
 
   // enforce exported functions to have return types
   // https://typescript-eslint.io/rules/explicit-module-boundary-types
-  "@typescript-eslint/explicit-module-boundary-types": "error",
+  "@typescript-eslint/explicit-module-boundary-types": "off",
 
   // enforce method signatures has the same style
   // https://typescript-eslint.io/rules/method-signature-style
@@ -186,9 +186,10 @@ const rules = {
   "no-return-await": "off",
   "@typescript-eslint/return-await": "error",
 
+  // Not sure about this one
   // disallow certain types in boolean expressions.
   // https://typescript-eslint.io/rules/strict-boolean-expressions
-  "@typescript-eslint/strict-boolean-expressions": "error",
+  "@typescript-eslint/strict-boolean-expressions": "off",
 
   // make sure switch statements are exhaustive
   // https://typescript-eslint.io/rules/switch-exhaustiveness-check
