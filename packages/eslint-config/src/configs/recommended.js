@@ -1,5 +1,6 @@
 // @ts-check
 import js from "@eslint/js";
+import tsParser from "@typescript-eslint/parser";
 import eslintPluginImportX from "eslint-plugin-import-x";
 import globals from "globals";
 import tsconfig from "typescript-eslint";
@@ -22,8 +23,8 @@ const recommendedJS = mergeConfigs(
   },
   // tsconfig.configs.base sets eslint parser to use the typescript parser to parse .js files - handles all modern syntax
   tsconfig.configs.base,
-  eslintPluginImportX.flatConfigs.recommended,
   js.configs.recommended,
+  eslintPluginImportX.flatConfigs.recommended,
   {
     name: "recommended-js",
     rules: {
@@ -42,12 +43,16 @@ const recommendedTS = mergeConfigs(
     files: ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts", "**/*.d.ts"],
     languageOptions: {
       parserOptions: {
+        parser: tsParser,
         projectService: true,
+        ecmaVersion: "latest",
+        sourceType: "module",
       },
     },
   },
-  eslintPluginImportX.flatConfigs.recommended,
   ...tsconfig.configs.recommended,
+  eslintPluginImportX.flatConfigs.recommended,
+  eslintPluginImportX.flatConfigs.typescript,
   {
     name: "recommended-ts",
     rules: rules.typescriptRules,
