@@ -38,7 +38,7 @@ const rules = {
     "error",
     {
       devDependencies: [
-        "**/test/**",
+        "**/test*/**",
         "**/mocks/**",
         "**/mock/**",
         "test/**", // tape, common npm pattern
