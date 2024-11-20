@@ -1,5 +1,4 @@
 // @ts-check
-// @ts-expect-error no types yet
 import jestPlugin from "eslint-plugin-jest";
 // @ts-expect-error no types yet
 import testingLibraryPlugin from "eslint-plugin-testing-library";

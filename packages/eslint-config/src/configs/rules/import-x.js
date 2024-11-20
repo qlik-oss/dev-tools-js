@@ -49,21 +49,21 @@ const rules = {
         "test.{js,jsx,ts,tsx}", // repos with a single test file
         "test-*.{js,jsx,ts,tsx}", // repos with multiple top-level test files
         "**/*{.,_}{test,spec}.{js,jsx,ts,tsx}", // tests where the extension or filename suffix denotes that it is a test
-        "**/jest.config.{js,ts}", // jest config
-        "**/jest.setup.{js,ts}", // jest setup
-        "**/vitest.config.{js,ts}", // vitest config
-        "**/vue.config.{js,ts}", // vue-cli config
-        "**/svelte.config.{js,ts}", // svelte config
-        "**/playwright.config.{js,ts}", // playwright config
-        "**/webpack.config.{js,ts}", // webpack config
-        "**/webpack.config.*.{js,ts}", // webpack config
-        "**/rollup.config.{js,ts}", // rollup config
-        "**/rollup.config.*.{js,ts}", // rollup config
-        "**/protractor.conf.{js,ts}", // protractor config
-        "**/protractor.conf.*.{js,ts}", // protractor config
-        "**/.eslintrc.{js,ts}", // eslint config
-        "**/eslint.config.{js,ts}", // eslint config
-        "**/.prettierrc.{js,ts}", // prettier config
+        "**/jest.config.{cjs,mjs,js,ts}", // jest config
+        "**/jest.setup.{cjs,mjs,js,ts}", // jest setup
+        "**/vitest.config.{cjs,mjs,js,ts}", // vitest config
+        "**/vue.config.{cjs,mjs,js,ts}", // vue-cli config
+        "**/svelte.config.{cjs,mjs,js,ts}", // svelte config
+        "**/playwright.config.{cjs,mjs,js,ts}", // playwright config
+        "**/webpack.config.{cjs,mjs,js,ts}", // webpack config
+        "**/webpack.mod.{cjs,mjs,js,ts}", // webpack config
+        "**/rollup.config.{cjs,mjs,js,ts}", // rollup config
+        "**/rollup.config.*cjs,mjs,.{js,ts}", // rollup config
+        "**/protractor.conf.{cjs,mjs,js,ts}", // protractor config
+        "**/protractor.conf.*.{cjs,mjs,js,ts}", // protractor config
+        "**/.eslintrc.{cjs,mjs,js,ts}", // eslint config
+        "**/eslint.config.{cjs,mjs,js,ts}", // eslint config
+        "**/.prettierrc.{cjs,mjs,js,ts}", // prettier config
         "**/.prettierrc", // prettier config
       ],
       optionalDependencies: false,
