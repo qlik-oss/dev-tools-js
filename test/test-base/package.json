@@ -4,7 +4,7 @@
   "description": "Test project for react linting",
   "type": "module",
   "scripts": {
-    "lint": "eslint . --flag unstable_ts_config"
+    "lint": "eslint ."
   },
   "prettier": "@qlik/prettier-config",
   "dependencies": {},

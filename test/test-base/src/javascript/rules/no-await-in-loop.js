@@ -1,6 +1,5 @@
-// no-await-in-loop and require await
+// no-await-in-loop
 
-// eslint-disable-next-line require-await
 async function returnsPromise() {
   return "value";
 }

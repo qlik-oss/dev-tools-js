@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable no-continue */
 /* eslint-disable no-unmodified-loop-condition */
 /* eslint-disable no-else-return */
@@ -62,7 +63,8 @@ findSomething([]);
 
 const obj = {};
 const bar = {};
-let firstKey, firstValue;
+let firstKey;
+let firstValue;
 const id = 1;
 
 // eslint-disable-next-line no-unreachable-loop
