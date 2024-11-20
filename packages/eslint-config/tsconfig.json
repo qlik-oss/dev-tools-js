@@ -4,6 +4,6 @@
     "declaration": true,
     "emitDeclarationOnly": true
   },
-  "include": ["src"],
+  "include": ["src/**.js"],
   "exclude": ["node_modules", "lib"]
 }

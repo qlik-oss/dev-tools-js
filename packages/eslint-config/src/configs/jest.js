@@ -1,6 +1,5 @@
 // @ts-check
 import jestPlugin from "eslint-plugin-jest";
-// @ts-expect-error no types yet
 import testingLibraryPlugin from "eslint-plugin-testing-library";
 import { mergeConfigs } from "../utils/config.js";
 import rules from "./rules/index.js";
