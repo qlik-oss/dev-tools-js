@@ -31,5 +31,3 @@ yarn-error.log*
 
 # turbo
 .turbo
-
-packages/eslint-config/src/**/*.d.ts
