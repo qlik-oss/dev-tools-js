@@ -302,14 +302,10 @@ const rules = {
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
   "react/no-array-index-key": "error",
 
+  // We dont use `.defaultProps` any more, we use fallbacks on props (`{ foo = "bar" }`)
   // Enforce a defaultProps definition for every prop that is not a required prop
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
-  "react/require-default-props": [
-    "error",
-    {
-      forbidDefaultForRequired: true,
-    },
-  ],
+  "react/require-default-props": "off",
 
   // Forbids using non-exported propTypes
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md
@@ -429,7 +425,7 @@ const rules = {
   "react/function-component-definition": [
     "error",
     {
-      namedComponents: "arrow-function",
+      namedComponents: "function-declaration",
       unnamedComponents: "arrow-function",
     },
   ],

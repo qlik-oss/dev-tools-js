@@ -38,6 +38,9 @@ const rules = {
     "error",
     {
       devDependencies: [
+        "**/test/**",
+        "**/mocks/**",
+        "**/mock/**",
         "test/**", // tape, common npm pattern
         "tests/**", // also common npm pattern
         "spec/**", // mocha, rspec-like pattern
@@ -144,9 +147,10 @@ const rules = {
   // enforce a consistent style for type specifiers (inline or top-level)
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/consistent-type-specifier-style.md
   "import-x/consistent-type-specifier-style": "off",
+  // Makes importing runtime (`import type {} from ...`) types annoying
   // Reports the use of empty named import blocks.
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-empty-named-blocks.md
-  "import-x/no-empty-named-blocks": "error",
+  "import-x/no-empty-named-blocks": "off",
 };
 
 export default rules;

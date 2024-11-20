@@ -1,4 +1,5 @@
 // @ts-check
+import react from "@eslint-react/eslint-plugin";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import eslintPluginReact from "eslint-plugin-react";
 // @ts-expect-error no types for this plugin yet
@@ -23,9 +24,10 @@ const reactConfig = mergeConfigs({
     },
   },
 
-  plugins: { react: reactPlugin, "jsx-a11y": jsxA11y, "react-hooks": reactHooks },
+  plugins: { ...react.configs.recommended.plugins, react: reactPlugin, "jsx-a11y": jsxA11y, "react-hooks": reactHooks },
 
   settings: {
+    ...react.configs.recommended.settings,
     react: {
       version: "detect",
     },
@@ -38,6 +40,7 @@ const reactConfig = mergeConfigs({
     // jsx-a11y plugin
     ...jsxA11y.flatConfigs.recommended.rules,
     ...rules.reactA11yRules,
+    ...react.configs.recommended.rules,
     // react-hooks plugin
     ...reactHooks.configs.recommended.rules,
     ...rules.reactHooksRules,
@@ -65,15 +68,6 @@ const reactTS = mergeConfigs(reactConfig, recommendedTS, {
   rules: {
     // turn on/off or modify js/ts rules necessary for react
     "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
-
-    // allow PascalCase for JSX components
-    "@typescript-eslint/naming-convention": [
-      "error",
-      {
-        selector: ["variable", "function"],
-        format: ["camelCase", "PascalCase"],
-      },
-    ],
   },
 });
 
