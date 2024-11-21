@@ -339,9 +339,10 @@ const rules = {
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md
   "react/jsx-curly-brace-presence": ["error", { props: "never", children: "never" }],
 
+  // Stylistic, Prettier handles this.
   // One JSX Element Per Line
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-one-expression-per-line.md
-  "react/jsx-one-expression-per-line": ["error", { allow: "single-child" }],
+  "react/jsx-one-expression-per-line": "off",
 
   // Enforce consistent usage of destructuring assignment of props, state, and context
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md

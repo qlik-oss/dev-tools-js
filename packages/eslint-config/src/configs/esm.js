@@ -1,6 +1,6 @@
 // @ts-check
 import { mergeConfigs } from "../utils/config.js";
-import { nodeJS, nodeTS } from "./node.js";
+import { cjsJS, cjsTS } from "./cjs.js";
 
 /**
  * @satisfies {import("../types/index.js").ESLintFlatConfig["rules"]}
@@ -13,7 +13,7 @@ const nodeEsmRules = {
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
-const esmJS = mergeConfigs(nodeJS, {
+const esmJS = mergeConfigs(cjsJS, {
   name: "node-esm-js",
   languageOptions: {
     sourceType: "module",
@@ -26,7 +26,7 @@ const esmJS = mergeConfigs(nodeJS, {
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
-const esmTS = mergeConfigs(nodeTS, {
+const esmTS = mergeConfigs(cjsTS, {
   name: "node-esm-ts",
   languageOptions: {
     sourceType: "module",

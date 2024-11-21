@@ -6,38 +6,38 @@ import { recommendedJS, recommendedTS } from "./recommended.js";
 /**
  * @satisfies {import("../types/index.js").ESLintFlatConfig['rules']}
  */
-const nodeRules = {
+const cjsRules = {
   // modify rules for node here
 };
 
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
-const nodeJS = mergeConfigs(recommendedJS, {
+const cjsJS = mergeConfigs(recommendedJS, {
   name: "node-cjs-js",
   languageOptions: {
     globals: globals.node,
     sourceType: "commonjs",
   },
   rules: {
-    ...nodeRules,
+    ...cjsRules,
   },
 });
 
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
-const nodeTS = mergeConfigs(recommendedTS, {
+const cjsTS = mergeConfigs(recommendedTS, {
   name: "node-cjs-ts",
   languageOptions: {
     globals: globals.node,
     sourceType: "commonjs",
   },
   rules: {
-    ...nodeRules,
+    ...cjsRules,
     // modify ts specific rules for node here
   },
 });
 
-export default [nodeJS, nodeTS];
-export { nodeJS, nodeTS };
+export default [cjsJS, cjsTS];
+export { cjsJS, cjsTS };

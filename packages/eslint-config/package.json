@@ -1,7 +1,7 @@
 {
   "name": "@qlik/eslint-config",
   "version": "0.8.1",
-  "description": "Qlik's ESLint config for typescript",
+  "description": "Qlik's ESLint configs",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
   "type": "module",
@@ -32,8 +32,10 @@
     "eslint-plugin-import-x": "^4.4.2",
     "eslint-plugin-jest": "^28.9.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-playwright": "2.1.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-svelte": "2.46.0",
     "eslint-plugin-testing-library": "^6.4.0",
     "globals": "^15.12.0",
     "typescript-eslint": "^8.15.0"
