@@ -8,8 +8,8 @@
   "exports": {
     ".": "./src/index.js"
   },
-  "types": "./src/index.d.ts",
   "module": "./src/index.js",
+  "types": "./src/index.d.ts",
   "files": [
     "src",
     "!**/__tests__"
