@@ -37,6 +37,9 @@ const svelte = mergeConfigs(...eslintPluginSvelte.configs["flat/recommended"], {
     "@typescript-eslint/no-unsafe-argument": "off",
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-unsafe-member-access": "off",
+
+    // Issues with function types that define parameters
+    "no-unused-vars": "off",
   },
 });
 
