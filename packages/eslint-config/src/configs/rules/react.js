@@ -232,9 +232,10 @@ const rules = {
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-first-prop-new-line.md
   "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
 
+  // Stylistic, Prettier handles this.
   // Enforce spacing around jsx equals signs
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md
-  "react/jsx-equals-spacing": ["error", "never"],
+  "react/jsx-equals-spacing": "off",
 
   // Stylistic, Prettier handles this.
   // Enforce JSX indentation
