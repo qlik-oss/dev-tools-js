@@ -12,9 +12,6 @@ import rules from "./rules/svelte.js";
 const svelte = mergeConfigs(...eslintPluginSvelte.configs["flat/recommended"], {
   name: "svelte",
   files: ["**/*.svelte"],
-  plugins: {
-    svelte: eslintPluginSvelte,
-  },
   languageOptions: {
     parser: svelteParser,
     parserOptions: {
