@@ -2,9 +2,10 @@
 
 /**
  * @satisfies {import("../../types/index.js").ESLintFlatConfig["rules"]}
+ * Svelte plugin https://sveltejs.github.io/eslint-plugin-svelte/rules/
  */
 const rules = {
-  // TODO use eslint-plugin-n https://github.com/eslint-community/eslint-plugin-n
+  // Override rules here
 };
 
 export default rules;
