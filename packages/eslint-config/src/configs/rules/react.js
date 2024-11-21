@@ -236,9 +236,10 @@ const rules = {
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md
   "react/jsx-equals-spacing": ["error", "never"],
 
+  // Stylistic, Prettier handles this.
   // Enforce JSX indentation
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md
-  "react/jsx-indent": ["error", 2],
+  "react/jsx-indent": "off",
 
   // Disallow target="_blank" on links
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md
