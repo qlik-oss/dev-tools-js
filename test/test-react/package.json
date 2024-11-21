@@ -3,9 +3,7 @@
   "private": true,
   "description": "Test project for react linting",
   "type": "module",
-  "scripts": {
-    "lint": "eslint ."
-  },
+  "scripts": {},
   "prettier": "@qlik/prettier-config",
   "dependencies": {
     "react": "^18.3.1"
