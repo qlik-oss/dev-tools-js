@@ -31,8 +31,9 @@ const svelte = mergeConfigs(...eslintPluginSvelte.configs["flat/recommended"], {
     "import-x/first": "off",
     "import-x/no-duplicates": "off",
     "import-x/no-mutable-exports": "off",
-    "import-x/no-unresolved ": "off",
+    "import-x/no-unresolved": "off",
     "import-x/prefer-default-export": "off",
+    "import-x/extensions": "off",
 
     "@typescript-eslint/no-unsafe-call": "off",
     "@typescript-eslint/no-unsafe-return": "off",
