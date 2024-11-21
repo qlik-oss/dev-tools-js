@@ -58,7 +58,7 @@ export default qlik.compose(
 );
 ```
 
-Using React and Svelte (rare occasion):
+Using React and Svelte:
 
 ```js
 // @ts-check
