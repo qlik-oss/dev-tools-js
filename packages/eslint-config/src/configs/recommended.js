@@ -12,6 +12,7 @@ import rules from "./rules/index.js";
  */
 const recommendedJS = mergeConfigs(
   {
+    files: ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.cjs"],
     languageOptions: {
       globals: globals.browser,
       parserOptions: {

@@ -15,6 +15,7 @@ const nodeEsmRules = {
  */
 const esmJS = mergeConfigs(cjsJS, {
   name: "node-esm-js",
+  files: ["**/*.{js,mjs}"],
   languageOptions: {
     sourceType: "module",
   },
@@ -28,6 +29,7 @@ const esmJS = mergeConfigs(cjsJS, {
  */
 const esmTS = mergeConfigs(cjsTS, {
   name: "node-esm-ts",
+  files: ["**/*.{ts,mts}"],
   languageOptions: {
     sourceType: "module",
   },

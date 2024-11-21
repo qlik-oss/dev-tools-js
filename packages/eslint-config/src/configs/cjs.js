@@ -15,6 +15,7 @@ const cjsRules = {
  */
 const cjsJS = mergeConfigs(recommendedJS, {
   name: "node-cjs-js",
+  files: ["**/*.{js,cjs}"],
   languageOptions: {
     globals: globals.node,
     sourceType: "commonjs",
@@ -29,6 +30,7 @@ const cjsJS = mergeConfigs(recommendedJS, {
  */
 const cjsTS = mergeConfigs(recommendedTS, {
   name: "node-cjs-ts",
+  files: ["**/*.{ts,cts}"],
   languageOptions: {
     globals: globals.node,
     sourceType: "commonjs",
