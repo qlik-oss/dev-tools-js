@@ -21,7 +21,7 @@ export default qlik.compose(
   ...qlik.configs.esm, // or qlik.config.cjs
   {
     ignores: ["dist", "npm", "node_modules"],
-  }
+  },
 );
 ```
 
@@ -48,14 +48,9 @@ Using Svelte:
 // @ts-check
 import qlik from "@qlik/eslint-config";
 
-export default qlik.compose(
-  ...qlik.configs.recommended,
-  ...qlik.configs.esm,
-  ...qlik.configs.svelte,
-  {
-    ignores: ["dist", "node_modules"],
-  },
-);
+export default qlik.compose(...qlik.configs.recommended, ...qlik.configs.esm, ...qlik.configs.svelte, {
+  ignores: ["dist", "node_modules"],
+});
 ```
 
 Using React and Svelte:
@@ -86,7 +81,7 @@ export default qlik.compose(
   ...qlik.configs.esm, // or qlik.configs.cjs
   {
     ignores: ["dist", "npm", "node_modules"],
-  }
+  },
 );
 ```
 
@@ -103,6 +98,6 @@ export default qlik.compose(
   ...qlik.configs.playwright,
   {
     ignores: ["dist", "npm", "node_modules"],
-  }
+  },
 );
 ```
