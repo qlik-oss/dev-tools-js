@@ -395,10 +395,11 @@ const rules = {
   // TODO: set to "static public field" once babel-preset-airbnb supports public class fields
   "react/static-property-placement": ["error", "property assignment"],
 
+  // This has valid cases but best practice to be explicit about the props
   // Disallow JSX props spreading
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
   "react/jsx-props-no-spreading": [
-    "error",
+    "off",
     {
       html: "enforce",
       custom: "enforce",

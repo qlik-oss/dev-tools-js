@@ -148,9 +148,10 @@ const rules = {
   // https://typescript-eslint.io/rules/no-unnecessary-boolean-literal-compare
   "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
 
+  // Lots of false/iffy positives
   // watch out for always truthy conditions
   // https://typescript-eslint.io/rules/no-unnecessary-condition
-  "@typescript-eslint/no-unnecessary-condition": "error",
+  "@typescript-eslint/no-unnecessary-condition": "off",
 
   // no unnecessary namespace qualifiers.
   // https://typescript-eslint.io/rules/no-unnecessary-qualifier
@@ -164,9 +165,10 @@ const rules = {
   // https://typescript-eslint.io/rules/no-unnecessary-type-arguments
   "@typescript-eslint/no-unnecessary-type-arguments": "error",
 
+  // Not working 100%
   // don't use type parameters when they're not needed
   // https://typescript-eslint.io/rules/no-unnecessary-type-parameters
-  "@typescript-eslint/no-unnecessary-type-parameters": "error",
+  "@typescript-eslint/no-unnecessary-type-parameters": "off",
 
   // reducers should be typed correctly
   // https://typescript-eslint.io/rules/prefer-reduce-type-parameter

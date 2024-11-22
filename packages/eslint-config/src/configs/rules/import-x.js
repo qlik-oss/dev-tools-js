@@ -31,11 +31,13 @@ const rules = {
   // disallow use of jsdoc-marked-deprecated imports
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-deprecated.md
   "import-x/no-deprecated": "warn",
+
+  // Can depend on bundler setup, and other things. Disabling for now.
   // Forbid the use of extraneous packages
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-extraneous-dependencies.md
   // paths are treated both as absolute paths, and relative to process.cwd()
   "import-x/no-extraneous-dependencies": [
-    "error",
+    "off",
     {
       devDependencies: [
         "**/test*/**",
@@ -54,6 +56,7 @@ const rules = {
         "**/vitest.config.{cjs,mjs,js,ts}", // vitest config
         "**/vue.config.{cjs,mjs,js,ts}", // vue-cli config
         "**/svelte.config.{cjs,mjs,js,ts}", // svelte config
+        "**/tsup.config.{cjs,mjs,js,ts}", // tsup config
         "**/playwright.config.{cjs,mjs,js,ts}", // playwright config
         "**/webpack.config.{cjs,mjs,js,ts}", // webpack config
         "**/webpack.mod.{cjs,mjs,js,ts}", // webpack config
