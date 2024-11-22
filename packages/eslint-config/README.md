@@ -1,110 +1,103 @@
 # @qlik/eslint-config
 
-Qlik's ESlint config for pure javascript/typescript environments. Based on airbnb-base/prettier config with some modifications.
+Qlik's ESlint config for pure JavaScript/TypeScript environments.
 
-## usage
+## Usage
 
-These configs assumes that you are using typescript. It is still possible to write .js files and get linting on those.
+These configs assumes that you are using TypeScript. It is still possible to write `.js` files and get linting on those.
 
-Simplest approach is to add one of the following field in `package.json`:
+To get started, create `eslint.config.js` (if your package json has `"type": "module"`), otherwise create `eslint.config.mjs`.
+If you are not building your project with TypeScript (using Webpack or Vite for example), then tell TypeScript to include
+all files by setting "include": `[".*", "**/*"]` in `tsconfig.json`.
 
 For a pure environment with no specific frameworks use:
 
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.recommended,
+  ...qlik.configs.esm, // or qlik.config.cjs
+  {
+    ignores: ["dist", "npm", "node_modules"],
   },
-  "extends": [
-    "@qlik/eslint-config"
-  ]
-},
+);
 ```
 
-Using react:
+Using React:
 
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.recommended,
+  ...qlik.configs.esm, // or qlik.config.cjs
+  ...qlik.configs.react,
+  ...qlik.configs.vitest, // or qlik.configs.jest if you are using Jest
+  {
+    ignores: ["dist", "node_modules"],
   },
-  "extends": [
-    "@qlik/eslint-config/react"
-  ]
-},
+);
 ```
 
-Using svelte:
+Using Svelte:
 
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
-  },
-  "extends": [
-    "@qlik/eslint-config/svelte"
-  ]
-},
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(...qlik.configs.recommended, ...qlik.configs.esm, ...qlik.configs.svelte, {
+  ignores: ["dist", "node_modules"],
+});
 ```
 
-Using react AND svelte (rare occasion):
+Using React and Svelte:
 
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.recommended,
+  ...qlik.configs.esm,
+  ...qlik.configs.react,
+  ...qlik.configs.svelte,
+  {
+    ignores: ["dist", "node_modules"],
   },
-  "extends": [
-    "@qlik/eslint-config/react-svelte"
-  ]
-},
+);
 ```
 
-For a node environment with commonjs modules use:
+Node environment:
 
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.recommended,
+  ...qlik.configs.esm, // or qlik.configs.cjs
+  {
+    ignores: ["dist", "npm", "node_modules"],
   },
-  "extends": [
-    "@qlik/eslint-config/node"
-  ]
-},
-```
-
-For a node environment with ES modules use:
-
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
-  },
-  "extends": [
-    "@qlik/eslint-config/esm"
-  ]
-},
+);
 ```
 
 Additional configs that can be used in conjunction with the above:
 
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.recommended,
+  ...qlik.configs.esm, // or qlik.configs.cjs
+  ...qlik.configs.vitest, // or qlik.configs.jest
+  ...qlik.configs.playwright,
+  {
+    ignores: ["dist", "npm", "node_modules"],
   },
-  "extends": [
-    "...",
-    "@qlik/eslint-config/vitest", // adds linting on vitest test and config files
-    // AND/OR
-    "@qlik/eslint-config/playwright" // adds linting on playwright test and config files
-  ]
-},
+);
 ```
