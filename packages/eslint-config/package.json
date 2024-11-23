@@ -22,7 +22,7 @@
   "scripts": {
     "format:check": "prettier --check '**' --ignore-unknown",
     "format:write": "prettier --write '**' --ignore-unknown",
-    "lint": "eslint ."
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ."
   },
   "prettier": "@qlik/prettier-config",
   "eslintConfig": {
@@ -35,25 +35,25 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
+    "@vitest/eslint-plugin": "1.1.10",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.3",
-    "eslint-plugin-import": "^2.30.0",
-    "eslint-plugin-jest": "^28.8.3",
-    "eslint-plugin-jsx-a11y": "^6.10.0",
-    "eslint-plugin-playwright": "^1.6.2",
-    "eslint-plugin-react": "^7.37.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-svelte": "^2.44.1",
-    "eslint-plugin-testing-library": "^6.3.0",
-    "eslint-plugin-vitest": "^0.4.1",
-    "svelte-eslint-parser": "^0.41.1"
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.9.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-playwright": "^2.1.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-svelte": "^2.46.0",
+    "eslint-plugin-testing-library": "^6.5.0",
+    "svelte-eslint-parser": "^0.43.0"
   },
   "devDependencies": {
     "@qlik/prettier-config": "workspace:*",
-    "eslint": "^8.57.0",
+    "eslint": "^9.15.0",
     "prettier": "^3.3.3"
   },
   "peerDependencies": {
