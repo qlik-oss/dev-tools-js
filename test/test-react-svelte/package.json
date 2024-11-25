@@ -4,7 +4,7 @@
   "type": "module",
   "description": "Test project for react-svelte linting",
   "scripts": {
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ."
+    "lint": "eslint ."
   },
   "prettier": "@qlik/prettier-config",
   "dependencies": {

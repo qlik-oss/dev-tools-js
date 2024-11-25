@@ -18,7 +18,7 @@
     "check-types": "tsc --noEmit",
     "format:check": "prettier --check '**' --ignore-unknown",
     "format:write": "prettier --write '**' --ignore-unknown",
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ."
+    "lint": "eslint ."
   },
   "prettier": "@qlik/prettier-config",
   "dependencies": {
