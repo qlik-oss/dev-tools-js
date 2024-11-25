@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 0.8.2
+
+### Patch Changes
+
+- a28dcec: chore: update deps, switch to new vitest package
+
 ## 0.8.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@qlik/eslint-config",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Qlik's ESLint configs",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
@@ -18,8 +18,7 @@
     "check-types": "tsc --noEmit",
     "format:check": "prettier --check '**' --ignore-unknown",
     "format:write": "prettier --write '**' --ignore-unknown",
-    "lint": "eslint .",
-    "test": "vitest run"
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ."
   },
   "prettier": "@qlik/prettier-config",
   "dependencies": {
