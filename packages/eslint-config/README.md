@@ -2,6 +2,41 @@
 
 Qlik's ESlint config for pure JavaScript/TypeScript environments.
 
+## Migrating from 0.x
+
+Integration steps:
+
+1. Install latest `eslint-config`
+2. Update to ESLint 9
+3. Rename your config to `eslint.config.js` (if you have `"type": "module"` in your package json) / `eslint.config.mjs` (if otherwise)
+
+example config that uses typescript, react, vitest, react-query plugin:
+
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+import pluginQuery from "@tanstack/eslint-plugin-query";
+
+export default qlik.compose(
+  ...qlik.configs.recommended,
+  ...qlik.configs.react,
+  ...qlik.configs.vitest,
+  ...pluginQuery.configs["flat/recommended"],
+  {
+    rules: {
+      // Override rules if needed
+    },
+  },
+  // In its own object so it's global
+  {
+    ignores: ["dist", "node_modules", "script"],
+  },
+);
+```
+
+4. If you aren't using typescript to build your project and use it solely as a 'linter', then make it include all files `"include": [".*", "**/*"]` in your tsconfig
+5. Run your `lint` script
+
 ## Usage
 
 These configs assumes that you are using TypeScript. It is still possible to write `.js` files and get linting on those.
