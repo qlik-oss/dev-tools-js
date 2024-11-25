@@ -424,15 +424,10 @@ const rules = {
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-useless-fragment.md
   "react/jsx-no-useless-fragment": "error",
 
+  // Stylistic rule
   // Enforce a specific function type for function components
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
-  "react/function-component-definition": [
-    "error",
-    {
-      namedComponents: "arrow-function",
-      unnamedComponents: "arrow-function",
-    },
-  ],
+  "react/function-component-definition": "off",
 
   // Prevent react contexts from taking non-stable values
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-constructed-context-values.md
