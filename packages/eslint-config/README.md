@@ -1,7 +1,7 @@
 <!-- prettier-ignore-start -->
 # @qlik/eslint-config
 
-Qlik's ESlint config for pure JavaScript/TypeScript environments.
+Qlik's ESlint config for JavaScript/TypeScript environments with optional framework support.
 
 ## Migrating from 0.x
 
