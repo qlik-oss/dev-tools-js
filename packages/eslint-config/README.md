@@ -84,7 +84,7 @@ Using Svelte:
 import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
-  ...qlik.configs.svelte, // based on the recommended config and adds react linting on .svelte files
+  ...qlik.configs.svelte, // based on the recommended config and adds svelte linting on .svelte files
   {
     ignores: ["dist", "node_modules"],
   }
