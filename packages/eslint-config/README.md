@@ -1,9 +1,9 @@
+<!-- prettier-ignore-start -->
 # @qlik/eslint-config
 
 Qlik's ESlint config for pure JavaScript/TypeScript environments.
 
 ## Migrating from 0.x
-
 
 1. Install latest `@qlik/eslint-config`
 2. Update to ESLint 9
@@ -32,7 +32,7 @@ export default qlik.compose(
 );
 ```
 
-4. If you aren't using typescript to build your project and use it solely as a 'linter', then make it include all files `"include": [".*", "**/*"]` in your tsconfig
+4. If you are not using typescript to build your project, then include all files `"include": [".*", "**/*"]` in the project's `tsconfig.json`
 5. Run your `lint` script
 
 ### v1 notable changes
@@ -49,7 +49,7 @@ To get started, create `eslint.config.js` (if your package json has `"type": "mo
 If you are not building your project with TypeScript (using Webpack or Vite for example), then tell TypeScript to include
 all files by setting "include": `[".*", "**/*"]` in `tsconfig.json`.
 
-For a pure environment with no specific frameworks use:
+For a pure browser environment with no specific frameworks use:
 
 ```js
 // @ts-check
@@ -57,14 +57,13 @@ import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
   ...qlik.configs.recommended,
-  ...qlik.configs.esm, // or qlik.config.cjs
   {
     ignores: ["dist", "npm", "node_modules"],
-  },
+  }
 );
 ```
 
-Using React:
+Using React with vitest:
 
 ```js
 // @ts-check
@@ -72,8 +71,6 @@ import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
   ...qlik.configs.react,
-  ...qlik.configs.esm, // or qlik.config.cjs
-  ...qlik.configs.vitest, // or qlik.configs.jest if you are using Jest
   {
     ignores: ["dist", "node_modules"],
   },
@@ -86,9 +83,12 @@ Using Svelte:
 // @ts-check
 import qlik from "@qlik/eslint-config";
 
-export default qlik.compose(...qlik.configs.svelte, ...qlik.configs.esm, {
-  ignores: ["dist", "node_modules"],
-});
+export default qlik.compose(
+  ...qlik.configs.svelte,
+  {
+    ignores: ["dist", "node_modules"],
+  }
+);
 ```
 
 Using React and Svelte:
@@ -97,9 +97,13 @@ Using React and Svelte:
 // @ts-check
 import qlik from "@qlik/eslint-config";
 
-export default qlik.compose(...qlik.configs.react, ...qlik.configs.svelte, ...qlik.configs.esm, {
-  ignores: ["dist", "node_modules"],
-});
+export default qlik.compose(
+  ...qlik.configs.react,
+  ...qlik.configs.svelte,
+  {
+    ignores: ["dist", "node_modules"],
+  }
+);
 ```
 
 Node environment:
@@ -109,25 +113,55 @@ Node environment:
 import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
-  ...qlik.configs.esm, // or qlik.configs.cjs
+  ...qlik.configs.esm, // or qlik.configs.cjs for commonjs
   {
     ignores: ["dist", "npm", "node_modules"],
   },
 );
 ```
 
-Additional configs that can be used in conjunction with the above:
+Additional configs that can be used in conjunction with the ones above:
 
 ```js
 // @ts-check
 import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
-  ...qlik.configs.esm, // or qlik.configs.cjs
-  ...qlik.configs.vitest, // or qlik.configs.jest
-  ...qlik.configs.playwright,
+  ...qlik.configs.recommended,  // pure browser environment, no framework config added
+  ...qlik.configs.vitest,       // enable vitest linting on files inside __test(s)__ folder
+  ...qlik.configs.jest,         // enable jest linting on files inside __test(s)__ folder, DON'T use together with vitest
+  ...qlik.configs.playwright,   // enable playwright linting on files inside ./test(s) folder.
   {
     ignores: ["dist", "npm", "node_modules"],
   },
 );
 ```
+
+A config can be extended if needed. For example if the default file patterns needs to be altered.
+
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.recommended,  // pure browser environment, no framework config added
+  {
+    // adds vitest lint rules on the specified files with an altered rule
+    files: ['**/my_tests_are_here/*.spec.ts']
+    extends [qlik.configs.vitest],
+    rules: {
+      "vitest/max-nested-describe": [
+        "error",
+        {
+          "max": 3
+        }
+      ]
+    }
+  },
+  {
+    ignores: ["dist", "npm", "node_modules"],
+  },
+);
+```
+
+<!-- prettier-ignore-end -->

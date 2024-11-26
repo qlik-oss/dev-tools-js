@@ -8,7 +8,7 @@ import { mergeConfigs } from "../utils/config.js";
  */
 const playwright = mergeConfigs(playwrightEslint.configs["flat/recommended"], {
   name: "playwright",
-  files: ["tests/**"],
+  files: ["tests/**", "test/**"],
   rules: {
     ...playwrightEslint.configs["flat/recommended"].rules,
     // modify rules from eslint-plugin-playwright here
