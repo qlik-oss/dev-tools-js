@@ -20,7 +20,7 @@
   "prettier": "@qlik/prettier-config",
   "devDependencies": {
     "@qlik/prettier-config": "workspace:*",
-    "prettier": "^3.3.3"
+    "prettier": "^3.4.1"
   },
   "publishConfig": {
     "access": "public",
