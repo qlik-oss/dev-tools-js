@@ -4,9 +4,8 @@ Qlik's ESlint config for pure JavaScript/TypeScript environments.
 
 ## Migrating from 0.x
 
-Integration steps:
 
-1. Install latest `eslint-config`
+1. Install latest `@qlik/eslint-config`
 2. Update to ESLint 9
 3. Rename your config to `eslint.config.js` (if you have `"type": "module"` in your package json) / `eslint.config.mjs` (if otherwise)
 
@@ -110,7 +109,6 @@ Node environment:
 import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
-  ...qlik.configs.recommended,
   ...qlik.configs.esm, // or qlik.configs.cjs
   {
     ignores: ["dist", "npm", "node_modules"],
@@ -125,7 +123,6 @@ Additional configs that can be used in conjunction with the above:
 import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
-  ...qlik.configs.recommended,
   ...qlik.configs.esm, // or qlik.configs.cjs
   ...qlik.configs.vitest, // or qlik.configs.jest
   ...qlik.configs.playwright,
