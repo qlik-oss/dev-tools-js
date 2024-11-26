@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.0.1
+
+### Patch Changes
+
+- 9efcb98: fix: remove publish config override
+
 ## 1.0.0
 
 ### Major Changes
