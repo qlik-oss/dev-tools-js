@@ -58,9 +58,6 @@
   },
   "publishConfig": {
     "access": "public",
-    "exports": {
-      ".": "./lib/index.js"
-    },
     "registry": "https://registry.npmjs.org/"
   }
 }
