@@ -43,11 +43,11 @@ export default qlik.compose(
 
 ## Usage
 
-These configs works on both Typescript and Javascript out of the box. (as long as the file endings are any of .js, .jsx, .mjs, .cjs, .ts, .tsx, .cts, .mts)
+These configs works on both TypeScript and JavaSript out of the box. (as long as the file endings are any of `.js, .jsx, .mjs, .cjs, .ts, .tsx, .cts, .mts`)
 
 To get started, create `eslint.config.js` (if your package json has `"type": "module"`), otherwise create `eslint.config.mjs`.
 If you are not building your project with TypeScript (using Webpack or Vite for example), then tell TypeScript to include
-all files by setting "include": `[".*", "**/*"]` in `tsconfig.json`.
+all files by setting `"include": [".*", "**/*"]` in `tsconfig.json`.
 
 For a pure browser environment with no specific frameworks use:
 
