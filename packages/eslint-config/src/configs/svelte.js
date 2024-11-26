@@ -3,6 +3,7 @@ import eslintPluginSvelte from "eslint-plugin-svelte";
 import svelteParser from "svelte-eslint-parser";
 import tsEslint from "typescript-eslint";
 import { mergeConfigs } from "../utils/config.js";
+import { recommendedJS, recommendedTS } from "./recommended.js";
 import rules from "./rules/svelte.js";
 
 /**
@@ -43,5 +44,5 @@ const svelte = mergeConfigs(...eslintPluginSvelte.configs["flat/recommended"], {
   },
 });
 
-export default [svelte];
+export default [recommendedJS, recommendedTS, svelte];
 export { svelte };

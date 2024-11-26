@@ -18,7 +18,6 @@ import qlik from "@qlik/eslint-config";
 import pluginQuery from "@tanstack/eslint-plugin-query";
 
 export default qlik.compose(
-  ...qlik.configs.recommended,
   ...qlik.configs.react,
   ...qlik.configs.vitest,
   ...pluginQuery.configs["flat/recommended"],
@@ -73,9 +72,8 @@ Using React:
 import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
-  ...qlik.configs.recommended,
-  ...qlik.configs.esm, // or qlik.config.cjs
   ...qlik.configs.react,
+  ...qlik.configs.esm, // or qlik.config.cjs
   ...qlik.configs.vitest, // or qlik.configs.jest if you are using Jest
   {
     ignores: ["dist", "node_modules"],
@@ -89,7 +87,7 @@ Using Svelte:
 // @ts-check
 import qlik from "@qlik/eslint-config";
 
-export default qlik.compose(...qlik.configs.recommended, ...qlik.configs.esm, ...qlik.configs.svelte, {
+export default qlik.compose(...qlik.configs.svelte, ...qlik.configs.esm, {
   ignores: ["dist", "node_modules"],
 });
 ```
@@ -100,15 +98,9 @@ Using React and Svelte:
 // @ts-check
 import qlik from "@qlik/eslint-config";
 
-export default qlik.compose(
-  ...qlik.configs.recommended,
-  ...qlik.configs.esm,
-  ...qlik.configs.react,
-  ...qlik.configs.svelte,
-  {
-    ignores: ["dist", "node_modules"],
-  },
-);
+export default qlik.compose(...qlik.configs.react, ...qlik.configs.svelte, ...qlik.configs.esm, {
+  ignores: ["dist", "node_modules"],
+});
 ```
 
 Node environment:
