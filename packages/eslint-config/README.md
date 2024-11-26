@@ -43,7 +43,7 @@ export default qlik.compose(
 
 ## Usage
 
-These configs assumes that you are using TypeScript. It is still possible to write `.js` files and get linting on those.
+These configs works on both Typescript and Javascript out of the box. (as long as the file endings are any of .js, .jsx, .mjs, .cjs, .ts, .tsx, .cts, .mts)
 
 To get started, create `eslint.config.js` (if your package json has `"type": "module"`), otherwise create `eslint.config.mjs`.
 If you are not building your project with TypeScript (using Webpack or Vite for example), then tell TypeScript to include
@@ -56,7 +56,7 @@ For a pure browser environment with no specific frameworks use:
 import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
-  ...qlik.configs.recommended,
+  ...qlik.configs.recommended, // adds linting on .js, .jsx, .mjs, .cjs, .ts, .tsx, .cts, .mts files. use for pure browser environment
   {
     ignores: ["dist", "npm", "node_modules"],
   }
@@ -70,7 +70,7 @@ Using React with vitest:
 import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
-  ...qlik.configs.react,
+  ...qlik.configs.react, // based on the recommended config and adds react linting on .jsx and .tsx files
   {
     ignores: ["dist", "node_modules"],
   },
@@ -84,7 +84,7 @@ Using Svelte:
 import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
-  ...qlik.configs.svelte,
+  ...qlik.configs.svelte, // based on the recommended config and adds react linting on .svelte files
   {
     ignores: ["dist", "node_modules"],
   }
@@ -113,7 +113,7 @@ Node environment:
 import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
-  ...qlik.configs.esm, // or qlik.configs.cjs for commonjs
+  ...qlik.configs.esm, // or qlik.configs.cjs for commonjs, recommended config with node environment enabled
   {
     ignores: ["dist", "npm", "node_modules"],
   },
@@ -127,7 +127,7 @@ Additional configs that can be used in conjunction with the ones above:
 import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
-  ...qlik.configs.recommended,  // pure browser environment, no framework config added
+  ...qlik.configs.recommended,  // pure browser environment
   ...qlik.configs.vitest,       // enable vitest linting on files inside __test(s)__ folder
   ...qlik.configs.jest,         // enable jest linting on files inside __test(s)__ folder, DON'T use together with vitest
   ...qlik.configs.playwright,   // enable playwright linting on files inside ./test(s) folder.
