@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 /* eslint-disable no-continue */
 /* eslint-disable no-unmodified-loop-condition */
 /* eslint-disable no-else-return */

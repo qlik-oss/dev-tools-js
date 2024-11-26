@@ -3,7 +3,9 @@
   "private": true,
   "description": "Test project for react linting",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint ."
+  },
   "prettier": "@qlik/prettier-config",
   "devDependencies": {
     "@qlik/eslint-config": "workspace:*",

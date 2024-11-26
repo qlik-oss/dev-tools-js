@@ -2,12 +2,13 @@
 import globals from "globals";
 import { mergeConfigs } from "../utils/config.js";
 import { recommendedJS, recommendedTS } from "./recommended.js";
+import rules from "./rules/index.js";
 
 /**
  * @satisfies {import("../types/index.js").ESLintFlatConfig['rules']}
  */
 const cjsRules = {
-  // modify rules for node here
+  // modify rules for node commonjs here
 };
 
 /**
@@ -21,6 +22,7 @@ const cjsJS = mergeConfigs(recommendedJS, {
     sourceType: "commonjs",
   },
   rules: {
+    ...rules.nodeRules,
     ...cjsRules,
   },
 });
@@ -36,6 +38,7 @@ const cjsTS = mergeConfigs(recommendedTS, {
     sourceType: "commonjs",
   },
   rules: {
+    ...rules.nodeRules,
     ...cjsRules,
     // modify ts specific rules for node here
   },

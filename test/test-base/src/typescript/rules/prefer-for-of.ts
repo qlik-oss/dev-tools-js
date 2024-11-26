@@ -5,7 +5,6 @@ for (let i = 0; i < array.length; i++) {
   console.log(array[i]);
 }
 
-// eslint-disable-next-line no-restricted-syntax
 for (const i in array) {
   console.log(i);
 }

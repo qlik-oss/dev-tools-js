@@ -208,6 +208,8 @@ const rules = {
         "response", // for Express responses
         "$scope", // for Angular 1 scopes
         "staticContext", // for ReactRouter context
+        "sharedState", // for shared state in reducers
+        "state", // for shared state in reducers
       ],
     },
   ],
@@ -706,15 +708,15 @@ const rules = {
     "error",
     {
       name: "isFinite",
-      message: "Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite",
+      message: "Use Number.isFinite instead",
     },
     {
       name: "isNaN",
-      message: "Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan",
+      message: "Use Number.isNaN instead",
     },
     ...confusingBrowserGlobals.map((g) => ({
       name: g,
-      message: `Use window.${g} instead. https://github.com/facebook/create-react-app/blob/HEAD/packages/confusing-browser-globals/README.md`,
+      message: `Use window.${g} instead`,
     })),
   ],
 
@@ -866,15 +868,7 @@ const rules = {
 
   // disallow dangling underscores in identifiers
   // https://eslint.org/docs/rules/no-underscore-dangle
-  "no-underscore-dangle": [
-    "error",
-    {
-      allow: [],
-      allowAfterThis: false,
-      allowAfterSuper: false,
-      enforceInMethodNames: true,
-    },
-  ],
+  "no-underscore-dangle": "off",
 
   // disallow the use of Boolean literals in conditional expressions
   // also, prefer `a || b` over `a ? a : b`

@@ -1,7 +1,9 @@
-shouldUseFlatConfig;
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 
-async (params: type) => {
-  asf;
+async (params: string[]) => {
+  params.length;
 };
 
 let nisse = 3;

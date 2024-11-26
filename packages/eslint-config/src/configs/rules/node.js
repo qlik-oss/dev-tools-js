@@ -5,6 +5,7 @@
  */
 const rules = {
   // TODO use eslint-plugin-n https://github.com/eslint-community/eslint-plugin-n
+  "no-console": "off",
 };
 
 export default rules;

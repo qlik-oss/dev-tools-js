@@ -14,7 +14,7 @@ const reactPlugin = eslintPluginReact;
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
-const reactConfig = mergeConfigs({
+const reactConfig = {
   languageOptions: {
     parserOptions: {
       ecmaFeatures: {
@@ -45,12 +45,12 @@ const reactConfig = mergeConfigs({
     ...reactHooks.configs.recommended.rules,
     ...rules.reactHooksRules,
   },
-});
+};
 
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
-const reactJS = mergeConfigs(reactConfig, recommendedJS, {
+const reactJS = mergeConfigs(reactConfig, {
   name: "react-js",
   files: ["**/*.jsx"],
   rules: {
@@ -62,7 +62,7 @@ const reactJS = mergeConfigs(reactConfig, recommendedJS, {
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
-const reactTS = mergeConfigs(reactConfig, recommendedTS, {
+const reactTS = mergeConfigs(reactConfig, {
   name: "react-ts",
   files: ["**/*.tsx"],
   rules: {

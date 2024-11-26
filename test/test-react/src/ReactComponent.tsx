@@ -13,6 +13,5 @@ const ReactComponent2 = ({ name }: ReactComponentProps): React.ReactNode => {
 function reactComponent({ name }: ReactComponentProps): React.ReactNode {
   return <section>Props: {`{ this name: "${name}" }`}</section>;
 }
-var shouldUseFlatConfig = "hej";
 
 export { ReactComponent, ReactComponent2, reactComponent };
