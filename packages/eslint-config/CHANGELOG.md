@@ -1,5 +1,15 @@
 # @qlik/eslint-config
 
+## 1.0.0
+
+### Major Changes
+
+- bfdfaef: feat!: switch to eslint 9 flat config
+
+### Patch Changes
+
+- 669324a: chore: update npm dependencies
+
 ## 0.8.2
 
 ### Patch Changes
