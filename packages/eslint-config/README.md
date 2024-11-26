@@ -1,110 +1,167 @@
+<!-- prettier-ignore-start -->
 # @qlik/eslint-config
 
-Qlik's ESlint config for pure javascript/typescript environments. Based on airbnb-base/prettier config with some modifications.
+Qlik's ESlint config for JavaScript/TypeScript environments with optional framework support.
 
-## usage
+## Migrating from 0.x
 
-These configs assumes that you are using typescript. It is still possible to write .js files and get linting on those.
+1. Install latest `@qlik/eslint-config`
+2. Update to ESLint 9
+3. Rename your config to `eslint.config.js` (if you have `"type": "module"` in your package json) / `eslint.config.mjs` (if otherwise)
 
-Simplest approach is to add one of the following field in `package.json`:
+example config that uses typescript, react, vitest, react-query plugin:
 
-For a pure environment with no specific frameworks use:
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
+export default qlik.compose(
+  ...qlik.configs.react,
+  ...qlik.configs.vitest,
+  ...pluginQuery.configs["flat/recommended"],
+  {
+    rules: {
+      // Override rules if needed
+    },
   },
-  "extends": [
-    "@qlik/eslint-config"
-  ]
-},
+  // In its own object so it's global
+  {
+    ignores: ["dist", "node_modules", "script"],
+  },
+);
 ```
 
-Using react:
+4. If you are not using typescript to build your project, then include all files `"include": [".*", "**/*"]` in the project's `tsconfig.json`
+5. Run your `lint` script
 
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
-  },
-  "extends": [
-    "@qlik/eslint-config/react"
-  ]
-},
+### v1 notable changes
+
+- Updates [`@typescript-eslint/typescript-eslint`](https://github.com/typescript-eslint/typescript-eslint) to v8, this brings a few new rules. See article for v8 <https://typescript-eslint.io/blog/announcing-typescript-eslint-v8>
+- Moves from [`eslint-plugin-import`](https://github.com/import-js/eslint-plugin-import) to [`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x). If you reference any of the `import/` rules you'll need to replace `import/` with `import-x/`.
+- Some stylistic rules have been disabled (for example `function` vs arrow functions)
+
+## Usage
+
+These configs works on both TypeScript and JavaSript out of the box. (as long as the file endings are any of `.js, .jsx, .mjs, .cjs, .ts, .tsx, .cts, .mts`)
+
+To get started, create `eslint.config.js` (if your package json has `"type": "module"`), otherwise create `eslint.config.mjs`.
+If you are not building your project with TypeScript (using Webpack or Vite for example), then tell TypeScript to include
+all files by setting `"include": [".*", "**/*"]` in `tsconfig.json`.
+
+For a pure browser environment with no specific frameworks use:
+
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.recommended, // adds linting on .js, .jsx, .mjs, .cjs, .ts, .tsx, .cts, .mts files. use for pure browser environment
+  {
+    ignores: ["dist", "npm", "node_modules"],
+  }
+);
 ```
 
-Using svelte:
+Using React with vitest:
 
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.react, // based on the recommended config and adds react linting on .jsx and .tsx files
+  {
+    ignores: ["dist", "node_modules"],
   },
-  "extends": [
-    "@qlik/eslint-config/svelte"
-  ]
-},
+);
 ```
 
-Using react AND svelte (rare occasion):
+Using Svelte:
 
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
-  },
-  "extends": [
-    "@qlik/eslint-config/react-svelte"
-  ]
-},
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.svelte, // based on the recommended config and adds svelte linting on .svelte files
+  {
+    ignores: ["dist", "node_modules"],
+  }
+);
 ```
 
-For a node environment with commonjs modules use:
+Using React and Svelte:
 
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
-  },
-  "extends": [
-    "@qlik/eslint-config/node"
-  ]
-},
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.react,
+  ...qlik.configs.svelte,
+  {
+    ignores: ["dist", "node_modules"],
+  }
+);
 ```
 
-For a node environment with ES modules use:
+Node environment:
 
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.esm, // or qlik.configs.cjs for commonjs, recommended config with node environment enabled
+  {
+    ignores: ["dist", "npm", "node_modules"],
   },
-  "extends": [
-    "@qlik/eslint-config/esm"
-  ]
-},
+);
 ```
 
-Additional configs that can be used in conjunction with the above:
+Additional configs that can be used in conjunction with the ones above:
 
-```json
-"eslintConfig": {
-  "root": true,
-  "parserOptions": {
-    "project": "path/to/tsconfig.json"
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.recommended,  // pure browser environment
+  ...qlik.configs.vitest,       // enable vitest linting on files inside __test(s)__ folder
+  ...qlik.configs.jest,         // enable jest linting on files inside __test(s)__ folder, DON'T use together with vitest
+  ...qlik.configs.playwright,   // enable playwright linting on files inside ./test(s) folder.
+  {
+    ignores: ["dist", "npm", "node_modules"],
   },
-  "extends": [
-    "...",
-    "@qlik/eslint-config/vitest", // adds linting on vitest test and config files
-    // AND/OR
-    "@qlik/eslint-config/playwright" // adds linting on playwright test and config files
-  ]
-},
+);
 ```
+
+A config can be extended if needed. For example if the default file patterns needs to be altered.
+
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.recommended,  // pure browser environment, no framework config added
+  {
+    // adds vitest lint rules on the specified files with an altered rule
+    files: ['**/my_tests_are_here/*.spec.ts']
+    extends [qlik.configs.vitest],
+    rules: {
+      "vitest/max-nested-describe": [
+        "error",
+        {
+          "max": 3
+        }
+      ]
+    }
+  },
+  {
+    ignores: ["dist", "npm", "node_modules"],
+  },
+);
+```
+
+<!-- prettier-ignore-end -->

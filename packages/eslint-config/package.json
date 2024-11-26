@@ -1,69 +1,66 @@
 {
   "name": "@qlik/eslint-config",
   "version": "0.8.2",
-  "description": "Qlik's ESLint config for typescript",
+  "description": "Qlik's ESLint configs",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
-  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
   "files": [
-    "configs",
-    "overrides",
-    "index.js",
-    "jest.js",
-    "node.js",
-    "esm.js",
-    "react.js",
-    "svelte.js",
-    "svelte-js.js",
-    "vitest.js",
-    "playwright.js",
-    "react-svelte.js"
+    "src",
+    "!**/__tests__"
   ],
   "scripts": {
+    "check-types": "tsc --noEmit",
     "format:check": "prettier --check '**' --ignore-unknown",
     "format:write": "prettier --write '**' --ignore-unknown",
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ."
+    "lint": "eslint ."
   },
   "prettier": "@qlik/prettier-config",
-  "eslintConfig": {
-    "env": {
-      "es6": true,
-      "node": true
-    },
-    "extends": "eslint:recommended"
-  },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
-    "@vitest/eslint-plugin": "1.1.10",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^18.0.0",
-    "eslint-config-prettier": "^9.1.0",
+    "@eslint-react/eslint-plugin": "1.16.2",
+    "@eslint/js": "^9.15.0",
+    "@typescript-eslint/utils": "^8.15.0",
+    "@vitest/eslint-plugin": "^1.1.10",
+    "confusing-browser-globals": "^1.0.11",
     "eslint-import-resolver-typescript": "^3.6.3",
-    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-import-x": "^4.4.2",
     "eslint-plugin-jest": "^28.9.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-playwright": "^2.1.0",
+    "eslint-plugin-playwright": "2.1.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-svelte": "^2.46.0",
-    "eslint-plugin-testing-library": "^6.5.0",
-    "svelte-eslint-parser": "^0.43.0"
+    "eslint-plugin-svelte": "2.46.0",
+    "eslint-plugin-testing-library": "^7.0.0",
+    "globals": "^15.12.0",
+    "svelte-eslint-parser": "0.43.0",
+    "typescript-eslint": "^8.15.0"
   },
   "devDependencies": {
     "@qlik/prettier-config": "workspace:*",
+    "@qlik/tsconfig": "workspace:*",
+    "@types/confusing-browser-globals": "^1.0.3",
+    "@types/eslint-plugin-jsx-a11y": "^6.9.0",
+    "@types/eslint__js": "^8.42.3",
     "eslint": "^9.15.0",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "vitest": "^2.1.5"
   },
   "peerDependencies": {
-    "eslint": "^8.0.0"
+    "eslint": ">=9.0.0"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "publishConfig": {
     "access": "public",
+    "exports": {
+      ".": "./lib/index.js"
+    },
     "registry": "https://registry.npmjs.org/"
   }
 }

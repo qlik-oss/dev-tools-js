@@ -1,6 +1,6 @@
 {
   "extends": "@qlik/tsconfig/react.json",
-  "include": ["src"],
+  "include": [".*", "./**/*"],
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
