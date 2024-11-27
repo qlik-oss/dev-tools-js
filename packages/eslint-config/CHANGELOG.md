@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- f222d0d: fix(eslint-config): config rules and combination update
+- f222d0d: fix(eslint-config): no typescript-eslint rules applied on .js files.
 
 ## 1.0.1
 
