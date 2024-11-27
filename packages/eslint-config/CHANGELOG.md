@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.0.2
+
+### Patch Changes
+
+- f222d0d: fix(eslint-config): config rules and combination update
+
 ## 1.0.1
 
 ### Patch Changes
