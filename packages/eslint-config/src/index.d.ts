@@ -1,24 +1,48 @@
-export default qlikEslintConfig;
+import type { QlikEslintConfig } from "./types/index.ts";
 
-declare namespace qlikEslintConfig {
-  export namespace configs {
-    export { cjs };
-    export { esm };
-    export { playwright };
-    export { jest };
-    export { react };
-    export { recommended };
-    export { svelte };
-    export { vitest };
-  }
-  export { compose };
+/**
+ * Qlik's recommended ESLint configuration objects for common scenarios.
+ */
+export interface QlikEslintConfig {
+  configs: {
+    /** node commonjs configuration (.js, .ts) */
+    cjs: ESLintFlatConfig[];
+    /** node esm configuration (.js, .ts) */
+    esm: ESLintFlatConfig[];
+    /** jest with testing-library configuration (\_\_test(s)\_\_\/\*\* ) */
+    jest: ESLintFlatConfig[];
+    /** playwright configuration (test(s)\/\*\* ) */
+    playwright: ESLintFlatConfig[];
+    /** react configuration (.js, .ts, .jsx, .tsx) */
+    react: ESLintFlatConfig[];
+    /** recommended configuration (.js, .ts) */
+    recommended: ESLintFlatConfig[];
+    /** svelte configuration (.svelte) */
+    svelte: ESLintFlatConfig[];
+    /** vitest with testing-library configuration (\_\_test(s)\_\_\/\*\* ) */
+    vitest: ESLintFlatConfig[];
+  };
+  /** utility function for defining configuration object */
+  compose: typeof compose;
 }
-import cjs from "./configs/cjs.js";
-import esm from "./configs/esm.js";
-import jest from "./configs/jest.js";
-import playwright from "./configs/playwright.js";
-import react from "./configs/react.js";
-import recommended from "./configs/recommended.js";
-import svelte from "./configs/svelte.js";
-import vitest from "./configs/vitest.js";
-import compose from "./utils/compose.js";
+
+/** node configuration for commonjs for javascript */
+export const cjsJS: ESLintFlatConfig;
+/** node configuration for commonjs for typescript */
+export const cjsTS: ESLintFlatConfig;
+/** node configuration for esm for javascript */
+export const esmJS: ESLintFlatConfig;
+/** node configuration for esm for typescript */
+export const esmTS: ESLintFlatConfig;
+/** jest configuration for javascript */
+export const reactJS: ESLintFlatConfig;
+/** jest configuration for typescript */
+export const reactTS: ESLintFlatConfig;
+/** vanilla configuration for javascript */
+export const recommendedJS: ESLintFlatConfig;
+/** vanilla configuration for typescript */
+export const recommendedTS: ESLintFlatConfig;
+
+// Default export
+declare const qlikEslintConfig: QlikEslintConfig;
+export default qlikEslintConfig;
