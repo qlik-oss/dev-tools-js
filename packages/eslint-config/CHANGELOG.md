@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.0.4
+
+### Patch Changes
+
+- 91fb7dc: fix: dont override import-x rules in typescript ruleset
+
 ## 1.0.3
 
 ### Patch Changes
