@@ -27,7 +27,7 @@ const rules = {
   "import-x/no-named-as-default": "error",
   // warn on accessing default export property names that are also named exports
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-named-as-default-member.md
-  "import-x/no-named-as-default-member": "error",
+  "import-x/no-named-as-default-member": "off",
   // disallow use of jsdoc-marked-deprecated imports
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-deprecated.md
   "import-x/no-deprecated": "warn",
