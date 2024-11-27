@@ -29,6 +29,31 @@ describe("compose function", () => {
     ]);
   });
 
+  it("should merge configs and overwrite files correctly", () => {
+    const baseConfig1: ESLintFlatConfig = { files: ["*.ts"], rules: { "no-console": "error" } };
+    const baseConfig2: ESLintFlatConfig = { files: ["*.tsx"], rules: { "no-undef": "error", "no-var": "error" } };
+
+    const config = [baseConfig1, baseConfig2];
+
+    const result = compose({
+      extend: [...config],
+      rules: { "no-debugger": "warn" },
+      files: ["*.js"],
+    });
+
+    expect(result).toEqual([
+      { files: ["*.js"], rules: { "no-console": "error" } },
+      {
+        files: ["*.js"],
+        rules: {
+          "no-undef": "error",
+          "no-var": "error",
+        },
+      },
+      { files: ["*.js"], rules: { "no-debugger": "warn" } },
+    ]);
+  });
+
   it("should handle multiple extends on an otherwise empty config", () => {
     const baseConfig1: ESLintFlatConfig = { rules: { "no-console": "error" } };
     const baseConfig2: ESLintFlatConfig = { rules: { "no-debugger": "warn" } };

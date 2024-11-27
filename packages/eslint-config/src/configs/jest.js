@@ -2,7 +2,7 @@
 import jestPlugin from "eslint-plugin-jest";
 import testingLibraryPlugin from "eslint-plugin-testing-library";
 import { mergeConfigs } from "../utils/config.js";
-import rules from "./rules/index.js";
+import testingLibraryRules from "./rules/testing-library.js";
 
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
@@ -15,7 +15,7 @@ const jest = mergeConfigs(jestPlugin.configs["flat/recommended"], {
     "testing-library": testingLibraryPlugin,
   },
   rules: {
-    ...rules.testingLibraryRules,
+    ...testingLibraryRules,
     // modify rules from eslint-plugin-jest here
   },
 });

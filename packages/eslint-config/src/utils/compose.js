@@ -7,16 +7,19 @@
  *
  * @example
  * ```js
- * import eslint from '@eslint/js';
- * import tseslint from 'typescript-eslint';
+ * import qlik from "@qlik/eslint-config";
  *
  * export default qlik.compose(
- *   eslint.configs.recommended,
- *   ...tseslint.configs.recommended,
+ *   ...qlik.configs.react,
+ *   ...qlik.configs.vitest,
  *   {
  *     rules: {
- *       '@typescript-eslint/array-type': 'error',
+ *       // Override rules if needed
  *     },
+ *   },
+ *   // In its own object so it's global
+ *   {
+ *     ignores: ["dist", "node_modules", "script"],
  *   },
  * );
  * ```

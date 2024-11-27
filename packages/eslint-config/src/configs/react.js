@@ -6,7 +6,9 @@ import eslintPluginReact from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import { mergeConfigs } from "../utils/config.js";
 import { recommendedJS, recommendedTS } from "./recommended.js";
-import rules from "./rules/index.js";
+import reactA11yRules from "./rules/react-a11y.js";
+import reactHooksRules from "./rules/react-hooks.js";
+import reactRules from "./rules/react.js";
 
 /** @type {any} */
 const reactPlugin = eslintPluginReact;
@@ -36,40 +38,50 @@ const reactConfig = {
   rules: {
     // react plugin
     ...reactPlugin.configs.flat.recommended.rules,
-    ...rules.reactRules,
+    ...reactRules,
     // jsx-a11y plugin
     ...jsxA11y.flatConfigs.recommended.rules,
-    ...rules.reactA11yRules,
+    ...reactA11yRules,
     ...react.configs.recommended.rules,
     // react-hooks plugin
     ...reactHooks.configs.recommended.rules,
-    ...rules.reactHooksRules,
+    ...reactHooksRules,
   },
 };
 
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
-const reactJS = mergeConfigs(reactConfig, {
-  name: "react-js",
-  files: ["**/*.js", "**/*.jsx"],
-  rules: {
-    // turn on/off or modify js rules necessary for react
-    "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx"] }],
+const reactJS = mergeConfigs(
+  // base it on the base react config
+  reactConfig,
+  // add qlik's recommended react config for javascript
+  {
+    name: "react-js",
+    files: ["**/*.js", "**/*.jsx"],
+    rules: {
+      // turn on/off or modify js rules necessary for react
+      "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx"] }],
+    },
   },
-});
+);
 
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
-const reactTS = mergeConfigs(reactConfig, {
-  name: "react-ts",
-  files: ["**/*.ts", "**/*.tsx"],
-  rules: {
-    // turn on/off or modify js/ts rules necessary for react
-    "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
+const reactTS = mergeConfigs(
+  // base it on the base react config
+  reactConfig,
+  // add qlik's recommended react config for typescript
+  {
+    name: "react-ts",
+    files: ["**/*.ts", "**/*.tsx"],
+    rules: {
+      // turn on/off or modify js/ts rules necessary for react
+      "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
+    },
   },
-});
+);
 
 export default [recommendedJS, reactTS, recommendedTS, reactTS];
 export { reactJS, reactTS };

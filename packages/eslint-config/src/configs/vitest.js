@@ -1,9 +1,8 @@
 // @ts-check
 import vitestPlugin from "@vitest/eslint-plugin";
-// @ts-expect-error no types yet
 import testingLibraryPlugin from "eslint-plugin-testing-library";
 import { mergeConfigs } from "../utils/config.js";
-import rules from "./rules/index.js";
+import testingLibraryRules from "./rules/testing-library.js";
 
 /**
  * @satisfies {import("../types/index.js").ESLintFlatConfig["rules"]}
@@ -26,7 +25,7 @@ const vitest = mergeConfigs(vitestCommon, {
   rules: {
     // modify rules from eslint-plugin-vitest here
     ...vitestPlugin.configs.recommended.rules, // you can also use vitest.configs.all.rules to enable all rules
-    ...rules.testingLibraryRules,
+    ...testingLibraryRules,
     "no-magic-numbers": "off",
     "@typescript-eslint/no-magic-numbers": "off",
   },
