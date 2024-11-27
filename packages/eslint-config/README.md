@@ -146,6 +146,41 @@ export default qlik.compose(
 The different configs are also accessible through named imports. These configs can be used in specific scenarios where more
 control of the configs are needed. The `extend` property can be used to apply a config on certain file patterns.
 
+Example only use javascript rules with react
+
+```js
+import qlik, { recommendedJS, reactJS } from "@qlik/eslint-config";
+
+export default qlik.compose(
+  recommendedJS,
+  reactJS
+)
+```
+
+with typescript support
+
+```js
+import qlik, { recommendedJS, reactJS } from "@qlik/eslint-config";
+
+export default qlik.compose(
+  recommendedJS,
+  reactJS,
+  recommendedTS,
+  reactTS
+)
+```
+
+This is equal to:
+
+```js
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.react
+)
+```
+
+Using the single configs can be useful together with the `extend` property.
 Example of a config that wants to use node on a part of the code base.
 
 ```js
