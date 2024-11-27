@@ -56,7 +56,6 @@ const recommendedTS = mergeConfigs(
     },
   },
   ...tsconfig.configs.recommended,
-  eslintPluginImportX.flatConfigs.recommended,
   eslintPluginImportX.flatConfigs.typescript,
   {
     name: "recommended-ts",
