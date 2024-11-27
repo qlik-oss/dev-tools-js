@@ -1,6 +1,5 @@
 /* eslint-disable no-lone-blocks */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 /* eslint-disable prefer-const */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 
