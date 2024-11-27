@@ -60,4 +60,18 @@ describe("merge function", () => {
       rules: { a: ["warn", { changed: { b: "bar" } }], b: "off" },
     });
   });
+
+  it("should handle merging with empty objects", () => {
+    const obj1 = { a: 1, b: { c: 2, d: [1, 2] } };
+    const obj2 = {};
+    const result = merge(obj1, obj2);
+    expect(result).toEqual({ a: 1, b: { c: 2, d: [1, 2] } });
+  });
+
+  it("should handle merging with keys that should be overridden", () => {
+    const obj1 = { a: 1, b: 2, files: ["*.js"], globals: ["BrowserGlobal1"] };
+    const obj2 = { a: 3, c: 4, files: ["*.ts"], globals: ["NodeGlobal1"] };
+    const result = merge(obj1, obj2);
+    expect(result).toEqual({ a: 3, b: 2, c: 4, files: ["*.ts"], globals: ["NodeGlobal1"] });
+  });
 });

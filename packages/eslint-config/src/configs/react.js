@@ -16,7 +16,7 @@ const reactPlugin = eslintPluginReact;
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
-const reactConfig = {
+const reactBaseConfig = {
   languageOptions: {
     parserOptions: {
       ecmaFeatures: {
@@ -53,8 +53,10 @@ const reactConfig = {
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
 const reactJS = mergeConfigs(
-  // base it on the base react config
-  reactConfig,
+  // base it on the recommended javascript config
+  recommendedJS,
+  // add the base react config
+  reactBaseConfig,
   // add qlik's recommended react config for javascript
   {
     name: "react-js",
@@ -70,8 +72,10 @@ const reactJS = mergeConfigs(
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
 const reactTS = mergeConfigs(
-  // base it on the base react config
-  reactConfig,
+  // base it on the recommended typescript config
+  recommendedTS,
+  // add the base react config
+  reactBaseConfig,
   // add qlik's recommended react config for typescript
   {
     name: "react-ts",
@@ -83,5 +87,5 @@ const reactTS = mergeConfigs(
   },
 );
 
-export default [recommendedJS, reactTS, recommendedTS, reactTS];
+export default [reactJS, reactTS];
 export { reactJS, reactTS };

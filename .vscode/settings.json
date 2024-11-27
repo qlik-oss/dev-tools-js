@@ -6,7 +6,6 @@
     "packages/tsconfig",
     "test/test-react-svelte",
     "test/test-react",
-    "test/test-base",
-    "test/compare-configs"
+    "test/test-base"
   ]
 }

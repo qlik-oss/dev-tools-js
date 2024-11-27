@@ -26,8 +26,6 @@ const vitest = mergeConfigs(vitestCommon, {
     // modify rules from eslint-plugin-vitest here
     ...vitestPlugin.configs.recommended.rules, // you can also use vitest.configs.all.rules to enable all rules
     ...testingLibraryRules,
-    "no-magic-numbers": "off",
-    "@typescript-eslint/no-magic-numbers": "off",
   },
 });
 

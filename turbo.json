@@ -4,6 +4,9 @@
     "lint": {
       "outputs": []
     },
+    "test": {
+      "outputs": []
+    },
     "format:check": {
       "outputs": []
     },

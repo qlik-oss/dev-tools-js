@@ -1,5 +1,6 @@
 // these ones will only do shallow merge, but the merge function will do deep merge
 const noNeedToDeepMerge = ["plugins", "rules", "parser"];
+const overWrite = ["files", "globals"];
 
 /**
  *
@@ -14,7 +15,9 @@ export const merge = (obj1, obj2) => {
   }
   const merged = { ...obj1 };
   Object.keys(obj2).forEach((key) => {
-    if (Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
+    if (overWrite.includes(key)) {
+      merged[key] = obj2[key];
+    } else if (Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
       merged[key] = [...new Set([...obj1[key], ...obj2[key]])];
     } else if (noNeedToDeepMerge.includes(key)) {
       merged[key] = { ...obj1[key], ...obj2[key] };
