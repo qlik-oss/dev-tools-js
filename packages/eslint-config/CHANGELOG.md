@@ -1,5 +1,12 @@
 # @qlik/eslint-config
 
+## 1.0.3
+
+### Patch Changes
+
+- 4bb6fc1: fix: enable react rules for ts/js files. fixes an issue where rules of hooks were not enable for files containing only hooks.
+- 37a5ba3: fix: turn off import-x/no-named-as-default-member
+
 ## 1.0.2
 
 ### Patch Changes
