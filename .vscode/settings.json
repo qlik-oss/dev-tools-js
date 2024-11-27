@@ -1,3 +1,12 @@
 {
-  "eslint.workingDirectories": ["test/test-react-svelte", "test/test-react", "test/test-base"]
+  "eslint.workingDirectories": [
+    "packages/browserslist-config",
+    "packages/eslint-config",
+    "packages/prettier-config",
+    "packages/tsconfig",
+    "test/test-react-svelte",
+    "test/test-react",
+    "test/test-base",
+    "test/compare-configs"
+  ]
 }
