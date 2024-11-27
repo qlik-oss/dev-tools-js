@@ -7,27 +7,20 @@ import tsconfig from "typescript-eslint";
 import { mergeConfigs } from "../utils/config.js";
 import rules from "./rules/index.js";
 
-/**
- * @type {import("../types/index.js").ESLintFlatConfig}
- */
-const recommendedJS = mergeConfigs(
+const baseConfig = mergeConfigs(
   {
-    files: ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.cjs"],
     languageOptions: {
       globals: globals.browser,
       parserOptions: {
         warnOnUnsupportedTypeScriptVersion: false,
       },
-      ecmaVersion: 2021,
+      ecmaVersion: "latest",
       sourceType: "module",
     },
   },
-  // tsconfig.configs.base sets eslint parser to use the typescript parser to parse .js files - handles all modern syntax
-  tsconfig.configs.base,
   js.configs.recommended,
   eslintPluginImportX.flatConfigs.recommended,
   {
-    name: "recommended-js",
     rules: {
       ...rules.importXRules,
       ...rules.eslintCoreRules,
@@ -38,16 +31,27 @@ const recommendedJS = mergeConfigs(
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
+const recommendedJS = mergeConfigs(
+  baseConfig,
+  // tsconfig.configs.base sets eslint parser to use the typescript parser to parse .js files - handles all modern syntax
+  tsconfig.configs.base,
+  {
+    name: "recommended-js",
+    files: ["**/*.js", "**/*.mjs", "**/*.cjs"],
+  },
+);
+
+/**
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
 const recommendedTS = mergeConfigs(
-  recommendedJS,
+  baseConfig,
   {
     files: ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts", "**/*.d.ts"],
     languageOptions: {
       parserOptions: {
         parser: tsParser,
         projectService: true,
-        ecmaVersion: "latest",
-        sourceType: "module",
       },
     },
   },

@@ -1,6 +1,7 @@
 // @ts-check
+import globals from "globals";
 import { mergeConfigs } from "../utils/config.js";
-import { cjsJS, cjsTS } from "./cjs.js";
+import { recommendedJS, recommendedTS } from "./recommended.js";
 
 /**
  * @satisfies {import("../types/index.js").ESLintFlatConfig["rules"]}
@@ -13,10 +14,11 @@ const nodeEsmRules = {
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
-const esmJS = mergeConfigs(cjsJS, {
+const esmJS = mergeConfigs(recommendedJS, {
   name: "node-esm-js",
   files: ["**/*.{js,mjs}"],
   languageOptions: {
+    globals: globals.node,
     sourceType: "module",
   },
   rules: {
@@ -27,10 +29,11 @@ const esmJS = mergeConfigs(cjsJS, {
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
-const esmTS = mergeConfigs(cjsTS, {
+const esmTS = mergeConfigs(recommendedTS, {
   name: "node-esm-ts",
   files: ["**/*.{ts,mts}"],
   languageOptions: {
+    globals: globals.node,
     sourceType: "module",
   },
   rules: {

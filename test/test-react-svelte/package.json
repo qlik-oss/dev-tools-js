@@ -1,13 +1,15 @@
 {
   "name": "test-react-svelte",
   "private": true,
-  "type": "module",
   "description": "Test project for react-svelte linting",
-  "scripts": {},
+  "type": "module",
+  "scripts": {
+    "lint": "eslint ."
+  },
   "prettier": "@qlik/prettier-config",
   "dependencies": {
     "react": "^18.3.1",
-    "svelte": "^5.2.8"
+    "svelte": "^5.2.9"
   },
   "devDependencies": {
     "@qlik/eslint-config": "workspace:*",

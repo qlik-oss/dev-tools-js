@@ -151,7 +151,7 @@ const rules = {
   // Lots of false/iffy positives
   // watch out for always truthy conditions
   // https://typescript-eslint.io/rules/no-unnecessary-condition
-  "@typescript-eslint/no-unnecessary-condition": "off",
+  "@typescript-eslint/no-unnecessary-condition": "error",
 
   // no unnecessary namespace qualifiers.
   // https://typescript-eslint.io/rules/no-unnecessary-qualifier
@@ -201,7 +201,7 @@ const rules = {
   // https://typescript-eslint.io/rules/use-unknown-in-catch-callback-variable
   "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
 
-  // Replace Airbnb 'camelcase' rule with '@typescript-eslint/naming-convention'
+  // Replace camelcase' rule with '@typescript-eslint/naming-convention'
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
   camelcase: "off",
   // The `@typescript-eslint/naming-convention` rule allows `leadingUnderscore` and `trailingUnderscore` settings. However, the existing `no-underscore-dangle` rule already takes care of this.
@@ -217,7 +217,7 @@ const rules = {
       selector: "function",
       format: ["camelCase", "PascalCase"],
     },
-    // Airbnb recommends PascalCase for classes (23.3), and although Airbnb does not make TypeScript recommendations, we are assuming this rule would similarly apply to anything "type like", including interfaces, type aliases, and enums
+    // Qlik recommends PascalCase for classes (23.3),
     {
       selector: "typeLike",
       format: ["PascalCase"],

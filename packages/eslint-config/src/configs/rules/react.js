@@ -387,13 +387,11 @@ const rules = {
 
   // Enforce state initialization style
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/state-in-constructor.md
-  // TODO: set to "never" once babel-preset-airbnb supports public class fields
-  "react/state-in-constructor": ["error", "always"],
+  "react/state-in-constructor": ["error", "never"],
 
   // Enforces where React component static properties should be positioned
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/static-property-placement.md
-  // TODO: set to "static public field" once babel-preset-airbnb supports public class fields
-  "react/static-property-placement": ["error", "property assignment"],
+  "react/static-property-placement": "error",
 
   // This has valid cases but best practice to be explicit about the props
   // Disallow JSX props spreading
