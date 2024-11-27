@@ -52,7 +52,7 @@ const reactConfig = {
  */
 const reactJS = mergeConfigs(reactConfig, {
   name: "react-js",
-  files: ["**/*.jsx"],
+  files: ["**/*.js", "**/*.jsx"],
   rules: {
     // turn on/off or modify js rules necessary for react
     "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx"] }],
@@ -64,7 +64,7 @@ const reactJS = mergeConfigs(reactConfig, {
  */
 const reactTS = mergeConfigs(reactConfig, {
   name: "react-ts",
-  files: ["**/*.tsx"],
+  files: ["**/*.ts", "**/*.tsx"],
   rules: {
     // turn on/off or modify js/ts rules necessary for react
     "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
