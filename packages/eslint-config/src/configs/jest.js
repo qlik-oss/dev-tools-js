@@ -2,7 +2,6 @@
 import jestPlugin from "eslint-plugin-jest";
 import testingLibraryPlugin from "eslint-plugin-testing-library";
 import { mergeConfigs } from "../utils/config.js";
-import testingLibraryRules from "./rules/testing-library.js";
 
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
@@ -18,7 +17,7 @@ const jest = mergeConfigs(
     name: "jest",
     files: ["**/__test__/**/*.{js,jsx,ts,tsx}", "**/__tests__/**/*.{js,jsx,ts,tsx}"],
     rules: {
-      ...testingLibraryRules,
+      // ...testingLibraryRules,
       // modify rules from eslint-plugin-jest here
     },
   },

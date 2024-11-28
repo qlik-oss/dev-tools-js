@@ -2,7 +2,6 @@
 import vitestPlugin from "@vitest/eslint-plugin";
 import testingLibraryPlugin from "eslint-plugin-testing-library";
 import { mergeConfigs } from "../utils/config.js";
-import testingLibraryRules from "./rules/testing-library.js";
 
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
@@ -18,7 +17,6 @@ const vitest = mergeConfigs(
     name: "vitest",
     files: ["**/__test__/**/*.{js,jsx,ts,tsx}", "**/__tests__/**/*.{js,jsx,ts,tsx}"],
     rules: {
-      ...testingLibraryRules,
       // modify rules from eslint-plugin-vitest here
     },
   },
