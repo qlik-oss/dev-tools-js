@@ -136,7 +136,7 @@ const rules = {
 
   // disallow unnecessary nested blocks
   // https://eslint.org/docs/rules/no-lone-blocks
-  "no-lone-blocks": "off",
+  "no-lone-blocks": "error",
 
   // disallow creation of functions within loops
   // https://eslint.org/docs/rules/no-loop-func
