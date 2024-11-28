@@ -23,7 +23,7 @@ describe("compose function", () => {
       files: ["*.js"],
     });
 
-    expect(result).toEqual([{ files: ["*.js"], rules: { "no-console": "error" } }]);
+    expect(result).toEqual([{ files: ["*.js"], rules: { "no-console": "error", "no-debugger": "warn" } }]);
   });
 
   it("should merge configs and overwrite files correctly", () => {
@@ -59,7 +59,7 @@ describe("compose function", () => {
       extend: [baseConfig1, baseConfig2],
     });
 
-    expect(result).toEqual([{ rules: { "no-console": "error" } }, { rules: { "no-debugger": "warn" } }, {}]);
+    expect(result).toEqual([{ rules: { "no-console": "error" } }, { rules: { "no-debugger": "warn" } }]);
   });
 
   it("should throw an error if extend property is not an array", () => {
@@ -91,9 +91,7 @@ describe("compose function", () => {
 
     expect(result).toEqual([
       { rules: { "no-console": "error" }, files: ["*.js"] },
-      { files: ["*.js"] },
       { rules: { "no-debugger": "warn" }, files: ["*.ts"] },
-      { files: ["*.ts"] },
     ]);
   });
 
@@ -113,14 +111,8 @@ describe("compose function", () => {
     );
 
     expect(result).toEqual([
-      { name: "base-config-1", rules: { "no-console": "error" }, files: ["*.js"] },
-      {
-        files: ["*.js"],
-      },
-      { name: "base-config-2", rules: { "no-debugger": "warn" }, files: ["*.ts"] },
-      {
-        files: ["*.ts"],
-      },
+      { name: "@qlik/eslint-config/base-config-1", rules: { "no-console": "error" }, files: ["*.js"] },
+      { name: "@qlik/eslint-config/base-config-2", rules: { "no-debugger": "warn" }, files: ["*.ts"] },
     ]);
   });
 
@@ -136,7 +128,6 @@ describe("compose function", () => {
     expect(result).toEqual([
       { rules: { "no-console": "error" }, files: ["*.js"] },
       { rules: { "no-debugger": "warn" }, files: ["*.js"] },
-      { files: ["*.js"] },
     ]);
   });
 
@@ -154,7 +145,6 @@ describe("compose function", () => {
     expect(result).toEqual([
       { rules: { "no-console": "error" }, files: ["*.tsx"] },
       { rules: { "no-debugger": "warn" }, files: ["*.tsx"] },
-      { files: ["*.tsx"] },
     ]);
   });
 
@@ -187,28 +177,16 @@ describe("compose function", () => {
             parse: parseFn,
           },
         },
+        rules: { "no-debugger": "off" },
       },
       {
         files: ["*.jsx"],
-        rules: {
-          "no-console": "error",
-        },
-      },
-      {
-        files: ["*.jsx"],
-        rules: {
-          "no-debugger": "off",
-        },
+        rules: { "no-console": "error", "no-debugger": "off" },
       },
       {
         files: ["*.tsx"],
         rules: {
           "no-debugger": "warn",
-        },
-      },
-      {
-        files: ["*.tsx"],
-        rules: {
           "no-undef": "error",
         },
       },
@@ -235,17 +213,7 @@ describe("compose function", () => {
         files: ["*.ts"],
         rules: {
           "no-console": "error",
-        },
-      },
-      {
-        files: ["*.ts"],
-        rules: {
           "no-debugger": "warn",
-        },
-      },
-      {
-        files: ["*.ts"],
-        rules: {
           "no-typescript": "error",
         },
       },

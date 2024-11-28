@@ -56,7 +56,7 @@ export default function compose(...configs) {
     return [
       ...extendArr.map((extension) => {
         const name = [config.name, extension.name].filter(Boolean).join("__");
-        return mergeConfigs(extension, config, { name });
+        return mergeConfigs(extension, config, name ? { name } : {});
       }),
     ];
   });
