@@ -128,7 +128,7 @@ const rules = {
   "import-x/no-self-import": "error",
   // Forbid cyclical dependencies between modules
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-cycle.md
-  "import-x/no-cycle": ["error", { maxDepth: "∞" }],
+  "import-x/no-cycle": ["error", { ignoreExternal: true }],
   // Ensures that there are no useless path segments
   // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-useless-path-segments.md
   "import-x/no-useless-path-segments": ["error", { commonjs: true }],
