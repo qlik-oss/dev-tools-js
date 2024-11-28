@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.1.1
+
+### Patch Changes
+
+- f4f426a: fix: make `extend` property useful
+
 ## 1.1.0
 
 ### Minor Changes
