@@ -69,9 +69,15 @@ describe("merge function", () => {
   });
 
   it("should handle merging with keys that should be overridden", () => {
-    const obj1 = { a: 1, b: 2, files: ["*.js"], globals: ["BrowserGlobal1"] };
-    const obj2 = { a: 3, c: 4, files: ["*.ts"], globals: ["NodeGlobal1"] };
+    const obj1 = {
+      a: 1,
+      b: 2,
+      files: ["*.js"],
+      ignores: ["should not be present after merge"],
+      globals: ["BrowserGlobal1"],
+    };
+    const obj2 = { a: 3, c: 4, files: ["*.ts"], ignores: ["only this"], globals: ["NodeGlobal1"] };
     const result = merge(obj1, obj2);
-    expect(result).toEqual({ a: 3, b: 2, c: 4, files: ["*.ts"], globals: ["NodeGlobal1"] });
+    expect(result).toEqual({ a: 3, b: 2, c: 4, files: ["*.ts"], ignores: ["only this"], globals: ["NodeGlobal1"] });
   });
 });

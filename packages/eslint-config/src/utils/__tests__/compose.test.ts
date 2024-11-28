@@ -23,10 +23,7 @@ describe("compose function", () => {
       files: ["*.js"],
     });
 
-    expect(result).toEqual([
-      { files: ["*.js"], rules: { "no-console": "error" } },
-      { files: ["*.js"], rules: { "no-debugger": "warn" } },
-    ]);
+    expect(result).toEqual([{ files: ["*.js"], rules: { "no-console": "error" } }]);
   });
 
   it("should merge configs and overwrite files correctly", () => {
@@ -42,15 +39,15 @@ describe("compose function", () => {
     });
 
     expect(result).toEqual([
-      { files: ["*.js"], rules: { "no-console": "error" } },
+      { files: ["*.js"], rules: { "no-console": "error", "no-debugger": "warn" } },
       {
         files: ["*.js"],
         rules: {
+          "no-debugger": "warn",
           "no-undef": "error",
           "no-var": "error",
         },
       },
-      { files: ["*.js"], rules: { "no-debugger": "warn" } },
     ]);
   });
 
