@@ -21,7 +21,7 @@ export default [
         "xtest": false
       }
     },
-    "name": "@qlik/eslint-config/jest-js",
+    "name": "@qlik/eslint-config/jest",
     "plugins": {
       "jest": "jest-plugin",
       "testing-library": "testing-library-plugin"

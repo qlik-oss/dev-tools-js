@@ -13,4 +13,4 @@ if ! git diff --exit-code generated/; then
   exit 1
 fi
 
-echo -e "\033[32mTest OK!\033[0m"
+echo -e "\033[32mLint configs has been verified, no diff found!\033[0m"

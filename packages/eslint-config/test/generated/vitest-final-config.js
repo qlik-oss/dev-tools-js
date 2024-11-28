@@ -4,7 +4,7 @@ export default [
       "**/__test__/**/*.{js,jsx,ts,tsx}",
       "**/__tests__/**/*.{js,jsx,ts,tsx}"
     ],
-    "name": "@qlik/eslint-config/vitest-js",
+    "name": "@qlik/eslint-config/vitest",
     "plugins": {
       "testing-library": "testing-library-plugin",
       "vitest": "vitest-plugin"

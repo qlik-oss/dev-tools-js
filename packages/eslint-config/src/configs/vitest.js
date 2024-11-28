@@ -5,29 +5,24 @@ import { mergeConfigs } from "../utils/config.js";
 import testingLibraryRules from "./rules/testing-library.js";
 
 /**
- * @satisfies {import("../types/index.js").ESLintFlatConfig["rules"]}
- */
-const vitestCommon = {};
-
-/**
  * @type {import("../types/index.js").ESLintFlatConfig}
  * config for jest https://github.com/jest-community/eslint-plugin-jest
  */
-const vitest = mergeConfigs(vitestCommon, {
-  name: "vitest-js",
-  plugins: {
-    vitest: vitestPlugin,
-    "testing-library": testingLibraryPlugin,
+const vitest = mergeConfigs(
+  // base it on the recommended vitest config
+  vitestPlugin.configs.recommended,
+  // add testing-library plugin recommended config for react
+  testingLibraryPlugin.configs["flat/react"],
+  // add qlik's recommended vitest config
+  {
+    name: "vitest",
+    files: ["**/__test__/**/*.{js,jsx,ts,tsx}", "**/__tests__/**/*.{js,jsx,ts,tsx}"],
+    rules: {
+      ...testingLibraryRules,
+      // modify rules from eslint-plugin-vitest here
+    },
   },
-
-  files: ["**/__test__/**/*.{js,jsx,ts,tsx}", "**/__tests__/**/*.{js,jsx,ts,tsx}"],
-
-  rules: {
-    // modify rules from eslint-plugin-vitest here
-    ...vitestPlugin.configs.recommended.rules, // you can also use vitest.configs.all.rules to enable all rules
-    ...testingLibraryRules,
-  },
-});
+);
 
 export default [vitest];
 export { vitest };
