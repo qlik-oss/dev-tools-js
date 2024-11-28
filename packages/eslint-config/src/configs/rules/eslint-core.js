@@ -500,7 +500,7 @@ const rules = {
   // https://eslint.org/docs/rules/no-template-curly-in-string
   "no-template-curly-in-string": "error",
 
-  // Disallow confusing multiline expressions
+  // Avoid code that looks like two expressions but is actually one
   // https://eslint.org/docs/rules/no-unexpected-multiline
   "no-unexpected-multiline": 0,
 
