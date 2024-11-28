@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.1.0
+
+### Minor Changes
+
+- 807ebd8: Exposing single configs as named exports. Can be import as `import { recommendedJS, recommendedTS } from "@qlik/eslint-config"`
+
 ## 1.0.4
 
 ### Patch Changes
