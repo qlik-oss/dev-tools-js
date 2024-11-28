@@ -206,7 +206,7 @@ export default qlik.compose(
   {
     // adds vitest lint rules on the specified files with an altered rule
     files: ['**/my_tests_are_here/*.spec.ts']
-    extend [qlik.configs.vitest],
+    extend: [qlik.configs.vitest],
     rules: {
       "vitest/max-nested-describe": [
         "error",
