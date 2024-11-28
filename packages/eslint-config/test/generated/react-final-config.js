@@ -1351,7 +1351,7 @@ export default [
       "import-x/no-cycle": [
         "error",
         {
-          "maxDepth": "∞"
+          "ignoreExternal": true
         }
       ],
       "import-x/no-deprecated": "warn",
@@ -4094,7 +4094,7 @@ export default [
       "import-x/no-cycle": [
         "error",
         {
-          "maxDepth": "∞"
+          "ignoreExternal": true
         }
       ],
       "import-x/no-deprecated": "warn",

@@ -870,10 +870,6 @@ const rules = {
   // https://eslint.org/docs/rules/no-underscore-dangle
   "no-underscore-dangle": "off",
 
-  // Disallow confusing multiline expressions
-  // https://eslint.org/docs/rules/no-unexpected-multiline
-  "no-unexpected-multiline": 0,
-
   // disallow the use of Boolean literals in conditional expressions
   // also, prefer `a || b` over `a ? a : b`
   // https://eslint.org/docs/rules/no-unneeded-ternary
