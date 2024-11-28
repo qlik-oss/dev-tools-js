@@ -152,7 +152,6 @@ Example only use javascript rules with react
 import qlik, { recommendedJS, reactJS } from "@qlik/eslint-config";
 
 export default qlik.compose(
-  recommendedJS,
   reactJS
 )
 ```
@@ -163,9 +162,7 @@ with typescript support
 import qlik, { recommendedJS, reactJS } from "@qlik/eslint-config";
 
 export default qlik.compose(
-  recommendedJS,
   reactJS,
-  recommendedTS,
   reactTS
 )
 ```
@@ -180,8 +177,8 @@ export default qlik.compose(
 )
 ```
 
-Using the single configs can be useful together with the `extend` property.
-Example of a config that wants to use node on a part of the code base.
+The single configs can be useful together with the `extend` property. Below shows an example of a config
+that wants to use lint rules for node environment on a part of the code base.
 
 ```js
 import qlik, { esmJS } from "@qlik/eslint-config";
@@ -209,7 +206,7 @@ export default qlik.compose(
   {
     // adds vitest lint rules on the specified files with an altered rule
     files: ['**/my_tests_are_here/*.spec.ts']
-    extends [qlik.configs.vitest],
+    extend [qlik.configs.vitest],
     rules: {
       "vitest/max-nested-describe": [
         "error",
