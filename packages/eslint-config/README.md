@@ -63,7 +63,7 @@ export default qlik.compose(
   ...qlik.configs.recommended, // adds linting on .js, .jsx, .mjs, .cjs, .ts, .tsx, .cts, .mts files. use for pure browser environment
   {
     ignores: ["dist", "npm", "node_modules"],
-  }
+  },
 );
 ```
 
@@ -91,7 +91,7 @@ export default qlik.compose(
   ...qlik.configs.svelte, // based on the recommended config and adds svelte linting on .svelte files
   {
     ignores: ["dist", "node_modules"],
-  }
+  },
 );
 ```
 
@@ -106,7 +106,7 @@ export default qlik.compose(
   ...qlik.configs.svelte,
   {
     ignores: ["dist", "node_modules"],
-  }
+  },
 );
 ```
 
@@ -152,7 +152,7 @@ Example only use javascript rules with react
 import qlik, { recommendedJS, reactJS } from "@qlik/eslint-config";
 
 export default qlik.compose(
-  reactJS
+  reactJS,
 )
 ```
 
@@ -163,7 +163,7 @@ import qlik, { recommendedJS, reactJS } from "@qlik/eslint-config";
 
 export default qlik.compose(
   reactJS,
-  reactTS
+  reactTS,
 )
 ```
 
@@ -173,7 +173,7 @@ This is equal to:
 import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
-  ...qlik.configs.react
+  ...qlik.configs.react,
 )
 ```
 
@@ -193,6 +193,86 @@ export default qlik.compose(
   },
 )
 
+```
+
+This will take the configs in the `extend` array and perform a deep merge of whatever is defined in the object containing
+the `extend` property with the configs in the `extend` array and return them as separate configs. The deep merge has three
+exceptions. `files`, `ignores` and `globals` are always overwritten by the later config.
+
+```js
+import qlik, { esmJS } from "@qlik/eslint-config";
+
+export default qlik.compose(
+  {
+    extend: [...qlik.configs.recommended], // contains two configs (recommendedJS and recommendedTS)
+    files: ["only_want_lint_here/**/*.js"],
+  },
+)
+```
+
+This will result in two configs, each with the given file pattern like this:
+
+```js
+export default [
+  {
+    ...recommendedJS config
+    files: ["only_want_lint_here/**/*.js"],
+  },
+  {
+    ...recommendedTS config
+    files: ["only_want_lint_here/**/*.js"],
+  }
+]
+```
+
+### More examples with export
+
+One GOTCHA about the flat configs. If there's no `files` property in one of the configs in the config array it is applied
+to every file. So in the case of turning off a rule that belongs to specific config e.g. jest or vitest. The following
+approach does NOT work.
+
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.recommended,
+  qlik.configs.vitest, // <-- this is applied to files inside __test(s)__ folders by default for our convenience
+  {
+    rules: {
+      // I want to change this rule, but it doesn't work because it is applied to all files
+      "vitest/max-nested-describe": [
+        "error",
+        {
+          "max": 3
+        },
+      ],
+    },
+  },
+);
+```
+
+Here the `extend` feature becomes helpful
+
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.recommended,
+  {
+    extend: [qlik.configs.vitest],
+    rules: {
+      // This will add or overwrite the rule in the default config
+      "vitest/max-nested-describe": [
+        "error",
+        {
+          "max": 3
+        },
+      ],
+    },
+  },
+);
 ```
 
 Example of changing the default file patterns on the vitest config.
@@ -216,10 +296,33 @@ export default qlik.compose(
       ]
     }
   },
-  {
-    ignores: ["dist", "npm", "node_modules"],
-  },
 );
+```
+
+This will result in a final config looking like this:
+
+```js
+export default [
+  {
+    ...recommendedJS config
+  },
+  {
+    ...recommendedTS config
+  },
+  {
+    files: ['**/my_tests_are_here/*.spec.ts'],
+    ...vitest config
+    rules: {
+      ... vitest config rules,
+      "vitest/max-nested-describe": [
+        "error",
+        {
+          "max": 3
+        }
+      ]
+    }
+  }
+]
 ```
 
 <!-- prettier-ignore-end -->

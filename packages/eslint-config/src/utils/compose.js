@@ -1,4 +1,7 @@
 // @ts-check
+
+import { mergeConfigs } from "./config.js";
+
 /**
  * Utility function to make it easy to strictly type your "Flat" config file
  *
@@ -33,6 +36,7 @@ export default function compose(...configs) {
     if (extendArr == null || extendArr.length === 0) {
       return config;
     }
+
     const undefinedExtensions = extendArr.reduce((acc, extension, extensionIndex) => {
       const maybeExtension = extension;
       if (maybeExtension == null) {
@@ -52,14 +56,8 @@ export default function compose(...configs) {
     return [
       ...extendArr.map((extension) => {
         const name = [config.name, extension.name].filter(Boolean).join("__");
-        return {
-          ...extension,
-          ...(config.files && { files: config.files }),
-          ...(config.ignores && { ignores: config.ignores }),
-          ...(name && { name }),
-        };
+        return mergeConfigs(extension, config, name ? { name } : {});
       }),
-      config,
     ];
   });
 }

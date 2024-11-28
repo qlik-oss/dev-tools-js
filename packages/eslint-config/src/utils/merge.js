@@ -1,6 +1,6 @@
 // these ones will only do shallow merge, but the merge function will do deep merge
 const noNeedToDeepMerge = ["plugins", "rules", "parser"];
-const overWrite = ["files", "globals"];
+const overWrite = ["files", "globals", "ignores"];
 
 /**
  *
