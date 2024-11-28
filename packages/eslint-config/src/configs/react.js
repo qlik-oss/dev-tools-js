@@ -16,38 +16,45 @@ const reactPlugin = eslintPluginReact;
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
-const reactBaseConfig = {
-  languageOptions: {
-    parserOptions: {
-      ecmaFeatures: {
-        jsx: true,
+const reactBaseConfig = mergeConfigs(
+  // base it on the recommended react plugins config
+  react.configs.recommended,
+  reactPlugin.configs.flat.recommended,
+  jsxA11y.flatConfigs.recommended,
+  // add react-hooks plugin config (no recommended flat config YET!)
+  {
+    plugins: {
+      "react-hooks": reactHooks,
+    },
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+    },
+  },
+
+  // add qlik's recommended react config
+  {
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+        jsxPragma: null, // for @typescript/eslint-parser
       },
-      jsxPragma: null, // for @typescript/eslint-parser
+    },
+
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+
+    rules: {
+      ...reactRules,
+      ...reactA11yRules,
+      ...reactHooksRules,
     },
   },
-
-  plugins: { ...react.configs.recommended.plugins, react: reactPlugin, "jsx-a11y": jsxA11y, "react-hooks": reactHooks },
-
-  settings: {
-    ...react.configs.recommended.settings,
-    react: {
-      version: "detect",
-    },
-  },
-
-  rules: {
-    // react plugin
-    ...reactPlugin.configs.flat.recommended.rules,
-    ...reactRules,
-    // jsx-a11y plugin
-    ...jsxA11y.flatConfigs.recommended.rules,
-    ...reactA11yRules,
-    ...react.configs.recommended.rules,
-    // react-hooks plugin
-    ...reactHooks.configs.recommended.rules,
-    ...reactHooksRules,
-  },
-};
+);
 
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
