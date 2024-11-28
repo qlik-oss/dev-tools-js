@@ -1,4 +1,5 @@
 // @ts-check
+import prettier from "eslint-config-prettier";
 import globals from "globals";
 import { mergeConfigs } from "../utils/config.js";
 import { recommendedJS, recommendedTS } from "./recommended.js";
@@ -29,6 +30,7 @@ const esmJS = mergeConfigs(
     },
     rules: nodeEsmRules,
   },
+  // prettier,
 );
 
 /**
@@ -50,6 +52,7 @@ const esmTS = mergeConfigs(
       // modify typescript specific rules for node esm here if needed
     },
   },
+  // prettier,
 );
 
 export default [esmJS, esmTS];

@@ -32,7 +32,7 @@ const rules = {
 
   // specify curly brace conventions for all control statements
   // https://eslint.org/docs/rules/curly
-  curly: ["error", "multi-line"], // multiline
+  curly: "off",
 
   // require default case in switch statements
   // https://eslint.org/docs/rules/default-case
@@ -499,10 +499,6 @@ const rules = {
   // Disallow template literal placeholder syntax in regular strings
   // https://eslint.org/docs/rules/no-template-curly-in-string
   "no-template-curly-in-string": "error",
-
-  // Avoid code that looks like two expressions but is actually one
-  // https://eslint.org/docs/rules/no-unexpected-multiline
-  "no-unexpected-multiline": "error",
 
   // disallow unreachable statements after a return, throw, continue, or break statement
   "no-unreachable": "error",

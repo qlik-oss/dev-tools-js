@@ -1,4 +1,5 @@
 // @ts-check
+import prettier from "eslint-config-prettier";
 import globals from "globals";
 import { mergeConfigs } from "../utils/config.js";
 import { recommendedJS, recommendedTS } from "./recommended.js";
@@ -28,6 +29,7 @@ const cjsJS = mergeConfigs(
     },
     rules: cjsRules,
   },
+  // prettier,
 );
 
 /**
@@ -49,6 +51,7 @@ const cjsTS = mergeConfigs(
       // modify ts specific rules for node here
     },
   },
+  // prettier,
 );
 
 export default [cjsJS, cjsTS];

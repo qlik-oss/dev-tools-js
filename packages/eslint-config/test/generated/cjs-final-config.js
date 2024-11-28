@@ -116,10 +116,7 @@ export default [
       ],
       "consistent-return": "error",
       "constructor-super": "error",
-      "curly": [
-        "error",
-        "multi-line"
-      ],
+      "curly": "off",
       "default-case": [
         "error",
         {
@@ -1067,10 +1064,7 @@ export default [
       "class-methods-use-this": "off",
       "consistent-return": "error",
       "constructor-super": "off",
-      "curly": [
-        "error",
-        "multi-line"
-      ],
+      "curly": "off",
       "default-case": [
         "error",
         {

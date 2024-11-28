@@ -1,5 +1,6 @@
 // @ts-check
 import react from "@eslint-react/eslint-plugin";
+import prettier from "eslint-config-prettier";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import eslintPluginReact from "eslint-plugin-react";
 // @ts-expect-error no types for this plugin yet
@@ -73,6 +74,7 @@ const reactJS = mergeConfigs(
       "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx"] }],
     },
   },
+  // prettier,
 );
 
 /**
@@ -92,6 +94,7 @@ const reactTS = mergeConfigs(
       "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
     },
   },
+  // prettier,
 );
 
 export default [reactJS, reactTS];

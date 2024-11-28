@@ -1249,10 +1249,7 @@ export default [
       ],
       "consistent-return": "error",
       "constructor-super": "error",
-      "curly": [
-        "error",
-        "multi-line"
-      ],
+      "curly": "off",
       "default-case": [
         "error",
         {
@@ -2230,30 +2227,11 @@ export default [
           "always": []
         }
       ],
-      "react/jsx-closing-bracket-location": [
-        "error",
-        "line-aligned"
-      ],
-      "react/jsx-closing-tag-location": "error",
       "react/jsx-curly-brace-presence": [
         "error",
         {
           "children": "never",
           "props": "never"
-        }
-      ],
-      "react/jsx-curly-newline": [
-        "error",
-        {
-          "multiline": "consistent",
-          "singleline": "consistent"
-        }
-      ],
-      "react/jsx-curly-spacing": [
-        "error",
-        "never",
-        {
-          "allowMultiline": true
         }
       ],
       "react/jsx-equals-spacing": "off",
@@ -2266,27 +2244,12 @@ export default [
           ]
         }
       ],
-      "react/jsx-first-prop-new-line": [
-        "error",
-        "multiline-multiprop"
-      ],
       "react/jsx-fragments": [
         "error",
         "syntax"
       ],
       "react/jsx-indent": "off",
-      "react/jsx-indent-props": [
-        "error",
-        2
-      ],
       "react/jsx-key": 2,
-      "react/jsx-max-props-per-line": [
-        "error",
-        {
-          "maximum": 1,
-          "when": "multiline"
-        }
-      ],
       "react/jsx-no-bind": [
         "error",
         {
@@ -3883,10 +3846,7 @@ export default [
       ],
       "consistent-return": "error",
       "constructor-super": "off",
-      "curly": [
-        "error",
-        "multi-line"
-      ],
+      "curly": "off",
       "default-case": [
         "error",
         {
@@ -4835,30 +4795,11 @@ export default [
           "always": []
         }
       ],
-      "react/jsx-closing-bracket-location": [
-        "error",
-        "line-aligned"
-      ],
-      "react/jsx-closing-tag-location": "error",
       "react/jsx-curly-brace-presence": [
         "error",
         {
           "children": "never",
           "props": "never"
-        }
-      ],
-      "react/jsx-curly-newline": [
-        "error",
-        {
-          "multiline": "consistent",
-          "singleline": "consistent"
-        }
-      ],
-      "react/jsx-curly-spacing": [
-        "error",
-        "never",
-        {
-          "allowMultiline": true
         }
       ],
       "react/jsx-equals-spacing": "off",
@@ -4873,27 +4814,12 @@ export default [
           ]
         }
       ],
-      "react/jsx-first-prop-new-line": [
-        "error",
-        "multiline-multiprop"
-      ],
       "react/jsx-fragments": [
         "error",
         "syntax"
       ],
       "react/jsx-indent": "off",
-      "react/jsx-indent-props": [
-        "error",
-        2
-      ],
       "react/jsx-key": 2,
-      "react/jsx-max-props-per-line": [
-        "error",
-        {
-          "maximum": 1,
-          "when": "multiline"
-        }
-      ],
       "react/jsx-no-bind": [
         "error",
         {

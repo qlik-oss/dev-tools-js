@@ -43,26 +43,6 @@ const rules = {
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md
   "react/jsx-boolean-value": ["error", "never", { always: [] }],
 
-  // Validate closing bracket location in JSX
-  // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md
-  "react/jsx-closing-bracket-location": ["error", "line-aligned"],
-
-  // Validate closing tag location in JSX
-  // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md
-  "react/jsx-closing-tag-location": "error",
-
-  // Enforce or disallow spaces inside of curly braces in JSX attributes
-  // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md
-  "react/jsx-curly-spacing": ["error", "never", { allowMultiline: true }],
-
-  // Validate props indentation in JSX
-  // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md
-  "react/jsx-indent-props": ["error", 2],
-
-  // Limit maximum of props on a single line in JSX
-  // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-max-props-per-line.md
-  "react/jsx-max-props-per-line": ["error", { maximum: 1, when: "multiline" }],
-
   // Prevent usage of .bind() in JSX props
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
   "react/jsx-no-bind": [
@@ -228,10 +208,6 @@ const rules = {
     },
   ],
 
-  // Require that the first prop in a JSX element be on a new line when the element is multiline
-  // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-first-prop-new-line.md
-  "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
-
   // Stylistic, Prettier handles this.
   // Enforce spacing around jsx equals signs
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md
@@ -374,16 +350,6 @@ const rules = {
   // Enforce shorthand or standard form for React fragments
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-fragments.md
   "react/jsx-fragments": ["error", "syntax"],
-
-  // Enforce linebreaks in curly braces in JSX attributes and expressions.
-  // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-curly-newline.md
-  "react/jsx-curly-newline": [
-    "error",
-    {
-      multiline: "consistent",
-      singleline: "consistent",
-    },
-  ],
 
   // Enforce state initialization style
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/state-in-constructor.md
