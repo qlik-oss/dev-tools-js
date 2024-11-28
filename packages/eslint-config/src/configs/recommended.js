@@ -5,9 +5,15 @@ import eslintPluginImportX from "eslint-plugin-import-x";
 import globals from "globals";
 import tsconfig from "typescript-eslint";
 import { mergeConfigs } from "../utils/config.js";
-import rules from "./rules/index.js";
+import eslintCoreRules from "./rules/eslint-core.js";
+import importXRules from "./rules/import-x.js";
+import typescriptRules from "./rules/typescript.js";
 
 const baseConfig = mergeConfigs(
+  // basic js config
+  js.configs.recommended,
+  // import-x plugin config
+  eslintPluginImportX.flatConfigs.recommended,
   {
     languageOptions: {
       globals: globals.browser,
@@ -17,13 +23,10 @@ const baseConfig = mergeConfigs(
       ecmaVersion: "latest",
       sourceType: "module",
     },
-  },
-  js.configs.recommended,
-  eslintPluginImportX.flatConfigs.recommended,
-  {
     rules: {
-      ...rules.importXRules,
-      ...rules.eslintCoreRules,
+      // add our recommended rules
+      ...eslintCoreRules,
+      ...importXRules,
     },
   },
 );
@@ -35,6 +38,7 @@ const recommendedJS = mergeConfigs(
   baseConfig,
   // tsconfig.configs.base sets eslint parser to use the typescript parser to parse .js files - handles all modern syntax
   tsconfig.configs.base,
+  // add qlik's recommended javascript config
   {
     name: "recommended-js",
     files: ["**/*.js", "**/*.mjs", "**/*.cjs"],
@@ -45,8 +49,15 @@ const recommendedJS = mergeConfigs(
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
 const recommendedTS = mergeConfigs(
+  // base it on base config
   baseConfig,
+  // add recommended typescript config
+  ...tsconfig.configs.recommended,
+  // add import-x recommended typescript config
+  eslintPluginImportX.flatConfigs.typescript,
+  // add qlik's recommended typescript config
   {
+    name: "recommended-ts",
     files: ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts", "**/*.d.ts"],
     languageOptions: {
       parserOptions: {
@@ -54,12 +65,7 @@ const recommendedTS = mergeConfigs(
         projectService: true,
       },
     },
-  },
-  ...tsconfig.configs.recommended,
-  eslintPluginImportX.flatConfigs.typescript,
-  {
-    name: "recommended-ts",
-    rules: rules.typescriptRules,
+    rules: typescriptRules,
   },
 );
 

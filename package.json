@@ -10,7 +10,8 @@
     "format:write": "turbo run format:write",
     "lint": "turbo run lint",
     "prepare-release": "changeset",
-    "publish-packages": "changeset publish"
+    "publish-packages": "changeset publish",
+    "test": "turbo run test"
   },
   "prettier": "@qlik/prettier-config",
   "devDependencies": {

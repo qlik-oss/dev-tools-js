@@ -18,23 +18,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 ## Needed for Changesets to find `main` branch
-
       ## https://github.com/changesets/changesets/issues/517
       - name: Create git reference to main branch (for Changesets)
         if: ${{ github.event.pull_request.title != 'Version Packages' }}
         run: git pull --force --no-tags origin main:main
-
       - uses: pnpm/action-setup@v3
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
-
       - run: pnpm install
-
       - run: pnpm exec changeset status --since=main
-
       - run: pnpm format:check
-
       - run: pnpm lint
+      - run: pnpm test

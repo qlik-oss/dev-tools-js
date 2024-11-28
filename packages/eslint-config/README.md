@@ -37,13 +37,17 @@ export default qlik.compose(
 
 ### v1 notable changes
 
-- Updates [`@typescript-eslint/typescript-eslint`](https://github.com/typescript-eslint/typescript-eslint) to v8, this brings a few new rules. See article for v8 <https://typescript-eslint.io/blog/announcing-typescript-eslint-v8>
-- Moves from [`eslint-plugin-import`](https://github.com/import-js/eslint-plugin-import) to [`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x). If you reference any of the `import/` rules you'll need to replace `import/` with `import-x/`.
+- Updates [`@typescript-eslint/typescript-eslint`](https://github.com/typescript-eslint/typescript-eslint) to v8, this brings
+a few new rules. See article for v8 <https://typescript-eslint.io/blog/announcing-typescript-eslint-v8>
+- Moves from [`eslint-plugin-import`](https://github.com/import-js/eslint-plugin-import) to [`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x).
+If you reference any of the `import/` rules you'll need to replace `import/` with `import-x/`.
 - Some stylistic rules have been disabled (for example `function` vs arrow functions)
 
 ## Usage
 
-These configs works on both TypeScript and JavaSript out of the box. (as long as the file endings are any of `.js, .jsx, .mjs, .cjs, .ts, .tsx, .cts, .mts`)
+The default exports configs works on both TypeScript and JavaSript out of the box. (as long as the file endings are any of `.js, .jsx, .mjs, .cjs, .ts, .tsx, .cts, .mts`).
+The configs are eslint flat config arrays populated with configs that has appropriate file endings attached to them. Designed
+to diminish the amount of configuration needed in an `eslint.config.js` file.
 
 To get started, create `eslint.config.js` (if your package json has `"type": "module"`), otherwise create `eslint.config.mjs`.
 If you are not building your project with TypeScript (using Webpack or Vite for example), then tell TypeScript to include
@@ -137,7 +141,61 @@ export default qlik.compose(
 );
 ```
 
-A config can be extended if needed. For example if the default file patterns needs to be altered.
+## Using the named exports configs
+
+The different configs are also accessible through named imports. These configs can be used in specific scenarios where more
+control of the configs are needed. The `extend` property can be used to apply a config on certain file patterns.
+
+Example only use javascript rules with react
+
+```js
+import qlik, { recommendedJS, reactJS } from "@qlik/eslint-config";
+
+export default qlik.compose(
+  reactJS
+)
+```
+
+with typescript support
+
+```js
+import qlik, { recommendedJS, reactJS } from "@qlik/eslint-config";
+
+export default qlik.compose(
+  reactJS,
+  reactTS
+)
+```
+
+This is equal to:
+
+```js
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.react
+)
+```
+
+The single configs can be useful together with the `extend` property. Below shows an example of a config
+that wants to use lint rules for node environment on a part of the code base.
+
+```js
+import qlik, { esmJS } from "@qlik/eslint-config";
+
+export default qlik.compose(
+  // apply recommended config to all files
+  ...qlik.configs.recommended,
+  // set node esm config on .js files inside the tools folder
+  {
+    files: ["tools/**/*.js"],
+    extend: [esmJS],
+  },
+)
+
+```
+
+Example of changing the default file patterns on the vitest config.
 
 ```js
 // @ts-check
@@ -148,7 +206,7 @@ export default qlik.compose(
   {
     // adds vitest lint rules on the specified files with an altered rule
     files: ['**/my_tests_are_here/*.spec.ts']
-    extends [qlik.configs.vitest],
+    extend: [qlik.configs.vitest],
     rules: {
       "vitest/max-nested-describe": [
         "error",
