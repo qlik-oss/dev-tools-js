@@ -74,7 +74,7 @@ const reactJS = mergeConfigs(
       "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx"] }],
     },
   },
-  // prettier,
+  prettier,
 );
 
 /**
@@ -94,7 +94,7 @@ const reactTS = mergeConfigs(
       "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
     },
   },
-  // prettier,
+  prettier,
 );
 
 export default [reactJS, reactTS];

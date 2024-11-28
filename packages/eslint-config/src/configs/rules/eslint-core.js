@@ -32,7 +32,7 @@ const rules = {
 
   // specify curly brace conventions for all control statements
   // https://eslint.org/docs/rules/curly
-  curly: "off",
+  curly: 0,
 
   // require default case in switch statements
   // https://eslint.org/docs/rules/default-case
@@ -500,6 +500,10 @@ const rules = {
   // https://eslint.org/docs/rules/no-template-curly-in-string
   "no-template-curly-in-string": "error",
 
+  // Disallow confusing multiline expressions
+  // https://eslint.org/docs/rules/no-unexpected-multiline
+  "no-unexpected-multiline": 0,
+
   // disallow unreachable statements after a return, throw, continue, or break statement
   "no-unreachable": "error",
 
@@ -865,6 +869,10 @@ const rules = {
   // disallow dangling underscores in identifiers
   // https://eslint.org/docs/rules/no-underscore-dangle
   "no-underscore-dangle": "off",
+
+  // Disallow confusing multiline expressions
+  // https://eslint.org/docs/rules/no-unexpected-multiline
+  "no-unexpected-multiline": 0,
 
   // disallow the use of Boolean literals in conditional expressions
   // also, prefer `a || b` over `a ? a : b`

@@ -44,7 +44,7 @@ const recommendedJS = mergeConfigs(
     name: "recommended-js",
     files: ["**/*.js", "**/*.mjs", "**/*.cjs"],
   },
-  // prettier,
+  prettier,
 );
 
 /**
@@ -69,7 +69,7 @@ const recommendedTS = mergeConfigs(
     },
     rules: typescriptRules,
   },
-  // prettier,
+  prettier,
 );
 
 export default [recommendedJS, recommendedTS];

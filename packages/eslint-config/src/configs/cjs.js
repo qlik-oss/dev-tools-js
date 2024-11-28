@@ -29,7 +29,7 @@ const cjsJS = mergeConfigs(
     },
     rules: cjsRules,
   },
-  // prettier,
+  prettier,
 );
 
 /**
@@ -51,7 +51,7 @@ const cjsTS = mergeConfigs(
       // modify ts specific rules for node here
     },
   },
-  // prettier,
+  prettier,
 );
 
 export default [cjsJS, cjsTS];

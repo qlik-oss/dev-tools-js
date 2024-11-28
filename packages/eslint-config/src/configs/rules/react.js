@@ -195,18 +195,7 @@ const rules = {
 
   // Prevent missing parentheses around multilines JSX
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md
-  "react/jsx-wrap-multilines": [
-    "error",
-    {
-      declaration: "parens-new-line",
-      assignment: "parens-new-line",
-      return: "parens-new-line",
-      arrow: "parens-new-line",
-      condition: "parens-new-line",
-      logical: "parens-new-line",
-      prop: "ignore",
-    },
-  ],
+  "react/jsx-wrap-multilines": "off",
 
   // Stylistic, Prettier handles this.
   // Enforce spacing around jsx equals signs
@@ -266,15 +255,7 @@ const rules = {
 
   // Validate whitespace in and around the JSX opening and closing brackets
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md
-  "react/jsx-tag-spacing": [
-    "error",
-    {
-      closingSlash: "never",
-      beforeSelfClosing: "always",
-      afterOpening: "never",
-      beforeClosing: "never",
-    },
-  ],
+  "react/jsx-tag-spacing": "off",
 
   // Prevent usage of Array index in keys
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
@@ -345,7 +326,7 @@ const rules = {
 
   // Disallow multiple spaces between inline JSX props
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-multi-spaces.md
-  "react/jsx-props-no-multi-spaces": "error",
+  "react/jsx-props-no-multi-spaces": "off",
 
   // Enforce shorthand or standard form for React fragments
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-fragments.md

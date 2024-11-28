@@ -30,7 +30,7 @@ const esmJS = mergeConfigs(
     },
     rules: nodeEsmRules,
   },
-  // prettier,
+  prettier,
 );
 
 /**
@@ -52,7 +52,7 @@ const esmTS = mergeConfigs(
       // modify typescript specific rules for node esm here if needed
     },
   },
-  // prettier,
+  prettier,
 );
 
 export default [esmJS, esmTS];

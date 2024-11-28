@@ -49,7 +49,7 @@ const svelteSvelte = mergeConfigs(
       "no-unused-vars": "off",
     },
   },
-  // prettier,
+  prettier,
 );
 
 export default [recommendedJS, recommendedTS, svelteSvelte];
