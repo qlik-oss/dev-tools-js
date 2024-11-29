@@ -30,10 +30,6 @@ const rules = {
   // https://eslint.org/docs/rules/consistent-return
   "consistent-return": "error",
 
-  // specify curly brace conventions for all control statements
-  // https://eslint.org/docs/rules/curly
-  curly: "off",
-
   // require default case in switch statements
   // https://eslint.org/docs/rules/default-case
   "default-case": ["error", { commentPattern: "^no default$" }],
