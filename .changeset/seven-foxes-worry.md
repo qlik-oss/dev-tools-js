@@ -2,4 +2,4 @@
 "@qlik/eslint-config": patch
 ---
 
-rules cleanup
+Disables stylistic rules, normally handled by prettier.
