@@ -1,6 +1,7 @@
 // @ts-check
 import js from "@eslint/js";
 import tsParser from "@typescript-eslint/parser";
+import prettier from "eslint-config-prettier";
 import eslintPluginImportX from "eslint-plugin-import-x";
 import globals from "globals";
 import tsconfig from "typescript-eslint";
@@ -43,6 +44,7 @@ const recommendedJS = mergeConfigs(
     name: "recommended-js",
     files: ["**/*.js", "**/*.mjs", "**/*.cjs"],
   },
+  prettier,
 );
 
 /**
@@ -67,6 +69,7 @@ const recommendedTS = mergeConfigs(
     },
     rules: typescriptRules,
   },
+  prettier,
 );
 
 export default [recommendedJS, recommendedTS];

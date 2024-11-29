@@ -1,4 +1,5 @@
 // @ts-check
+import prettier from "eslint-config-prettier";
 import eslintPluginSvelte from "eslint-plugin-svelte";
 import svelteParser from "svelte-eslint-parser";
 import tsEslint from "typescript-eslint";
@@ -48,6 +49,7 @@ const svelteSvelte = mergeConfigs(
       "no-unused-vars": "off",
     },
   },
+  prettier,
 );
 
 export default [recommendedJS, recommendedTS, svelteSvelte];

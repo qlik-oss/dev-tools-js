@@ -30,10 +30,6 @@ const rules = {
   // https://eslint.org/docs/rules/consistent-return
   "consistent-return": "error",
 
-  // specify curly brace conventions for all control statements
-  // https://eslint.org/docs/rules/curly
-  curly: ["error", "multi-line"], // multiline
-
   // require default case in switch statements
   // https://eslint.org/docs/rules/default-case
   "default-case": ["error", { commentPattern: "^no default$" }],
@@ -502,7 +498,7 @@ const rules = {
 
   // Avoid code that looks like two expressions but is actually one
   // https://eslint.org/docs/rules/no-unexpected-multiline
-  "no-unexpected-multiline": "error",
+  "no-unexpected-multiline": "off",
 
   // disallow unreachable statements after a return, throw, continue, or break statement
   "no-unreachable": "error",
