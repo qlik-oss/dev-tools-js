@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.1.3
+
+### Patch Changes
+
+- d40c1bc: Add svelte as peer dependency since `eslint-plugin-svelte` needs it.
+
 ## 1.1.2
 
 ### Patch Changes
