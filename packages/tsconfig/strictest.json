@@ -19,6 +19,7 @@
     "noEmit": true,
     "skipLibCheck": true,
     "strict": true,
+    "strictNullChecks": true,
     "target": "ESNext",
     "verbatimModuleSyntax": true
   },
