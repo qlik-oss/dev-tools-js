@@ -227,9 +227,50 @@ export default [
 
 ### More examples with export
 
-One GOTCHA about the flat configs. If there's no `files` property in one of the configs in the config array it is applied
-to every file. So in the case of turning off a rule that belongs to specific config e.g. jest or vitest. The following
-approach does NOT work.
+One GOTCHA about the flat configs. If there's no `files` property in one of the configs in the config array it is applied to every file. So in the case of turning off a rule that belongs to specific config e.g. `@typescript/eslint`. The following
+approach can be problematic.
+
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.recommended, // <-- typescript-eslint is applied to .ts files only
+  {
+    rules: {
+      // I want to change this rule, but it is applied to all files so if I have a .js file somewhere getting linted I will get an ERROR about missing plugin.
+      "@typescript-eslint/method-signature-style": "off",
+    },
+  },
+);
+```
+
+This will have to be fine-tuned. However, it is recommended to not disable rules.
+
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.recommended, // <-- typescript-eslint is applied to .ts files only
+  {
+    files: ["**/*.ts"]
+    rules: {
+      // typescript specific rules here
+      "@typescript-eslint/method-signature-style": "off",
+    },
+  },
+  {
+    rules: {
+      // these are fine, since they are applied to all files
+      "no-var": "off",
+      "import-x/no-unresolved": "off"
+    },
+  },
+);
+```
+
+Another GOTCHA can happen with the vitest and jest configs
 
 ```js
 // @ts-check
