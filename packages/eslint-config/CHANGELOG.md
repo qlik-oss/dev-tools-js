@@ -1,5 +1,12 @@
 # @qlik/eslint-config
 
+## 1.1.4
+
+### Patch Changes
+
+- 2d60fc4: Add documentation for specific use cases
+- 0fecad5: chore: update npm dependencies
+
 ## 1.1.3
 
 ### Patch Changes

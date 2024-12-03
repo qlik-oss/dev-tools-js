@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.3.0
+
+### Minor Changes
+
+- 1d49c7d: Add strictNullchecks to all shared tsconfigs
+
 ## 0.2.8
 
 ### Patch Changes
