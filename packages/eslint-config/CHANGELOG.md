@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.1.7
+
+### Patch Changes
+
+- b82f912: Fix types for main module
+
 ## 1.1.6
 
 ### Patch Changes
