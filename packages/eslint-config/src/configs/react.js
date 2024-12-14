@@ -92,6 +92,9 @@ const reactTS = mergeConfigs(
     rules: {
       // turn on/off or modify js/ts rules necessary for react
       "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
+      // avoid double linting of class-methods-use-this in typescript
+      "class-methods-use-this": "off",
+      "@typescript-eslint/class-methods-use-this": reactBaseConfig.rules?.["class-methods-use-this"] || "off",
     },
   },
   prettier,
