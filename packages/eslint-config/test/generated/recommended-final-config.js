@@ -83,6 +83,7 @@ export default [
         "CSSKeywordValue": false,
         "CSSLayerBlockRule": false,
         "CSSLayerStatementRule": false,
+        "CSSMarginRule": false,
         "CSSMathClamp": false,
         "CSSMathInvert": false,
         "CSSMathMax": false,
@@ -867,12 +868,15 @@ export default [
         "XRDOMOverlayState": false,
         "XRDepthInformation": false,
         "XRFrame": false,
+        "XRHand": false,
         "XRHitTestResult": false,
         "XRHitTestSource": false,
         "XRInputSource": false,
         "XRInputSourceArray": false,
         "XRInputSourceEvent": false,
         "XRInputSourcesChangeEvent": false,
+        "XRJointPose": false,
+        "XRJointSpace": false,
         "XRLayer": false,
         "XRLightEstimate": false,
         "XRLightProbe": false,
@@ -2153,6 +2157,7 @@ export default [
         "CSSKeywordValue": false,
         "CSSLayerBlockRule": false,
         "CSSLayerStatementRule": false,
+        "CSSMarginRule": false,
         "CSSMathClamp": false,
         "CSSMathInvert": false,
         "CSSMathMax": false,
@@ -2937,12 +2942,15 @@ export default [
         "XRDOMOverlayState": false,
         "XRDepthInformation": false,
         "XRFrame": false,
+        "XRHand": false,
         "XRHitTestResult": false,
         "XRHitTestSource": false,
         "XRInputSource": false,
         "XRInputSourceArray": false,
         "XRInputSourceEvent": false,
         "XRInputSourcesChangeEvent": false,
+        "XRJointPose": false,
+        "XRJointSpace": false,
         "XRLayer": false,
         "XRLightEstimate": false,
         "XRLightProbe": false,
@@ -3208,9 +3216,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.16.0"
+            "version": "8.18.0"
           },
-          "version": "8.16.0"
+          "version": "8.18.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
