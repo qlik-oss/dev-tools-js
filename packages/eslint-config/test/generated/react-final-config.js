@@ -3860,7 +3860,24 @@ export default [
       "@typescript-eslint/class-methods-use-this": [
         "warn",
         {
-          "exceptMethods": []
+          "exceptMethods": [
+            "render",
+            "getInitialState",
+            "getDefaultProps",
+            "getChildContext",
+            "componentWillMount",
+            "UNSAFE_componentWillMount",
+            "componentDidMount",
+            "componentWillReceiveProps",
+            "UNSAFE_componentWillReceiveProps",
+            "shouldComponentUpdate",
+            "componentWillUpdate",
+            "UNSAFE_componentWillUpdate",
+            "componentDidUpdate",
+            "componentWillUnmount",
+            "componentDidCatch",
+            "getSnapshotBeforeUpdate"
+          ]
         }
       ],
       "@typescript-eslint/comma-dangle": "off",
@@ -4003,29 +4020,7 @@ export default [
       "block-spacing": "off",
       "brace-style": "off",
       "camelcase": "off",
-      "class-methods-use-this": [
-        "warn",
-        {
-          "exceptMethods": [
-            "render",
-            "getInitialState",
-            "getDefaultProps",
-            "getChildContext",
-            "componentWillMount",
-            "UNSAFE_componentWillMount",
-            "componentDidMount",
-            "componentWillReceiveProps",
-            "UNSAFE_componentWillReceiveProps",
-            "shouldComponentUpdate",
-            "componentWillUpdate",
-            "UNSAFE_componentWillUpdate",
-            "componentDidUpdate",
-            "componentWillUnmount",
-            "componentDidCatch",
-            "getSnapshotBeforeUpdate"
-          ]
-        }
-      ],
+      "class-methods-use-this": "off",
       "comma-dangle": "off",
       "comma-spacing": "off",
       "comma-style": "off",
