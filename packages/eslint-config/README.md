@@ -177,6 +177,17 @@ export default qlik.compose(
 )
 ```
 
+Using only javascript and svelte
+
+```js
+import qlik, { recommendedJS, svelteJS } from "@qlik/eslint-config";
+
+export default qlik.compose(
+  recommendedJS,
+  svelteJS,
+)
+```
+
 The single configs can be useful together with the `extend` property. Below shows an example of a config
 that wants to use lint rules for node environment on a part of the code base.
 

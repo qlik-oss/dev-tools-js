@@ -11,7 +11,7 @@ import svelteRules from "./rules/svelte.js";
  * @type {import("../types/index.js").ESLintFlatConfig}
  * config for Svelte https://github.com/sveltejs/eslint-plugin-svelte
  */
-const svelteSvelte = mergeConfigs(
+const svelteJS = mergeConfigs(
   // base it on svelte plugin recommended config
   ...eslintPluginSvelte.configs["flat/recommended"],
   // add qlik's recommended svelte config
@@ -52,5 +52,5 @@ const svelteSvelte = mergeConfigs(
   prettier,
 );
 
-export default [recommendedJS, recommendedTS, svelteSvelte];
-export { svelteSvelte as svelte };
+export default [recommendedJS, recommendedTS, svelteJS];
+export { svelteJS };
