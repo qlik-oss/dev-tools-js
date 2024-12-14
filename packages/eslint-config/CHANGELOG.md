@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.1.6
+
+### Patch Changes
+
+- 1773312: Expose svelte single config as svelteJS
+
 ## 1.1.5
 
 ### Patch Changes
