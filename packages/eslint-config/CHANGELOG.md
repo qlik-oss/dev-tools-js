@@ -1,5 +1,12 @@
 # @qlik/eslint-config
 
+## 1.1.5
+
+### Patch Changes
+
+- 8522397: chore: update npm dependencies
+- a32a832: Disable class-methods-use-this for typescript files in favor for @typescript-eslint/class-methods-use-this
+
 ## 1.1.4
 
 ### Patch Changes
