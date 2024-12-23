@@ -1176,7 +1176,7 @@ export default [
       "@eslint-react/dom/no-unsafe-target-blank": "warn",
       "@eslint-react/ensure-forward-ref-using-ref": "warn",
       "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn",
-      "@eslint-react/hooks-extra/no-redundant-custom-hook": "warn",
+      "@eslint-react/hooks-extra/no-useless-custom-hooks": "warn",
       "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "warn",
       "@eslint-react/jsx-no-duplicate-props": "warn",
       "@eslint-react/jsx-uses-vars": "warn",
@@ -2626,18 +2626,14 @@ export default [
         "version": "detect"
       },
       "react-x": {
-        "additionalComponents": [
-          {
-            "as": "a",
-            "attributes": [
-              {
-                "as": "href",
-                "name": "to"
-              }
-            ],
-            "name": "Link"
-          }
-        ]
+        "additionalHooks": {
+          "useLayoutEffect": [
+            "useIsomorphicLayoutEffect"
+          ]
+        },
+        "polymorphicPropName": "as",
+        "strictImportCheck": false,
+        "version": "detect"
       }
     }
   },
@@ -3787,9 +3783,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.18.0"
+            "version": "8.18.1"
           },
-          "version": "8.18.0"
+          "version": "8.18.1"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -3826,7 +3822,7 @@ export default [
       "@eslint-react/dom/no-unsafe-target-blank": "warn",
       "@eslint-react/ensure-forward-ref-using-ref": "warn",
       "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn",
-      "@eslint-react/hooks-extra/no-redundant-custom-hook": "warn",
+      "@eslint-react/hooks-extra/no-useless-custom-hooks": "warn",
       "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "warn",
       "@eslint-react/jsx-no-duplicate-props": "warn",
       "@eslint-react/jsx-uses-vars": "warn",
@@ -5374,18 +5370,14 @@ export default [
         "version": "detect"
       },
       "react-x": {
-        "additionalComponents": [
-          {
-            "as": "a",
-            "attributes": [
-              {
-                "as": "href",
-                "name": "to"
-              }
-            ],
-            "name": "Link"
-          }
-        ]
+        "additionalHooks": {
+          "useLayoutEffect": [
+            "useIsomorphicLayoutEffect"
+          ]
+        },
+        "polymorphicPropName": "as",
+        "strictImportCheck": false,
+        "version": "detect"
       }
     }
   }
