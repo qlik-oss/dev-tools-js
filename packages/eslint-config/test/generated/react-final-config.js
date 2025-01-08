@@ -1163,7 +1163,6 @@ export default [
     "rules": {
       "@babel/object-curly-spacing": "off",
       "@babel/semi": "off",
-      "@eslint-react/dom/no-children-in-void-dom-elements": "warn",
       "@eslint-react/dom/no-dangerously-set-innerhtml": "warn",
       "@eslint-react/dom/no-dangerously-set-innerhtml-with-children": "error",
       "@eslint-react/dom/no-find-dom-node": "error",
@@ -1174,12 +1173,11 @@ export default [
       "@eslint-react/dom/no-script-url": "warn",
       "@eslint-react/dom/no-unsafe-iframe-sandbox": "warn",
       "@eslint-react/dom/no-unsafe-target-blank": "warn",
+      "@eslint-react/dom/no-void-elements-with-children": "warn",
       "@eslint-react/ensure-forward-ref-using-ref": "warn",
       "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn",
       "@eslint-react/hooks-extra/no-useless-custom-hooks": "warn",
       "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "warn",
-      "@eslint-react/jsx-no-duplicate-props": "warn",
-      "@eslint-react/jsx-uses-vars": "warn",
       "@eslint-react/no-access-state-in-setstate": "error",
       "@eslint-react/no-array-index-key": "warn",
       "@eslint-react/no-children-count": "warn",
@@ -1196,6 +1194,7 @@ export default [
       "@eslint-react/no-create-ref": "error",
       "@eslint-react/no-default-props": "error",
       "@eslint-react/no-direct-mutation-state": "error",
+      "@eslint-react/no-duplicate-jsx-props": "warn",
       "@eslint-react/no-duplicate-key": "error",
       "@eslint-react/no-forward-ref": "warn",
       "@eslint-react/no-implicit-key": "warn",
@@ -1214,6 +1213,7 @@ export default [
       "@eslint-react/no-unstable-default-props": "warn",
       "@eslint-react/no-unused-class-component-members": "warn",
       "@eslint-react/no-unused-state": "warn",
+      "@eslint-react/use-jsx-vars": "warn",
       "@eslint-react/web-api/no-leaked-event-listener": "warn",
       "@eslint-react/web-api/no-leaked-interval": "warn",
       "@eslint-react/web-api/no-leaked-resize-observer": "warn",
@@ -3783,9 +3783,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.18.1"
+            "version": "8.19.0"
           },
-          "version": "8.18.1"
+          "version": "8.19.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -3809,7 +3809,6 @@ export default [
     "rules": {
       "@babel/object-curly-spacing": "off",
       "@babel/semi": "off",
-      "@eslint-react/dom/no-children-in-void-dom-elements": "warn",
       "@eslint-react/dom/no-dangerously-set-innerhtml": "warn",
       "@eslint-react/dom/no-dangerously-set-innerhtml-with-children": "error",
       "@eslint-react/dom/no-find-dom-node": "error",
@@ -3820,12 +3819,11 @@ export default [
       "@eslint-react/dom/no-script-url": "warn",
       "@eslint-react/dom/no-unsafe-iframe-sandbox": "warn",
       "@eslint-react/dom/no-unsafe-target-blank": "warn",
+      "@eslint-react/dom/no-void-elements-with-children": "warn",
       "@eslint-react/ensure-forward-ref-using-ref": "warn",
       "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn",
       "@eslint-react/hooks-extra/no-useless-custom-hooks": "warn",
       "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "warn",
-      "@eslint-react/jsx-no-duplicate-props": "warn",
-      "@eslint-react/jsx-uses-vars": "warn",
       "@eslint-react/no-access-state-in-setstate": "error",
       "@eslint-react/no-array-index-key": "warn",
       "@eslint-react/no-children-count": "warn",
@@ -3842,6 +3840,7 @@ export default [
       "@eslint-react/no-create-ref": "error",
       "@eslint-react/no-default-props": "error",
       "@eslint-react/no-direct-mutation-state": "error",
+      "@eslint-react/no-duplicate-jsx-props": "warn",
       "@eslint-react/no-duplicate-key": "error",
       "@eslint-react/no-forward-ref": "warn",
       "@eslint-react/no-implicit-key": "warn",
@@ -3860,6 +3859,7 @@ export default [
       "@eslint-react/no-unstable-default-props": "warn",
       "@eslint-react/no-unused-class-component-members": "warn",
       "@eslint-react/no-unused-state": "warn",
+      "@eslint-react/use-jsx-vars": "warn",
       "@eslint-react/web-api/no-leaked-event-listener": "warn",
       "@eslint-react/web-api/no-leaked-interval": "warn",
       "@eslint-react/web-api/no-leaked-resize-observer": "warn",
