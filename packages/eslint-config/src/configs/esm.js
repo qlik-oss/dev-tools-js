@@ -10,8 +10,19 @@ import nodeRules from "./rules/node.js";
  */
 const nodeEsmRules = {
   ...nodeRules,
-  "import-x/extensions": ["error", "ignorePackages"],
   // modify rules for node esm here
+
+  // Ensure consistent use of file extension within the import path
+  // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/extensions.md
+  "import-x/extensions": [
+    "error",
+    "ignorePackages",
+    {
+      ts: "never",
+      mts: "never",
+      tsx: "never",
+    },
+  ],
 };
 
 /**
