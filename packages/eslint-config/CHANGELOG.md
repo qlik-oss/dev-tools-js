@@ -1,5 +1,12 @@
 # @qlik/eslint-config
 
+## 1.1.10
+
+### Patch Changes
+
+- 5e9e755: update npm dependencies
+- ea2a0a7: Only enforce file endings in esm-config by default for js-files.
+
 ## 1.1.9
 
 ### Patch Changes
