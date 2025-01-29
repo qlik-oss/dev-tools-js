@@ -1258,6 +1258,8 @@ export default [
         "error",
         "ignorePackages",
         {
+          "cjs": "never",
+          "cts": "never",
           "js": "never",
           "jsx": "never",
           "mjs": "never",
@@ -3435,6 +3437,8 @@ export default [
         "error",
         "ignorePackages",
         {
+          "cjs": "never",
+          "cts": "never",
           "js": "never",
           "jsx": "never",
           "mjs": "never",

@@ -200,7 +200,12 @@ export default [
       "import-x/export": "error",
       "import-x/extensions": [
         "error",
-        "ignorePackages"
+        "ignorePackages",
+        {
+          "mts": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
       ],
       "import-x/named": "error",
       "import-x/namespace": "error",
@@ -1311,7 +1316,12 @@ export default [
       "import-x/export": "error",
       "import-x/extensions": [
         "error",
-        "ignorePackages"
+        "ignorePackages",
+        {
+          "mts": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
       ],
       "import-x/named": "off",
       "import-x/namespace": "error",

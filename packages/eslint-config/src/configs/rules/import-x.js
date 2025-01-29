@@ -98,9 +98,11 @@ const rules = {
     "ignorePackages",
     {
       js: "never",
+      cjs: "never",
       mjs: "never",
       jsx: "never",
       ts: "never",
+      cts: "never",
       mts: "never",
       tsx: "never",
     },
