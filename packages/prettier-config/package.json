@@ -4,7 +4,7 @@
   "description": "Qlik's shared Prettier config",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
-  "main": "./prettier-config.js",
+  "main": "./index.js",
   "scripts": {
     "format:check": "prettier --check '**' --ignore-unknown",
     "format:write": "prettier --write '**' --ignore-unknown"
