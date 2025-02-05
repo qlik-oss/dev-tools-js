@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.4.21
+
+### Patch Changes
+
+- ead1cf4: fix(prettier-config): support pnpm v10
+
 ## 0.4.20
 
 ### Patch Changes
