@@ -1213,6 +1213,7 @@ export default [
       "@eslint-react/no-unstable-default-props": "warn",
       "@eslint-react/no-unused-class-component-members": "warn",
       "@eslint-react/no-unused-state": "warn",
+      "@eslint-react/no-use-context": "warn",
       "@eslint-react/use-jsx-vars": "warn",
       "@eslint-react/web-api/no-leaked-event-listener": "warn",
       "@eslint-react/web-api/no-leaked-interval": "warn",
@@ -3969,9 +3970,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.22.0"
+            "version": "8.24.1"
           },
-          "version": "8.22.0"
+          "version": "8.24.1"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -4045,6 +4046,7 @@ export default [
       "@eslint-react/no-unstable-default-props": "warn",
       "@eslint-react/no-unused-class-component-members": "warn",
       "@eslint-react/no-unused-state": "warn",
+      "@eslint-react/no-use-context": "warn",
       "@eslint-react/use-jsx-vars": "warn",
       "@eslint-react/web-api/no-leaked-event-listener": "warn",
       "@eslint-react/web-api/no-leaked-interval": "warn",

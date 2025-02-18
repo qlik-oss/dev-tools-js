@@ -6,8 +6,8 @@
   "license": "ISC",
   "main": "./prettier.config.js",
   "scripts": {
-    "format:check": "prettier --check '**' --ignore-unknown",
-    "format:write": "prettier --write '**' --ignore-unknown"
+    "format:check": "cd ../.. && prettier --check 'packages/prettier-config' --ignore-unknown",
+    "format:write": "cd ../.. && prettier --write 'packages/prettier-config' --ignore-unknown"
   },
   "dependencies": {
     "prettier-plugin-organize-imports": "^4.1.0",
@@ -16,10 +16,10 @@
     "prettier-plugin-svelte": "^3.3.3"
   },
   "peerDependencies": {
-    "prettier": "^3.0.0"
+    "prettier": ">=3.0.0"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "publishConfig": {
     "access": "public",

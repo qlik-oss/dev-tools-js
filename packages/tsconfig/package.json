@@ -14,13 +14,8 @@
     "vue.json"
   ],
   "scripts": {
-    "format:check": "prettier --check '**' --ignore-unknown",
-    "format:write": "prettier --write '**' --ignore-unknown"
-  },
-  "prettier": "@qlik/prettier-config",
-  "devDependencies": {
-    "@qlik/prettier-config": "workspace:*",
-    "prettier": "^3.4.2"
+    "format:check": "cd ../.. && prettier --check 'packages/tsconfig' --ignore-unknown",
+    "format:write": "cd ../.. && prettier --write 'packages/tsconfig' --ignore-unknown"
   },
   "publishConfig": {
     "access": "public",
