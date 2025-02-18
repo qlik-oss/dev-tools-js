@@ -1,17 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
-    "lint": {
-      "outputs": []
-    },
-    "test": {
-      "outputs": []
-    },
-    "format:check": {
-      "outputs": []
-    },
-    "format:write": {
-      "outputs": []
-    }
+    "lint": {},
+    "test": {}
   }
 }

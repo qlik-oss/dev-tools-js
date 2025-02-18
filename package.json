@@ -6,8 +6,8 @@
   ],
   "scripts": {
     "empty-changeset": "changeset add --empty",
-    "format:check": "turbo run format:check",
-    "format:write": "turbo run format:write",
+    "format:check": "prettier --check '**' --ignore-unknown",
+    "format:write": "prettier --write '**' --ignore-unknown",
     "lint": "turbo run lint",
     "prepare-release": "changeset",
     "publish-packages": "changeset publish",
@@ -15,10 +15,10 @@
   },
   "prettier": "@qlik/prettier-config",
   "devDependencies": {
-    "@changesets/cli": "2.27.12",
+    "@changesets/cli": "^2.27.12",
     "@qlik/prettier-config": "workspace:*",
-    "prettier": "3.5.1",
-    "turbo": "2.4.2"
+    "prettier": "^3.5.1",
+    "turbo": "^2.4.2"
   },
   "packageManager": "pnpm@10.4.1",
   "engines": {
