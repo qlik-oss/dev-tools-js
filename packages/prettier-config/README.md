@@ -4,6 +4,8 @@ Prettier config to share among projects for consistent formatting. The config is
 
 ## usage
 
+Install `@qlik/prettier-config` as a devDependency in package.json.
+
 Add this to `package.json`
 
 ```json
