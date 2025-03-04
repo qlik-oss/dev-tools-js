@@ -47,6 +47,9 @@ await fs.writeFile(cjsConfig, `export default ${parseConfig(qlik.configs.cjs)}`)
 // esm
 const esmConfig = path.resolve(__dirname, "generated/esm-final-config.js");
 await fs.writeFile(esmConfig, `export default ${parseConfig(qlik.configs.esm)}`);
+// esbrowser
+const esbrowserConfig = path.resolve(__dirname, "generated/esbrowser-final-config.js");
+await fs.writeFile(esbrowserConfig, `export default ${parseConfig(qlik.configs.esbrowser)}`);
 // recommended
 const recommendedConfig = path.resolve(__dirname, "generated/recommended-final-config.js");
 await fs.writeFile(recommendedConfig, `export default ${parseConfig(qlik.configs.recommended)}`);

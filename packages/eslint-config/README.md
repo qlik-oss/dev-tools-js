@@ -53,7 +53,7 @@ To get started, create `eslint.config.js` (if your package json has `"type": "mo
 If you are not building your project with TypeScript (using Webpack or Vite for example), then tell TypeScript to include
 all files by setting `"include": [".*", "**/*"]` in `tsconfig.json`.
 
-For a pure browser environment with no specific frameworks use:
+For a pure browser environment with a bundler and no specific framework use:
 
 ```js
 // @ts-check
@@ -67,7 +67,7 @@ export default qlik.compose(
 );
 ```
 
-Using React with vitest:
+Using React:
 
 ```js
 // @ts-check
@@ -75,6 +75,20 @@ import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
   ...qlik.configs.react, // based on the recommended config and adds react linting on .jsx and .tsx files
+  {
+    ignores: ["dist", "node_modules"],
+  },
+);
+```
+
+Using Pure ES modules in browser:
+
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.esbrowser, // based on the recommended config and adds specific es module rules (file endings)
   {
     ignores: ["dist", "node_modules"],
   },
@@ -137,6 +151,21 @@ export default qlik.compose(
   ...qlik.configs.playwright,   // enable playwright linting on files inside ./test(s) folder.
   {
     ignores: ["dist", "npm", "node_modules"],
+  },
+);
+```
+
+Example: Using React with vitest:
+
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+
+export default qlik.compose(
+  ...qlik.configs.react, // based on the recommended config and adds react linting on .jsx and .tsx files
+  ...qlik.configs.vitest,       // enable vitest linting on files inside __test(s)__ folder
+  {
+    ignores: ["dist", "node_modules"],
   },
 );
 ```

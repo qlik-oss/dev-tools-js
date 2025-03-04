@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "react": "^19.0.0",
-    "svelte": "^5.20.5"
+    "svelte": "^5.21.0"
   },
   "devDependencies": {
     "@qlik/eslint-config": "workspace:*",
