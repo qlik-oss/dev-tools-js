@@ -1,4 +1,5 @@
 import cjs, { cjsJS, cjsTS } from "./configs/cjs.js";
+import esbrowser, { esbrowserJS, esbrowserTS } from "./configs/esbrowser.js";
 import esm, { esmJS, esmTS } from "./configs/esm.js";
 import jest from "./configs/jest.js";
 import playwright from "./configs/playwright.js";
@@ -11,6 +12,7 @@ import compose from "./utils/compose.js";
 declare namespace qlikEslintConfig {
   export namespace configs {
     export { cjs };
+    export { esbrowser };
     export { esm };
     export { playwright };
     export { jest };
@@ -23,4 +25,16 @@ declare namespace qlikEslintConfig {
 }
 
 export default qlikEslintConfig;
-export { cjsJS, cjsTS, esmJS, esmTS, reactJS, reactTS, recommendedJS, recommendedTS, svelteJS };
+export {
+  cjsJS,
+  cjsTS,
+  esbrowserJS,
+  esbrowserTS,
+  esmJS,
+  esmTS,
+  reactJS,
+  reactTS,
+  recommendedJS,
+  recommendedTS,
+  svelteJS,
+};
