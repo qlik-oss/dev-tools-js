@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.2.0
+
+### Minor Changes
+
+- d42af84: Add esbrowser config for pure es modules in browser environment
+
 ## 1.1.11
 
 ### Patch Changes
