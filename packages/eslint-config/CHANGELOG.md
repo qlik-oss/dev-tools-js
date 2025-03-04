@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.2.1
+
+### Patch Changes
+
+- 625824f: Fix typed exports for @qlik/eslint-config
+
 ## 1.2.0
 
 ### Minor Changes
