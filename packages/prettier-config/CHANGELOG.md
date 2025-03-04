@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 0.4.22
+
+### Patch Changes
+
+- d42af84: Update npm dependency prettier-plugin-packagejson
+
 ## 0.4.21
 
 ### Patch Changes
