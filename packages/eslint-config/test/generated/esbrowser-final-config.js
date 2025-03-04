@@ -1,8 +1,7 @@
 export default [
   {
     "files": [
-      "**/*.js",
-      "**/*.jsx"
+      "**/*.{js,mjs}"
     ],
     "languageOptions": {
       "ecmaVersion": "latest",
@@ -1136,91 +1135,20 @@ export default [
         "visualViewport": false,
         "window": false
       },
-      "parser": "@qlik/eslint-config/react-js-parser",
+      "parser": "@qlik/eslint-config/esbrowser-js-parser",
       "parserOptions": {
-        "ecmaFeatures": {
-          "jsx": true
-        },
-        "jsxPragma": null,
         "warnOnUnsupportedTypeScriptVersion": false
       },
       "sourceType": "module"
     },
-    "name": "@qlik/eslint-config/react-js",
+    "name": "@qlik/eslint-config/esbrowser-js",
     "plugins": {
-      "@eslint-react": "@eslint-react-plugin",
-      "@eslint-react/debug": "@eslint-react/debug-plugin",
-      "@eslint-react/dom": "@eslint-react/dom-plugin",
-      "@eslint-react/hooks-extra": "@eslint-react/hooks-extra-plugin",
-      "@eslint-react/naming-convention": "@eslint-react/naming-convention-plugin",
-      "@eslint-react/web-api": "@eslint-react/web-api-plugin",
       "@typescript-eslint": "@typescript-eslint-plugin",
-      "import-x": "import-x-plugin",
-      "jsx-a11y": "jsx-a11y-plugin",
-      "react": "react-plugin",
-      "react-hooks": "react-hooks-plugin"
+      "import-x": "import-x-plugin"
     },
     "rules": {
       "@babel/object-curly-spacing": "off",
       "@babel/semi": "off",
-      "@eslint-react/dom/no-dangerously-set-innerhtml": "warn",
-      "@eslint-react/dom/no-dangerously-set-innerhtml-with-children": "error",
-      "@eslint-react/dom/no-find-dom-node": "error",
-      "@eslint-react/dom/no-missing-button-type": "warn",
-      "@eslint-react/dom/no-missing-iframe-sandbox": "warn",
-      "@eslint-react/dom/no-namespace": "error",
-      "@eslint-react/dom/no-render-return-value": "error",
-      "@eslint-react/dom/no-script-url": "warn",
-      "@eslint-react/dom/no-unsafe-iframe-sandbox": "warn",
-      "@eslint-react/dom/no-unsafe-target-blank": "warn",
-      "@eslint-react/dom/no-void-elements-with-children": "warn",
-      "@eslint-react/ensure-forward-ref-using-ref": "warn",
-      "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn",
-      "@eslint-react/hooks-extra/no-useless-custom-hooks": "warn",
-      "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "warn",
-      "@eslint-react/naming-convention/context-name": "warn",
-      "@eslint-react/naming-convention/use-state": "warn",
-      "@eslint-react/no-access-state-in-setstate": "error",
-      "@eslint-react/no-array-index-key": "warn",
-      "@eslint-react/no-children-count": "warn",
-      "@eslint-react/no-children-for-each": "warn",
-      "@eslint-react/no-children-map": "warn",
-      "@eslint-react/no-children-only": "warn",
-      "@eslint-react/no-children-to-array": "warn",
-      "@eslint-react/no-clone-element": "warn",
-      "@eslint-react/no-comment-textnodes": "warn",
-      "@eslint-react/no-component-will-mount": "error",
-      "@eslint-react/no-component-will-receive-props": "error",
-      "@eslint-react/no-component-will-update": "error",
-      "@eslint-react/no-context-provider": "warn",
-      "@eslint-react/no-create-ref": "error",
-      "@eslint-react/no-default-props": "error",
-      "@eslint-react/no-direct-mutation-state": "error",
-      "@eslint-react/no-duplicate-jsx-props": "warn",
-      "@eslint-react/no-duplicate-key": "warn",
-      "@eslint-react/no-forward-ref": "warn",
-      "@eslint-react/no-implicit-key": "warn",
-      "@eslint-react/no-missing-key": "error",
-      "@eslint-react/no-nested-components": "error",
-      "@eslint-react/no-prop-types": "error",
-      "@eslint-react/no-redundant-should-component-update": "error",
-      "@eslint-react/no-set-state-in-component-did-mount": "warn",
-      "@eslint-react/no-set-state-in-component-did-update": "warn",
-      "@eslint-react/no-set-state-in-component-will-update": "warn",
-      "@eslint-react/no-string-refs": "error",
-      "@eslint-react/no-unsafe-component-will-mount": "warn",
-      "@eslint-react/no-unsafe-component-will-receive-props": "warn",
-      "@eslint-react/no-unsafe-component-will-update": "warn",
-      "@eslint-react/no-unstable-context-value": "warn",
-      "@eslint-react/no-unstable-default-props": "warn",
-      "@eslint-react/no-unused-class-component-members": "warn",
-      "@eslint-react/no-unused-state": "warn",
-      "@eslint-react/no-use-context": "warn",
-      "@eslint-react/use-jsx-vars": "warn",
-      "@eslint-react/web-api/no-leaked-event-listener": "warn",
-      "@eslint-react/web-api/no-leaked-interval": "warn",
-      "@eslint-react/web-api/no-leaked-resize-observer": "warn",
-      "@eslint-react/web-api/no-leaked-timeout": "warn",
       "@stylistic/array-bracket-newline": "off",
       "@stylistic/array-bracket-spacing": "off",
       "@stylistic/array-element-newline": "off",
@@ -1448,24 +1376,7 @@ export default [
       "class-methods-use-this": [
         "warn",
         {
-          "exceptMethods": [
-            "render",
-            "getInitialState",
-            "getDefaultProps",
-            "getChildContext",
-            "componentWillMount",
-            "UNSAFE_componentWillMount",
-            "componentDidMount",
-            "componentWillReceiveProps",
-            "UNSAFE_componentWillReceiveProps",
-            "shouldComponentUpdate",
-            "componentWillUpdate",
-            "UNSAFE_componentWillUpdate",
-            "componentDidUpdate",
-            "componentWillUnmount",
-            "componentDidCatch",
-            "getSnapshotBeforeUpdate"
-          ]
+          "exceptMethods": []
         }
       ],
       "comma-dangle": "off",
@@ -1525,11 +1436,6 @@ export default [
         "error",
         "ignorePackages",
         {
-          "cjs": "never",
-          "cts": "never",
-          "js": "never",
-          "jsx": "never",
-          "mjs": "never",
           "mts": "never",
           "ts": "never",
           "tsx": "never"
@@ -1617,229 +1523,6 @@ export default [
       "import-x/prefer-default-export": "off",
       "indent": "off",
       "indent-legacy": "off",
-      "jsx-a11y/alt-text": [
-        "error",
-        {
-          "area": [],
-          "elements": [
-            "img",
-            "object",
-            "area",
-            "input[type=\"image\"]"
-          ],
-          "img": [],
-          "input[type=\"image\"]": [],
-          "object": []
-        }
-      ],
-      "jsx-a11y/anchor-ambiguous-text": "off",
-      "jsx-a11y/anchor-has-content": [
-        "error",
-        {
-          "components": []
-        }
-      ],
-      "jsx-a11y/anchor-is-valid": [
-        "error",
-        {
-          "aspects": [
-            "noHref",
-            "invalidHref",
-            "preferButton"
-          ],
-          "components": [
-            "Link"
-          ],
-          "specialLink": [
-            "to"
-          ]
-        }
-      ],
-      "jsx-a11y/aria-activedescendant-has-tabindex": "error",
-      "jsx-a11y/aria-props": "error",
-      "jsx-a11y/aria-proptypes": "error",
-      "jsx-a11y/aria-role": [
-        "error",
-        {
-          "ignoreNonDOM": false
-        }
-      ],
-      "jsx-a11y/aria-unsupported-elements": "error",
-      "jsx-a11y/autocomplete-valid": "error",
-      "jsx-a11y/click-events-have-key-events": "error",
-      "jsx-a11y/control-has-associated-label": [
-        "error",
-        {
-          "controlComponents": [],
-          "depth": 5,
-          "ignoreElements": [
-            "audio",
-            "canvas",
-            "embed",
-            "input",
-            "textarea",
-            "tr",
-            "video"
-          ],
-          "ignoreRoles": [
-            "grid",
-            "listbox",
-            "menu",
-            "menubar",
-            "radiogroup",
-            "row",
-            "tablist",
-            "toolbar",
-            "tree",
-            "treegrid"
-          ],
-          "labelAttributes": [
-            "label"
-          ]
-        }
-      ],
-      "jsx-a11y/heading-has-content": [
-        "error",
-        {
-          "components": [
-            ""
-          ]
-        }
-      ],
-      "jsx-a11y/html-has-lang": "error",
-      "jsx-a11y/iframe-has-title": "error",
-      "jsx-a11y/img-redundant-alt": "error",
-      "jsx-a11y/interactive-supports-focus": "error",
-      "jsx-a11y/label-has-associated-control": [
-        "error",
-        {
-          "assert": "both",
-          "controlComponents": [],
-          "depth": 25,
-          "labelAttributes": [],
-          "labelComponents": []
-        }
-      ],
-      "jsx-a11y/label-has-for": "off",
-      "jsx-a11y/lang": "error",
-      "jsx-a11y/media-has-caption": [
-        "error",
-        {
-          "audio": [],
-          "track": [],
-          "video": []
-        }
-      ],
-      "jsx-a11y/mouse-events-have-key-events": "error",
-      "jsx-a11y/no-access-key": "error",
-      "jsx-a11y/no-autofocus": [
-        "error",
-        {
-          "ignoreNonDOM": true
-        }
-      ],
-      "jsx-a11y/no-distracting-elements": [
-        "error",
-        {
-          "elements": [
-            "marquee",
-            "blink"
-          ]
-        }
-      ],
-      "jsx-a11y/no-interactive-element-to-noninteractive-role": [
-        "error",
-        {
-          "tr": [
-            "none",
-            "presentation"
-          ]
-        }
-      ],
-      "jsx-a11y/no-noninteractive-element-interactions": [
-        "error",
-        {
-          "handlers": [
-            "onClick",
-            "onMouseDown",
-            "onMouseUp",
-            "onKeyPress",
-            "onKeyDown",
-            "onKeyUp"
-          ]
-        }
-      ],
-      "jsx-a11y/no-noninteractive-element-to-interactive-role": [
-        "error",
-        {
-          "li": [
-            "menuitem",
-            "option",
-            "row",
-            "tab",
-            "treeitem"
-          ],
-          "ol": [
-            "listbox",
-            "menu",
-            "menubar",
-            "radiogroup",
-            "tablist",
-            "tree",
-            "treegrid"
-          ],
-          "table": [
-            "grid"
-          ],
-          "td": [
-            "gridcell"
-          ],
-          "ul": [
-            "listbox",
-            "menu",
-            "menubar",
-            "radiogroup",
-            "tablist",
-            "tree",
-            "treegrid"
-          ]
-        }
-      ],
-      "jsx-a11y/no-noninteractive-tabindex": [
-        "error",
-        {
-          "allowExpressionValues": true,
-          "roles": [
-            "tabpanel"
-          ],
-          "tags": []
-        }
-      ],
-      "jsx-a11y/no-redundant-roles": [
-        "error",
-        {
-          "nav": [
-            "navigation"
-          ]
-        }
-      ],
-      "jsx-a11y/no-static-element-interactions": [
-        "error",
-        {
-          "handlers": [
-            "onClick",
-            "onMouseDown",
-            "onMouseUp",
-            "onKeyPress",
-            "onKeyDown",
-            "onKeyUp"
-          ]
-        }
-      ],
-      "jsx-a11y/role-has-required-aria-props": "error",
-      "jsx-a11y/role-supports-aria-props": "error",
-      "jsx-a11y/scope": "error",
-      "jsx-a11y/tabindex-no-positive": "error",
       "jsx-quotes": "off",
       "key-spacing": "off",
       "keyword-spacing": "off",
@@ -2462,266 +2145,22 @@ export default [
       "quote-props": "off",
       "quotes": 0,
       "radix": "error",
-      "react-hooks/exhaustive-deps": "error",
-      "react-hooks/rules-of-hooks": "error",
-      "react/button-has-type": [
-        "error",
-        {
-          "button": true,
-          "reset": false,
-          "submit": true
-        }
-      ],
-      "react/default-props-match-prop-types": [
-        "error",
-        {
-          "allowRequiredDefaults": false
-        }
-      ],
-      "react/destructuring-assignment": [
-        "error",
-        "always"
-      ],
-      "react/display-name": 2,
-      "react/forbid-foreign-prop-types": [
-        "warn",
-        {
-          "allowInPropTypes": true
-        }
-      ],
-      "react/forbid-prop-types": [
-        "error",
-        {
-          "checkChildContextTypes": true,
-          "checkContextTypes": true,
-          "forbid": [
-            "any",
-            "array",
-            "object"
-          ]
-        }
-      ],
-      "react/forward-ref-uses-ref": "error",
-      "react/function-component-definition": "off",
-      "react/hook-use-state": "error",
-      "react/jsx-boolean-value": [
-        "error",
-        "never",
-        {
-          "always": []
-        }
-      ],
       "react/jsx-child-element-spacing": "off",
       "react/jsx-closing-bracket-location": "off",
       "react/jsx-closing-tag-location": "off",
-      "react/jsx-curly-brace-presence": [
-        "error",
-        {
-          "children": "never",
-          "props": "never"
-        }
-      ],
       "react/jsx-curly-newline": "off",
       "react/jsx-curly-spacing": "off",
       "react/jsx-equals-spacing": "off",
-      "react/jsx-filename-extension": [
-        2,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ],
       "react/jsx-first-prop-new-line": "off",
-      "react/jsx-fragments": [
-        "error",
-        "syntax"
-      ],
       "react/jsx-indent": "off",
       "react/jsx-indent-props": "off",
-      "react/jsx-key": 2,
       "react/jsx-max-props-per-line": "off",
       "react/jsx-newline": "off",
-      "react/jsx-no-bind": [
-        "error",
-        {
-          "allowArrowFunctions": true,
-          "allowBind": false,
-          "allowFunctions": false,
-          "ignoreDOMComponents": true,
-          "ignoreRefs": true
-        }
-      ],
-      "react/jsx-no-comment-textnodes": "error",
-      "react/jsx-no-constructed-context-values": "error",
-      "react/jsx-no-duplicate-props": [
-        "error",
-        {
-          "ignoreCase": true
-        }
-      ],
-      "react/jsx-no-leaked-render": "error",
-      "react/jsx-no-script-url": [
-        "error",
-        [
-          {
-            "name": "Link",
-            "props": [
-              "to"
-            ]
-          }
-        ]
-      ],
-      "react/jsx-no-target-blank": [
-        "error",
-        {
-          "enforceDynamicLinks": "always"
-        }
-      ],
-      "react/jsx-no-undef": "error",
-      "react/jsx-no-useless-fragment": "error",
       "react/jsx-one-expression-per-line": "off",
-      "react/jsx-pascal-case": [
-        "error",
-        {
-          "allowAllCaps": true,
-          "ignore": []
-        }
-      ],
       "react/jsx-props-no-multi-spaces": "off",
-      "react/jsx-props-no-spread-multi": "error",
-      "react/jsx-props-no-spreading": [
-        "off",
-        {
-          "custom": "enforce",
-          "exceptions": [],
-          "explicitSpread": "ignore",
-          "html": "enforce"
-        }
-      ],
       "react/jsx-space-before-closing": "off",
       "react/jsx-tag-spacing": "off",
-      "react/jsx-uses-react": "off",
-      "react/jsx-uses-vars": "error",
       "react/jsx-wrap-multilines": "off",
-      "react/no-access-state-in-setstate": "error",
-      "react/no-array-index-key": "error",
-      "react/no-arrow-function-lifecycle": "error",
-      "react/no-children-prop": "error",
-      "react/no-danger": "warn",
-      "react/no-danger-with-children": "error",
-      "react/no-deprecated": [
-        "error"
-      ],
-      "react/no-did-update-set-state": "error",
-      "react/no-direct-mutation-state": 2,
-      "react/no-find-dom-node": "error",
-      "react/no-invalid-html-attribute": "error",
-      "react/no-is-mounted": "error",
-      "react/no-namespace": "error",
-      "react/no-object-type-as-default-prop": "error",
-      "react/no-redundant-should-component-update": "error",
-      "react/no-render-return-value": "error",
-      "react/no-string-refs": "error",
-      "react/no-this-in-sfc": "error",
-      "react/no-typos": "error",
-      "react/no-unescaped-entities": "error",
-      "react/no-unknown-property": "error",
-      "react/no-unsafe": 0,
-      "react/no-unstable-nested-components": "error",
-      "react/no-unused-class-component-methods": "error",
-      "react/no-unused-prop-types": [
-        "error",
-        {
-          "customValidators": [],
-          "skipShapeProps": true
-        }
-      ],
-      "react/no-unused-state": "error",
-      "react/no-will-update-set-state": "error",
-      "react/prefer-es6-class": [
-        "error",
-        "always"
-      ],
-      "react/prefer-exact-props": "error",
-      "react/prefer-stateless-function": [
-        "error",
-        {
-          "ignorePureComponents": true
-        }
-      ],
-      "react/prop-types": [
-        "error",
-        {
-          "customValidators": [],
-          "ignore": [],
-          "skipUndeclared": false
-        }
-      ],
-      "react/react-in-jsx-scope": "off",
-      "react/require-default-props": "off",
-      "react/require-render-return": "error",
-      "react/self-closing-comp": "error",
-      "react/sort-comp": [
-        "error",
-        {
-          "groups": {
-            "lifecycle": [
-              "displayName",
-              "propTypes",
-              "contextTypes",
-              "childContextTypes",
-              "mixins",
-              "statics",
-              "defaultProps",
-              "constructor",
-              "getDefaultProps",
-              "getInitialState",
-              "state",
-              "getChildContext",
-              "getDerivedStateFromProps",
-              "componentWillMount",
-              "UNSAFE_componentWillMount",
-              "componentDidMount",
-              "componentWillReceiveProps",
-              "UNSAFE_componentWillReceiveProps",
-              "shouldComponentUpdate",
-              "componentWillUpdate",
-              "UNSAFE_componentWillUpdate",
-              "getSnapshotBeforeUpdate",
-              "componentDidUpdate",
-              "componentDidCatch",
-              "componentWillUnmount"
-            ],
-            "rendering": [
-              "/^render.+$/",
-              "render"
-            ]
-          },
-          "order": [
-            "static-variables",
-            "static-methods",
-            "instance-variables",
-            "lifecycle",
-            "/^handle.+$/",
-            "/^on.+$/",
-            "getters",
-            "setters",
-            "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
-            "instance-methods",
-            "everything-else",
-            "rendering"
-          ]
-        }
-      ],
-      "react/state-in-constructor": [
-        "error",
-        "never"
-      ],
-      "react/static-property-placement": "error",
-      "react/style-prop-object": "error",
-      "react/void-dom-elements-no-children": "error",
       "require-atomic-updates": "error",
       "require-yield": "error",
       "rest-spread-spacing": "off",
@@ -2805,32 +2244,11 @@ export default [
       "wrap-regex": "off",
       "yield-star-spacing": "off",
       "yoda": "error"
-    },
-    "settings": {
-      "react": {
-        "version": "detect"
-      },
-      "react-x": {
-        "additionalHooks": {
-          "useEffect": [
-            "useIsomorphicLayoutEffect"
-          ],
-          "useLayoutEffect": [
-            "useIsomorphicLayoutEffect"
-          ]
-        },
-        "importSource": "react",
-        "polymorphicPropName": "as",
-        "skipImportCheck": true,
-        "strict": false,
-        "version": "detect"
-      }
     }
   },
   {
     "files": [
-      "**/*.ts",
-      "**/*.tsx"
+      "**/*.{ts,mts}"
     ],
     "languageOptions": {
       "ecmaVersion": "latest",
@@ -3964,12 +3382,8 @@ export default [
         "visualViewport": false,
         "window": false
       },
-      "parser": "@qlik/eslint-config/react-ts-parser",
+      "parser": "@qlik/eslint-config/esbrowser-ts-parser",
       "parserOptions": {
-        "ecmaFeatures": {
-          "jsx": true
-        },
-        "jsxPragma": null,
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
@@ -3982,81 +3396,14 @@ export default [
       },
       "sourceType": "module"
     },
-    "name": "@qlik/eslint-config/react-ts",
+    "name": "@qlik/eslint-config/esbrowser-ts",
     "plugins": {
-      "@eslint-react": "@eslint-react-plugin",
-      "@eslint-react/debug": "@eslint-react/debug-plugin",
-      "@eslint-react/dom": "@eslint-react/dom-plugin",
-      "@eslint-react/hooks-extra": "@eslint-react/hooks-extra-plugin",
-      "@eslint-react/naming-convention": "@eslint-react/naming-convention-plugin",
-      "@eslint-react/web-api": "@eslint-react/web-api-plugin",
       "@typescript-eslint": "@typescript-eslint-plugin",
-      "import-x": "import-x-plugin",
-      "jsx-a11y": "jsx-a11y-plugin",
-      "react": "react-plugin",
-      "react-hooks": "react-hooks-plugin"
+      "import-x": "import-x-plugin"
     },
     "rules": {
       "@babel/object-curly-spacing": "off",
       "@babel/semi": "off",
-      "@eslint-react/dom/no-dangerously-set-innerhtml": "warn",
-      "@eslint-react/dom/no-dangerously-set-innerhtml-with-children": "error",
-      "@eslint-react/dom/no-find-dom-node": "error",
-      "@eslint-react/dom/no-missing-button-type": "warn",
-      "@eslint-react/dom/no-missing-iframe-sandbox": "warn",
-      "@eslint-react/dom/no-namespace": "error",
-      "@eslint-react/dom/no-render-return-value": "error",
-      "@eslint-react/dom/no-script-url": "warn",
-      "@eslint-react/dom/no-unsafe-iframe-sandbox": "warn",
-      "@eslint-react/dom/no-unsafe-target-blank": "warn",
-      "@eslint-react/dom/no-void-elements-with-children": "warn",
-      "@eslint-react/ensure-forward-ref-using-ref": "warn",
-      "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn",
-      "@eslint-react/hooks-extra/no-useless-custom-hooks": "warn",
-      "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "warn",
-      "@eslint-react/naming-convention/context-name": "warn",
-      "@eslint-react/naming-convention/use-state": "warn",
-      "@eslint-react/no-access-state-in-setstate": "error",
-      "@eslint-react/no-array-index-key": "warn",
-      "@eslint-react/no-children-count": "warn",
-      "@eslint-react/no-children-for-each": "warn",
-      "@eslint-react/no-children-map": "warn",
-      "@eslint-react/no-children-only": "warn",
-      "@eslint-react/no-children-to-array": "warn",
-      "@eslint-react/no-clone-element": "warn",
-      "@eslint-react/no-comment-textnodes": "warn",
-      "@eslint-react/no-component-will-mount": "error",
-      "@eslint-react/no-component-will-receive-props": "error",
-      "@eslint-react/no-component-will-update": "error",
-      "@eslint-react/no-context-provider": "warn",
-      "@eslint-react/no-create-ref": "error",
-      "@eslint-react/no-default-props": "error",
-      "@eslint-react/no-direct-mutation-state": "error",
-      "@eslint-react/no-duplicate-jsx-props": "warn",
-      "@eslint-react/no-duplicate-key": "warn",
-      "@eslint-react/no-forward-ref": "warn",
-      "@eslint-react/no-implicit-key": "warn",
-      "@eslint-react/no-missing-key": "error",
-      "@eslint-react/no-nested-components": "error",
-      "@eslint-react/no-prop-types": "error",
-      "@eslint-react/no-redundant-should-component-update": "error",
-      "@eslint-react/no-set-state-in-component-did-mount": "warn",
-      "@eslint-react/no-set-state-in-component-did-update": "warn",
-      "@eslint-react/no-set-state-in-component-will-update": "warn",
-      "@eslint-react/no-string-refs": "error",
-      "@eslint-react/no-unsafe-component-will-mount": "warn",
-      "@eslint-react/no-unsafe-component-will-receive-props": "warn",
-      "@eslint-react/no-unsafe-component-will-update": "warn",
-      "@eslint-react/no-unstable-context-value": "warn",
-      "@eslint-react/no-unstable-default-props": "warn",
-      "@eslint-react/no-unused-class-component-members": "warn",
-      "@eslint-react/no-unused-state": "warn",
-      "@eslint-react/no-use-context": "warn",
-      "@eslint-react/use-jsx-vars": "warn",
-      "@eslint-react/web-api/no-leaked-event-listener": "warn",
-      "@eslint-react/web-api/no-leaked-interval": "warn",
-      "@eslint-react/web-api/no-leaked-resize-observer": "warn",
-      "@eslint-react/web-api/no-leaked-timeout": "warn",
       "@stylistic/array-bracket-newline": "off",
       "@stylistic/array-bracket-spacing": "off",
       "@stylistic/array-element-newline": "off",
@@ -4243,24 +3590,7 @@ export default [
       "@typescript-eslint/class-methods-use-this": [
         "warn",
         {
-          "exceptMethods": [
-            "render",
-            "getInitialState",
-            "getDefaultProps",
-            "getChildContext",
-            "componentWillMount",
-            "UNSAFE_componentWillMount",
-            "componentDidMount",
-            "componentWillReceiveProps",
-            "UNSAFE_componentWillReceiveProps",
-            "shouldComponentUpdate",
-            "componentWillUpdate",
-            "UNSAFE_componentWillUpdate",
-            "componentDidUpdate",
-            "componentWillUnmount",
-            "componentDidCatch",
-            "getSnapshotBeforeUpdate"
-          ]
+          "exceptMethods": []
         }
       ],
       "@typescript-eslint/comma-dangle": "off",
@@ -4456,11 +3786,6 @@ export default [
         "error",
         "ignorePackages",
         {
-          "cjs": "never",
-          "cts": "never",
-          "js": "never",
-          "jsx": "never",
-          "mjs": "never",
           "mts": "never",
           "ts": "never",
           "tsx": "never"
@@ -4548,229 +3873,6 @@ export default [
       "import-x/prefer-default-export": "off",
       "indent": "off",
       "indent-legacy": "off",
-      "jsx-a11y/alt-text": [
-        "error",
-        {
-          "area": [],
-          "elements": [
-            "img",
-            "object",
-            "area",
-            "input[type=\"image\"]"
-          ],
-          "img": [],
-          "input[type=\"image\"]": [],
-          "object": []
-        }
-      ],
-      "jsx-a11y/anchor-ambiguous-text": "off",
-      "jsx-a11y/anchor-has-content": [
-        "error",
-        {
-          "components": []
-        }
-      ],
-      "jsx-a11y/anchor-is-valid": [
-        "error",
-        {
-          "aspects": [
-            "noHref",
-            "invalidHref",
-            "preferButton"
-          ],
-          "components": [
-            "Link"
-          ],
-          "specialLink": [
-            "to"
-          ]
-        }
-      ],
-      "jsx-a11y/aria-activedescendant-has-tabindex": "error",
-      "jsx-a11y/aria-props": "error",
-      "jsx-a11y/aria-proptypes": "error",
-      "jsx-a11y/aria-role": [
-        "error",
-        {
-          "ignoreNonDOM": false
-        }
-      ],
-      "jsx-a11y/aria-unsupported-elements": "error",
-      "jsx-a11y/autocomplete-valid": "error",
-      "jsx-a11y/click-events-have-key-events": "error",
-      "jsx-a11y/control-has-associated-label": [
-        "error",
-        {
-          "controlComponents": [],
-          "depth": 5,
-          "ignoreElements": [
-            "audio",
-            "canvas",
-            "embed",
-            "input",
-            "textarea",
-            "tr",
-            "video"
-          ],
-          "ignoreRoles": [
-            "grid",
-            "listbox",
-            "menu",
-            "menubar",
-            "radiogroup",
-            "row",
-            "tablist",
-            "toolbar",
-            "tree",
-            "treegrid"
-          ],
-          "labelAttributes": [
-            "label"
-          ]
-        }
-      ],
-      "jsx-a11y/heading-has-content": [
-        "error",
-        {
-          "components": [
-            ""
-          ]
-        }
-      ],
-      "jsx-a11y/html-has-lang": "error",
-      "jsx-a11y/iframe-has-title": "error",
-      "jsx-a11y/img-redundant-alt": "error",
-      "jsx-a11y/interactive-supports-focus": "error",
-      "jsx-a11y/label-has-associated-control": [
-        "error",
-        {
-          "assert": "both",
-          "controlComponents": [],
-          "depth": 25,
-          "labelAttributes": [],
-          "labelComponents": []
-        }
-      ],
-      "jsx-a11y/label-has-for": "off",
-      "jsx-a11y/lang": "error",
-      "jsx-a11y/media-has-caption": [
-        "error",
-        {
-          "audio": [],
-          "track": [],
-          "video": []
-        }
-      ],
-      "jsx-a11y/mouse-events-have-key-events": "error",
-      "jsx-a11y/no-access-key": "error",
-      "jsx-a11y/no-autofocus": [
-        "error",
-        {
-          "ignoreNonDOM": true
-        }
-      ],
-      "jsx-a11y/no-distracting-elements": [
-        "error",
-        {
-          "elements": [
-            "marquee",
-            "blink"
-          ]
-        }
-      ],
-      "jsx-a11y/no-interactive-element-to-noninteractive-role": [
-        "error",
-        {
-          "tr": [
-            "none",
-            "presentation"
-          ]
-        }
-      ],
-      "jsx-a11y/no-noninteractive-element-interactions": [
-        "error",
-        {
-          "handlers": [
-            "onClick",
-            "onMouseDown",
-            "onMouseUp",
-            "onKeyPress",
-            "onKeyDown",
-            "onKeyUp"
-          ]
-        }
-      ],
-      "jsx-a11y/no-noninteractive-element-to-interactive-role": [
-        "error",
-        {
-          "li": [
-            "menuitem",
-            "option",
-            "row",
-            "tab",
-            "treeitem"
-          ],
-          "ol": [
-            "listbox",
-            "menu",
-            "menubar",
-            "radiogroup",
-            "tablist",
-            "tree",
-            "treegrid"
-          ],
-          "table": [
-            "grid"
-          ],
-          "td": [
-            "gridcell"
-          ],
-          "ul": [
-            "listbox",
-            "menu",
-            "menubar",
-            "radiogroup",
-            "tablist",
-            "tree",
-            "treegrid"
-          ]
-        }
-      ],
-      "jsx-a11y/no-noninteractive-tabindex": [
-        "error",
-        {
-          "allowExpressionValues": true,
-          "roles": [
-            "tabpanel"
-          ],
-          "tags": []
-        }
-      ],
-      "jsx-a11y/no-redundant-roles": [
-        "error",
-        {
-          "nav": [
-            "navigation"
-          ]
-        }
-      ],
-      "jsx-a11y/no-static-element-interactions": [
-        "error",
-        {
-          "handlers": [
-            "onClick",
-            "onMouseDown",
-            "onMouseUp",
-            "onKeyPress",
-            "onKeyDown",
-            "onKeyUp"
-          ]
-        }
-      ],
-      "jsx-a11y/role-has-required-aria-props": "error",
-      "jsx-a11y/role-supports-aria-props": "error",
-      "jsx-a11y/scope": "error",
-      "jsx-a11y/tabindex-no-positive": "error",
       "jsx-quotes": "off",
       "key-spacing": "off",
       "keyword-spacing": "off",
@@ -5369,268 +4471,22 @@ export default [
       "quote-props": "off",
       "quotes": 0,
       "radix": "error",
-      "react-hooks/exhaustive-deps": "error",
-      "react-hooks/rules-of-hooks": "error",
-      "react/button-has-type": [
-        "error",
-        {
-          "button": true,
-          "reset": false,
-          "submit": true
-        }
-      ],
-      "react/default-props-match-prop-types": [
-        "error",
-        {
-          "allowRequiredDefaults": false
-        }
-      ],
-      "react/destructuring-assignment": [
-        "error",
-        "always"
-      ],
-      "react/display-name": 2,
-      "react/forbid-foreign-prop-types": [
-        "warn",
-        {
-          "allowInPropTypes": true
-        }
-      ],
-      "react/forbid-prop-types": [
-        "error",
-        {
-          "checkChildContextTypes": true,
-          "checkContextTypes": true,
-          "forbid": [
-            "any",
-            "array",
-            "object"
-          ]
-        }
-      ],
-      "react/forward-ref-uses-ref": "error",
-      "react/function-component-definition": "off",
-      "react/hook-use-state": "error",
-      "react/jsx-boolean-value": [
-        "error",
-        "never",
-        {
-          "always": []
-        }
-      ],
       "react/jsx-child-element-spacing": "off",
       "react/jsx-closing-bracket-location": "off",
       "react/jsx-closing-tag-location": "off",
-      "react/jsx-curly-brace-presence": [
-        "error",
-        {
-          "children": "never",
-          "props": "never"
-        }
-      ],
       "react/jsx-curly-newline": "off",
       "react/jsx-curly-spacing": "off",
       "react/jsx-equals-spacing": "off",
-      "react/jsx-filename-extension": [
-        2,
-        {
-          "extensions": [
-            ".js",
-            ".jsx",
-            ".ts",
-            ".tsx"
-          ]
-        }
-      ],
       "react/jsx-first-prop-new-line": "off",
-      "react/jsx-fragments": [
-        "error",
-        "syntax"
-      ],
       "react/jsx-indent": "off",
       "react/jsx-indent-props": "off",
-      "react/jsx-key": 2,
       "react/jsx-max-props-per-line": "off",
       "react/jsx-newline": "off",
-      "react/jsx-no-bind": [
-        "error",
-        {
-          "allowArrowFunctions": true,
-          "allowBind": false,
-          "allowFunctions": false,
-          "ignoreDOMComponents": true,
-          "ignoreRefs": true
-        }
-      ],
-      "react/jsx-no-comment-textnodes": "error",
-      "react/jsx-no-constructed-context-values": "error",
-      "react/jsx-no-duplicate-props": [
-        "error",
-        {
-          "ignoreCase": true
-        }
-      ],
-      "react/jsx-no-leaked-render": "error",
-      "react/jsx-no-script-url": [
-        "error",
-        [
-          {
-            "name": "Link",
-            "props": [
-              "to"
-            ]
-          }
-        ]
-      ],
-      "react/jsx-no-target-blank": [
-        "error",
-        {
-          "enforceDynamicLinks": "always"
-        }
-      ],
-      "react/jsx-no-undef": "error",
-      "react/jsx-no-useless-fragment": "error",
       "react/jsx-one-expression-per-line": "off",
-      "react/jsx-pascal-case": [
-        "error",
-        {
-          "allowAllCaps": true,
-          "ignore": []
-        }
-      ],
       "react/jsx-props-no-multi-spaces": "off",
-      "react/jsx-props-no-spread-multi": "error",
-      "react/jsx-props-no-spreading": [
-        "off",
-        {
-          "custom": "enforce",
-          "exceptions": [],
-          "explicitSpread": "ignore",
-          "html": "enforce"
-        }
-      ],
       "react/jsx-space-before-closing": "off",
       "react/jsx-tag-spacing": "off",
-      "react/jsx-uses-react": "off",
-      "react/jsx-uses-vars": "error",
       "react/jsx-wrap-multilines": "off",
-      "react/no-access-state-in-setstate": "error",
-      "react/no-array-index-key": "error",
-      "react/no-arrow-function-lifecycle": "error",
-      "react/no-children-prop": "error",
-      "react/no-danger": "warn",
-      "react/no-danger-with-children": "error",
-      "react/no-deprecated": [
-        "error"
-      ],
-      "react/no-did-update-set-state": "error",
-      "react/no-direct-mutation-state": 2,
-      "react/no-find-dom-node": "error",
-      "react/no-invalid-html-attribute": "error",
-      "react/no-is-mounted": "error",
-      "react/no-namespace": "error",
-      "react/no-object-type-as-default-prop": "error",
-      "react/no-redundant-should-component-update": "error",
-      "react/no-render-return-value": "error",
-      "react/no-string-refs": "error",
-      "react/no-this-in-sfc": "error",
-      "react/no-typos": "error",
-      "react/no-unescaped-entities": "error",
-      "react/no-unknown-property": "error",
-      "react/no-unsafe": 0,
-      "react/no-unstable-nested-components": "error",
-      "react/no-unused-class-component-methods": "error",
-      "react/no-unused-prop-types": [
-        "error",
-        {
-          "customValidators": [],
-          "skipShapeProps": true
-        }
-      ],
-      "react/no-unused-state": "error",
-      "react/no-will-update-set-state": "error",
-      "react/prefer-es6-class": [
-        "error",
-        "always"
-      ],
-      "react/prefer-exact-props": "error",
-      "react/prefer-stateless-function": [
-        "error",
-        {
-          "ignorePureComponents": true
-        }
-      ],
-      "react/prop-types": [
-        "error",
-        {
-          "customValidators": [],
-          "ignore": [],
-          "skipUndeclared": false
-        }
-      ],
-      "react/react-in-jsx-scope": "off",
-      "react/require-default-props": "off",
-      "react/require-render-return": "error",
-      "react/self-closing-comp": "error",
-      "react/sort-comp": [
-        "error",
-        {
-          "groups": {
-            "lifecycle": [
-              "displayName",
-              "propTypes",
-              "contextTypes",
-              "childContextTypes",
-              "mixins",
-              "statics",
-              "defaultProps",
-              "constructor",
-              "getDefaultProps",
-              "getInitialState",
-              "state",
-              "getChildContext",
-              "getDerivedStateFromProps",
-              "componentWillMount",
-              "UNSAFE_componentWillMount",
-              "componentDidMount",
-              "componentWillReceiveProps",
-              "UNSAFE_componentWillReceiveProps",
-              "shouldComponentUpdate",
-              "componentWillUpdate",
-              "UNSAFE_componentWillUpdate",
-              "getSnapshotBeforeUpdate",
-              "componentDidUpdate",
-              "componentDidCatch",
-              "componentWillUnmount"
-            ],
-            "rendering": [
-              "/^render.+$/",
-              "render"
-            ]
-          },
-          "order": [
-            "static-variables",
-            "static-methods",
-            "instance-variables",
-            "lifecycle",
-            "/^handle.+$/",
-            "/^on.+$/",
-            "getters",
-            "setters",
-            "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
-            "instance-methods",
-            "everything-else",
-            "rendering"
-          ]
-        }
-      ],
-      "react/state-in-constructor": [
-        "error",
-        "never"
-      ],
-      "react/static-property-placement": "error",
-      "react/style-prop-object": "error",
-      "react/void-dom-elements-no-children": "error",
       "require-atomic-updates": "error",
       "require-yield": "error",
       "rest-spread-spacing": "off",
@@ -5740,24 +4596,6 @@ export default [
       },
       "import-x/resolver": {
         "typescript": true
-      },
-      "react": {
-        "version": "detect"
-      },
-      "react-x": {
-        "additionalHooks": {
-          "useEffect": [
-            "useIsomorphicLayoutEffect"
-          ],
-          "useLayoutEffect": [
-            "useIsomorphicLayoutEffect"
-          ]
-        },
-        "importSource": "react",
-        "polymorphicPropName": "as",
-        "skipImportCheck": true,
-        "strict": false,
-        "version": "detect"
       }
     }
   }
