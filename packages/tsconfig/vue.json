@@ -12,6 +12,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
+    "stripInternal": true,
     "target": "ESNext",
     "useDefineForClassFields": true,
     "verbatimModuleSyntax": true
