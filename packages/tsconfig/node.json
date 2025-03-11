@@ -11,6 +11,7 @@
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
+    "stripInternal": true,
     "target": "ES2021",
     "verbatimModuleSyntax": true
   },
