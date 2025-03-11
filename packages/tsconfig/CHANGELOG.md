@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 0.3.1
+
+### Patch Changes
+
+- 7e51895: feat(tsconfig): add stripInternal to shared tsconfigs
+
 ## 0.3.0
 
 ### Minor Changes
