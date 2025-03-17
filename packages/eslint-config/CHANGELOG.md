@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.2.3
+
+### Patch Changes
+
+- 8294d0d: update dependencies
+
 ## 1.2.2
 
 ### Patch Changes
