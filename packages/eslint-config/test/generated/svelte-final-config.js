@@ -3398,9 +3398,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.26.1"
+            "version": "8.27.0"
           },
-          "version": "8.26.1"
+          "version": "8.27.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -4628,7 +4628,7 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.26.1"
+            "version": "8.27.0"
           }
         }
       }
@@ -4985,6 +4985,8 @@ export default [
       "svelte/no-store-async": "error",
       "svelte/no-svelte-internal": "error",
       "svelte/no-unknown-style-directive-property": "error",
+      "svelte/no-unnecessary-state-wrap": "error",
+      "svelte/no-unused-props": "error",
       "svelte/no-unused-svelte-ignore": "error",
       "svelte/no-useless-children-snippet": "error",
       "svelte/no-useless-mustaches": "error",
