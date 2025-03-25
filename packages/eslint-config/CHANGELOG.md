@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.3.0
+
+### Minor Changes
+
+- bf6f094: feat: update configs to auto-handle cjs modules
+
 ## 1.2.3
 
 ### Patch Changes
