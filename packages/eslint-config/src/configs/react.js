@@ -3,13 +3,13 @@ import react from "@eslint-react/eslint-plugin";
 import prettier from "eslint-config-prettier";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import eslintPluginReact from "eslint-plugin-react";
-// @ts-expect-error no types for this plugin yet
 import reactHooks from "eslint-plugin-react-hooks";
 import { mergeConfigs } from "../utils/config.js";
-import { recommendedJS, recommendedTS } from "./recommended.js";
 import reactA11yRules from "./rules/react-a11y.js";
 import reactHooksRules from "./rules/react-hooks.js";
 import reactRules from "./rules/react.js";
+import { baseConfigJS, baseConfigTS } from "./shared/base.js";
+import { baseCjsJS, baseCjsTS } from "./shared/node.js";
 
 /** @type {any} */
 const reactPlugin = eslintPluginReact;
@@ -62,7 +62,7 @@ const reactBaseConfig = mergeConfigs(
  */
 const reactJS = mergeConfigs(
   // base it on the recommended javascript config
-  recommendedJS,
+  baseConfigJS,
   // add the base react config
   reactBaseConfig,
   // add qlik's recommended react config for javascript
@@ -82,7 +82,7 @@ const reactJS = mergeConfigs(
  */
 const reactTS = mergeConfigs(
   // base it on the recommended typescript config
-  recommendedTS,
+  baseConfigTS,
   // add the base react config
   reactBaseConfig,
   // add qlik's recommended react config for typescript
@@ -100,5 +100,31 @@ const reactTS = mergeConfigs(
   prettier,
 );
 
-export default [reactJS, reactTS];
+/**
+ * Adding commonjs config for .cjs files
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
+const reactCJS = mergeConfigs(
+  baseCjsJS,
+  {
+    name: "react-cjs",
+    files: ["**/*.cjs"],
+  },
+  prettier,
+);
+
+/**
+ * Adding commonjs config for .cts files
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
+const reactCTS = mergeConfigs(
+  baseCjsTS,
+  {
+    name: "react-cts",
+    files: ["**/*.cts"],
+  },
+  prettier,
+);
+
+export default [reactJS, reactTS, reactCJS, reactCTS];
 export { reactJS, reactTS };

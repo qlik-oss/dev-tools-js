@@ -2,8 +2,9 @@
 import prettier from "eslint-config-prettier";
 import globals from "globals";
 import { mergeConfigs } from "../utils/config.js";
-import { recommendedJS, recommendedTS } from "./recommended.js";
 import nodeRules from "./rules/node.js";
+import { baseConfigJS, baseConfigTS } from "./shared/base.js";
+import { baseCjsJS, baseCjsTS } from "./shared/node.js";
 
 /**
  * @satisfies {import("../types/index.js").ESLintFlatConfig["rules"]}
@@ -26,11 +27,12 @@ const nodeEsmRules = {
 };
 
 /**
+ * ESM config for javascript in node
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
 const esmJS = mergeConfigs(
   // base it on the recommended javascript config
-  recommendedJS,
+  baseConfigJS,
   // add qlik's recommended node esm config for javascript
   {
     name: "node-esm-js",
@@ -45,11 +47,12 @@ const esmJS = mergeConfigs(
 );
 
 /**
+ * ESM config for typescript in node
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
 const esmTS = mergeConfigs(
   // base it on the recommended typescript config
-  recommendedTS,
+  baseConfigTS,
   // add qlik's recommended node esm config for typescript
   {
     name: "node-esm-ts",
@@ -66,5 +69,31 @@ const esmTS = mergeConfigs(
   prettier,
 );
 
-export default [esmJS, esmTS];
+/**
+ * Adding commonjs config for .cjs files
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
+const esmCJS = mergeConfigs(
+  baseCjsJS,
+  {
+    name: "node-esm-cjs",
+    files: ["**/*.cjs"],
+  },
+  prettier,
+);
+
+/**
+ * Adding commonjs config for .cts files
+ * @type {import("../types/index.js").ESLintFlatConfig}
+ */
+const esmCTS = mergeConfigs(
+  baseCjsTS,
+  {
+    name: "node-esm-cts",
+    files: ["**/*.cts"],
+  },
+  prettier,
+);
+
+export default [esmJS, esmTS, esmCJS, esmCTS];
 export { esmJS, esmTS };
