@@ -2,8 +2,7 @@ export default [
   {
     "files": [
       "**/*.js",
-      "**/*.mjs",
-      "**/*.cjs"
+      "**/*.mjs"
     ],
     "languageOptions": {
       "ecmaVersion": "latest",
@@ -2256,9 +2255,7 @@ export default [
   {
     "files": [
       "**/*.ts",
-      "**/*.tsx",
       "**/*.mts",
-      "**/*.cts",
       "**/*.d.ts"
     ],
     "languageOptions": {
@@ -3398,9 +3395,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.27.0"
+            "version": "8.28.0"
           },
-          "version": "8.27.0"
+          "version": "8.28.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -4628,7 +4625,7 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.27.0"
+            "version": "8.28.0"
           }
         }
       }
