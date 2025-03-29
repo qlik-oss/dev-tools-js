@@ -7,7 +7,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react": "^19.0.0"
+    "react": "^19.1.0"
   },
   "devDependencies": {
     "@qlik/eslint-config": "workspace:*",

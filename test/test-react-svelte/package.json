@@ -7,7 +7,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react": "^19.0.0",
+    "react": "^19.1.0",
     "svelte": "^5.25.3"
   },
   "devDependencies": {
