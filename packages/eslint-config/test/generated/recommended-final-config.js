@@ -3395,9 +3395,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.28.0"
+            "version": "8.29.0"
           },
-          "version": "8.28.0"
+          "version": "8.29.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -4435,7 +4435,7 @@ export default [
       "no-useless-return": "error",
       "no-var": "error",
       "no-whitespace-before-property": "off",
-      "no-with": "error",
+      "no-with": "off",
       "no-wrap-func": "off",
       "nonblock-statement-body-position": "off",
       "object-curly-newline": "off",
@@ -5897,9 +5897,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.28.0"
+            "version": "8.29.0"
           },
-          "version": "8.28.0"
+          "version": "8.29.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -6937,7 +6937,7 @@ export default [
       "no-useless-return": "error",
       "no-var": "error",
       "no-whitespace-before-property": "off",
-      "no-with": "error",
+      "no-with": "off",
       "no-wrap-func": "off",
       "nonblock-statement-body-position": "off",
       "object-curly-newline": "off",
