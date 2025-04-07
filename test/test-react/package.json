@@ -7,12 +7,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react": "^19.0.0"
+    "react": "^19.1.0"
   },
   "devDependencies": {
     "@qlik/eslint-config": "workspace:*",
     "@qlik/tsconfig": "workspace:*",
-    "@types/react": "^19.0.12",
-    "eslint": "^9.23.0"
+    "@types/react": "^19.1.0",
+    "eslint": "^9.24.0"
   }
 }

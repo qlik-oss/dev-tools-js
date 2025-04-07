@@ -1167,13 +1167,13 @@ export default [
       "@eslint-react/dom/no-dangerously-set-innerhtml-with-children": "error",
       "@eslint-react/dom/no-find-dom-node": "error",
       "@eslint-react/dom/no-flush-sync": "error",
+      "@eslint-react/dom/no-hydrate": "error",
       "@eslint-react/dom/no-missing-button-type": "warn",
       "@eslint-react/dom/no-missing-iframe-sandbox": "warn",
       "@eslint-react/dom/no-namespace": "error",
       "@eslint-react/dom/no-render": "error",
       "@eslint-react/dom/no-render-return-value": "error",
       "@eslint-react/dom/no-script-url": "warn",
-      "@eslint-react/dom/no-unknown-property": "warn",
       "@eslint-react/dom/no-unsafe-iframe-sandbox": "warn",
       "@eslint-react/dom/no-unsafe-target-blank": "warn",
       "@eslint-react/dom/no-use-form-state": "error",
@@ -1182,7 +1182,9 @@ export default [
       "@eslint-react/hooks-extra/no-unnecessary-use-prefix": "warn",
       "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "warn",
       "@eslint-react/jsx-no-duplicate-props": "warn",
+      "@eslint-react/jsx-uses-react": "warn",
       "@eslint-react/jsx-uses-vars": "warn",
+      "@eslint-react/naming-convention/context-name": "warn",
       "@eslint-react/no-access-state-in-setstate": "error",
       "@eslint-react/no-array-index-key": "warn",
       "@eslint-react/no-children-count": "warn",
@@ -1219,7 +1221,6 @@ export default [
       "@eslint-react/no-unused-state": "warn",
       "@eslint-react/no-use-context": "warn",
       "@eslint-react/no-useless-forward-ref": "warn",
-      "@eslint-react/no-useless-fragment": "warn",
       "@eslint-react/web-api/no-leaked-event-listener": "warn",
       "@eslint-react/web-api/no-leaked-interval": "warn",
       "@eslint-react/web-api/no-leaked-resize-observer": "warn",
@@ -3976,9 +3977,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.28.0"
+            "version": "8.29.0"
           },
-          "version": "8.28.0"
+          "version": "8.29.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -4006,13 +4007,13 @@ export default [
       "@eslint-react/dom/no-dangerously-set-innerhtml-with-children": "error",
       "@eslint-react/dom/no-find-dom-node": "error",
       "@eslint-react/dom/no-flush-sync": "error",
+      "@eslint-react/dom/no-hydrate": "error",
       "@eslint-react/dom/no-missing-button-type": "warn",
       "@eslint-react/dom/no-missing-iframe-sandbox": "warn",
       "@eslint-react/dom/no-namespace": "error",
       "@eslint-react/dom/no-render": "error",
       "@eslint-react/dom/no-render-return-value": "error",
       "@eslint-react/dom/no-script-url": "warn",
-      "@eslint-react/dom/no-unknown-property": "warn",
       "@eslint-react/dom/no-unsafe-iframe-sandbox": "warn",
       "@eslint-react/dom/no-unsafe-target-blank": "warn",
       "@eslint-react/dom/no-use-form-state": "error",
@@ -4021,7 +4022,9 @@ export default [
       "@eslint-react/hooks-extra/no-unnecessary-use-prefix": "warn",
       "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "warn",
       "@eslint-react/jsx-no-duplicate-props": "warn",
+      "@eslint-react/jsx-uses-react": "warn",
       "@eslint-react/jsx-uses-vars": "warn",
+      "@eslint-react/naming-convention/context-name": "warn",
       "@eslint-react/no-access-state-in-setstate": "error",
       "@eslint-react/no-array-index-key": "warn",
       "@eslint-react/no-children-count": "warn",
@@ -4058,7 +4061,6 @@ export default [
       "@eslint-react/no-unused-state": "warn",
       "@eslint-react/no-use-context": "warn",
       "@eslint-react/no-useless-forward-ref": "warn",
-      "@eslint-react/no-useless-fragment": "warn",
       "@eslint-react/web-api/no-leaked-event-listener": "warn",
       "@eslint-react/web-api/no-leaked-interval": "warn",
       "@eslint-react/web-api/no-leaked-resize-observer": "warn",
@@ -5326,7 +5328,7 @@ export default [
       "no-useless-return": "error",
       "no-var": "error",
       "no-whitespace-before-property": "off",
-      "no-with": "error",
+      "no-with": "off",
       "no-wrap-func": "off",
       "nonblock-statement-body-position": "off",
       "object-curly-newline": "off",
@@ -7052,9 +7054,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.28.0"
+            "version": "8.29.0"
           },
-          "version": "8.28.0"
+          "version": "8.29.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -8092,7 +8094,7 @@ export default [
       "no-useless-return": "error",
       "no-var": "error",
       "no-whitespace-before-property": "off",
-      "no-with": "error",
+      "no-with": "off",
       "no-wrap-func": "off",
       "nonblock-statement-body-position": "off",
       "object-curly-newline": "off",
