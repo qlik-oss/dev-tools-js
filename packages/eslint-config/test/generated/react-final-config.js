@@ -1205,7 +1205,9 @@ export default [
       "@eslint-react/no-forward-ref": "warn",
       "@eslint-react/no-implicit-key": "warn",
       "@eslint-react/no-missing-key": "error",
+      "@eslint-react/no-misused-capture-owner-stack": "error",
       "@eslint-react/no-nested-component-definitions": "error",
+      "@eslint-react/no-nested-lazy-component-declarations": "warn",
       "@eslint-react/no-prop-types": "error",
       "@eslint-react/no-redundant-should-component-update": "error",
       "@eslint-react/no-set-state-in-component-did-mount": "warn",
@@ -2815,6 +2817,7 @@ export default [
         "version": "detect"
       },
       "react-x": {
+        "additionalComponents": [],
         "additionalHooks": {
           "useEffect": [
             "useIsomorphicLayoutEffect"
@@ -2826,7 +2829,7 @@ export default [
         "importSource": "react",
         "polymorphicPropName": "as",
         "skipImportCheck": true,
-        "strict": false,
+        "strict": true,
         "version": "detect"
       }
     }
@@ -3977,9 +3980,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.29.0"
+            "version": "8.30.1"
           },
-          "version": "8.29.0"
+          "version": "8.30.1"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -4045,7 +4048,9 @@ export default [
       "@eslint-react/no-forward-ref": "warn",
       "@eslint-react/no-implicit-key": "warn",
       "@eslint-react/no-missing-key": "error",
+      "@eslint-react/no-misused-capture-owner-stack": "error",
       "@eslint-react/no-nested-component-definitions": "error",
+      "@eslint-react/no-nested-lazy-component-declarations": "warn",
       "@eslint-react/no-prop-types": "error",
       "@eslint-react/no-redundant-should-component-update": "error",
       "@eslint-react/no-set-state-in-component-did-mount": "warn",
@@ -5753,6 +5758,7 @@ export default [
         "version": "detect"
       },
       "react-x": {
+        "additionalComponents": [],
         "additionalHooks": {
           "useEffect": [
             "useIsomorphicLayoutEffect"
@@ -5764,7 +5770,7 @@ export default [
         "importSource": "react",
         "polymorphicPropName": "as",
         "skipImportCheck": true,
-        "strict": false,
+        "strict": true,
         "version": "detect"
       }
     }
@@ -7054,9 +7060,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.29.0"
+            "version": "8.30.1"
           },
-          "version": "8.29.0"
+          "version": "8.30.1"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
