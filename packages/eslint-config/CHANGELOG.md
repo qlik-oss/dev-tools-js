@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.3.4
+
+### Patch Changes
+
+- fb51a53: chore: update npm dependencies
+
 ## 1.3.3
 
 ### Patch Changes
