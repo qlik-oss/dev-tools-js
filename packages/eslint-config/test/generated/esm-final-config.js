@@ -8,6 +8,7 @@ export default [
       "globals": {
         "AbortController": false,
         "AbortSignal": false,
+        "AsyncDisposableStack": false,
         "Blob": false,
         "BroadcastChannel": false,
         "Buffer": false,
@@ -20,6 +21,7 @@ export default [
         "CustomEvent": false,
         "DOMException": false,
         "DecompressionStream": false,
+        "DisposableStack": false,
         "Event": false,
         "EventTarget": false,
         "File": false,
@@ -45,6 +47,7 @@ export default [
         "Request": false,
         "Response": false,
         "SubtleCrypto": false,
+        "SuppressedError": false,
         "TextDecoder": false,
         "TextDecoderStream": false,
         "TextEncoder": false,
@@ -52,6 +55,7 @@ export default [
         "TransformStream": false,
         "TransformStreamDefaultController": false,
         "URL": false,
+        "URLPattern": false,
         "URLSearchParams": false,
         "WebAssembly": false,
         "WebSocket": false,
@@ -1201,6 +1205,7 @@ export default [
       "globals": {
         "AbortController": false,
         "AbortSignal": false,
+        "AsyncDisposableStack": false,
         "Blob": false,
         "BroadcastChannel": false,
         "Buffer": false,
@@ -1213,6 +1218,7 @@ export default [
         "CustomEvent": false,
         "DOMException": false,
         "DecompressionStream": false,
+        "DisposableStack": false,
         "Event": false,
         "EventTarget": false,
         "File": false,
@@ -1238,6 +1244,7 @@ export default [
         "Request": false,
         "Response": false,
         "SubtleCrypto": false,
+        "SuppressedError": false,
         "TextDecoder": false,
         "TextDecoderStream": false,
         "TextEncoder": false,
@@ -1245,6 +1252,7 @@ export default [
         "TransformStream": false,
         "TransformStreamDefaultController": false,
         "URL": false,
+        "URLPattern": false,
         "URLSearchParams": false,
         "WebAssembly": false,
         "WebSocket": false,
@@ -1279,9 +1287,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.31.0"
+            "version": "8.32.0"
           },
-          "version": "8.31.0"
+          "version": "8.32.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -2500,6 +2508,7 @@ export default [
       "globals": {
         "AbortController": false,
         "AbortSignal": false,
+        "AsyncDisposableStack": false,
         "Blob": false,
         "BroadcastChannel": false,
         "Buffer": false,
@@ -2512,6 +2521,7 @@ export default [
         "CustomEvent": false,
         "DOMException": false,
         "DecompressionStream": false,
+        "DisposableStack": false,
         "Event": false,
         "EventTarget": false,
         "File": false,
@@ -2537,6 +2547,7 @@ export default [
         "Request": false,
         "Response": false,
         "SubtleCrypto": false,
+        "SuppressedError": false,
         "TextDecoder": false,
         "TextDecoderStream": false,
         "TextEncoder": false,
@@ -2544,6 +2555,7 @@ export default [
         "TransformStream": false,
         "TransformStreamDefaultController": false,
         "URL": false,
+        "URLPattern": false,
         "URLSearchParams": false,
         "WebAssembly": false,
         "WebSocket": false,
@@ -3698,6 +3710,7 @@ export default [
       "globals": {
         "AbortController": false,
         "AbortSignal": false,
+        "AsyncDisposableStack": false,
         "Blob": false,
         "BroadcastChannel": false,
         "Buffer": false,
@@ -3710,6 +3723,7 @@ export default [
         "CustomEvent": false,
         "DOMException": false,
         "DecompressionStream": false,
+        "DisposableStack": false,
         "Event": false,
         "EventTarget": false,
         "File": false,
@@ -3735,6 +3749,7 @@ export default [
         "Request": false,
         "Response": false,
         "SubtleCrypto": false,
+        "SuppressedError": false,
         "TextDecoder": false,
         "TextDecoderStream": false,
         "TextEncoder": false,
@@ -3742,6 +3757,7 @@ export default [
         "TransformStream": false,
         "TransformStreamDefaultController": false,
         "URL": false,
+        "URLPattern": false,
         "URLSearchParams": false,
         "WebAssembly": false,
         "WebSocket": false,
@@ -3776,9 +3792,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.31.0"
+            "version": "8.32.0"
           },
-          "version": "8.31.0"
+          "version": "8.32.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
