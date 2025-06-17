@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.3.6
+
+### Patch Changes
+
+- 19e9e79: update deps
+
 ## 1.3.5
 
 ### Patch Changes
