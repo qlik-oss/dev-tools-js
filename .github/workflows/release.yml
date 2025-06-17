@@ -1,9 +1,10 @@
 name: Release
 
-permissions:
-  contents: read
-  pull-requests: write
-  packages: write
+# Some permissions are missing
+# permissions:
+#   contents: read
+#   pull-requests: write
+#   packages: write
 
 on:
   push:
