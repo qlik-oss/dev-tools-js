@@ -144,6 +144,7 @@ export default [
         "CharacterBoundsUpdateEvent": false,
         "CharacterData": false,
         "Clipboard": false,
+        "ClipboardChangeEvent": false,
         "ClipboardEvent": false,
         "ClipboardItem": false,
         "CloseEvent": false,
@@ -160,6 +161,7 @@ export default [
         "CookieStore": false,
         "CookieStoreManager": false,
         "CountQueuingStrategy": false,
+        "CreateMonitor": false,
         "Credential": false,
         "CredentialsContainer": false,
         "CropTarget": false,
@@ -411,6 +413,7 @@ export default [
         "InputDeviceCapabilities": false,
         "InputDeviceInfo": false,
         "InputEvent": false,
+        "IntegrityViolationReportBody": false,
         "IntersectionObserver": false,
         "IntersectionObserverEntry": false,
         "Keyboard": false,
@@ -571,6 +574,7 @@ export default [
         "PushManager": false,
         "PushSubscription": false,
         "PushSubscriptionOptions": false,
+        "QuotaExceededError": false,
         "RTCCertificate": false,
         "RTCDTMFSender": false,
         "RTCDTMFToneChangeEvent": false,
@@ -757,6 +761,7 @@ export default [
         "SubmitEvent": false,
         "Subscriber": false,
         "SubtleCrypto": false,
+        "Summarizer": false,
         "SuppressedError": false,
         "SyncManager": false,
         "TEMPORARY": false,
@@ -788,6 +793,7 @@ export default [
         "TransformStream": false,
         "TransformStreamDefaultController": false,
         "TransitionEvent": false,
+        "Translator": false,
         "TreeWalker": false,
         "TrustedHTML": false,
         "TrustedScript": false,
@@ -823,6 +829,7 @@ export default [
         "ViewTimeline": false,
         "ViewTransition": false,
         "ViewTransitionTypeSet": false,
+        "Viewport": false,
         "VirtualKeyboard": false,
         "VirtualKeyboardGeometryChangeEvent": false,
         "VisibilityStateEntry": false,
@@ -1152,6 +1159,7 @@ export default [
         "toolbar": false,
         "top": false,
         "trustedTypes": false,
+        "viewport": false,
         "visualViewport": false,
         "when": false,
         "window": false
@@ -3000,6 +3008,7 @@ export default [
         "CharacterBoundsUpdateEvent": false,
         "CharacterData": false,
         "Clipboard": false,
+        "ClipboardChangeEvent": false,
         "ClipboardEvent": false,
         "ClipboardItem": false,
         "CloseEvent": false,
@@ -3016,6 +3025,7 @@ export default [
         "CookieStore": false,
         "CookieStoreManager": false,
         "CountQueuingStrategy": false,
+        "CreateMonitor": false,
         "Credential": false,
         "CredentialsContainer": false,
         "CropTarget": false,
@@ -3267,6 +3277,7 @@ export default [
         "InputDeviceCapabilities": false,
         "InputDeviceInfo": false,
         "InputEvent": false,
+        "IntegrityViolationReportBody": false,
         "IntersectionObserver": false,
         "IntersectionObserverEntry": false,
         "Keyboard": false,
@@ -3427,6 +3438,7 @@ export default [
         "PushManager": false,
         "PushSubscription": false,
         "PushSubscriptionOptions": false,
+        "QuotaExceededError": false,
         "RTCCertificate": false,
         "RTCDTMFSender": false,
         "RTCDTMFToneChangeEvent": false,
@@ -3613,6 +3625,7 @@ export default [
         "SubmitEvent": false,
         "Subscriber": false,
         "SubtleCrypto": false,
+        "Summarizer": false,
         "SuppressedError": false,
         "SyncManager": false,
         "TEMPORARY": false,
@@ -3644,6 +3657,7 @@ export default [
         "TransformStream": false,
         "TransformStreamDefaultController": false,
         "TransitionEvent": false,
+        "Translator": false,
         "TreeWalker": false,
         "TrustedHTML": false,
         "TrustedScript": false,
@@ -3679,6 +3693,7 @@ export default [
         "ViewTimeline": false,
         "ViewTransition": false,
         "ViewTransitionTypeSet": false,
+        "Viewport": false,
         "VirtualKeyboard": false,
         "VirtualKeyboardGeometryChangeEvent": false,
         "VisibilityStateEntry": false,
@@ -4008,6 +4023,7 @@ export default [
         "toolbar": false,
         "top": false,
         "trustedTypes": false,
+        "viewport": false,
         "visualViewport": false,
         "when": false,
         "window": false
@@ -4021,9 +4037,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.35.0"
+            "version": "8.36.0"
           },
-          "version": "8.35.0"
+          "version": "8.36.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -7110,9 +7126,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.35.0"
+            "version": "8.36.0"
           },
-          "version": "8.35.0"
+          "version": "8.36.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
