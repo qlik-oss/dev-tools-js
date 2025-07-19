@@ -18,7 +18,7 @@
     "@changesets/cli": "^2.29.5",
     "@qlik/prettier-config": "workspace:*",
     "prettier": "^3.6.2",
-    "turbo": "^2.5.4"
+    "turbo": "^2.5.5"
   },
   "packageManager": "pnpm@10.12.1",
   "engines": {
