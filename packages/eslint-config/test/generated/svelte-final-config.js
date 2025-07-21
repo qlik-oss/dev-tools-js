@@ -3451,9 +3451,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.36.0"
+            "version": "8.37.0"
           },
-          "version": "8.36.0"
+          "version": "8.37.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -4681,7 +4681,7 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.36.0"
+            "version": "8.37.0"
           }
         }
       }
@@ -5043,6 +5043,7 @@ export default [
       "svelte/no-unused-svelte-ignore": "error",
       "svelte/no-useless-children-snippet": "error",
       "svelte/no-useless-mustaches": "error",
+      "svelte/prefer-svelte-reactivity": "error",
       "svelte/prefer-writable-derived": "error",
       "svelte/require-each-key": "error",
       "svelte/require-event-dispatcher-types": "error",
