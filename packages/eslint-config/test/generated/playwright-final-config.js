@@ -91,12 +91,14 @@ export default [
       "playwright/no-unsafe-references": "error",
       "playwright/no-useless-await": "warn",
       "playwright/no-useless-not": "warn",
+      "playwright/no-wait-for-navigation": "error",
       "playwright/no-wait-for-selector": "warn",
       "playwright/no-wait-for-timeout": "warn",
       "playwright/prefer-web-first-assertions": "error",
       "playwright/valid-describe-callback": "error",
       "playwright/valid-expect": "error",
       "playwright/valid-expect-in-promise": "error",
+      "playwright/valid-test-tags": "error",
       "playwright/valid-title": "error"
     }
   }
