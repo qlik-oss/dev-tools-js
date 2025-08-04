@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.3.12
+
+### Patch Changes
+
+- cec52aa: chore: update npm dependencies
+
 ## 1.3.11
 
 ### Patch Changes
