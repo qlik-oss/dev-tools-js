@@ -32,6 +32,10 @@ jobs:
       - name: Update Dependencies
         run: pnpm update --latest --recursive
 
+      - name: Run test cases to update test output diff
+        continue-on-error: true
+        run: pnpm test
+
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v4
