@@ -9,8 +9,8 @@
   "devDependencies": {
     "@qlik/eslint-config": "workspace:*",
     "@qlik/tsconfig": "workspace:*",
-    "@types/react": "^19.1.10",
-    "eslint": "^9.33.0",
+    "@types/react": "^19.1.12",
+    "eslint": "^9.35.0",
     "vitest": "^3.2.4"
   }
 }

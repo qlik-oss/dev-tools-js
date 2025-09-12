@@ -77,6 +77,9 @@ export default [
         "CSSFontFaceRule": false,
         "CSSFontFeatureValuesRule": false,
         "CSSFontPaletteValuesRule": false,
+        "CSSFunctionDeclarations": false,
+        "CSSFunctionDescriptors": false,
+        "CSSFunctionRule": false,
         "CSSGroupingRule": false,
         "CSSImageValue": false,
         "CSSImportRule": false,
@@ -742,6 +745,11 @@ export default [
         "SnapEvent": false,
         "SourceBuffer": false,
         "SourceBufferList": false,
+        "SpeechGrammar": false,
+        "SpeechGrammarList": false,
+        "SpeechRecognition": false,
+        "SpeechRecognitionErrorEvent": false,
+        "SpeechRecognitionEvent": false,
         "SpeechSynthesis": false,
         "SpeechSynthesisErrorEvent": false,
         "SpeechSynthesisEvent": false,
@@ -2359,6 +2367,9 @@ export default [
         "CSSFontFaceRule": false,
         "CSSFontFeatureValuesRule": false,
         "CSSFontPaletteValuesRule": false,
+        "CSSFunctionDeclarations": false,
+        "CSSFunctionDescriptors": false,
+        "CSSFunctionRule": false,
         "CSSGroupingRule": false,
         "CSSImageValue": false,
         "CSSImportRule": false,
@@ -3024,6 +3035,11 @@ export default [
         "SnapEvent": false,
         "SourceBuffer": false,
         "SourceBufferList": false,
+        "SpeechGrammar": false,
+        "SpeechGrammarList": false,
+        "SpeechRecognition": false,
+        "SpeechRecognitionErrorEvent": false,
+        "SpeechRecognitionEvent": false,
         "SpeechSynthesis": false,
         "SpeechSynthesisErrorEvent": false,
         "SpeechSynthesisEvent": false,
@@ -3451,9 +3467,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.39.1"
+            "version": "8.43.0"
           },
-          "version": "8.39.1"
+          "version": "8.43.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -4681,7 +4697,7 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.39.1"
+            "version": "8.43.0"
           }
         }
       }
@@ -5028,6 +5044,7 @@ export default [
       "svelte/no-immutable-reactive-statements": "error",
       "svelte/no-inner-declarations": "error",
       "svelte/no-inspect": "warn",
+      "svelte/no-navigation-without-resolve": "error",
       "svelte/no-not-function-handler": "error",
       "svelte/no-object-in-text-mustaches": "error",
       "svelte/no-raw-special-elements": "error",
