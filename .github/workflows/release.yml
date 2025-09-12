@@ -18,24 +18,23 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
-
       - name: Git Config
         run: |
           git config user.name "github-action"
           git config user.email "github-action@noreply.github.com"
-
-      - uses: pnpm/action-setup@v3
-
-      - uses: actions/setup-node@v4
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+      - name: Setup Node
+        uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
           cache: pnpm
-
-      - run: pnpm i
-
+      - name: Install Dependencies
+        run: pnpm i
       - name: Create Release Pull Request or Publish to Qlik GitHub Packages npm registry
         id: changesets
         uses: changesets/action@v1
