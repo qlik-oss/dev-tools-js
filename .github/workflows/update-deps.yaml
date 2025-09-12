@@ -13,29 +13,26 @@ jobs:
   update-dependencies:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
+      - name: Checkout Repository
+        uses: actions/checkout@v5
       - name: Git Config
         run: |
           git config user.name "github-action"
           git config user.email "github-action@noreply.github.com"
-
-      - uses: pnpm/action-setup@v3
-
-      - uses: actions/setup-node@v4
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+      - name: Setup Node
+        uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: pnpm
-
-      - run: pnpm install
-
+      - name: Install Dependencies
+        run: pnpm install
       - name: Update Dependencies
         run: pnpm update --latest --recursive
-
       - name: Run test cases to update test output diff
         continue-on-error: true
         run: pnpm test
-
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v7
@@ -47,11 +44,3 @@ jobs:
           branch: chore/update-dependencies
           delete-branch: true
           title: "chore: update npm dependencies"
-
-      - name: Enable Pull Request Automerge
-        if: steps.cpr.outputs.pull-request-operation == 'created'
-        uses: peter-evans/enable-pull-request-automerge@v2
-        with:
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
-          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
-          merge-method: squash

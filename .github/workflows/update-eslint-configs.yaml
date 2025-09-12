@@ -11,21 +11,25 @@ jobs:
   update-configs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v5
 
       - name: Git Config
         run: |
           git config user.name "github-action"
           git config user.email "github-action@noreply.github.com"
 
-      - uses: pnpm/action-setup@v3
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: pnpm
 
-      - run: pnpm install
+      - name: Install Dependencies
+        run: pnpm install
 
       - name: Update Configs
         run: ./packages/eslint-config/test/update-configs.sh
