@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.4.0
+
+### Minor Changes
+
+- 69f0c6d: - Major bump on @eslint-react/eslint-plugin causing some rules to change: <https://github.com/Rel1cx/eslint-react/releases/tag/v2.0.0>
+
 ## 1.3.15
 
 ### Patch Changes
