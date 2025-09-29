@@ -1214,10 +1214,7 @@ export default [
       "@eslint-react/dom/no-unsafe-target-blank": "warn",
       "@eslint-react/dom/no-use-form-state": "error",
       "@eslint-react/dom/no-void-elements-with-children": "error",
-      "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn",
-      "@eslint-react/hooks-extra/no-unnecessary-use-prefix": "warn",
-      "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "warn",
-      "@eslint-react/jsx-key-before-spread": "warn",
+      "@eslint-react/jsx-no-comment-textnodes": "warn",
       "@eslint-react/jsx-no-duplicate-props": "warn",
       "@eslint-react/jsx-uses-react": "warn",
       "@eslint-react/jsx-uses-vars": "warn",
@@ -1230,7 +1227,6 @@ export default [
       "@eslint-react/no-children-only": "warn",
       "@eslint-react/no-children-to-array": "warn",
       "@eslint-react/no-clone-element": "warn",
-      "@eslint-react/no-comment-textnodes": "warn",
       "@eslint-react/no-component-will-mount": "error",
       "@eslint-react/no-component-will-receive-props": "error",
       "@eslint-react/no-component-will-update": "error",
@@ -1238,19 +1234,19 @@ export default [
       "@eslint-react/no-create-ref": "error",
       "@eslint-react/no-default-props": "error",
       "@eslint-react/no-direct-mutation-state": "error",
-      "@eslint-react/no-duplicate-key": "warn",
+      "@eslint-react/no-duplicate-key": "error",
       "@eslint-react/no-forward-ref": "warn",
       "@eslint-react/no-implicit-key": "warn",
       "@eslint-react/no-missing-key": "error",
-      "@eslint-react/no-misused-capture-owner-stack": "error",
       "@eslint-react/no-nested-component-definitions": "error",
-      "@eslint-react/no-nested-lazy-component-declarations": "warn",
+      "@eslint-react/no-nested-lazy-component-declarations": "error",
       "@eslint-react/no-prop-types": "error",
       "@eslint-react/no-redundant-should-component-update": "error",
       "@eslint-react/no-set-state-in-component-did-mount": "warn",
       "@eslint-react/no-set-state-in-component-did-update": "warn",
       "@eslint-react/no-set-state-in-component-will-update": "warn",
       "@eslint-react/no-string-refs": "error",
+      "@eslint-react/no-unnecessary-use-prefix": "warn",
       "@eslint-react/no-unsafe-component-will-mount": "warn",
       "@eslint-react/no-unsafe-component-will-receive-props": "warn",
       "@eslint-react/no-unsafe-component-will-update": "warn",
@@ -1260,6 +1256,7 @@ export default [
       "@eslint-react/no-unused-state": "warn",
       "@eslint-react/no-use-context": "warn",
       "@eslint-react/no-useless-forward-ref": "warn",
+      "@eslint-react/prefer-use-state-lazy-initialization": "warn",
       "@eslint-react/web-api/no-leaked-event-listener": "warn",
       "@eslint-react/web-api/no-leaked-interval": "warn",
       "@eslint-react/web-api/no-leaked-resize-observer": "warn",
@@ -2854,19 +2851,8 @@ export default [
         "version": "detect"
       },
       "react-x": {
-        "additionalComponents": [],
-        "additionalHooks": {
-          "useEffect": [
-            "useIsomorphicLayoutEffect"
-          ],
-          "useLayoutEffect": [
-            "useIsomorphicLayoutEffect"
-          ]
-        },
         "importSource": "react",
         "polymorphicPropName": "as",
-        "skipImportCheck": true,
-        "strict": true,
         "version": "detect"
       }
     }
@@ -4053,9 +4039,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.44.0"
+            "version": "8.44.1"
           },
-          "version": "8.44.0"
+          "version": "8.44.1"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -4094,10 +4080,7 @@ export default [
       "@eslint-react/dom/no-unsafe-target-blank": "warn",
       "@eslint-react/dom/no-use-form-state": "error",
       "@eslint-react/dom/no-void-elements-with-children": "error",
-      "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn",
-      "@eslint-react/hooks-extra/no-unnecessary-use-prefix": "warn",
-      "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "warn",
-      "@eslint-react/jsx-key-before-spread": "warn",
+      "@eslint-react/jsx-no-comment-textnodes": "warn",
       "@eslint-react/jsx-no-duplicate-props": "warn",
       "@eslint-react/jsx-uses-react": "warn",
       "@eslint-react/jsx-uses-vars": "warn",
@@ -4110,7 +4093,6 @@ export default [
       "@eslint-react/no-children-only": "warn",
       "@eslint-react/no-children-to-array": "warn",
       "@eslint-react/no-clone-element": "warn",
-      "@eslint-react/no-comment-textnodes": "warn",
       "@eslint-react/no-component-will-mount": "error",
       "@eslint-react/no-component-will-receive-props": "error",
       "@eslint-react/no-component-will-update": "error",
@@ -4118,19 +4100,19 @@ export default [
       "@eslint-react/no-create-ref": "error",
       "@eslint-react/no-default-props": "error",
       "@eslint-react/no-direct-mutation-state": "error",
-      "@eslint-react/no-duplicate-key": "warn",
+      "@eslint-react/no-duplicate-key": "error",
       "@eslint-react/no-forward-ref": "warn",
       "@eslint-react/no-implicit-key": "warn",
       "@eslint-react/no-missing-key": "error",
-      "@eslint-react/no-misused-capture-owner-stack": "error",
       "@eslint-react/no-nested-component-definitions": "error",
-      "@eslint-react/no-nested-lazy-component-declarations": "warn",
+      "@eslint-react/no-nested-lazy-component-declarations": "error",
       "@eslint-react/no-prop-types": "error",
       "@eslint-react/no-redundant-should-component-update": "error",
       "@eslint-react/no-set-state-in-component-did-mount": "warn",
       "@eslint-react/no-set-state-in-component-did-update": "warn",
       "@eslint-react/no-set-state-in-component-will-update": "warn",
       "@eslint-react/no-string-refs": "error",
+      "@eslint-react/no-unnecessary-use-prefix": "warn",
       "@eslint-react/no-unsafe-component-will-mount": "warn",
       "@eslint-react/no-unsafe-component-will-receive-props": "warn",
       "@eslint-react/no-unsafe-component-will-update": "warn",
@@ -4140,6 +4122,7 @@ export default [
       "@eslint-react/no-unused-state": "warn",
       "@eslint-react/no-use-context": "warn",
       "@eslint-react/no-useless-forward-ref": "warn",
+      "@eslint-react/prefer-use-state-lazy-initialization": "warn",
       "@eslint-react/web-api/no-leaked-event-listener": "warn",
       "@eslint-react/web-api/no-leaked-interval": "warn",
       "@eslint-react/web-api/no-leaked-resize-observer": "warn",
@@ -5832,19 +5815,8 @@ export default [
         "version": "detect"
       },
       "react-x": {
-        "additionalComponents": [],
-        "additionalHooks": {
-          "useEffect": [
-            "useIsomorphicLayoutEffect"
-          ],
-          "useLayoutEffect": [
-            "useIsomorphicLayoutEffect"
-          ]
-        },
         "importSource": "react",
         "polymorphicPropName": "as",
-        "skipImportCheck": true,
-        "strict": true,
         "version": "detect"
       }
     }
@@ -7142,9 +7114,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.44.0"
+            "version": "8.44.1"
           },
-          "version": "8.44.0"
+          "version": "8.44.1"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
