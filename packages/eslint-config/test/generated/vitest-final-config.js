@@ -51,6 +51,7 @@ export default [
       "vitest/no-commented-out-tests": "error",
       "vitest/no-identical-title": "error",
       "vitest/no-import-node-test": "error",
+      "vitest/prefer-called-exactly-once-with": "error",
       "vitest/require-local-test-context-for-concurrent-snapshots": "error",
       "vitest/valid-describe-callback": "error",
       "vitest/valid-expect": "error",
