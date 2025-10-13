@@ -1,5 +1,4 @@
 // @ts-check
-import react from "@eslint-react/eslint-plugin";
 import prettier from "eslint-config-prettier";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import eslintPluginReact from "eslint-plugin-react";
@@ -15,7 +14,6 @@ import { baseCjsJS, baseCjsTS } from "./shared/node.js";
  */
 const reactBaseConfig = mergeConfigs(
   // base it on the recommended react plugins config
-  react.configs.recommended,
   eslintPluginReact.configs.flat.recommended,
   jsxA11y.flatConfigs.recommended,
   // @ts-expect-error - types are wrong
