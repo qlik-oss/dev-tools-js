@@ -2523,8 +2523,23 @@ export default [
       "quote-props": "off",
       "quotes": 0,
       "radix": "error",
+      "react-hooks/component-hook-factories": "error",
+      "react-hooks/config": "error",
+      "react-hooks/error-boundaries": "error",
       "react-hooks/exhaustive-deps": "error",
+      "react-hooks/gating": "error",
+      "react-hooks/globals": "error",
+      "react-hooks/immutability": "error",
+      "react-hooks/incompatible-library": "warn",
+      "react-hooks/preserve-manual-memoization": "error",
+      "react-hooks/purity": "error",
+      "react-hooks/refs": "error",
       "react-hooks/rules-of-hooks": "error",
+      "react-hooks/set-state-in-effect": "error",
+      "react-hooks/set-state-in-render": "error",
+      "react-hooks/static-components": "error",
+      "react-hooks/unsupported-syntax": "warn",
+      "react-hooks/use-memo": "error",
       "react/button-has-type": [
         "error",
         {
@@ -4060,9 +4075,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.45.0"
+            "version": "8.46.0"
           },
-          "version": "8.45.0"
+          "version": "8.46.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -5481,8 +5496,23 @@ export default [
       "quote-props": "off",
       "quotes": 0,
       "radix": "error",
+      "react-hooks/component-hook-factories": "error",
+      "react-hooks/config": "error",
+      "react-hooks/error-boundaries": "error",
       "react-hooks/exhaustive-deps": "error",
+      "react-hooks/gating": "error",
+      "react-hooks/globals": "error",
+      "react-hooks/immutability": "error",
+      "react-hooks/incompatible-library": "warn",
+      "react-hooks/preserve-manual-memoization": "error",
+      "react-hooks/purity": "error",
+      "react-hooks/refs": "error",
       "react-hooks/rules-of-hooks": "error",
+      "react-hooks/set-state-in-effect": "error",
+      "react-hooks/set-state-in-render": "error",
+      "react-hooks/static-components": "error",
+      "react-hooks/unsupported-syntax": "warn",
+      "react-hooks/use-memo": "error",
       "react/button-has-type": [
         "error",
         {
@@ -7156,9 +7186,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.45.0"
+            "version": "8.46.0"
           },
-          "version": "8.45.0"
+          "version": "8.46.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
