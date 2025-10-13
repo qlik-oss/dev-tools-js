@@ -6,13 +6,9 @@ import eslintPluginReact from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import { mergeConfigs } from "../utils/config.js";
 import reactA11yRules from "./rules/react-a11y.js";
-import reactHooksRules from "./rules/react-hooks.js";
 import reactRules from "./rules/react.js";
 import { baseConfigJS, baseConfigTS } from "./shared/base.js";
 import { baseCjsJS, baseCjsTS } from "./shared/node.js";
-
-/** @type {any} */
-const reactPlugin = eslintPluginReact;
 
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
@@ -20,17 +16,10 @@ const reactPlugin = eslintPluginReact;
 const reactBaseConfig = mergeConfigs(
   // base it on the recommended react plugins config
   react.configs.recommended,
-  reactPlugin.configs.flat.recommended,
+  eslintPluginReact.configs.flat.recommended,
   jsxA11y.flatConfigs.recommended,
-  // add react-hooks plugin config (no recommended flat config YET!)
-  {
-    plugins: {
-      "react-hooks": reactHooks,
-    },
-    rules: {
-      ...reactHooks.configs.recommended.rules,
-    },
-  },
+  // @ts-expect-error - types are wrong
+  reactHooks.configs.flat.recommended,
 
   // add qlik's recommended react config
   {
@@ -52,7 +41,6 @@ const reactBaseConfig = mergeConfigs(
     rules: {
       ...reactRules,
       ...reactA11yRules,
-      ...reactHooksRules,
     },
   },
 );
