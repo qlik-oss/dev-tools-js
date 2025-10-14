@@ -1,5 +1,4 @@
 // @ts-check
-import react from "@eslint-react/eslint-plugin";
 import prettier from "eslint-config-prettier";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import eslintPluginReact from "eslint-plugin-react";
@@ -11,26 +10,15 @@ import reactRules from "./rules/react.js";
 import { baseConfigJS, baseConfigTS } from "./shared/base.js";
 import { baseCjsJS, baseCjsTS } from "./shared/node.js";
 
-/** @type {any} */
-const reactPlugin = eslintPluginReact;
-
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
 const reactBaseConfig = mergeConfigs(
   // base it on the recommended react plugins config
-  react.configs.recommended,
-  reactPlugin.configs.flat.recommended,
+  eslintPluginReact.configs.flat.recommended,
   jsxA11y.flatConfigs.recommended,
-  // add react-hooks plugin config (no recommended flat config YET!)
-  {
-    plugins: {
-      "react-hooks": reactHooks,
-    },
-    rules: {
-      ...reactHooks.configs.recommended.rules,
-    },
-  },
+  // @ts-expect-error - types are wrong
+  reactHooks.configs.flat["recommended-latest"],
 
   // add qlik's recommended react config
   {
