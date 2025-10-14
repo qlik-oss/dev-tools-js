@@ -18,7 +18,7 @@ const reactBaseConfig = mergeConfigs(
   eslintPluginReact.configs.flat.recommended,
   jsxA11y.flatConfigs.recommended,
   // @ts-expect-error - types are wrong
-  reactHooks.configs.flat.recommended,
+  reactHooks.configs.flat["recommended-latest"],
 
   // add qlik's recommended react config
   {
