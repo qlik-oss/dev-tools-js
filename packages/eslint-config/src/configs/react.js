@@ -5,6 +5,7 @@ import eslintPluginReact from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import { mergeConfigs } from "../utils/config.js";
 import reactA11yRules from "./rules/react-a11y.js";
+import reactHooksRules from "./rules/react-hooks.js";
 import reactRules from "./rules/react.js";
 import { baseConfigJS, baseConfigTS } from "./shared/base.js";
 import { baseCjsJS, baseCjsTS } from "./shared/node.js";
@@ -39,6 +40,7 @@ const reactBaseConfig = mergeConfigs(
     rules: {
       ...reactRules,
       ...reactA11yRules,
+      ...reactHooksRules,
     },
   },
 );
