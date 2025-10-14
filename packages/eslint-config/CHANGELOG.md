@@ -1,5 +1,12 @@
 # @qlik/eslint-config
 
+## 1.4.2
+
+### Patch Changes
+
+- 2493d9f: chore: update npm dependencies
+- ba3c933: update configuration for new major of eslint react plugin
+
 ## 1.4.1
 
 ### Patch Changes
