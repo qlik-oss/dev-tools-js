@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.4.3
+
+### Patch Changes
+
+- abda4bc: chore: update npm dependencies
+
 ## 1.4.2
 
 ### Patch Changes
