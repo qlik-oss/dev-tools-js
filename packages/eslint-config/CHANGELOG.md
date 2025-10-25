@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.4.4
+
+### Patch Changes
+
+- 70cb4cd: update depdendencies
+
 ## 1.4.3
 
 ### Patch Changes
