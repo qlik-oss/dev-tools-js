@@ -12,7 +12,7 @@ importers:
         specifier: ^2.29.7
         version: 2.29.7(@types/node@24.10.0)
       '@qlik/prettier-config':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:packages/prettier-config
       prettier:
         specifier: ^3.6.2
@@ -84,7 +84,7 @@ importers:
         version: 8.46.3(eslint@9.39.1)(typescript@5.9.3)
     devDependencies:
       '@qlik/tsconfig':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../tsconfig
       '@types/confusing-browser-globals':
         specifier: ^1.0.3
@@ -99,7 +99,7 @@ importers:
         specifier: ^24.10.0
         version: 24.10.0
       eslint:
-        specifier: 9.39.1
+        specifier: ^9.39.1
         version: 9.39.1
       prettier:
         specifier: ^3.6.2
@@ -134,16 +134,16 @@ importers:
   test/test-base:
     devDependencies:
       '@qlik/eslint-config':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/eslint-config
       '@qlik/tsconfig':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/tsconfig
       '@types/react':
         specifier: ^19.2.2
         version: 19.2.2
       eslint:
-        specifier: 9.39.1
+        specifier: ^9.39.1
         version: 9.39.1
       vitest:
         specifier: ^4.0.7
@@ -156,16 +156,16 @@ importers:
         version: 19.2.0
     devDependencies:
       '@qlik/eslint-config':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/eslint-config
       '@qlik/tsconfig':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/tsconfig
       '@types/react':
         specifier: ^19.2.2
         version: 19.2.2
       eslint:
-        specifier: 9.39.1
+        specifier: ^9.39.1
         version: 9.39.1
 
   test/test-react-svelte:
@@ -178,16 +178,16 @@ importers:
         version: 5.43.3
     devDependencies:
       '@qlik/eslint-config':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/eslint-config
       '@qlik/tsconfig':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/tsconfig
       '@types/react':
         specifier: ^19.2.2
         version: 19.2.2
       eslint:
-        specifier: 9.39.1
+        specifier: ^9.39.1
         version: 9.39.1
 
 packages:
