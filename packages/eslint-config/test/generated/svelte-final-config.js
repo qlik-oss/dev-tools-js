@@ -199,6 +199,7 @@ export default [
         "DeviceMotionEventRotationRate": false,
         "DeviceOrientationEvent": false,
         "DevicePosture": false,
+        "DigitalCredential": false,
         "DisposableStack": false,
         "Document": false,
         "DocumentFragment": false,
@@ -395,6 +396,7 @@ export default [
         "IDBKeyRange": false,
         "IDBObjectStore": false,
         "IDBOpenDBRequest": false,
+        "IDBRecord": false,
         "IDBRequest": false,
         "IDBTransaction": false,
         "IDBVersionChangeEvent": false,
@@ -417,6 +419,7 @@ export default [
         "InputDeviceInfo": false,
         "InputEvent": false,
         "IntegrityViolationReportBody": false,
+        "InterestEvent": false,
         "IntersectionObserver": false,
         "IntersectionObserverEntry": false,
         "Keyboard": false,
@@ -493,6 +496,7 @@ export default [
         "NavigationCurrentEntryChangeEvent": false,
         "NavigationDestination": false,
         "NavigationHistoryEntry": false,
+        "NavigationPrecommitController": false,
         "NavigationPreloadManager": false,
         "NavigationTransition": false,
         "Navigator": false,
@@ -750,6 +754,7 @@ export default [
         "SpeechRecognition": false,
         "SpeechRecognitionErrorEvent": false,
         "SpeechRecognitionEvent": false,
+        "SpeechRecognitionPhrase": false,
         "SpeechSynthesis": false,
         "SpeechSynthesisErrorEvent": false,
         "SpeechSynthesisEvent": false,
@@ -2489,6 +2494,7 @@ export default [
         "DeviceMotionEventRotationRate": false,
         "DeviceOrientationEvent": false,
         "DevicePosture": false,
+        "DigitalCredential": false,
         "DisposableStack": false,
         "Document": false,
         "DocumentFragment": false,
@@ -2685,6 +2691,7 @@ export default [
         "IDBKeyRange": false,
         "IDBObjectStore": false,
         "IDBOpenDBRequest": false,
+        "IDBRecord": false,
         "IDBRequest": false,
         "IDBTransaction": false,
         "IDBVersionChangeEvent": false,
@@ -2707,6 +2714,7 @@ export default [
         "InputDeviceInfo": false,
         "InputEvent": false,
         "IntegrityViolationReportBody": false,
+        "InterestEvent": false,
         "IntersectionObserver": false,
         "IntersectionObserverEntry": false,
         "Keyboard": false,
@@ -2783,6 +2791,7 @@ export default [
         "NavigationCurrentEntryChangeEvent": false,
         "NavigationDestination": false,
         "NavigationHistoryEntry": false,
+        "NavigationPrecommitController": false,
         "NavigationPreloadManager": false,
         "NavigationTransition": false,
         "Navigator": false,
@@ -3040,6 +3049,7 @@ export default [
         "SpeechRecognition": false,
         "SpeechRecognitionErrorEvent": false,
         "SpeechRecognitionEvent": false,
+        "SpeechRecognitionPhrase": false,
         "SpeechSynthesis": false,
         "SpeechSynthesisErrorEvent": false,
         "SpeechSynthesisEvent": false,
@@ -3467,9 +3477,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.46.2"
+            "version": "8.46.3"
           },
-          "version": "8.46.2"
+          "version": "8.46.3"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -4697,7 +4707,7 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.46.2"
+            "version": "8.46.3"
           }
         }
       }
