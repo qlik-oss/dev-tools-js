@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.4.8
+
+### Patch Changes
+
+- 2c2e9b6: chore: update npm dependencies
+
 ## 1.4.7
 
 ### Patch Changes
