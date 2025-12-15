@@ -10,7 +10,7 @@
     "@qlik/eslint-config": "workspace:^",
     "@qlik/tsconfig": "workspace:^",
     "@types/react": "^19.2.7",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "vitest": "^4.0.15"
   }
 }
