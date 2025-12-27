@@ -57,6 +57,7 @@ export default [
       "vitest/no-interpolation-in-snapshots": "error",
       "vitest/no-mocks-import": "error",
       "vitest/no-standalone-expect": "error",
+      "vitest/no-unneeded-async-expect-function": "error",
       "vitest/prefer-called-exactly-once-with": "error",
       "vitest/require-local-test-context-for-concurrent-snapshots": "error",
       "vitest/valid-describe-callback": "error",
