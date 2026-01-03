@@ -39,9 +39,7 @@ export default [
         "AudioScheduledSourceNode": false,
         "AudioSinkInfo": false,
         "AudioWorklet": false,
-        "AudioWorkletGlobalScope": false,
         "AudioWorkletNode": false,
-        "AudioWorkletProcessor": false,
         "AuthenticatorAssertionResponse": false,
         "AuthenticatorAttestationResponse": false,
         "AuthenticatorResponse": false,
@@ -120,6 +118,7 @@ export default [
         "CSSSkewY": false,
         "CSSStartingStyleRule": false,
         "CSSStyleDeclaration": false,
+        "CSSStyleProperties": false,
         "CSSStyleRule": false,
         "CSSStyleSheet": false,
         "CSSStyleValue": false,
@@ -782,6 +781,7 @@ export default [
         "TaskController": false,
         "TaskPriorityChangeEvent": false,
         "TaskSignal": false,
+        "Temporal": false,
         "Text": false,
         "TextDecoder": false,
         "TextDecoderStream": false,
@@ -885,7 +885,6 @@ export default [
         "WindowControlsOverlayGeometryChangeEvent": false,
         "Worker": false,
         "Worklet": false,
-        "WorkletGlobalScope": false,
         "WritableStream": false,
         "WritableStreamDefaultController": false,
         "WritableStreamDefaultWriter": false,
@@ -957,8 +956,6 @@ export default [
         "credentialless": false,
         "crossOriginIsolated": false,
         "crypto": false,
-        "currentFrame": false,
-        "currentTime": false,
         "customElements": false,
         "devicePixelRatio": false,
         "dispatchEvent": false,
@@ -1135,14 +1132,12 @@ export default [
         "prompt": false,
         "queryLocalFonts": false,
         "queueMicrotask": false,
-        "registerProcessor": false,
         "removeEventListener": false,
         "reportError": false,
         "requestAnimationFrame": false,
         "requestIdleCallback": false,
         "resizeBy": false,
         "resizeTo": false,
-        "sampleRate": false,
         "scheduler": false,
         "screen": false,
         "screenLeft": false,
@@ -2845,9 +2840,7 @@ export default [
         "AudioScheduledSourceNode": false,
         "AudioSinkInfo": false,
         "AudioWorklet": false,
-        "AudioWorkletGlobalScope": false,
         "AudioWorkletNode": false,
-        "AudioWorkletProcessor": false,
         "AuthenticatorAssertionResponse": false,
         "AuthenticatorAttestationResponse": false,
         "AuthenticatorResponse": false,
@@ -2926,6 +2919,7 @@ export default [
         "CSSSkewY": false,
         "CSSStartingStyleRule": false,
         "CSSStyleDeclaration": false,
+        "CSSStyleProperties": false,
         "CSSStyleRule": false,
         "CSSStyleSheet": false,
         "CSSStyleValue": false,
@@ -3588,6 +3582,7 @@ export default [
         "TaskController": false,
         "TaskPriorityChangeEvent": false,
         "TaskSignal": false,
+        "Temporal": false,
         "Text": false,
         "TextDecoder": false,
         "TextDecoderStream": false,
@@ -3691,7 +3686,6 @@ export default [
         "WindowControlsOverlayGeometryChangeEvent": false,
         "Worker": false,
         "Worklet": false,
-        "WorkletGlobalScope": false,
         "WritableStream": false,
         "WritableStreamDefaultController": false,
         "WritableStreamDefaultWriter": false,
@@ -3763,8 +3757,6 @@ export default [
         "credentialless": false,
         "crossOriginIsolated": false,
         "crypto": false,
-        "currentFrame": false,
-        "currentTime": false,
         "customElements": false,
         "devicePixelRatio": false,
         "dispatchEvent": false,
@@ -3941,14 +3933,12 @@ export default [
         "prompt": false,
         "queryLocalFonts": false,
         "queueMicrotask": false,
-        "registerProcessor": false,
         "removeEventListener": false,
         "reportError": false,
         "requestAnimationFrame": false,
         "requestIdleCallback": false,
         "resizeBy": false,
         "resizeTo": false,
-        "sampleRate": false,
         "scheduler": false,
         "screen": false,
         "screenLeft": false,
@@ -3992,9 +3982,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.49.0"
+            "version": "8.51.0"
           },
-          "version": "8.49.0"
+          "version": "8.51.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -7018,9 +7008,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.49.0"
+            "version": "8.51.0"
           },
-          "version": "8.49.0"
+          "version": "8.51.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
