@@ -86,6 +86,7 @@ export default [
     },
     "rules": {
       "no-empty-pattern": "off",
+      "playwright/consistent-spacing-between-blocks": "warn",
       "playwright/expect-expect": "warn",
       "playwright/max-nested-describe": "warn",
       "playwright/missing-playwright-await": "error",
