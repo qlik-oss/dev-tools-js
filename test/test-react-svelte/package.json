@@ -8,12 +8,12 @@
   },
   "dependencies": {
     "react": "^19.2.3",
-    "svelte": "^5.46.4"
+    "svelte": "^5.48.0"
   },
   "devDependencies": {
     "@qlik/eslint-config": "workspace:^",
     "@qlik/tsconfig": "workspace:^",
-    "@types/react": "^19.2.8",
+    "@types/react": "^19.2.9",
     "eslint": "^9.39.2"
   }
 }
