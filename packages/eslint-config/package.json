@@ -1,6 +1,6 @@
 {
   "name": "@qlik/eslint-config",
-  "version": "1.4.16",
+  "version": "1.4.17",
   "description": "Qlik's ESLint configs",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
