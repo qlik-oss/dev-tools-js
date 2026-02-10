@@ -331,6 +331,7 @@ export default [
         "HTMLFormElement": false,
         "HTMLFrameElement": false,
         "HTMLFrameSetElement": false,
+        "HTMLGeolocationElement": false,
         "HTMLHRElement": false,
         "HTMLHeadElement": false,
         "HTMLHeadingElement": false,
@@ -931,6 +932,7 @@ export default [
         "XRView": false,
         "XRViewerPose": false,
         "XRViewport": false,
+        "XRVisibilityMaskChangeEvent": false,
         "XRWebGLBinding": false,
         "XRWebGLDepthInformation": false,
         "XRWebGLLayer": false,
@@ -2621,6 +2623,7 @@ export default [
         "HTMLFormElement": false,
         "HTMLFrameElement": false,
         "HTMLFrameSetElement": false,
+        "HTMLGeolocationElement": false,
         "HTMLHRElement": false,
         "HTMLHeadElement": false,
         "HTMLHeadingElement": false,
@@ -3221,6 +3224,7 @@ export default [
         "XRView": false,
         "XRViewerPose": false,
         "XRViewport": false,
+        "XRVisibilityMaskChangeEvent": false,
         "XRWebGLBinding": false,
         "XRWebGLDepthInformation": false,
         "XRWebGLLayer": false,
@@ -3467,9 +3471,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.54.0"
+            "version": "8.55.0"
           },
-          "version": "8.54.0"
+          "version": "8.55.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -5985,9 +5989,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.54.0"
+            "version": "8.55.0"
           },
-          "version": "8.54.0"
+          "version": "8.55.0"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
