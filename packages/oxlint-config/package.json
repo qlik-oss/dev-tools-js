@@ -1,0 +1,34 @@
+{
+  "name": "@qlik/oxlint-config",
+  "version": "0.1.0",
+  "description": "Qlik's oxlint configs",
+  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    "./recommended.js": "./recommended.js",
+    "./react.js": "./react.js",
+    "./node.js": "./node.js",
+    "./vitest.js": "./vitest.js",
+    "./jest.js": "./jest.js"
+  },
+  "files": [
+    "recommended.js",
+    "react.js",
+    "node.js",
+    "vitest.js",
+    "jest.js"
+  ],
+  "scripts": {
+    "format:check": "cd ../.. && prettier --check 'packages/oxlint-config' --ignore-unknown",
+    "format:write": "cd ../.. && prettier --write 'packages/oxlint-config' --ignore-unknown",
+    "test": "./test/verify-configs.sh",
+    "test:update": "./test/update-configs.sh"
+  },
+  "devDependencies": {
+    "oxlint": "^1.50.0"
+  },
+  "peerDependencies": {
+    "oxlint": ">=1.0.0"
+  }
+}

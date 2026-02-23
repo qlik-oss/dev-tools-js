@@ -1,0 +1,590 @@
+{
+  "categories": {
+    "correctness": "deny",
+    "pedantic": "deny",
+    "suspicious": "deny"
+  },
+  "env": {
+    "builtin": true
+  },
+  "globals": {},
+  "ignorePatterns": [],
+  "plugins": [
+    "typescript",
+    "import"
+  ],
+  "rules": {
+    "accessor-pairs": "deny",
+    "array-callback-return": [
+      "deny",
+      [
+        {
+          "allowImplicit": true
+        }
+      ]
+    ],
+    "block-scoped-var": "deny",
+    "constructor-super": "deny",
+    "default-case": "deny",
+    "default-case-last": "deny",
+    "default-param-last": "deny",
+    "eqeqeq": [
+      "deny",
+      [
+        "always",
+        {
+          "null": "ignore"
+        }
+      ]
+    ],
+    "for-direction": "deny",
+    "func-names": "warn",
+    "import/default": "deny",
+    "import/max-dependencies": "deny",
+    "import/namespace": "deny",
+    "import/no-absolute-path": "deny",
+    "import/no-amd": "deny",
+    "import/no-cycle": [
+      "deny",
+      [
+        {
+          "ignoreExternal": true
+        }
+      ]
+    ],
+    "import/no-dynamic-require": "deny",
+    "import/no-empty-named-blocks": "allow",
+    "import/no-named-as-default": "deny",
+    "import/no-named-as-default-member": "allow",
+    "import/no-self-import": "deny",
+    "import/no-unassigned-import": "deny",
+    "import/no-webpack-loader-syntax": "deny",
+    "max-classes-per-file": "deny",
+    "max-depth": "deny",
+    "max-lines": "deny",
+    "max-lines-per-function": "deny",
+    "max-nested-callbacks": "deny",
+    "new-cap": [
+      "deny",
+      [
+        {
+          "capIsNew": false,
+          "newIsCap": true
+        }
+      ]
+    ],
+    "no-alert": "deny",
+    "no-array-constructor": "deny",
+    "no-async-promise-executor": "deny",
+    "no-await-in-loop": "deny",
+    "no-bitwise": "deny",
+    "no-caller": "deny",
+    "no-case-declarations": "deny",
+    "no-class-assign": "deny",
+    "no-compare-neg-zero": "deny",
+    "no-cond-assign": "deny",
+    "no-console": "warn",
+    "no-const-assign": "deny",
+    "no-constant-binary-expression": "deny",
+    "no-constant-condition": "deny",
+    "no-constructor-return": "deny",
+    "no-continue": "deny",
+    "no-control-regex": "deny",
+    "no-debugger": "deny",
+    "no-delete-var": "deny",
+    "no-dupe-class-members": "deny",
+    "no-dupe-else-if": "deny",
+    "no-dupe-keys": "deny",
+    "no-duplicate-case": "deny",
+    "no-else-return": [
+      "deny",
+      [
+        {
+          "allowElseIf": false
+        }
+      ]
+    ],
+    "no-empty-character-class": "deny",
+    "no-empty-function": "warn",
+    "no-empty-pattern": "deny",
+    "no-empty-static-block": "deny",
+    "no-eval": "deny",
+    "no-ex-assign": "deny",
+    "no-extend-native": "deny",
+    "no-extra-bind": "deny",
+    "no-extra-boolean-cast": "deny",
+    "no-extra-label": "deny",
+    "no-fallthrough": "deny",
+    "no-func-assign": "deny",
+    "no-global-assign": "deny",
+    "no-import-assign": "deny",
+    "no-inline-comments": "deny",
+    "no-inner-declarations": "deny",
+    "no-invalid-regexp": "deny",
+    "no-irregular-whitespace": "deny",
+    "no-iterator": "deny",
+    "no-label-var": "deny",
+    "no-labels": "deny",
+    "no-lone-blocks": "deny",
+    "no-lonely-if": "deny",
+    "no-loop-func": "deny",
+    "no-loss-of-precision": "deny",
+    "no-misleading-character-class": "deny",
+    "no-multi-assign": "deny",
+    "no-multi-str": "deny",
+    "no-negated-condition": "deny",
+    "no-nested-ternary": "deny",
+    "no-new": "deny",
+    "no-new-func": "deny",
+    "no-new-native-nonconstructor": "deny",
+    "no-new-wrappers": "deny",
+    "no-nonoctal-decimal-escape": "deny",
+    "no-obj-calls": "deny",
+    "no-object-constructor": "deny",
+    "no-param-reassign": [
+      "deny",
+      [
+        {
+          "ignorePropertyModificationsFor": [
+            "prev",
+            "acc",
+            "accumulator",
+            "e",
+            "ctx",
+            "context",
+            "req",
+            "request",
+            "res",
+            "response",
+            "$scope",
+            "staticContext",
+            "sharedState",
+            "state"
+          ],
+          "props": true
+        }
+      ]
+    ],
+    "no-promise-executor-return": "deny",
+    "no-proto": "deny",
+    "no-prototype-builtins": "deny",
+    "no-redeclare": "deny",
+    "no-restricted-globals": [
+      "deny",
+      [
+        {
+          "message": "Use Number.isFinite instead",
+          "name": "isFinite"
+        },
+        {
+          "message": "Use Number.isNaN instead",
+          "name": "isNaN"
+        },
+        {
+          "message": "Use window.addEventListener instead",
+          "name": "addEventListener"
+        },
+        {
+          "message": "Use window.blur instead",
+          "name": "blur"
+        },
+        {
+          "message": "Use window.close instead",
+          "name": "close"
+        },
+        {
+          "message": "Use window.closed instead",
+          "name": "closed"
+        },
+        {
+          "message": "Use window.confirm instead",
+          "name": "confirm"
+        },
+        {
+          "message": "Use window.defaultStatus instead",
+          "name": "defaultStatus"
+        },
+        {
+          "message": "Use window.defaultstatus instead",
+          "name": "defaultstatus"
+        },
+        {
+          "message": "Use window.error instead",
+          "name": "error"
+        },
+        {
+          "message": "Use window.event instead",
+          "name": "event"
+        },
+        {
+          "message": "Use window.find instead",
+          "name": "find"
+        },
+        {
+          "message": "Use window.focus instead",
+          "name": "focus"
+        },
+        {
+          "message": "Use window.frameElement instead",
+          "name": "frameElement"
+        },
+        {
+          "message": "Use window.frames instead",
+          "name": "frames"
+        },
+        {
+          "message": "Use window.history instead",
+          "name": "history"
+        },
+        {
+          "message": "Use window.innerHeight instead",
+          "name": "innerHeight"
+        },
+        {
+          "message": "Use window.innerWidth instead",
+          "name": "innerWidth"
+        },
+        {
+          "message": "Use window.length instead",
+          "name": "length"
+        },
+        {
+          "message": "Use window.localStorage instead",
+          "name": "localStorage"
+        },
+        {
+          "message": "Use window.location instead",
+          "name": "location"
+        },
+        {
+          "message": "Use window.menubar instead",
+          "name": "menubar"
+        },
+        {
+          "message": "Use window.moveBy instead",
+          "name": "moveBy"
+        },
+        {
+          "message": "Use window.moveTo instead",
+          "name": "moveTo"
+        },
+        {
+          "message": "Use window.name instead",
+          "name": "name"
+        },
+        {
+          "message": "Use window.onblur instead",
+          "name": "onblur"
+        },
+        {
+          "message": "Use window.onerror instead",
+          "name": "onerror"
+        },
+        {
+          "message": "Use window.onfocus instead",
+          "name": "onfocus"
+        },
+        {
+          "message": "Use window.onload instead",
+          "name": "onload"
+        },
+        {
+          "message": "Use window.onresize instead",
+          "name": "onresize"
+        },
+        {
+          "message": "Use window.onunload instead",
+          "name": "onunload"
+        },
+        {
+          "message": "Use window.open instead",
+          "name": "open"
+        },
+        {
+          "message": "Use window.opener instead",
+          "name": "opener"
+        },
+        {
+          "message": "Use window.opera instead",
+          "name": "opera"
+        },
+        {
+          "message": "Use window.outerHeight instead",
+          "name": "outerHeight"
+        },
+        {
+          "message": "Use window.outerWidth instead",
+          "name": "outerWidth"
+        },
+        {
+          "message": "Use window.pageXOffset instead",
+          "name": "pageXOffset"
+        },
+        {
+          "message": "Use window.pageYOffset instead",
+          "name": "pageYOffset"
+        },
+        {
+          "message": "Use window.parent instead",
+          "name": "parent"
+        },
+        {
+          "message": "Use window.print instead",
+          "name": "print"
+        },
+        {
+          "message": "Use window.removeEventListener instead",
+          "name": "removeEventListener"
+        },
+        {
+          "message": "Use window.resizeBy instead",
+          "name": "resizeBy"
+        },
+        {
+          "message": "Use window.resizeTo instead",
+          "name": "resizeTo"
+        },
+        {
+          "message": "Use window.screen instead",
+          "name": "screen"
+        },
+        {
+          "message": "Use window.screenLeft instead",
+          "name": "screenLeft"
+        },
+        {
+          "message": "Use window.screenTop instead",
+          "name": "screenTop"
+        },
+        {
+          "message": "Use window.screenX instead",
+          "name": "screenX"
+        },
+        {
+          "message": "Use window.screenY instead",
+          "name": "screenY"
+        },
+        {
+          "message": "Use window.scroll instead",
+          "name": "scroll"
+        },
+        {
+          "message": "Use window.scrollbars instead",
+          "name": "scrollbars"
+        },
+        {
+          "message": "Use window.scrollBy instead",
+          "name": "scrollBy"
+        },
+        {
+          "message": "Use window.scrollTo instead",
+          "name": "scrollTo"
+        },
+        {
+          "message": "Use window.scrollX instead",
+          "name": "scrollX"
+        },
+        {
+          "message": "Use window.scrollY instead",
+          "name": "scrollY"
+        },
+        {
+          "message": "Use window.self instead",
+          "name": "self"
+        },
+        {
+          "message": "Use window.sessionStorage instead",
+          "name": "sessionStorage"
+        },
+        {
+          "message": "Use window.status instead",
+          "name": "status"
+        },
+        {
+          "message": "Use window.statusbar instead",
+          "name": "statusbar"
+        },
+        {
+          "message": "Use window.stop instead",
+          "name": "stop"
+        },
+        {
+          "message": "Use window.toolbar instead",
+          "name": "toolbar"
+        },
+        {
+          "message": "Use window.top instead",
+          "name": "top"
+        }
+      ]
+    ],
+    "no-restricted-imports": "allow",
+    "no-return-assign": [
+      "deny",
+      [
+        "always"
+      ]
+    ],
+    "no-script-url": "deny",
+    "no-self-assign": "deny",
+    "no-self-compare": "deny",
+    "no-sequences": "deny",
+    "no-setter-return": "deny",
+    "no-shadow": "deny",
+    "no-shadow-restricted-names": "deny",
+    "no-sparse-arrays": "deny",
+    "no-this-before-super": "deny",
+    "no-throw-literal": "deny",
+    "no-unassigned-vars": "deny",
+    "no-unexpected-multiline": "deny",
+    "no-unmodified-loop-condition": "deny",
+    "no-unneeded-ternary": "deny",
+    "no-unsafe-finally": "deny",
+    "no-unsafe-negation": "deny",
+    "no-unsafe-optional-chaining": "deny",
+    "no-unused-expressions": "deny",
+    "no-unused-labels": "deny",
+    "no-unused-private-class-members": "deny",
+    "no-unused-vars": "deny",
+    "no-useless-backreference": "deny",
+    "no-useless-call": "deny",
+    "no-useless-catch": "deny",
+    "no-useless-concat": "deny",
+    "no-useless-constructor": "deny",
+    "no-useless-escape": "deny",
+    "no-useless-rename": "deny",
+    "no-useless-return": "deny",
+    "no-var": "deny",
+    "no-warning-comments": "deny",
+    "no-with": "deny",
+    "operator-assignment": "deny",
+    "prefer-const": "deny",
+    "prefer-exponentiation-operator": "deny",
+    "prefer-numeric-literals": "deny",
+    "prefer-object-has-own": "deny",
+    "prefer-object-spread": "deny",
+    "prefer-promise-reject-errors": [
+      "deny",
+      [
+        {
+          "allowEmptyReject": true
+        }
+      ]
+    ],
+    "prefer-rest-params": "deny",
+    "prefer-spread": "deny",
+    "prefer-template": "deny",
+    "preserve-caught-error": "deny",
+    "radix": "deny",
+    "require-await": "deny",
+    "require-yield": "deny",
+    "sort-vars": "deny",
+    "symbol-description": "deny",
+    "typescript/await-thenable": "deny",
+    "typescript/ban-ts-comment": "deny",
+    "typescript/ban-types": "deny",
+    "typescript/consistent-type-exports": "deny",
+    "typescript/consistent-type-imports": "deny",
+    "typescript/no-array-delete": "deny",
+    "typescript/no-base-to-string": "deny",
+    "typescript/no-confusing-non-null-assertion": "deny",
+    "typescript/no-confusing-void-expression": "deny",
+    "typescript/no-deprecated": "deny",
+    "typescript/no-duplicate-enum-values": "deny",
+    "typescript/no-duplicate-type-constituents": "deny",
+    "typescript/no-dynamic-delete": "deny",
+    "typescript/no-extra-non-null-assertion": "deny",
+    "typescript/no-extraneous-class": "deny",
+    "typescript/no-floating-promises": "deny",
+    "typescript/no-for-in-array": "deny",
+    "typescript/no-implied-eval": "deny",
+    "typescript/no-import-type-side-effects": "deny",
+    "typescript/no-invalid-void-type": "deny",
+    "typescript/no-meaningless-void-operator": "deny",
+    "typescript/no-misused-new": "deny",
+    "typescript/no-misused-promises": "deny",
+    "typescript/no-misused-spread": "deny",
+    "typescript/no-mixed-enums": "deny",
+    "typescript/no-non-null-asserted-nullish-coalescing": "deny",
+    "typescript/no-non-null-asserted-optional-chain": "deny",
+    "typescript/no-non-null-assertion": "deny",
+    "typescript/no-redundant-type-constituents": "deny",
+    "typescript/no-this-alias": "deny",
+    "typescript/no-unnecessary-boolean-literal-compare": "deny",
+    "typescript/no-unnecessary-parameter-property-assignment": "deny",
+    "typescript/no-unnecessary-template-expression": "deny",
+    "typescript/no-unnecessary-type-arguments": "deny",
+    "typescript/no-unnecessary-type-assertion": "deny",
+    "typescript/no-unnecessary-type-constraint": "deny",
+    "typescript/no-unsafe-argument": "deny",
+    "typescript/no-unsafe-assignment": "deny",
+    "typescript/no-unsafe-call": "deny",
+    "typescript/no-unsafe-declaration-merging": "deny",
+    "typescript/no-unsafe-enum-comparison": "deny",
+    "typescript/no-unsafe-function-type": "deny",
+    "typescript/no-unsafe-member-access": "deny",
+    "typescript/no-unsafe-return": "deny",
+    "typescript/no-unsafe-type-assertion": "deny",
+    "typescript/no-unsafe-unary-minus": "deny",
+    "typescript/no-useless-empty-export": "deny",
+    "typescript/no-wrapper-object-types": "deny",
+    "typescript/only-throw-error": "deny",
+    "typescript/prefer-as-const": "deny",
+    "typescript/prefer-enum-initializers": "deny",
+    "typescript/prefer-includes": "deny",
+    "typescript/prefer-literal-enum-member": "deny",
+    "typescript/prefer-namespace-keyword": "deny",
+    "typescript/prefer-nullish-coalescing": "deny",
+    "typescript/prefer-promise-reject-errors": "deny",
+    "typescript/prefer-ts-expect-error": "deny",
+    "typescript/related-getter-setter-pairs": "deny",
+    "typescript/require-array-sort-compare": "deny",
+    "typescript/require-await": "deny",
+    "typescript/restrict-plus-operands": "deny",
+    "typescript/restrict-template-expressions": "deny",
+    "typescript/return-await": "deny",
+    "typescript/strict-boolean-expressions": "deny",
+    "typescript/switch-exhaustiveness-check": "deny",
+    "typescript/triple-slash-reference": "deny",
+    "typescript/unbound-method": "deny",
+    "typescript/unified-signatures": "deny",
+    "unicode-bom": [
+      "deny",
+      [
+        "never"
+      ]
+    ],
+    "use-isnan": "deny",
+    "valid-typeof": "deny",
+    "yoda": "deny"
+  },
+  "settings": {
+    "jsdoc": {
+      "augmentsExtendsReplacesDocs": false,
+      "exemptDestructuredRootsFromChecks": false,
+      "ignoreInternal": false,
+      "ignorePrivate": false,
+      "ignoreReplacesDocs": true,
+      "implementsReplacesDocs": false,
+      "overrideReplacesDocs": true,
+      "tagNamePreference": {}
+    },
+    "jsx-a11y": {
+      "attributes": {},
+      "components": {},
+      "polymorphicPropName": null
+    },
+    "next": {
+      "rootDir": []
+    },
+    "react": {
+      "componentWrapperFunctions": [],
+      "formComponents": [],
+      "linkComponents": [],
+      "version": null
+    },
+    "vitest": {
+      "typecheck": false
+    }
+  }
+}
