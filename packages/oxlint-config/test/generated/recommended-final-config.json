@@ -24,6 +24,7 @@
       ]
     ],
     "block-scoped-var": "deny",
+    "class-methods-use-this": "warn",
     "constructor-super": "deny",
     "default-case": "deny",
     "default-case-last": "deny",
@@ -39,8 +40,16 @@
     ],
     "for-direction": "deny",
     "func-names": "warn",
+    "getter-return": [
+      "deny",
+      [
+        {
+          "allowImplicit": true
+        }
+      ]
+    ],
     "import/default": "deny",
-    "import/max-dependencies": "deny",
+    "import/max-dependencies": "allow",
     "import/namespace": "deny",
     "import/no-absolute-path": "deny",
     "import/no-amd": "deny",
@@ -52,17 +61,20 @@
         }
       ]
     ],
+    "import/no-duplicates": "deny",
     "import/no-dynamic-require": "deny",
     "import/no-empty-named-blocks": "allow",
+    "import/no-mutable-exports": "deny",
     "import/no-named-as-default": "deny",
     "import/no-named-as-default-member": "allow",
+    "import/no-named-default": "deny",
     "import/no-self-import": "deny",
     "import/no-unassigned-import": "deny",
     "import/no-webpack-loader-syntax": "deny",
     "max-classes-per-file": "deny",
     "max-depth": "deny",
-    "max-lines": "deny",
-    "max-lines-per-function": "deny",
+    "max-lines": "allow",
+    "max-lines-per-function": "allow",
     "max-nested-callbacks": "deny",
     "new-cap": [
       "deny",
@@ -105,7 +117,7 @@
       ]
     ],
     "no-empty-character-class": "deny",
-    "no-empty-function": "warn",
+    "no-empty-function": "allow",
     "no-empty-pattern": "deny",
     "no-empty-static-block": "deny",
     "no-eval": "deny",
@@ -118,7 +130,7 @@
     "no-func-assign": "deny",
     "no-global-assign": "deny",
     "no-import-assign": "deny",
-    "no-inline-comments": "deny",
+    "no-inline-comments": "allow",
     "no-inner-declarations": "deny",
     "no-invalid-regexp": "deny",
     "no-irregular-whitespace": "deny",
@@ -169,6 +181,7 @@
     "no-proto": "deny",
     "no-prototype-builtins": "deny",
     "no-redeclare": "deny",
+    "no-regex-spaces": "deny",
     "no-restricted-globals": [
       "deny",
       [
@@ -433,12 +446,14 @@
     "no-shadow": "deny",
     "no-shadow-restricted-names": "deny",
     "no-sparse-arrays": "deny",
+    "no-template-curly-in-string": "deny",
     "no-this-before-super": "deny",
     "no-throw-literal": "deny",
     "no-unassigned-vars": "deny",
     "no-unexpected-multiline": "deny",
     "no-unmodified-loop-condition": "deny",
     "no-unneeded-ternary": "deny",
+    "no-unreachable": "deny",
     "no-unsafe-finally": "deny",
     "no-unsafe-negation": "deny",
     "no-unsafe-optional-chaining": "deny",
@@ -476,7 +491,7 @@
     "prefer-template": "deny",
     "preserve-caught-error": "deny",
     "radix": "deny",
-    "require-await": "deny",
+    "require-await": "warn",
     "require-yield": "deny",
     "sort-vars": "deny",
     "symbol-description": "deny",
@@ -536,6 +551,8 @@
     "typescript/prefer-namespace-keyword": "deny",
     "typescript/prefer-nullish-coalescing": "deny",
     "typescript/prefer-promise-reject-errors": "deny",
+    "typescript/prefer-reduce-type-parameter": "deny",
+    "typescript/prefer-return-this-type": "deny",
     "typescript/prefer-ts-expect-error": "deny",
     "typescript/related-getter-setter-pairs": "deny",
     "typescript/require-array-sort-compare": "deny",
@@ -548,6 +565,7 @@
     "typescript/triple-slash-reference": "deny",
     "typescript/unbound-method": "deny",
     "typescript/unified-signatures": "deny",
+    "typescript/use-unknown-in-catch-callback-variable": "deny",
     "unicode-bom": [
       "deny",
       [
