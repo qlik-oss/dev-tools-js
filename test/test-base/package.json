@@ -1,7 +1,7 @@
 {
   "name": "test-base",
   "private": true,
-  "description": "Test project for react linting",
+  "description": "Test project for linting",
   "type": "module",
   "scripts": {
     "lint": "eslint ."
