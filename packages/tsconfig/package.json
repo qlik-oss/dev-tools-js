@@ -9,7 +9,6 @@
     "node.json",
     "react.json",
     "recommended.json",
-    "svelte.json",
     "strictest.json",
     "vue.json"
   ],

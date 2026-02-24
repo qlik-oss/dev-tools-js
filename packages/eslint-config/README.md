@@ -32,8 +32,8 @@ export default qlik.compose(
 );
 ```
 
-4. If you are not using typescript to build your project, then include all files `"include": [".*", "**/*"]` in the project's `tsconfig.json`
-5. Run your `lint` script
+1. If you are not using typescript to build your project, then include all files `"include": [".*", "**/*"]` in the project's `tsconfig.json`
+2. Run your `lint` script
 
 ### v1 notable changes
 
@@ -89,35 +89,6 @@ import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
   ...qlik.configs.esbrowser, // based on the recommended config and adds specific es module rules (file endings)
-  {
-    ignores: ["dist", "node_modules"],
-  },
-);
-```
-
-Using Svelte:
-
-```js
-// @ts-check
-import qlik from "@qlik/eslint-config";
-
-export default qlik.compose(
-  ...qlik.configs.svelte, // based on the recommended config and adds svelte linting on .svelte files
-  {
-    ignores: ["dist", "node_modules"],
-  },
-);
-```
-
-Using React and Svelte:
-
-```js
-// @ts-check
-import qlik from "@qlik/eslint-config";
-
-export default qlik.compose(
-  ...qlik.configs.react,
-  ...qlik.configs.svelte,
   {
     ignores: ["dist", "node_modules"],
   },
@@ -203,17 +174,6 @@ import qlik from "@qlik/eslint-config";
 
 export default qlik.compose(
   ...qlik.configs.react,
-)
-```
-
-Using only javascript and svelte
-
-```js
-import qlik, { recommendedJS, svelteJS } from "@qlik/eslint-config";
-
-export default qlik.compose(
-  recommendedJS,
-  svelteJS,
 )
 ```
 

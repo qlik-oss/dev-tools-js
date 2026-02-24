@@ -1519,7 +1519,6 @@ export default [
             "**/jest.setup.{cjs,mjs,js,ts}",
             "**/vitest.config.{cjs,mjs,js,ts}",
             "**/vue.config.{cjs,mjs,js,ts}",
-            "**/svelte.config.{cjs,mjs,js,ts}",
             "**/tsup.config.{cjs,mjs,js,ts}",
             "**/playwright.config.{cjs,mjs,js,ts}",
             "**/webpack.config.{cjs,mjs,js,ts}",
@@ -3471,9 +3470,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.56.0"
+            "version": "8.56.1"
           },
-          "version": "8.56.0"
+          "version": "8.56.1"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -3914,7 +3913,6 @@ export default [
             "**/jest.setup.{cjs,mjs,js,ts}",
             "**/vitest.config.{cjs,mjs,js,ts}",
             "**/vue.config.{cjs,mjs,js,ts}",
-            "**/svelte.config.{cjs,mjs,js,ts}",
             "**/tsup.config.{cjs,mjs,js,ts}",
             "**/playwright.config.{cjs,mjs,js,ts}",
             "**/webpack.config.{cjs,mjs,js,ts}",
@@ -5123,7 +5121,6 @@ export default [
             "**/jest.setup.{cjs,mjs,js,ts}",
             "**/vitest.config.{cjs,mjs,js,ts}",
             "**/vue.config.{cjs,mjs,js,ts}",
-            "**/svelte.config.{cjs,mjs,js,ts}",
             "**/tsup.config.{cjs,mjs,js,ts}",
             "**/playwright.config.{cjs,mjs,js,ts}",
             "**/webpack.config.{cjs,mjs,js,ts}",
@@ -5989,9 +5986,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.56.0"
+            "version": "8.56.1"
           },
-          "version": "8.56.0"
+          "version": "8.56.1"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -6432,7 +6429,6 @@ export default [
             "**/jest.setup.{cjs,mjs,js,ts}",
             "**/vitest.config.{cjs,mjs,js,ts}",
             "**/vue.config.{cjs,mjs,js,ts}",
-            "**/svelte.config.{cjs,mjs,js,ts}",
             "**/tsup.config.{cjs,mjs,js,ts}",
             "**/playwright.config.{cjs,mjs,js,ts}",
             "**/webpack.config.{cjs,mjs,js,ts}",

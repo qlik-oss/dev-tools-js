@@ -55,7 +55,6 @@ const rules = {
         "**/jest.setup.{cjs,mjs,js,ts}", // jest setup
         "**/vitest.config.{cjs,mjs,js,ts}", // vitest config
         "**/vue.config.{cjs,mjs,js,ts}", // vue-cli config
-        "**/svelte.config.{cjs,mjs,js,ts}", // svelte config
         "**/tsup.config.{cjs,mjs,js,ts}", // tsup config
         "**/playwright.config.{cjs,mjs,js,ts}", // playwright config
         "**/webpack.config.{cjs,mjs,js,ts}", // webpack config

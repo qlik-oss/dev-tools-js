@@ -4,7 +4,6 @@
     "packages/eslint-config",
     "packages/prettier-config",
     "packages/tsconfig",
-    "test/test-react-svelte",
     "test/test-react",
     "test/test-base"
   ]
