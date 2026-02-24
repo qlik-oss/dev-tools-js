@@ -56,9 +56,6 @@ await fs.writeFile(recommendedConfig, `export default ${parseConfig(qlik.configs
 // react
 const reactConfig = path.resolve(__dirname, "generated/react-final-config.js");
 await fs.writeFile(reactConfig, `export default ${parseConfig(qlik.configs.react)}`);
-// svelte
-const svelteConfig = path.resolve(__dirname, "generated/svelte-final-config.js");
-await fs.writeFile(svelteConfig, `export default ${parseConfig(qlik.configs.svelte)}`);
 // vitest
 const vitestConfig = path.resolve(__dirname, "generated/vitest-final-config.js");
 await fs.writeFile(vitestConfig, `export default ${parseConfig(qlik.configs.vitest)}`);

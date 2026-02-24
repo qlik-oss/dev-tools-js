@@ -3,7 +3,6 @@ import prettier from "eslint-config-prettier";
 import eslintReact from "@eslint-react/eslint-plugin";
 import { mergeConfigs } from "../utils/config.js";
 import { baseConfigJS, baseConfigTS } from "./shared/base.js";
-import { baseCjsJS, baseCjsTS } from "./shared/node.js";
 
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}

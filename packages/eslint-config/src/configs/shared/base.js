@@ -1,4 +1,5 @@
 import js from "@eslint/js";
+import confusingBrowserGlobals from "confusing-browser-globals";
 import eslintPluginImportLite from "eslint-plugin-import-lite";
 import globals from "globals";
 import tsconfig from "typescript-eslint";
@@ -25,9 +26,25 @@ const baseConfig = mergeConfigs(
       sourceType: "module",
     },
     rules: {
-      // add our recommended rules
-      // ...eslintCoreRules,
-      // ...importXRules,
+      // add or modify recommended rules
+
+      // disallow specific globals
+      // https://eslint.org/docs/latest/rules/no-restricted-globals
+      "no-restricted-globals": [
+        "error",
+        {
+          name: "isFinite",
+          message: "Use Number.isFinite instead",
+        },
+        {
+          name: "isNaN",
+          message: "Use Number.isNaN instead",
+        },
+        ...confusingBrowserGlobals.map((g) => ({
+          name: g,
+          message: `Use window.${g} instead`,
+        })),
+      ],
     },
   },
 );
