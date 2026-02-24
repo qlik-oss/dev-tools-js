@@ -1,16 +1,10 @@
 // @ts-check
 import globals from "globals";
 import { mergeConfigs } from "../../utils/config.js";
-import nodeRules from "../rules/node.js";
 import { baseConfigJS, baseConfigTS } from "./base.js";
+// import nodeRules from "../rules/node.js";
 
-/**
- * @satisfies {import("../../types/index.js").ESLintFlatConfig['rules']}
- */
-const cjsRules = {
-  ...nodeRules,
-  // modify rules for node commonjs here
-};
+// TODO use eslint-plugin-n https://github.com/eslint-community/eslint-plugin-n
 
 /**
  * CJS config for javascript in node
@@ -25,7 +19,10 @@ const baseCjsJS = mergeConfigs(
       globals: globals.node,
       sourceType: "commonjs",
     },
-    rules: cjsRules,
+    rules: {
+      // console.logs are useful in node scripts
+      "no-console": "off",
+    },
   },
 );
 
@@ -43,31 +40,11 @@ const baseCjsTS = mergeConfigs(
       sourceType: "commonjs",
     },
     rules: {
-      ...cjsRules,
-      // modify ts specific rules for node here
+      // console.logs are useful in node scripts
+      "no-console": "off",
     },
   },
 );
-
-/**
- * @satisfies {import("../../types/index.js").ESLintFlatConfig["rules"]}
- */
-const nodeEsmRules = {
-  ...nodeRules,
-  // modify rules for node esm here
-
-  // Ensure consistent use of file extension within the import path
-  // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/extensions.md
-  "import-x/extensions": [
-    "error",
-    "ignorePackages",
-    {
-      ts: "never",
-      mts: "never",
-      tsx: "never",
-    },
-  ],
-};
 
 /**
  * ESM config for javascript in node
@@ -82,7 +59,10 @@ const baseEsmJS = mergeConfigs(
       globals: globals.node,
       sourceType: "module",
     },
-    rules: nodeEsmRules,
+    rules: {
+      // console.logs are useful in node scripts
+      "no-console": "off",
+    },
   },
 );
 
@@ -100,7 +80,8 @@ const baseEsmTS = mergeConfigs(
       sourceType: "module",
     },
     rules: {
-      ...nodeEsmRules,
+      // console.logs are useful in node scripts
+      "no-console": "off",
       // modify typescript specific rules for node esm here if needed
     },
   },

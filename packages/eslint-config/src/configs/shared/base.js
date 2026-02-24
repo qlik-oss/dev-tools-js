@@ -1,12 +1,11 @@
 import js from "@eslint/js";
-import tsParser from "@typescript-eslint/parser";
-import eslintPluginImportX from "eslint-plugin-import-x";
+import eslintPluginImportLite from "eslint-plugin-import-lite";
 import globals from "globals";
 import tsconfig from "typescript-eslint";
 import { mergeConfigs } from "../../utils/config.js";
-import eslintCoreRules from "../rules/eslint-core.js";
-import importXRules from "../rules/import-x.js";
-import typescriptRules from "../rules/typescript.js";
+// import eslintCoreRules from "../rules/eslint-core.js";
+// import importXRules from "../rules/import-x.js";
+// import typescriptRules from "../rules/typescript.js";
 
 /**
  * @type {import("../../types/index.js").ESLintFlatConfig}
@@ -14,8 +13,8 @@ import typescriptRules from "../rules/typescript.js";
 const baseConfig = mergeConfigs(
   // basic js config
   js.configs.recommended,
-  // import-x plugin config
-  eslintPluginImportX.flatConfigs.recommended,
+  // import--lite plugin config
+  eslintPluginImportLite.configs.recommended,
   {
     languageOptions: {
       globals: globals.browser,
@@ -27,8 +26,8 @@ const baseConfig = mergeConfigs(
     },
     rules: {
       // add our recommended rules
-      ...eslintCoreRules,
-      ...importXRules,
+      // ...eslintCoreRules,
+      // ...importXRules,
     },
   },
 );
@@ -51,18 +50,16 @@ const baseConfigTS = mergeConfigs(
   baseConfig,
   // add recommended typescript config
   ...tsconfig.configs.recommended,
-  // add import-x recommended typescript config
-  eslintPluginImportX.flatConfigs.typescript,
   // add qlik's recommended typescript config
-  {
-    languageOptions: {
-      parserOptions: {
-        parser: tsParser,
-        projectService: true,
-      },
-    },
-    rules: typescriptRules,
-  },
+  // {
+  //   languageOptions: {
+  //     parserOptions: {
+  //       parser: tsParser,
+  //       projectService: true,
+  //     },
+  //   },
+  //   rules: typescriptRules,
+  // },
 );
 
 export { baseConfigJS, baseConfigTS };

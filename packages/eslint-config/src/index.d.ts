@@ -6,7 +6,6 @@ import playwright from "./configs/playwright.js";
 import react, { reactJS, reactTS } from "./configs/react.js";
 import recommended, { recommendedJS, recommendedTS } from "./configs/recommended.js";
 import vitest from "./configs/vitest.js";
-import compose from "./utils/compose.js";
 
 declare namespace qlikEslintConfig {
   export namespace configs {
@@ -19,7 +18,6 @@ declare namespace qlikEslintConfig {
     export { recommended };
     export { vitest };
   }
-  export { compose };
 }
 
 export default qlikEslintConfig;

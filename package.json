@@ -24,13 +24,5 @@
   "engines": {
     "node": ">=22",
     "pnpm": ">=10"
-  },
-  "pnpm": {
-    "updateConfig": {
-      "ignoreDependencies": [
-        "eslint",
-        "@eslint/js"
-      ]
-    }
   }
 }

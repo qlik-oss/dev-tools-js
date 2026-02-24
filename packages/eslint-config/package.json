@@ -22,19 +22,15 @@
     "test": "vitest run && ./test/verify-configs.sh"
   },
   "dependencies": {
-    "@eslint/js": "^9.39.2",
-    "@typescript-eslint/parser": "^8.56.1",
+    "@eslint/js": "^10.0.1",
     "@typescript-eslint/utils": "^8.56.1",
     "@vitest/eslint-plugin": "^1.6.9",
     "confusing-browser-globals": "^1.0.11",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-import-resolver-typescript": "^4.4.4",
-    "eslint-plugin-import-x": "^4.16.1",
+    "@eslint-react/eslint-plugin": "^2.13.0",
+    "eslint-plugin-import-lite": "^0.5.2",
     "eslint-plugin-jest": "^29.15.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-playwright": "^2.7.1",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-testing-library": "^7.16.0",
     "globals": "^17.3.0",
     "typescript-eslint": "^8.56.1"
@@ -43,18 +39,17 @@
     "@qlik/tsconfig": "workspace:^",
     "@types/confusing-browser-globals": "^1.0.3",
     "@types/eslint-config-prettier": "^6.11.3",
-    "@types/eslint-plugin-jsx-a11y": "^6.10.1",
     "@types/node": "^25.3.0",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.2",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
   },
   "peerDependencies": {
-    "eslint": ">=9.0.0"
+    "eslint": "10.x"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "publishConfig": {
     "access": "public",

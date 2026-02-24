@@ -2,29 +2,11 @@
 import prettier from "eslint-config-prettier";
 import globals from "globals";
 import { mergeConfigs } from "../utils/config.js";
-import nodeRules from "./rules/node.js";
 import { baseConfigJS, baseConfigTS } from "./shared/base.js";
 import { baseCjsJS, baseCjsTS } from "./shared/node.js";
+// import nodeRules from "./rules/node.js";
 
-/**
- * @satisfies {import("../types/index.js").ESLintFlatConfig["rules"]}
- */
-const nodeEsmRules = {
-  ...nodeRules,
-  // modify rules for node esm here
-
-  // Ensure consistent use of file extension within the import path
-  // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/extensions.md
-  "import-x/extensions": [
-    "error",
-    "ignorePackages",
-    {
-      ts: "never",
-      mts: "never",
-      tsx: "never",
-    },
-  ],
-};
+// TODO use eslint-plugin-n https://github.com/eslint-community/eslint-plugin-n
 
 /**
  * ESM config for javascript in node
@@ -41,7 +23,11 @@ const esmJS = mergeConfigs(
       globals: globals.node,
       sourceType: "module",
     },
-    rules: nodeEsmRules,
+    rules: {
+      // console.logs are useful in node scripts
+      "no-console": "off",
+      // modify javascript specific rules for node esm here if needed
+    },
   },
   prettier,
 );
@@ -62,7 +48,8 @@ const esmTS = mergeConfigs(
       sourceType: "module",
     },
     rules: {
-      ...nodeEsmRules,
+      // console.logs are useful in node scripts
+      "no-console": "off",
       // modify typescript specific rules for node esm here if needed
     },
   },
