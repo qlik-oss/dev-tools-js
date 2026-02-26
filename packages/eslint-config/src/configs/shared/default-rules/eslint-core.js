@@ -49,17 +49,9 @@ const rules = {
   // https://eslint.org/docs/rules/no-extra-bind
   "no-extra-bind": "error",
 
-  // disallow Unnecessary Labels
-  // https://eslint.org/docs/rules/no-extra-label
-  "no-extra-label": "error",
-
   // disallow use of eval()-like methods
   // https://eslint.org/docs/rules/no-implied-eval
   "no-implied-eval": "error",
-
-  // disallow usage of __iterator__ property
-  // https://eslint.org/docs/rules/no-iterator
-  "no-iterator": "error",
 
   // disallow unnecessary nested blocks
   // https://eslint.org/docs/rules/no-lone-blocks
@@ -68,10 +60,6 @@ const rules = {
   // disallow creation of functions within loops
   // https://eslint.org/docs/rules/no-loop-func
   "no-loop-func": "error",
-
-  // don't use magic numbers
-  // https://eslint.org/docs/rules/no-magic-numbers
-  "no-magic-numbers": "off",
 
   // disallow use of new operator for Function object
   // https://eslint.org/docs/rules/no-new-func
@@ -232,10 +220,6 @@ const rules = {
   // https://eslint.org/docs/rules/radix
   radix: "error",
 
-  // DEPRECATED. require immediate function invocation to be wrapped in parentheses
-  // https://eslint.org/docs/rules/wrap-iife.html
-  // "wrap-iife": ["error", "outside", { functionPrototypeMethods: false }],
-
   // require or disallow Yoda conditions
   // https://eslint.org/docs/rules/yoda
   yoda: "error",
@@ -246,9 +230,6 @@ const rules = {
 
   // disallow use of console
   "no-console": "warn",
-
-  // DEPRECATED. disallow unnecessary semicolons
-  // "no-extra-semi": "error",
 
   // disallow function or variable declarations in nested blocks
   "no-inner-declarations": "error",
@@ -274,43 +255,9 @@ const rules = {
   // https://eslint.org/docs/rules/no-unsafe-optional-chaining
   "no-unsafe-optional-chaining": ["error", { disallowArithmeticOperators: true }],
 
-  // Disallow assignments that can lead to race conditions due to usage of await or yield
-  // https://eslint.org/docs/rules/require-atomic-updates
-  // note: not enabled because it is very buggy
-  "require-atomic-updates": "error",
-
   // ensure that the results of typeof are compared against a valid string
   // https://eslint.org/docs/rules/valid-typeof
   "valid-typeof": ["error", { requireStringLiterals: true }],
-
-  // enforces no braces where they can be omitted
-  // https://eslint.org/docs/rules/arrow-body-style
-  "arrow-body-style": "off",
-
-  // DEPRECATED. require parens in arrow function arguments
-  // https://eslint.org/docs/rules/arrow-parens
-  // "arrow-parens": ["error", "always"],
-
-  // DEPREACTED. require space before/after arrow function's arrow
-  // https://eslint.org/docs/rules/arrow-spacing
-  // "arrow-spacing": ["error", { before: true, after: true }],
-
-  // DEPREACTED. enforce the spacing around the * in generator functions
-  // https://eslint.org/docs/rules/generator-star-spacing
-  // "generator-star-spacing": ["error", { before: false, after: true }],
-
-  // DEPRECATED. disallow arrow functions where they could be confused with comparisons
-  // https://eslint.org/docs/rules/no-confusing-arrow
-  // "no-confusing-arrow": [
-  //   "error",
-  //   {
-  //     allowParens: true,
-  //   },
-  // ],
-
-  // DEPRECATED. disallow symbol constructor
-  // https://eslint.org/docs/rules/no-new-symbol
-  // "no-new-symbol": "error",
 
   // Disallow specified names in exports
   // https://eslint.org/docs/rules/no-restricted-exports
@@ -321,16 +268,6 @@ const rules = {
         "default", // use `export default` to provide a default export
         "then", // this will cause tons of confusion when your module is dynamically `import()`ed, and will break in most node ESM versions
       ],
-    },
-  ],
-
-  // disallow specific imports
-  // https://eslint.org/docs/rules/no-restricted-imports
-  "no-restricted-imports": [
-    "off",
-    {
-      paths: [],
-      patterns: [],
     },
   ],
 
@@ -367,9 +304,6 @@ const rules = {
     },
   ],
 
-  // suggest using arrow functions as callbacks
-  "prefer-arrow-callback": "off",
-
   // suggest using of const declaration for variables that are never modified after declared
   "prefer-const": [
     "error",
@@ -395,25 +329,9 @@ const rules = {
   // https://eslint.org/docs/rules/prefer-template
   "prefer-template": "error",
 
-  // DEPRECATED. enforce spacing between object rest-spread
-  // https://eslint.org/docs/rules/rest-spread-spacing
-  // "rest-spread-spacing": ["error", "never"],
-
   // require a Symbol description
   // https://eslint.org/docs/rules/symbol-description
   "symbol-description": "error",
-
-  // DEPRECATED. enforce usage of spacing in template strings
-  // https://eslint.org/docs/rules/template-curly-spacing
-  // "template-curly-spacing": "error",
-
-  // DEPRECATED. enforce spacing around the * in yield* expressions
-  // https://eslint.org/docs/rules/yield-star-spacing
-  // "yield-star-spacing": ["error", "after"],
-
-  // disallow labels that share a name with a variable
-  // https://eslint.org/docs/rules/no-label-var
-  "no-label-var": "error",
 
   // disallow specific globals
   // https://eslint.org/docs/latest/rules/no-restricted-globals
@@ -434,47 +352,23 @@ const rules = {
   ],
 
   // disallow declaration of variables already declared in the outer scope
+  // https://eslint.org/docs/latest/rules/no-shadow
   "no-shadow": "error",
 
   // disallow use of undefined when initializing variables
+  // https://eslint.org/docs/latest/rules/no-undef-init
   "no-undef-init": "error",
 
   // require camel case names
+  // https://eslint.org/docs/latest/rules/camelcase
   camelcase: ["error", { properties: "never", ignoreDestructuring: false }],
-
-  // DEPRECATED. https://eslint.org/docs/rules/function-call-argument-newline
-  // "function-call-argument-newline": ["error", "consistent"],
 
   // require function expressions to have a name
   // https://eslint.org/docs/rules/func-names
   "func-names": "warn",
 
-  // DEPRECATED. require or disallow newlines around directives
-  // https://eslint.org/docs/rules/lines-around-directive
-  // "lines-around-directive": [
-  //   "error",
-  //   {
-  //     before: "always",
-  //     after: "always",
-  //   },
-  // ],
-
-  // DEPRECATED. specify the maximum length of a line in your program
-  // https://eslint.org/docs/rules/max-len
-  // "max-len": [
-  //   "error",
-  //   100,
-  //   2,
-  //   {
-  //     ignoreUrls: true,
-  //     ignoreComments: false,
-  //     ignoreRegExpLiterals: true,
-  //     ignoreStrings: true,
-  //     ignoreTemplateLiterals: true,
-  //   },
-  // ],
-
   // require a capital letter for constructors
+  // https://eslint.org/docs/rules/new-cap
   "new-cap": [
     "error",
     {
@@ -485,68 +379,19 @@ const rules = {
     },
   ],
 
-  // DEPRECATED. disallow the omission of parentheses when invoking a constructor with no arguments
-  // https://eslint.org/docs/rules/new-parens
-  // "new-parens": "error",
-
-  // DEPRECATED. enforces new line after each method call in the chain to make it
-  // more readable and easy to maintain
-  // https://eslint.org/docs/rules/newline-per-chained-call
-  // "newline-per-chained-call": ["error", { ignoreChainWithDepth: 4 }],
-
   // disallow use of the Array constructor
   "no-array-constructor": "error",
-
-  // disallow use of bitwise operators
-  // https://eslint.org/docs/rules/no-bitwise
-  "no-bitwise": "error",
-
-  // disallow use of the continue statement
-  // https://eslint.org/docs/rules/no-continue
-  "no-continue": "error",
 
   // disallow if as the only statement in an else block
   // https://eslint.org/docs/rules/no-lonely-if
   "no-lonely-if": "error",
 
-  // DEPRECATED. disallow un-paren'd mixes of different operators
-  // https://eslint.org/docs/rules/no-mixed-operators
-  // "no-mixed-operators": [
-  //   "error",
-  //   {
-  //     // the list of arithmetic groups disallows mixing `%` and `**`
-  //     // with other arithmetic operators.
-  //     groups: [
-  //       ["%", "**"],
-  //       ["%", "+"],
-  //       ["%", "-"],
-  //       ["%", "*"],
-  //       ["%", "/"],
-  //       ["/", "*"],
-  //       ["&", "|", "<<", ">>", ">>>"],
-  //       ["==", "!=", "===", "!=="],
-  //       ["&&", "||"],
-  //     ],
-  //     allowSamePrecedence: false,
-  //   },
-  // ],
-
-  // DEPRECATED. disallow mixed spaces and tabs for indentation
-  // "no-mixed-spaces-and-tabs": "error",
-
   // disallow use of chained assignment expressions
   // https://eslint.org/docs/rules/no-multi-assign
   "no-multi-assign": ["error"],
 
-  // DEPRECATED. disallow multiple empty lines, only one newline at the end, and no new lines at the beginning
-  // https://eslint.org/docs/rules/no-multiple-empty-lines
-  // "no-multiple-empty-lines": ["error", { max: 1, maxBOF: 0, maxEOF: 0 }],
-
   // disallow nested ternary expressions
   "no-nested-ternary": "error",
-
-  // DEPRECATED. disallow use of the Object constructor
-  // "no-new-object": "error",
 
   // disallow certain syntax forms
   // https://eslint.org/docs/rules/no-restricted-syntax
@@ -567,65 +412,18 @@ const rules = {
     },
   ],
 
-  // DEPRECATED. disallow tab characters entirely
-  // "no-tabs": "error",
-
-  // disallow dangling underscores in identifiers
-  // https://eslint.org/docs/rules/no-underscore-dangle
-  "no-underscore-dangle": "off",
-
   // disallow the use of Boolean literals in conditional expressions
   // also, prefer `a || b` over `a ? a : b`
   // https://eslint.org/docs/rules/no-unneeded-ternary
   "no-unneeded-ternary": ["error", { defaultAssignment: false }],
 
-  // DEPRECATED. disallow whitespace before properties
-  // https://eslint.org/docs/rules/no-whitespace-before-property
-  // "no-whitespace-before-property": "error",
-
-  // DEPRECATED. enforce the location of single-line statements
-  // https://eslint.org/docs/rules/nonblock-statement-body-position
-  // "nonblock-statement-body-position": ["error", "beside", { overrides: {} }],
-
-  // DEPRECATED. require padding inside curly braces
-  // "object-curly-spacing": ["error", "always"],
-
-  // DEPRECATED. enforce line breaks between braces
-  // https://eslint.org/docs/rules/object-curly-newline
-  // "object-curly-newline": [
-  //   "error",
-  //   {
-  //     ObjectExpression: { minProperties: 4, multiline: true, consistent: true },
-  //     ObjectPattern: { minProperties: 4, multiline: true, consistent: true },
-  //     ImportDeclaration: { minProperties: 4, multiline: true, consistent: true },
-  //     ExportDeclaration: { minProperties: 4, multiline: true, consistent: true },
-  //   },
-  // ],
-
-  // DEPRECATED. enforce "same line" or "multiple line" on object properties.
-  // https://eslint.org/docs/rules/object-property-newline
-  // "object-property-newline": [
-  //   "error",
-  //   {
-  //     allowAllPropertiesOnSameLine: true,
-  //   },
-  // ],
-
   // allow just one var statement per function
   // https://eslint.org/docs/rules/one-var
   "one-var": ["error", "never"],
 
-  // DEPREACTED. require a newline around variable declaration
-  // https://eslint.org/docs/rules/one-var-declaration-per-line
-  // "one-var-declaration-per-line": ["error", "always"],
-
   // require assignment operator shorthand where possible or prohibit it entirely
   // https://eslint.org/docs/rules/operator-assignment
   "operator-assignment": ["error", "always"],
-
-  // DEPRECATED. Requires operator at the beginning of the line in multiline statements
-  // https://eslint.org/docs/rules/operator-linebreak
-  // "operator-linebreak": ["error", "before", { overrides: { "=": "none" } }],
 
   // Disallow the use of Math.pow in favor of the ** operator
   // https://eslint.org/docs/rules/prefer-exponentiation-operator
@@ -634,31 +432,6 @@ const rules = {
   // Prefer use of an object spread over Object.assign
   // https://eslint.org/docs/rules/prefer-object-spread
   "prefer-object-spread": "error",
-
-  // DEPRECATED. require quotes around object literal property names
-  // https://eslint.org/docs/rules/quote-props.html
-  // "quote-props": ["error", "as-needed", { keywords: false, unnecessary: true, numbers: false }],
-
-  // DEPRECATED. require or disallow use of semicolons instead of ASI
-  // semi: ["error", "always"],
-
-  // DEPRECATED. require or disallow a space immediately following the // or /* in a comment
-  // https://eslint.org/docs/rules/spaced-comment
-  // "spaced-comment": [
-  //   "error",
-  //   "always",
-  //   {
-  //     line: {
-  //       exceptions: ["-", "+"],
-  //       markers: ["=", "!", "/"], // space here to support sprockets directives, slash for TS /// comments
-  //     },
-  //     block: {
-  //       exceptions: ["-", "+"],
-  //       markers: ["=", "!", ":", "::"], // space here to support sprockets directives and flow comment types
-  //       balanced: true,
-  //     },
-  //   },
-  // ],
 
   // require or disallow the Unicode Byte Order Mark
   // https://eslint.org/docs/rules/unicode-bom

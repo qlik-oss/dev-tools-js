@@ -48,17 +48,7 @@ const baseConfigTS = mergeConfigs(
   // base it on base config
   baseConfig,
   // add recommended typescript config
-  ...tsconfig.configs.recommended,
-  // add qlik's recommended typescript config
-  // {
-  //   languageOptions: {
-  //     parserOptions: {
-  //       parser: tsParser,
-  //       projectService: true,
-  //     },
-  //   },
-  //   rules: typescriptRules,
-  // },
+  ...tsconfig.configs.recommendedTypeChecked,
 );
 
 export { baseConfigJS, baseConfigTS };

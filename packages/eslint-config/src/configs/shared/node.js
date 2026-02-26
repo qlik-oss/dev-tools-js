@@ -2,7 +2,7 @@
 import globals from "globals";
 import { mergeConfigs } from "../../utils/config.js";
 import { baseConfigJS, baseConfigTS } from "./base.js";
-// import nodeRules from "../rules/node.js";
+import nodeRules from "./default-rules/node.js";
 
 // TODO use eslint-plugin-n https://github.com/eslint-community/eslint-plugin-n
 
@@ -20,8 +20,8 @@ const baseCjsJS = mergeConfigs(
       sourceType: "commonjs",
     },
     rules: {
-      // console.logs are useful in node scripts
-      "no-console": "off",
+      ...nodeRules,
+      // modify javascript specific rules for node cjs here if needed
     },
   },
 );
@@ -42,6 +42,7 @@ const baseCjsTS = mergeConfigs(
     rules: {
       // console.logs are useful in node scripts
       "no-console": "off",
+      // modify typescript specific rules for node cjs here if needed
     },
   },
 );
@@ -60,8 +61,8 @@ const baseEsmJS = mergeConfigs(
       sourceType: "module",
     },
     rules: {
-      // console.logs are useful in node scripts
-      "no-console": "off",
+      ...nodeRules,
+      // modify javascript specific rules for node esm here if needed
     },
   },
 );
@@ -80,8 +81,7 @@ const baseEsmTS = mergeConfigs(
       sourceType: "module",
     },
     rules: {
-      // console.logs are useful in node scripts
-      "no-console": "off",
+      ...nodeRules,
       // modify typescript specific rules for node esm here if needed
     },
   },
