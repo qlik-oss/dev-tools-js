@@ -3,8 +3,6 @@
     "packages/browserslist-config",
     "packages/eslint-config",
     "packages/prettier-config",
-    "packages/tsconfig",
-    "test/test-react",
-    "test/test-base"
+    "packages/tsconfig"
   ]
 }

@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-empty-object-type */
-import { TSESLint } from "@typescript-eslint/utils";
+import type { Linter } from "eslint";
 
-interface ESLintFlatConfig extends TSESLint.FlatConfig.Config {}
-interface ESLintPlugin extends TSESLint.FlatConfig.Plugin {}
-interface ESLintLanguageOptions extends TSESLint.FlatConfig.LanguageOptions {}
+type ESLintFlatConfig = Linter.Config;
+type ESLintPlugin = NonNullable<Linter.Config["plugins"]>[string];
+type ESLintLanguageOptions = NonNullable<Linter.Config["languageOptions"]>;
 
 type QlikEslintConfig = {
   configs: Record<string, ESLintFlatConfig[]>;

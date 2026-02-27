@@ -30,7 +30,6 @@ function parseConfig(configArray) {
             config.plugins[key] = `${key}-plugin`;
           }
           if (config.languageOptions?.parser) {
-            // @ts-expect-error - intentional to not include parser in the output
             config.languageOptions.parser = `${config.name || "unknown"}-parser`;
           }
         });

@@ -40,8 +40,7 @@ const baseCjsTS = mergeConfigs(
       sourceType: "commonjs",
     },
     rules: {
-      // console.logs are useful in node scripts
-      "no-console": "off",
+      ...nodeRules,
       // modify typescript specific rules for node cjs here if needed
     },
   },

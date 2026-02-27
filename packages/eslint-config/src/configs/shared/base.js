@@ -4,8 +4,7 @@ import globals from "globals";
 import tsconfig from "typescript-eslint";
 import { mergeConfigs } from "../../utils/config.js";
 import eslintCoreRules from "./default-rules/eslint-core.js";
-// import importXRules from "../rules/import-x.js";
-// import typescriptRules from "../rules/typescript.js";
+import typescriptRules from "./default-rules/typescript.js";
 
 /**
  * @type {import("../../types/index.js").ESLintFlatConfig}
@@ -49,6 +48,17 @@ const baseConfigTS = mergeConfigs(
   baseConfig,
   // add recommended typescript config
   ...tsconfig.configs.recommendedTypeChecked,
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+      },
+    },
+    rules: {
+      ...typescriptRules,
+      // add qlik's recommended typescript config for typescript here if needed
+    },
+  },
 );
 
 export { baseConfigJS, baseConfigTS };
