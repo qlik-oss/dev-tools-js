@@ -97,8 +97,7 @@ export default [
     },
     "name": "@qlik/eslint-config/node-esm-js",
     "plugins": {
-      "@typescript-eslint": "@typescript-eslint-plugin",
-      "import-lite": "import-lite-plugin"
+      "@typescript-eslint": "@typescript-eslint-plugin"
     },
     "rules": {
       "@babel/object-curly-spacing": "off",
@@ -363,7 +362,6 @@ export default [
       "generator-star-spacing": "off",
       "getter-return": "error",
       "implicit-arrow-linebreak": "off",
-      "import-lite/no-duplicates": "error",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -1112,14 +1110,14 @@ export default [
       },
       "parser": "@qlik/eslint-config/node-esm-ts-parser",
       "parserOptions": {
+        "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
       },
       "sourceType": "module"
     },
     "name": "@qlik/eslint-config/node-esm-ts",
     "plugins": {
-      "@typescript-eslint": "@typescript-eslint-plugin",
-      "import-lite": "import-lite-plugin"
+      "@typescript-eslint": "@typescript-eslint-plugin"
     },
     "rules": {
       "@babel/object-curly-spacing": "off",
@@ -1316,6 +1314,30 @@ export default [
       "@typescript-eslint/keyword-spacing": "off",
       "@typescript-eslint/lines-around-comment": 0,
       "@typescript-eslint/member-delimiter-style": "off",
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "format": [
+            "camelCase",
+            "PascalCase",
+            "UPPER_CASE"
+          ],
+          "selector": "variable"
+        },
+        {
+          "format": [
+            "camelCase",
+            "PascalCase"
+          ],
+          "selector": "function"
+        },
+        {
+          "format": [
+            "PascalCase"
+          ],
+          "selector": "typeLike"
+        }
+      ],
       "@typescript-eslint/no-array-constructor": "error",
       "@typescript-eslint/no-array-delete": "error",
       "@typescript-eslint/no-base-to-string": "error",
@@ -1335,6 +1357,7 @@ export default [
       "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
       "@typescript-eslint/no-redundant-type-constituents": "error",
       "@typescript-eslint/no-require-imports": "error",
+      "@typescript-eslint/no-shadow": "error",
       "@typescript-eslint/no-this-alias": "error",
       "@typescript-eslint/no-unnecessary-type-assertion": "error",
       "@typescript-eslint/no-unnecessary-type-constraint": "error",
@@ -1376,18 +1399,12 @@ export default [
       "babel/semi": "off",
       "block-spacing": "off",
       "brace-style": "off",
-      "camelcase": [
-        "error",
-        {
-          "ignoreDestructuring": false,
-          "properties": "never"
-        }
-      ],
+      "camelcase": "off",
       "comma-dangle": "off",
       "comma-spacing": "off",
       "comma-style": "off",
       "computed-property-spacing": "off",
-      "consistent-return": "error",
+      "consistent-return": "off",
       "constructor-super": "off",
       "curly": 0,
       "default-case": [
@@ -1427,7 +1444,6 @@ export default [
       "generator-star-spacing": "off",
       "getter-return": "off",
       "implicit-arrow-linebreak": "off",
-      "import-lite/no-duplicates": "error",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -1864,7 +1880,7 @@ export default [
       "no-self-compare": "error",
       "no-sequences": "error",
       "no-setter-return": "off",
-      "no-shadow": "error",
+      "no-shadow": "off",
       "no-shadow-restricted-names": "error",
       "no-space-before-semi": "off",
       "no-spaced-func": "off",
@@ -2166,8 +2182,7 @@ export default [
     },
     "name": "@qlik/eslint-config/node-esm-cjs",
     "plugins": {
-      "@typescript-eslint": "@typescript-eslint-plugin",
-      "import-lite": "import-lite-plugin"
+      "@typescript-eslint": "@typescript-eslint-plugin"
     },
     "rules": {
       "@babel/object-curly-spacing": "off",
@@ -2432,7 +2447,6 @@ export default [
       "generator-star-spacing": "off",
       "getter-return": "error",
       "implicit-arrow-linebreak": "off",
-      "import-lite/no-duplicates": "error",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -3181,14 +3195,14 @@ export default [
       },
       "parser": "@qlik/eslint-config/node-esm-cts-parser",
       "parserOptions": {
+        "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
       },
       "sourceType": "commonjs"
     },
     "name": "@qlik/eslint-config/node-esm-cts",
     "plugins": {
-      "@typescript-eslint": "@typescript-eslint-plugin",
-      "import-lite": "import-lite-plugin"
+      "@typescript-eslint": "@typescript-eslint-plugin"
     },
     "rules": {
       "@babel/object-curly-spacing": "off",
@@ -3385,6 +3399,30 @@ export default [
       "@typescript-eslint/keyword-spacing": "off",
       "@typescript-eslint/lines-around-comment": 0,
       "@typescript-eslint/member-delimiter-style": "off",
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "format": [
+            "camelCase",
+            "PascalCase",
+            "UPPER_CASE"
+          ],
+          "selector": "variable"
+        },
+        {
+          "format": [
+            "camelCase",
+            "PascalCase"
+          ],
+          "selector": "function"
+        },
+        {
+          "format": [
+            "PascalCase"
+          ],
+          "selector": "typeLike"
+        }
+      ],
       "@typescript-eslint/no-array-constructor": "error",
       "@typescript-eslint/no-array-delete": "error",
       "@typescript-eslint/no-base-to-string": "error",
@@ -3404,6 +3442,7 @@ export default [
       "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
       "@typescript-eslint/no-redundant-type-constituents": "error",
       "@typescript-eslint/no-require-imports": "error",
+      "@typescript-eslint/no-shadow": "error",
       "@typescript-eslint/no-this-alias": "error",
       "@typescript-eslint/no-unnecessary-type-assertion": "error",
       "@typescript-eslint/no-unnecessary-type-constraint": "error",
@@ -3445,18 +3484,12 @@ export default [
       "babel/semi": "off",
       "block-spacing": "off",
       "brace-style": "off",
-      "camelcase": [
-        "error",
-        {
-          "ignoreDestructuring": false,
-          "properties": "never"
-        }
-      ],
+      "camelcase": "off",
       "comma-dangle": "off",
       "comma-spacing": "off",
       "comma-style": "off",
       "computed-property-spacing": "off",
-      "consistent-return": "error",
+      "consistent-return": "off",
       "constructor-super": "off",
       "curly": 0,
       "default-case": [
@@ -3496,7 +3529,6 @@ export default [
       "generator-star-spacing": "off",
       "getter-return": "off",
       "implicit-arrow-linebreak": "off",
-      "import-lite/no-duplicates": "error",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -3933,7 +3965,7 @@ export default [
       "no-self-compare": "error",
       "no-sequences": "error",
       "no-setter-return": "off",
-      "no-shadow": "error",
+      "no-shadow": "off",
       "no-shadow-restricted-names": "error",
       "no-space-before-semi": "off",
       "no-spaced-func": "off",

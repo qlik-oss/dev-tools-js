@@ -5,7 +5,7 @@ import { mergeConfigs } from "../utils/config.js";
 
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
- * config for jest https://github.com/jest-community/eslint-plugin-jest
+ * config for vitest https://github.com/vitest/eslint-plugin-vitest
  */
 const vitest = mergeConfigs(
   // base it on the recommended vitest config

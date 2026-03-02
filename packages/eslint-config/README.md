@@ -118,7 +118,7 @@ import qlik from "@qlik/eslint-config";
 export default qlik.compose(
   ...qlik.configs.recommended,  // pure browser environment
   ...qlik.configs.vitest,       // enable vitest linting on files inside __test(s)__ folder
-  ...qlik.configs.jest,         // enable jest linting on files inside __test(s)__ folder, DON'T use together with vitest
+
   ...qlik.configs.playwright,   // enable playwright linting on files inside ./test(s) folder.
   {
     ignores: ["dist", "npm", "node_modules"],
@@ -270,7 +270,7 @@ export default qlik.compose(
 );
 ```
 
-Another GOTCHA can happen with the vitest and jest configs
+Another GOTCHA can happen with the vitest configs
 
 ```js
 // @ts-check

@@ -2,7 +2,6 @@
 import cjs, { cjsJS, cjsTS } from "./configs/cjs.js";
 import esbrowser, { esbrowserJS, esbrowserTS } from "./configs/esbrowser.js";
 import esm, { esmJS, esmTS } from "./configs/esm.js";
-import jest from "./configs/jest.js";
 import playwright from "./configs/playwright.js";
 import react, { reactJS, reactTS } from "./configs/react.js";
 import recommended, { recommendedJS, recommendedTS } from "./configs/recommended.js";
@@ -16,7 +15,6 @@ const qlikEslintConfig = {
     cjs,
     esbrowser,
     esm,
-    jest,
     playwright,
     react,
     recommended,

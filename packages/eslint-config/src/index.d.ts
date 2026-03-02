@@ -1,7 +1,6 @@
 import cjs, { cjsJS, cjsTS } from "./configs/cjs.js";
 import esbrowser, { esbrowserJS, esbrowserTS } from "./configs/esbrowser.js";
 import esm, { esmJS, esmTS } from "./configs/esm.js";
-import jest from "./configs/jest.js";
 import playwright from "./configs/playwright.js";
 import react, { reactJS, reactTS } from "./configs/react.js";
 import recommended, { recommendedJS, recommendedTS } from "./configs/recommended.js";
@@ -13,7 +12,6 @@ declare namespace qlikEslintConfig {
     export { esbrowser };
     export { esm };
     export { playwright };
-    export { jest };
     export { react };
     export { recommended };
     export { vitest };
@@ -21,15 +19,4 @@ declare namespace qlikEslintConfig {
 }
 
 export default qlikEslintConfig;
-export {
-  cjsJS,
-  cjsTS,
-  esbrowserJS,
-  esbrowserTS,
-  esmJS,
-  esmTS,
-  reactJS,
-  reactTS,
-  recommendedJS,
-  recommendedTS,
-};
+export { cjsJS, cjsTS, esbrowserJS, esbrowserTS, esmJS, esmTS, reactJS, reactTS, recommendedJS, recommendedTS };

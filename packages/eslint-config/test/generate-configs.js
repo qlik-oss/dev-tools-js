@@ -58,9 +58,6 @@ await fs.writeFile(reactConfig, `export default ${parseConfig(qlik.configs.react
 // vitest
 const vitestConfig = path.resolve(__dirname, "generated/vitest-final-config.js");
 await fs.writeFile(vitestConfig, `export default ${parseConfig(qlik.configs.vitest)}`);
-// jest
-const jestConfig = path.resolve(__dirname, "generated/jest-final-config.js");
-await fs.writeFile(jestConfig, `export default ${parseConfig(qlik.configs.jest)}`);
 // playwright
 const playwrightConfig = path.resolve(__dirname, "generated/playwright-final-config.js");
 await fs.writeFile(playwrightConfig, `export default ${parseConfig(qlik.configs.playwright)}`);

@@ -9,6 +9,7 @@ import nodeRules from "./default-rules/node.js";
 /**
  * CJS config for javascript in node
  * @type {import("../../types/index.js").ESLintFlatConfig}
+ * This config is meant to be extended by javascript specific configs, it is not meant to be used directly.
  */
 const baseCjsJS = mergeConfigs(
   // base it on the recommended javascript config
@@ -28,6 +29,7 @@ const baseCjsJS = mergeConfigs(
 
 /**
  * CJS config for typescript in node
+ * This config is meant to be extended by typescript specific configs, it is not meant to be used directly.
  * @type {import("../../types/index.js").ESLintFlatConfig}
  */
 const baseCjsTS = mergeConfigs(
