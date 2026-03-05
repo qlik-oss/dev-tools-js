@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.4.22
+
+### Patch Changes
+
+- ccf6345: Updates npm dependencies
+
 ## 1.4.21
 
 ### Patch Changes
