@@ -163,6 +163,7 @@ export default [
         "CookieStore": false,
         "CookieStoreManager": false,
         "CountQueuingStrategy": false,
+        "CrashReportContext": false,
         "CreateMonitor": false,
         "Credential": false,
         "CredentialsContainer": false,
@@ -520,6 +521,7 @@ export default [
         "OffscreenCanvasRenderingContext2D": false,
         "Option": false,
         "OrientationSensor": false,
+        "Origin": false,
         "OscillatorNode": false,
         "OverconstrainedError": false,
         "PERSISTENT": false,
@@ -552,6 +554,7 @@ export default [
         "PerformanceScriptTiming": false,
         "PerformanceServerTiming": false,
         "PerformanceTiming": false,
+        "PerformanceTimingConfidence": false,
         "PeriodicSyncManager": false,
         "PeriodicWave": false,
         "PermissionStatus": false,
@@ -954,6 +957,7 @@ export default [
         "confirm": false,
         "console": false,
         "cookieStore": false,
+        "crashReport": false,
         "createImageBitmap": false,
         "credentialless": false,
         "crossOriginIsolated": false,
@@ -2455,6 +2459,7 @@ export default [
         "CookieStore": false,
         "CookieStoreManager": false,
         "CountQueuingStrategy": false,
+        "CrashReportContext": false,
         "CreateMonitor": false,
         "Credential": false,
         "CredentialsContainer": false,
@@ -2812,6 +2817,7 @@ export default [
         "OffscreenCanvasRenderingContext2D": false,
         "Option": false,
         "OrientationSensor": false,
+        "Origin": false,
         "OscillatorNode": false,
         "OverconstrainedError": false,
         "PERSISTENT": false,
@@ -2844,6 +2850,7 @@ export default [
         "PerformanceScriptTiming": false,
         "PerformanceServerTiming": false,
         "PerformanceTiming": false,
+        "PerformanceTimingConfidence": false,
         "PeriodicSyncManager": false,
         "PeriodicWave": false,
         "PermissionStatus": false,
@@ -3246,6 +3253,7 @@ export default [
         "confirm": false,
         "console": false,
         "cookieStore": false,
+        "crashReport": false,
         "createImageBitmap": false,
         "credentialless": false,
         "crossOriginIsolated": false,
@@ -3471,9 +3479,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.56.0"
+            "version": "8.56.1"
           },
-          "version": "8.56.0"
+          "version": "8.56.1"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -5989,9 +5997,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.56.0"
+            "version": "8.56.1"
           },
-          "version": "8.56.0"
+          "version": "8.56.1"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
