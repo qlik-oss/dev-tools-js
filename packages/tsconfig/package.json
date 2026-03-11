@@ -2,9 +2,8 @@
   "name": "@qlik/tsconfig",
   "version": "0.3.1",
   "description": "Useful compiler options for compiling a TypeScript project",
-  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
-  "main": "recommended.json",
+  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "files": [
     "node.json",
     "react.json",
@@ -13,12 +12,13 @@
     "strictest.json",
     "vue.json"
   ],
-  "scripts": {
-    "format:check": "cd ../.. && prettier --check 'packages/tsconfig' --ignore-unknown",
-    "format:write": "cd ../.. && prettier --write 'packages/tsconfig' --ignore-unknown"
-  },
+  "main": "recommended.json",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "format:check": "cd ../.. && oxfmt --check 'packages/tsconfig' --ignore-unknown",
+    "format:write": "cd ../.. && oxfmt 'packages/tsconfig'"
   }
 }
