@@ -6,12 +6,12 @@
     "browserslist",
     "web"
   ],
-  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
-  "main": "index.js",
+  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "files": [
     "index.js"
   ],
+  "main": "index.js",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
