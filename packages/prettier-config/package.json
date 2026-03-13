@@ -1,13 +1,17 @@
 {
   "name": "@qlik/prettier-config",
-  "version": "0.4.34",
+  "version": "0.4.36",
   "description": "Qlik's shared Prettier config",
-  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
+  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "main": "./prettier.config.js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
-    "format:check": "cd ../.. && prettier --check 'packages/prettier-config' --ignore-unknown",
-    "format:write": "cd ../.. && prettier --write 'packages/prettier-config' --ignore-unknown"
+    "format:check": "cd ../.. && oxfmt --check 'packages/prettier-config'",
+    "format:write": "cd ../.. && oxfmt 'packages/prettier-config'"
   },
   "dependencies": {
     "prettier-plugin-organize-imports": "^4.3.0",
@@ -19,9 +23,5 @@
   },
   "engines": {
     "node": ">=18"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   }
 }

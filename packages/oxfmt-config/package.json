@@ -1,0 +1,27 @@
+{
+  "name": "@qlik/oxfmt-config",
+  "version": "0.1.1",
+  "description": "Qlik's shared oxfmt config",
+  "license": "ISC",
+  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
+  "type": "module",
+  "main": "./oxfmt.config.js",
+  "types": "./oxfmt.config.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "format:check": "cd ../.. && oxfmt --check 'packages/oxfmt-config'",
+    "format:write": "cd ../.. && oxfmt 'packages/oxfmt-config'"
+  },
+  "dependencies": {
+    "oxfmt": "^0.38.0"
+  },
+  "peerDependencies": {
+    "oxfmt": ">=0.38.0"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}

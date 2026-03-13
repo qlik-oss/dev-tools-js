@@ -1,5 +1,23 @@
 # @qlik/eslint-config
 
+## 1.4.24
+
+### Patch Changes
+
+- ad10229: add eslint-import-resolver-node as dependency
+
+## 1.4.23
+
+### Patch Changes
+
+- 9559f65: chore: update npm dependencies
+
+## 1.4.22
+
+### Patch Changes
+
+- ccf6345: Updates npm dependencies
+
 ## 1.4.21
 
 ### Patch Changes

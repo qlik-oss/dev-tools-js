@@ -1,23 +1,27 @@
 {
   "name": "@qlik/eslint-config",
-  "version": "1.4.21",
+  "version": "1.4.24",
   "description": "Qlik's ESLint configs",
-  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "license": "ISC",
-  "type": "module",
-  "exports": {
-    ".": "./src/index.js"
-  },
-  "module": "./src/index.js",
-  "types": "./src/index.d.ts",
+  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
   "files": [
     "src",
     "!**/__tests__"
   ],
+  "type": "module",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "check-types": "tsc --noEmit",
-    "format:check": "cd ../.. && prettier --check 'packages/eslint-config' --ignore-unknown",
-    "format:write": "cd ../.. && prettier --write 'packages/eslint-config' --ignore-unknown",
+    "format:check": "cd ../.. && oxfmt --check 'packages/eslint-config'",
+    "format:write": "cd ../.. && oxfmt 'packages/eslint-config'",
     "lint": "eslint .",
     "test": "vitest run && ./test/verify-configs.sh"
   },
@@ -48,9 +52,5 @@
   },
   "engines": {
     "node": ">=20"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   }
 }

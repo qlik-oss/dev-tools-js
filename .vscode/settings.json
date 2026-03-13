@@ -1,8 +1,10 @@
 {
+  "editor.defaultFormatter": "oxc.oxc-vscode",
   "eslint.workingDirectories": [
     "packages/browserslist-config",
     "packages/eslint-config",
+    "packages/oxfmt-config",
     "packages/prettier-config",
-    "packages/tsconfig"
-  ]
+    "packages/tsconfig",
+  ],
 }
