@@ -5,6 +5,6 @@
     "packages/eslint-config",
     "packages/oxfmt-config",
     "packages/prettier-config",
-    "packages/tsconfig",
-  ],
+    "packages/tsconfig"
+  ]
 }

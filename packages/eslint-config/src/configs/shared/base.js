@@ -1,4 +1,5 @@
 import js from "@eslint/js";
+import { importX } from "eslint-plugin-import-x";
 import globals from "globals";
 import tsconfig from "typescript-eslint";
 import { mergeConfigs } from "../../utils/config.js";
@@ -16,6 +17,8 @@ import typescriptRules from "./default-rules/typescript.js";
 const baseConfig = mergeConfigs(
   // basic js config
   js.configs.recommended,
+  // import-x recommended config
+  importX.flatConfigs.recommended,
   {
     languageOptions: {
       globals: globals.browser,
@@ -55,6 +58,8 @@ const baseConfigJS = mergeConfigs(
 const baseConfigTS = mergeConfigs(
   // base it on base config
   baseConfig,
+  // typescript settings for import-x
+  importX.flatConfigs.typescript,
   // add recommended typescript config
   ...tsconfig.configs.recommendedTypeChecked,
   {

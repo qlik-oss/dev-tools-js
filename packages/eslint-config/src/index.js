@@ -24,15 +24,4 @@ const qlikEslintConfig = {
 
 export default qlikEslintConfig;
 
-export {
-  cjsJS,
-  cjsTS,
-  esbrowserJS,
-  esbrowserTS,
-  esmJS,
-  esmTS,
-  reactJS,
-  reactTS,
-  recommendedJS,
-  recommendedTS,
-};
+export { cjsJS, cjsTS, esbrowserJS, esbrowserTS, esmJS, esmTS, reactJS, reactTS, recommendedJS, recommendedTS };

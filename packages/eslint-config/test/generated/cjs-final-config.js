@@ -97,7 +97,8 @@ export default [
     },
     "name": "@qlik/eslint-config/node-cjs-js",
     "plugins": {
-      "@typescript-eslint": "@typescript-eslint-plugin"
+      "@typescript-eslint": "@typescript-eslint-plugin",
+      "import-x": "import-x-plugin"
     },
     "rules": {
       "@babel/object-curly-spacing": "off",
@@ -362,6 +363,14 @@ export default [
       "generator-star-spacing": "off",
       "getter-return": "error",
       "implicit-arrow-linebreak": "off",
+      "import-x/default": "error",
+      "import-x/export": "error",
+      "import-x/named": "error",
+      "import-x/namespace": "error",
+      "import-x/no-duplicates": "warn",
+      "import-x/no-named-as-default": "warn",
+      "import-x/no-named-as-default-member": "warn",
+      "import-x/no-unresolved": "error",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -1117,7 +1126,8 @@ export default [
     },
     "name": "@qlik/eslint-config/node-cjs-ts",
     "plugins": {
-      "@typescript-eslint": "@typescript-eslint-plugin"
+      "@typescript-eslint": "@typescript-eslint-plugin",
+      "import-x": "import-x-plugin"
     },
     "rules": {
       "@babel/object-curly-spacing": "off",
@@ -1444,6 +1454,14 @@ export default [
       "generator-star-spacing": "off",
       "getter-return": "off",
       "implicit-arrow-linebreak": "off",
+      "import-x/default": "error",
+      "import-x/export": "error",
+      "import-x/named": "off",
+      "import-x/namespace": "error",
+      "import-x/no-duplicates": "warn",
+      "import-x/no-named-as-default": "warn",
+      "import-x/no-named-as-default-member": "warn",
+      "import-x/no-unresolved": "error",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -2082,6 +2100,33 @@ export default [
       "wrap-regex": "off",
       "yield-star-spacing": "off",
       "yoda": "error"
+    },
+    "settings": {
+      "import-x/extensions": [
+        ".ts",
+        ".tsx",
+        ".cts",
+        ".mts",
+        ".js",
+        ".jsx",
+        ".cjs",
+        ".mjs"
+      ],
+      "import-x/external-module-folders": [
+        "node_modules",
+        "node_modules/@types"
+      ],
+      "import-x/parsers": {
+        "@typescript-eslint/parser": [
+          ".ts",
+          ".tsx",
+          ".cts",
+          ".mts"
+        ]
+      },
+      "import-x/resolver": {
+        "typescript": true
+      }
     }
   },
   {
@@ -2182,7 +2227,8 @@ export default [
     },
     "name": "@qlik/eslint-config/node-cjs-mjs",
     "plugins": {
-      "@typescript-eslint": "@typescript-eslint-plugin"
+      "@typescript-eslint": "@typescript-eslint-plugin",
+      "import-x": "import-x-plugin"
     },
     "rules": {
       "@babel/object-curly-spacing": "off",
@@ -2447,6 +2493,14 @@ export default [
       "generator-star-spacing": "off",
       "getter-return": "error",
       "implicit-arrow-linebreak": "off",
+      "import-x/default": "error",
+      "import-x/export": "error",
+      "import-x/named": "error",
+      "import-x/namespace": "error",
+      "import-x/no-duplicates": "warn",
+      "import-x/no-named-as-default": "warn",
+      "import-x/no-named-as-default-member": "warn",
+      "import-x/no-unresolved": "error",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -3202,7 +3256,8 @@ export default [
     },
     "name": "@qlik/eslint-config/node-cjs-mts",
     "plugins": {
-      "@typescript-eslint": "@typescript-eslint-plugin"
+      "@typescript-eslint": "@typescript-eslint-plugin",
+      "import-x": "import-x-plugin"
     },
     "rules": {
       "@babel/object-curly-spacing": "off",
@@ -3529,6 +3584,14 @@ export default [
       "generator-star-spacing": "off",
       "getter-return": "off",
       "implicit-arrow-linebreak": "off",
+      "import-x/default": "error",
+      "import-x/export": "error",
+      "import-x/named": "off",
+      "import-x/namespace": "error",
+      "import-x/no-duplicates": "warn",
+      "import-x/no-named-as-default": "warn",
+      "import-x/no-named-as-default-member": "warn",
+      "import-x/no-unresolved": "error",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -4167,6 +4230,33 @@ export default [
       "wrap-regex": "off",
       "yield-star-spacing": "off",
       "yoda": "error"
+    },
+    "settings": {
+      "import-x/extensions": [
+        ".ts",
+        ".tsx",
+        ".cts",
+        ".mts",
+        ".js",
+        ".jsx",
+        ".cjs",
+        ".mjs"
+      ],
+      "import-x/external-module-folders": [
+        "node_modules",
+        "node_modules/@types"
+      ],
+      "import-x/parsers": {
+        "@typescript-eslint/parser": [
+          ".ts",
+          ".tsx",
+          ".cts",
+          ".mts"
+        ]
+      },
+      "import-x/resolver": {
+        "typescript": true
+      }
     }
   }
 ]
