@@ -3994,9 +3994,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.57.1"
+            "version": "8.57.2"
           },
-          "version": "8.57.1"
+          "version": "8.57.2"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -7020,9 +7020,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.57.1"
+            "version": "8.57.2"
           },
-          "version": "8.57.1"
+          "version": "8.57.2"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
