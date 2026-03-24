@@ -3295,13 +3295,6 @@ export default [
       },
       "parser": "@qlik/eslint-config/esbrowser-ts-parser",
       "parserOptions": {
-        "parser": {
-          "meta": {
-            "name": "typescript-eslint/parser",
-            "version": "8.57.2"
-          },
-          "version": "8.57.2"
-        },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
       },
@@ -5432,13 +5425,6 @@ export default [
       },
       "parser": "@qlik/eslint-config/browser-esm-cts-parser",
       "parserOptions": {
-        "parser": {
-          "meta": {
-            "name": "typescript-eslint/parser",
-            "version": "8.57.2"
-          },
-          "version": "8.57.2"
-        },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
       },
