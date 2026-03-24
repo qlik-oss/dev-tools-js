@@ -1,6 +1,6 @@
 {
   "name": "@qlik/eslint-config",
-  "version": "1.4.24",
+  "version": "1.4.26",
   "description": "Qlik's ESLint configs",
   "license": "ISC",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
@@ -26,29 +26,29 @@
     "test": "vitest run && ./test/verify-configs.sh"
   },
   "dependencies": {
-    "@eslint-react/eslint-plugin": "3.0.0-rc.1",
+    "@eslint-react/eslint-plugin": "3.0.0",
     "@eslint/js": "^10.0.1",
-    "@typescript-eslint/utils": "^8.57.0",
-    "@vitest/eslint-plugin": "^1.6.11",
+    "@typescript-eslint/utils": "^8.57.2",
+    "@vitest/eslint-plugin": "^1.6.13",
     "confusing-browser-globals": "^1.0.11",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-node": "^0.3.9",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import-x": "^4.16.2",
-    "eslint-plugin-playwright": "^2.9.0",
-    "eslint-plugin-testing-library": "^7.16.0",
+    "eslint-plugin-playwright": "^2.10.1",
+    "eslint-plugin-testing-library": "^7.16.1",
     "globals": "^17.4.0",
-    "typescript-eslint": "^8.57.0"
+    "typescript-eslint": "^8.57.2"
   },
   "devDependencies": {
     "@qlik/tsconfig": "workspace:^",
     "@types/confusing-browser-globals": "^1.0.3",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/node": "^25.5.0",
-    "eslint": "^10.0.3",
+    "eslint": "^10.1.0",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.0"
+    "vitest": "^4.1.1"
   },
   "peerDependencies": {
     "eslint": "10.x"

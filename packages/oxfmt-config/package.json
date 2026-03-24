@@ -1,6 +1,6 @@
 {
   "name": "@qlik/oxfmt-config",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "Qlik's shared oxfmt config",
   "license": "ISC",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
@@ -16,7 +16,7 @@
     "format:write": "cd ../.. && oxfmt 'packages/oxfmt-config'"
   },
   "dependencies": {
-    "oxfmt": "^0.40.0"
+    "oxfmt": "^0.42.0"
   },
   "peerDependencies": {
     "oxfmt": ">=0.38.0"
