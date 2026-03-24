@@ -1,5 +1,11 @@
 # @qlik/oxfmt-config
 
+## 0.1.3
+
+### Patch Changes
+
+- 639faf3: Update npm dependencies
+
 ## 0.1.2
 
 ### Patch Changes

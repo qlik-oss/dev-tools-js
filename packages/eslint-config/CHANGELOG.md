@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 1.4.26
+
+### Patch Changes
+
+- 639faf3: Update npm dependencies
+
 ## 1.4.25
 
 ### Patch Changes
