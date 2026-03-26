@@ -29,11 +29,9 @@
     "updateConfig": {
       "ignoreDependencies": [
         "eslint",
-        "@eslint/js"
+        "@eslint/js",
+        "typescript"
       ]
-    },
-    "overrides": {
-      "flatted@<3.4.0": ">=3.4.0"
     }
   }
 }
