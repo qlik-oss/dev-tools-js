@@ -16,7 +16,7 @@
     "format:write": "cd ../.. && oxfmt 'packages/oxfmt-config'"
   },
   "dependencies": {
-    "oxfmt": "^0.41.0"
+    "oxfmt": "^0.42.0"
   },
   "peerDependencies": {
     "oxfmt": ">=0.38.0"
