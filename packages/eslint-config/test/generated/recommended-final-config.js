@@ -1454,12 +1454,96 @@ export default [
       "implicit-arrow-linebreak": "off",
       "import-x/default": "error",
       "import-x/export": "error",
+      "import-x/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "cjs": "never",
+          "cts": "never",
+          "js": "never",
+          "jsx": "never",
+          "mjs": "never",
+          "mts": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+      ],
       "import-x/named": "error",
       "import-x/namespace": "error",
-      "import-x/no-duplicates": "warn",
-      "import-x/no-named-as-default": "warn",
+      "import-x/newline-after-import": "error",
+      "import-x/no-absolute-path": "error",
+      "import-x/no-amd": "error",
+      "import-x/no-cycle": [
+        "error",
+        {
+          "ignoreExternal": true
+        }
+      ],
+      "import-x/no-deprecated": "warn",
+      "import-x/no-duplicates": "error",
+      "import-x/no-dynamic-require": "warn",
+      "import-x/no-extraneous-dependencies": [
+        "off",
+        {
+          "devDependencies": [
+            "**/test*/**",
+            "**/mocks/**",
+            "**/mock/**",
+            "test/**",
+            "tests/**",
+            "spec/**",
+            "**/__tests__/**",
+            "**/__test__/**",
+            "**/__mocks__/**",
+            "test.{js,jsx,ts,tsx}",
+            "test-*.{js,jsx,ts,tsx}",
+            "**/*{.,_}{test,spec}.{js,jsx,ts,tsx}",
+            "**/jest.config.{cjs,mjs,js,ts}",
+            "**/jest.setup.{cjs,mjs,js,ts}",
+            "**/vitest.config.{cjs,mjs,js,ts}",
+            "**/vue.config.{cjs,mjs,js,ts}",
+            "**/svelte.config.{cjs,mjs,js,ts}",
+            "**/tsup.config.{cjs,mjs,js,ts}",
+            "**/playwright.config.{cjs,mjs,js,ts}",
+            "**/webpack.config.{cjs,mjs,js,ts}",
+            "**/webpack.mod.{cjs,mjs,js,ts}",
+            "**/rollup.config.{cjs,mjs,js,ts}",
+            "**/rollup.config.*cjs,mjs,.{js,ts}",
+            "**/protractor.conf.{cjs,mjs,js,ts}",
+            "**/protractor.conf.*.{cjs,mjs,js,ts}",
+            "**/.eslintrc.{cjs,mjs,js,ts}",
+            "**/eslint.config.{cjs,mjs,js,ts}",
+            "**/.prettierrc.{cjs,mjs,js,ts}",
+            "**/.prettierrc"
+          ],
+          "optionalDependencies": false
+        }
+      ],
+      "import-x/no-import-module-exports": [
+        "error",
+        {
+          "exceptions": []
+        }
+      ],
+      "import-x/no-mutable-exports": "error",
+      "import-x/no-named-as-default": "error",
       "import-x/no-named-as-default-member": "warn",
-      "import-x/no-unresolved": "error",
+      "import-x/no-named-default": "error",
+      "import-x/no-relative-packages": "error",
+      "import-x/no-self-import": "error",
+      "import-x/no-unresolved": [
+        "error",
+        {
+          "commonjs": true
+        }
+      ],
+      "import-x/no-useless-path-segments": [
+        "error",
+        {
+          "commonjs": true
+        }
+      ],
+      "import-x/no-webpack-loader-syntax": "error",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -3635,12 +3719,96 @@ export default [
       "implicit-arrow-linebreak": "off",
       "import-x/default": "error",
       "import-x/export": "error",
+      "import-x/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "cjs": "never",
+          "cts": "never",
+          "js": "never",
+          "jsx": "never",
+          "mjs": "never",
+          "mts": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+      ],
       "import-x/named": "off",
       "import-x/namespace": "error",
-      "import-x/no-duplicates": "warn",
-      "import-x/no-named-as-default": "warn",
+      "import-x/newline-after-import": "error",
+      "import-x/no-absolute-path": "error",
+      "import-x/no-amd": "error",
+      "import-x/no-cycle": [
+        "error",
+        {
+          "ignoreExternal": true
+        }
+      ],
+      "import-x/no-deprecated": "warn",
+      "import-x/no-duplicates": "error",
+      "import-x/no-dynamic-require": "warn",
+      "import-x/no-extraneous-dependencies": [
+        "off",
+        {
+          "devDependencies": [
+            "**/test*/**",
+            "**/mocks/**",
+            "**/mock/**",
+            "test/**",
+            "tests/**",
+            "spec/**",
+            "**/__tests__/**",
+            "**/__test__/**",
+            "**/__mocks__/**",
+            "test.{js,jsx,ts,tsx}",
+            "test-*.{js,jsx,ts,tsx}",
+            "**/*{.,_}{test,spec}.{js,jsx,ts,tsx}",
+            "**/jest.config.{cjs,mjs,js,ts}",
+            "**/jest.setup.{cjs,mjs,js,ts}",
+            "**/vitest.config.{cjs,mjs,js,ts}",
+            "**/vue.config.{cjs,mjs,js,ts}",
+            "**/svelte.config.{cjs,mjs,js,ts}",
+            "**/tsup.config.{cjs,mjs,js,ts}",
+            "**/playwright.config.{cjs,mjs,js,ts}",
+            "**/webpack.config.{cjs,mjs,js,ts}",
+            "**/webpack.mod.{cjs,mjs,js,ts}",
+            "**/rollup.config.{cjs,mjs,js,ts}",
+            "**/rollup.config.*cjs,mjs,.{js,ts}",
+            "**/protractor.conf.{cjs,mjs,js,ts}",
+            "**/protractor.conf.*.{cjs,mjs,js,ts}",
+            "**/.eslintrc.{cjs,mjs,js,ts}",
+            "**/eslint.config.{cjs,mjs,js,ts}",
+            "**/.prettierrc.{cjs,mjs,js,ts}",
+            "**/.prettierrc"
+          ],
+          "optionalDependencies": false
+        }
+      ],
+      "import-x/no-import-module-exports": [
+        "error",
+        {
+          "exceptions": []
+        }
+      ],
+      "import-x/no-mutable-exports": "error",
+      "import-x/no-named-as-default": "error",
       "import-x/no-named-as-default-member": "warn",
-      "import-x/no-unresolved": "error",
+      "import-x/no-named-default": "error",
+      "import-x/no-relative-packages": "error",
+      "import-x/no-self-import": "error",
+      "import-x/no-unresolved": [
+        "error",
+        {
+          "commonjs": true
+        }
+      ],
+      "import-x/no-useless-path-segments": [
+        "error",
+        {
+          "commonjs": true
+        }
+      ],
+      "import-x/no-webpack-loader-syntax": "error",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -4674,12 +4842,96 @@ export default [
       "implicit-arrow-linebreak": "off",
       "import-x/default": "error",
       "import-x/export": "error",
+      "import-x/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "cjs": "never",
+          "cts": "never",
+          "js": "never",
+          "jsx": "never",
+          "mjs": "never",
+          "mts": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+      ],
       "import-x/named": "error",
       "import-x/namespace": "error",
-      "import-x/no-duplicates": "warn",
-      "import-x/no-named-as-default": "warn",
+      "import-x/newline-after-import": "error",
+      "import-x/no-absolute-path": "error",
+      "import-x/no-amd": "error",
+      "import-x/no-cycle": [
+        "error",
+        {
+          "ignoreExternal": true
+        }
+      ],
+      "import-x/no-deprecated": "warn",
+      "import-x/no-duplicates": "error",
+      "import-x/no-dynamic-require": "warn",
+      "import-x/no-extraneous-dependencies": [
+        "off",
+        {
+          "devDependencies": [
+            "**/test*/**",
+            "**/mocks/**",
+            "**/mock/**",
+            "test/**",
+            "tests/**",
+            "spec/**",
+            "**/__tests__/**",
+            "**/__test__/**",
+            "**/__mocks__/**",
+            "test.{js,jsx,ts,tsx}",
+            "test-*.{js,jsx,ts,tsx}",
+            "**/*{.,_}{test,spec}.{js,jsx,ts,tsx}",
+            "**/jest.config.{cjs,mjs,js,ts}",
+            "**/jest.setup.{cjs,mjs,js,ts}",
+            "**/vitest.config.{cjs,mjs,js,ts}",
+            "**/vue.config.{cjs,mjs,js,ts}",
+            "**/svelte.config.{cjs,mjs,js,ts}",
+            "**/tsup.config.{cjs,mjs,js,ts}",
+            "**/playwright.config.{cjs,mjs,js,ts}",
+            "**/webpack.config.{cjs,mjs,js,ts}",
+            "**/webpack.mod.{cjs,mjs,js,ts}",
+            "**/rollup.config.{cjs,mjs,js,ts}",
+            "**/rollup.config.*cjs,mjs,.{js,ts}",
+            "**/protractor.conf.{cjs,mjs,js,ts}",
+            "**/protractor.conf.*.{cjs,mjs,js,ts}",
+            "**/.eslintrc.{cjs,mjs,js,ts}",
+            "**/eslint.config.{cjs,mjs,js,ts}",
+            "**/.prettierrc.{cjs,mjs,js,ts}",
+            "**/.prettierrc"
+          ],
+          "optionalDependencies": false
+        }
+      ],
+      "import-x/no-import-module-exports": [
+        "error",
+        {
+          "exceptions": []
+        }
+      ],
+      "import-x/no-mutable-exports": "error",
+      "import-x/no-named-as-default": "error",
       "import-x/no-named-as-default-member": "warn",
-      "import-x/no-unresolved": "error",
+      "import-x/no-named-default": "error",
+      "import-x/no-relative-packages": "error",
+      "import-x/no-self-import": "error",
+      "import-x/no-unresolved": [
+        "error",
+        {
+          "commonjs": true
+        }
+      ],
+      "import-x/no-useless-path-segments": [
+        "error",
+        {
+          "commonjs": true
+        }
+      ],
+      "import-x/no-webpack-loader-syntax": "error",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -5765,12 +6017,96 @@ export default [
       "implicit-arrow-linebreak": "off",
       "import-x/default": "error",
       "import-x/export": "error",
+      "import-x/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "cjs": "never",
+          "cts": "never",
+          "js": "never",
+          "jsx": "never",
+          "mjs": "never",
+          "mts": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+      ],
       "import-x/named": "off",
       "import-x/namespace": "error",
-      "import-x/no-duplicates": "warn",
-      "import-x/no-named-as-default": "warn",
+      "import-x/newline-after-import": "error",
+      "import-x/no-absolute-path": "error",
+      "import-x/no-amd": "error",
+      "import-x/no-cycle": [
+        "error",
+        {
+          "ignoreExternal": true
+        }
+      ],
+      "import-x/no-deprecated": "warn",
+      "import-x/no-duplicates": "error",
+      "import-x/no-dynamic-require": "warn",
+      "import-x/no-extraneous-dependencies": [
+        "off",
+        {
+          "devDependencies": [
+            "**/test*/**",
+            "**/mocks/**",
+            "**/mock/**",
+            "test/**",
+            "tests/**",
+            "spec/**",
+            "**/__tests__/**",
+            "**/__test__/**",
+            "**/__mocks__/**",
+            "test.{js,jsx,ts,tsx}",
+            "test-*.{js,jsx,ts,tsx}",
+            "**/*{.,_}{test,spec}.{js,jsx,ts,tsx}",
+            "**/jest.config.{cjs,mjs,js,ts}",
+            "**/jest.setup.{cjs,mjs,js,ts}",
+            "**/vitest.config.{cjs,mjs,js,ts}",
+            "**/vue.config.{cjs,mjs,js,ts}",
+            "**/svelte.config.{cjs,mjs,js,ts}",
+            "**/tsup.config.{cjs,mjs,js,ts}",
+            "**/playwright.config.{cjs,mjs,js,ts}",
+            "**/webpack.config.{cjs,mjs,js,ts}",
+            "**/webpack.mod.{cjs,mjs,js,ts}",
+            "**/rollup.config.{cjs,mjs,js,ts}",
+            "**/rollup.config.*cjs,mjs,.{js,ts}",
+            "**/protractor.conf.{cjs,mjs,js,ts}",
+            "**/protractor.conf.*.{cjs,mjs,js,ts}",
+            "**/.eslintrc.{cjs,mjs,js,ts}",
+            "**/eslint.config.{cjs,mjs,js,ts}",
+            "**/.prettierrc.{cjs,mjs,js,ts}",
+            "**/.prettierrc"
+          ],
+          "optionalDependencies": false
+        }
+      ],
+      "import-x/no-import-module-exports": [
+        "error",
+        {
+          "exceptions": []
+        }
+      ],
+      "import-x/no-mutable-exports": "error",
+      "import-x/no-named-as-default": "error",
       "import-x/no-named-as-default-member": "warn",
-      "import-x/no-unresolved": "error",
+      "import-x/no-named-default": "error",
+      "import-x/no-relative-packages": "error",
+      "import-x/no-self-import": "error",
+      "import-x/no-unresolved": [
+        "error",
+        {
+          "commonjs": true
+        }
+      ],
+      "import-x/no-useless-path-segments": [
+        "error",
+        {
+          "commonjs": true
+        }
+      ],
+      "import-x/no-webpack-loader-syntax": "error",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",

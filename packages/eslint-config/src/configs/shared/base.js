@@ -5,6 +5,7 @@ import tsconfig from "typescript-eslint";
 import { mergeConfigs } from "../../utils/config.js";
 import eslintCoreRules from "./default-rules/eslint-core.js";
 import typescriptRules from "./default-rules/typescript.js";
+import importXRules from "./default-rules/import-x.js";
 
 /**
  * This is the base config that all other configs in this package extend from.
@@ -31,6 +32,7 @@ const baseConfig = mergeConfigs(
     rules: {
       // add or modify recommended default rules
       ...eslintCoreRules,
+      ...importXRules,
     },
   },
 );
