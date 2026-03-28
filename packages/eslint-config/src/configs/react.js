@@ -3,6 +3,7 @@ import eslintReact from "@eslint-react/eslint-plugin";
 import prettier from "eslint-config-prettier";
 import { mergeConfigs } from "../utils/config.js";
 import { baseConfigJS, baseConfigTS } from "./shared/base.js";
+import reactRules from "./shared/default-rules/react.js";
 
 /**
  * @type {import("../types/index.js").ESLintFlatConfig}
@@ -18,6 +19,7 @@ const reactJS = mergeConfigs(
     files: ["**/*.js", "**/*.jsx"],
     rules: {
       // turn on/off or modify js rules necessary for react
+      ...reactRules,
     },
   },
   prettier,
@@ -37,6 +39,7 @@ const reactTS = mergeConfigs(
     files: ["**/*.ts", "**/*.tsx"],
     rules: {
       // turn on/off or modify js/ts rules necessary for react
+      ...reactRules,
     },
   },
   prettier,
