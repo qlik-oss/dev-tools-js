@@ -1,5 +1,11 @@
 # @qlik/oxfmt-config
 
+## 0.1.4
+
+### Patch Changes
+
+- 2106030: chore: update npm dependencies
+
 ## 0.1.3
 
 ### Patch Changes

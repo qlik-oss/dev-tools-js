@@ -41,6 +41,6 @@ jobs:
           commit-message: "chore: update npm dependencies"
           committer: svc-pipeline <svc_pipeline@qlik.com>
           author: svc-pipeline <svc_pipeline@qlik.com>
-          branch: chore/update-dependencies
+          branch: bot/update-dependencies
           delete-branch: true
           title: "chore: update npm dependencies"

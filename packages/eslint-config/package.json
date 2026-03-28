@@ -1,6 +1,6 @@
 {
   "name": "@qlik/eslint-config",
-  "version": "1.4.26",
+  "version": "1.4.27",
   "description": "Qlik's ESLint configs",
   "license": "ISC",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
@@ -36,7 +36,7 @@
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import-x": "^4.16.2",
     "eslint-plugin-playwright": "^2.10.1",
-    "eslint-plugin-testing-library": "^7.16.1",
+    "eslint-plugin-testing-library": "^7.16.2",
     "globals": "^17.4.0",
     "typescript-eslint": "^8.57.2"
   },
@@ -48,7 +48,7 @@
     "eslint": "^10.1.0",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.1"
+    "vitest": "^4.1.2"
   },
   "peerDependencies": {
     "eslint": "10.x"
