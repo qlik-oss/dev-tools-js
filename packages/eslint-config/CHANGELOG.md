@@ -1,5 +1,12 @@
 # @qlik/eslint-config
 
+## 1.4.28
+
+### Patch Changes
+
+- 0613527: Update npm dependencies
+- c14b933: Turn off @typescript-eslint/no-unnecessary-condition since it became buggy
+
 ## 1.4.27
 
 ### Patch Changes
