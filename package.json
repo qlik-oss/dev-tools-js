@@ -18,7 +18,7 @@
     "@changesets/cli": "^2.30.0",
     "@qlik/oxfmt-config": "workspace:^",
     "oxfmt": "^0.42.0",
-    "turbo": "^2.8.20"
+    "turbo": "^2.8.21"
   },
   "engines": {
     "node": ">=22",
