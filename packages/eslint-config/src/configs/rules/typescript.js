@@ -151,7 +151,7 @@ const rules = {
   // Lots of false/iffy positives
   // watch out for always truthy conditions
   // https://typescript-eslint.io/rules/no-unnecessary-condition
-  "@typescript-eslint/no-unnecessary-condition": "error",
+  "@typescript-eslint/no-unnecessary-condition": "off",
 
   // no unnecessary namespace qualifiers.
   // https://typescript-eslint.io/rules/no-unnecessary-qualifier
