@@ -3,10 +3,10 @@ const noNeedToDeepMerge = ["plugins", "rules", "parser"];
 const overWrite = ["files", "globals", "ignores"];
 
 /**
- *
+ * Deep merge two objects, with special handling for certain keys
  * @param {any} obj1
  * @param {any} obj2
- * @returns
+ * @returns {object}
  */
 export const merge = (obj1, obj2) => {
   // add error handling

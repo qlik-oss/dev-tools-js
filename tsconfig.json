@@ -1,0 +1,7 @@
+{
+  "extends": "@qlik/tsconfig/node.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": ["**/*"]
+}

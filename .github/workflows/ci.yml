@@ -38,6 +38,8 @@ jobs:
         run: pnpm install
       - name: Check Changeset Status
         run: pnpm exec changeset status --since=main
+      - name: Check Types
+        run: pnpm check-types
       - name: Check Format
         run: pnpm format:check
       - name: Check Lint

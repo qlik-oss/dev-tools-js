@@ -21,4 +21,3 @@ const playwright = mergeConfigs(
 );
 
 export default [playwright];
-export { playwright };

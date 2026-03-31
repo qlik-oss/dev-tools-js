@@ -23,4 +23,3 @@ const vitest = mergeConfigs(
 );
 
 export default [vitest];
-export { vitest };

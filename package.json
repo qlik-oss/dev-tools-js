@@ -6,19 +6,26 @@
   ],
   "type": "module",
   "scripts": {
+    "check-types": "turbo run check-types",
     "empty-changeset": "changeset add --empty",
     "format:check": "oxfmt --check",
     "format:write": "oxfmt",
-    "lint": "turbo run lint",
+    "lint": "eslint .",
     "prepare-release": "changeset",
     "publish-packages": "changeset publish",
     "test": "turbo run test"
   },
   "devDependencies": {
     "@changesets/cli": "^2.30.0",
+    "@qlik/eslint-config": "workspace:^",
     "@qlik/oxfmt-config": "workspace:^",
+    "@qlik/tsconfig": "workspace:^",
+    "@types/node": "^25.5.0",
+    "eslint": "^10.1.0",
     "oxfmt": "^0.43.0",
-    "turbo": "^2.9.1"
+    "turbo": "^2.9.1",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
   },
   "engines": {
     "node": ">=22",

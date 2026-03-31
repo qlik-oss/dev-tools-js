@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -11,6 +12,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
  */
 function JSONstringifyOrder(obj, space) {
   const allKeys = new Set();
+  // eslint-disable-next-line no-sequences
   JSON.stringify(obj, (key, value) => (allKeys.add(key), value));
   return JSON.stringify(obj, Array.from(allKeys).sort(), space);
 }
