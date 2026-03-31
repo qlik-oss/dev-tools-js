@@ -2,11 +2,7 @@
 import prettier from "eslint-config-prettier";
 import globals from "globals";
 import { mergeConfigs } from "../utils/config.js";
-import { baseConfigJS, baseConfigTS } from "./shared/base.js";
-import { baseCjsJS, baseCjsTS } from "./shared/node.js";
-// import nodeRules from "./rules/node.js";
-
-// TODO use eslint-plugin-n https://github.com/eslint-community/eslint-plugin-n
+import { baseCjsJS, baseCjsTS, baseEsmJS, baseEsmTS } from "./shared/node.js";
 
 /**
  * ESM config for javascript in node
@@ -14,7 +10,7 @@ import { baseCjsJS, baseCjsTS } from "./shared/node.js";
  */
 const esmJS = mergeConfigs(
   // base it on the recommended javascript config
-  baseConfigJS,
+  baseEsmJS,
   // add qlik's recommended node esm config for javascript
   {
     name: "node-esm-js",
@@ -24,8 +20,6 @@ const esmJS = mergeConfigs(
       sourceType: "module",
     },
     rules: {
-      // console.logs are useful in node scripts
-      "no-console": "off",
       // modify javascript specific rules for node esm here if needed
     },
   },
@@ -38,7 +32,7 @@ const esmJS = mergeConfigs(
  */
 const esmTS = mergeConfigs(
   // base it on the recommended typescript config
-  baseConfigTS,
+  baseEsmTS,
   // add qlik's recommended node esm config for typescript
   {
     name: "node-esm-ts",
@@ -48,8 +42,6 @@ const esmTS = mergeConfigs(
       sourceType: "module",
     },
     rules: {
-      // console.logs are useful in node scripts
-      "no-console": "off",
       // modify typescript specific rules for node esm here if needed
     },
   },

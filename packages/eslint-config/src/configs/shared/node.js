@@ -7,6 +7,26 @@ import nodeRules from "./default-rules/node.js";
 // TODO use eslint-plugin-n https://github.com/eslint-community/eslint-plugin-n
 
 /**
+ * @satisfies {import("../../types/index.js").ESLintFlatConfig["rules"]}
+ */
+const nodeEsmRules = {
+  ...nodeRules,
+  // modify rules for node esm here
+
+  // Ensure consistent use of file extension within the import path
+  // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/extensions.md
+  "import-x/extensions": [
+    "error",
+    "ignorePackages",
+    {
+      ts: "never",
+      mts: "never",
+      tsx: "never",
+    },
+  ],
+};
+
+/**
  * CJS config for javascript in node
  * @type {import("../../types/index.js").ESLintFlatConfig}
  * This config is meant to be extended by javascript specific configs, it is not meant to be used directly.
@@ -63,6 +83,7 @@ const baseEsmJS = mergeConfigs(
     },
     rules: {
       ...nodeRules,
+      ...nodeEsmRules,
       // modify javascript specific rules for node esm here if needed
     },
   },
@@ -83,6 +104,7 @@ const baseEsmTS = mergeConfigs(
     },
     rules: {
       ...nodeRules,
+      ...nodeEsmRules,
       // modify typescript specific rules for node esm here if needed
     },
   },
