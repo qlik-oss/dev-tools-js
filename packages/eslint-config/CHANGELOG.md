@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 2.0.0-next.0
+
+### Major Changes
+
+- Support ESLint 10
+
 ## 1.4.28
 
 ### Patch Changes

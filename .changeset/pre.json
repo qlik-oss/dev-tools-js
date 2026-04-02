@@ -1,0 +1,14 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@qlik/browserslist-config": "3.0.0",
+    "@qlik/eslint-config": "1.4.28",
+    "@qlik/oxfmt-config": "0.1.4",
+    "@qlik/prettier-config": "0.4.36",
+    "@qlik/tsconfig": "0.3.1"
+  },
+  "changesets": [
+    "hip-mugs-smell"
+  ]
+}
