@@ -266,7 +266,53 @@ Example of migration:
 old config:
 
 ```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 
+export default qlik.compose(
+  ...qlik.configs.react,
+  ...qlik.configs.vitest,
+  ...pluginQuery.configs["flat/recommended"],
+  {
+    rules: {
+      // Override rules if needed
+    },
+  },
+  // In its own object so it's global
+  {
+    ignores: ["dist", "node_modules", "script"],
+  },
+);
+```
+
+1. add `import { defineConfig } from "eslint/config";`
+2. replace `qlik.compose` with `defineConfig`
+3. remove the `...` from the imported configs
+4. replace `extend` with `extends` (if present)
+
+new config:
+
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+import pluginQuery from "@tanstack/eslint-plugin-query";
+import { defineConfig } from "eslint/config";
+
+export default defineConfig(
+  qlik.configs.react,
+  qlik.configs.vitest,
+  pluginQuery.configs["flat/recommended"],
+  {
+    rules: {
+      // Override rules if needed
+    },
+  },
+  // In its own object so it's global
+  {
+    ignores: ["dist", "node_modules", "script"],
+  },
+);
 ```
 
 <!-- prettier-ignore-end -->
