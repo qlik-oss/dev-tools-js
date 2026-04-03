@@ -21,8 +21,8 @@ import qlik from "@qlik/eslint-config";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
-  qlik.configs.react,
-  qlik.configs.vitest,
+  ...qlik.configs.react,
+  ...qlik.configs.vitest,
   {
     rules: {
       // Override rules if needed
@@ -44,8 +44,8 @@ import pluginQuery from "@tanstack/eslint-plugin-query";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-  qlik.configs.react,
-  qlik.configs.vitest,
+  ...qlik.configs.react,
+  ...qlik.configs.vitest,
   pluginQuery.configs["flat/recommended"],
   {
     ignores: ["dist", "script", "my-special-no-linting.ts"],
@@ -75,7 +75,7 @@ import qlik from "@qlik/eslint-config";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
-  qlik.configs.recommended, // adds linting on .js, .jsx, .mjs, .cjs, .ts, .tsx, .cts, .mts files. use for pure browser environment
+  ...qlik.configs.recommended, // adds linting on .js, .jsx, .mjs, .cjs, .ts, .tsx, .cts, .mts files. use for pure browser environment
   {
     ignores: ["dist"],
   },
@@ -90,7 +90,7 @@ import qlik from "@qlik/eslint-config";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
-  qlik.configs.react, // based on the recommended config and adds react linting on .jsx and .tsx files
+  ...qlik.configs.react, // based on the recommended config and adds react linting on .jsx and .tsx files
   {
     ignores: ["dist"],
   },
@@ -105,7 +105,7 @@ import qlik from "@qlik/eslint-config";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
-  qlik.configs.esbrowser, // based on the recommended config and adds specific es module rules (file endings)
+  ...qlik.configs.esbrowser, // based on the recommended config and adds specific es module rules (file endings)
   {
     ignores: ["dist"],
   },
@@ -120,7 +120,7 @@ import qlik from "@qlik/eslint-config";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
-  qlik.configs.esm, // or qlik.configs.cjs for commonjs, recommended config with node environment enabled
+  ...qlik.configs.esm, // or qlik.configs.cjs for commonjs, recommended config with node environment enabled
   {
     ignores: ["dist"],
   },
@@ -135,9 +135,9 @@ import qlik from "@qlik/eslint-config";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
-  qlik.configs.recommended,  // pure browser environment
-  qlik.configs.vitest,       // enable vitest linting on files inside __test(s)__ folder
-  qlik.configs.playwright,   // enable playwright linting on files inside ./test(s) folder.
+  ...qlik.configs.recommended,  // pure browser environment
+  ...qlik.configs.vitest,       // enable vitest linting on files inside __test(s)__ folder
+  ...qlik.configs.playwright,   // enable playwright linting on files inside ./test(s) folder.
   {
     ignores: ["dist"],
   },
@@ -152,8 +152,8 @@ import qlik from "@qlik/eslint-config";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
-  qlik.configs.recommended, // pure browser environment
-  qlik.configs.vitest,      // enable vitest linting on files inside __test(s)__ folder
+  ...qlik.configs.recommended, // pure browser environment
+  ...qlik.configs.vitest,      // enable vitest linting on files inside __test(s)__ folder
   {
     files: ["playwright/**/*.{js,jsx,ts,tsx}"], // will lint the files inside ./playwright folder with the playwright plugin
     extends: [...qlik.configs.playwright],
@@ -173,8 +173,8 @@ import qlik from "@qlik/eslint-config";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
-  qlik.configs.react,  // based on the recommended config and adds react linting on .jsx and .tsx files
-  qlik.configs.vitest, // enable vitest linting on files inside __test(s)__ folder
+  ...qlik.configs.react,  // based on the recommended config and adds react linting on .jsx and .tsx files
+  ...qlik.configs.vitest, // enable vitest linting on files inside __test(s)__ folder
   {
     ignores: ["dist"],
   },
@@ -203,10 +203,10 @@ with typescript support
 import { reactJS, reactTS } from "@qlik/eslint-config";
 import { defineConfig } from "eslint/config";
 
-export default defineConfig([
+export default defineConfig(
   reactJS,
   reactTS,
-])
+)
 ```
 
 This is equal to:
@@ -216,7 +216,7 @@ import qlik from "@qlik/eslint-config";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
-  qlik.configs.react,
+  ...qlik.configs.react,
 )
 ```
 
@@ -229,7 +229,7 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig(
   // apply recommended config to all files
-  qlik.configs.recommended,
+  ...qlik.configs.recommended,
   {
     // set node esm config on .mjs files inside the tools folder
     files: ["tools/**/*.mjs"],
@@ -273,7 +273,7 @@ import pluginQuery from "@tanstack/eslint-plugin-query";
 export default qlik.compose(
   ...qlik.configs.react,
   ...qlik.configs.vitest,
-  ...pluginQuery.configs["flat/recommended"],
+  pluginQuery.configs["flat/recommended"],
   {
     rules: {
       // Override rules if needed
@@ -300,8 +300,8 @@ import pluginQuery from "@tanstack/eslint-plugin-query";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
-  qlik.configs.react,
-  qlik.configs.vitest,
+  ...qlik.configs.react,
+  ...qlik.configs.vitest,
   pluginQuery.configs["flat/recommended"],
   {
     rules: {
