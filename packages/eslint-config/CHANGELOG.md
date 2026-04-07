@@ -1,10 +1,21 @@
 # @qlik/eslint-config
 
+## 2.0.0-next.1
+
+### Major Changes
+
+- 61d574a: Support ESLint 10
+
+### Patch Changes
+
+- 4b5fb2e: Add some strictness to typescript rules
+
 ## 2.0.0-next.0
 
 ### Major Changes
 
 - Support ESLint 10
+
 ## 1.4.29
 
 ### Patch Changes

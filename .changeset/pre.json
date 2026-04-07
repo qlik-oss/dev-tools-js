@@ -8,5 +8,9 @@
     "@qlik/prettier-config": "0.4.36",
     "@qlik/tsconfig": "0.3.1"
   },
-  "changesets": ["hip-mugs-smell"]
+  "changesets": [
+    "hip-mugs-smell",
+    "short-tomatoes-sell",
+    "vast-flies-allow"
+  ]
 }
