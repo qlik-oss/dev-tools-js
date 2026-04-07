@@ -1,6 +1,6 @@
 {
   "name": "@qlik/prettier-config",
-  "version": "0.4.36",
+  "version": "0.4.37",
   "description": "Qlik's shared Prettier config",
   "license": "ISC",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
@@ -12,7 +12,7 @@
   "dependencies": {
     "prettier-plugin-organize-imports": "^4.3.0",
     "prettier-plugin-packagejson": "^3.0.2",
-    "prettier-plugin-sh": "^0.18.0"
+    "prettier-plugin-sh": "^0.18.1"
   },
   "peerDependencies": {
     "prettier": ">=3.0.0"
