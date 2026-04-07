@@ -104,6 +104,10 @@ const rules = {
   // https://eslint.org/docs/rules/no-proto
   "no-proto": "error",
 
+  // disallow declaring the same variable more than once
+  // https://eslint.org/docs/rules/no-redeclare
+  "no-redeclare": "error",
+
   // disallow certain object properties
   // https://eslint.org/docs/rules/no-restricted-properties
   "no-restricted-properties": [
@@ -268,6 +272,16 @@ const rules = {
         "default", // use `export default` to provide a default export
         "then", // this will cause tons of confusion when your module is dynamically `import()`ed, and will break in most node ESM versions
       ],
+    },
+  ],
+
+  // disallow specific imports
+  // https://eslint.org/docs/rules/no-restricted-imports
+  "no-restricted-imports": [
+    "off",
+    {
+      paths: [],
+      patterns: [],
     },
   ],
 
