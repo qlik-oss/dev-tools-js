@@ -37,7 +37,7 @@ const vitestTS = mergeConfigs(
     files: ["**/__test__/**/*.{ts,tsx}", "**/__tests__/**/*.{ts,tsx}", "mocks/**/*.ts"],
     rules: {
       // turn off/modify rules that suitable for tests in TypeScript
-      
+
       // turn off all the rules that are too strict for tests, and warn on any explicit any types
       "@typescript-eslint/no-unsafe-assignment": "off",
       "@typescript-eslint/no-unsafe-member-access": "off",

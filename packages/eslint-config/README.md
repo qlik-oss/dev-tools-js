@@ -294,8 +294,7 @@ export default qlik.compose(
 
 1. add `import { defineConfig } from "eslint/config";`
 2. replace `qlik.compose` with `defineConfig`
-3. remove the `...` from the imported configs
-4. replace `extend` with `extends` (if present)
+3. replace `extend` with `extends` (if present)
 
 new config:
 
@@ -344,6 +343,7 @@ Follow these steps carefully and explain changes where non-trivial:
    - Ensure flat config format is used (`eslint.config.js/ts`)
    - Import `defineConfig` from `"eslint/config"`
    - Replace any usage of `qlik.compose` with `defineConfig` where applicable
+   - Replace any usage of `extend` with `extends`
    - Ensure plugins and configs are compatible with ESLint 10
 
 5. Run `npx eslint . --fix`
