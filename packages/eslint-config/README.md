@@ -315,4 +315,49 @@ export default defineConfig(
 );
 ```
 
+Use this prompt for migrating:
+
+```text
+I want to migrate this project from ESLint v9 to ESLint v10 and update `@qlik/eslint-config` to v2 which supports ESLint v10.
+
+Follow these steps carefully and explain changes where non-trivial:
+
+1. Update dependencies:
+   - Set `eslint` to the latest version (v10)
+   - Set `@qlik/eslint-config` to the latest version (v2)
+
+2. Install dependencies and ensure there are no version conflicts.
+
+3. Remove or update any constraints that block ESLint upgrades:
+   - `resolutions`, `overrides`, or pinned versions in `package.json`
+   - `.ncurc.json` rules preventing upgrades
+
+4. Migrate ESLint config to be compatible with ESLint 10:
+   - Ensure flat config format is used (`eslint.config.js/ts`)
+   - Import `defineConfig` from `"eslint/config"`
+   - Replace any usage of `qlik.compose` with `defineConfig` where applicable
+   - Ensure plugins and configs are compatible with ESLint 10
+
+5. Run `npx eslint . --fix`
+
+6. Handle remaining issues:
+   - Prefer code fixes over disabling rules
+   - Only disable rules if absolutely necessary
+   - For every disabled rule, add a comment explaining why
+
+7. Validation:
+   - ESLint runs without errors
+   - No critical rules are disabled silently
+   - The project builds and tests still pass
+
+8. Output:
+   - Summary of changes made
+   - List of rules disabled (if any) with justification
+   - Any potential risks or follow-ups
+
+Important:
+- Do not make changes that alter runtime behavior or business logic.
+- If uncertain, ask before making destructive or unclear changes.
+```
+
 <!-- prettier-ignore-end -->
