@@ -257,9 +257,15 @@ The biggest changes between v1 and v2 is the plugins used. Since a lot of plugin
 
 When migrating from v1 -> v2 do the following:
 
+Automatic:
+
+Use the prompt [supplied below](#ai-prompt) and give to a co-pilot agent.
+
+Manual:
+
 1. Remove the `qlik.compose` function and replace it with `defineConfig`
 2. If you were using any of the removed plugins (e.g. eslint-plugin-jest) you will have to add it to the eslint config.
-3. Some rules might have changed, been added or removed so you will likely get new errors/warnings that needs to be addressed
+3. This new config has a stricter set of rules applied, especially in the typescript files. Also, some rules might have been removed (removed plugins) or changed. So you might see new lint errors after migrating. But it's highlighting possible problems in the code so spend some time fixing the errors. Disabling rules should only be done when you have good reasons.
 
 Example of migration:
 
