@@ -253,7 +253,7 @@ The biggest changes between v1 and v2 is the plugins used. Since a lot of plugin
 - `eslint-plugin-playwright` - Removed
 - `eslint-plugin-svelte` - Removed
 - `eslint-plugin-react` - Replaced with [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react)
-- `eslint-plugin-react-hooks` - Replacd with [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react)
+- `eslint-plugin-react-hooks` - Replaced with [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react)
 
 When migrating from v1 -> v2 do the following:
 
