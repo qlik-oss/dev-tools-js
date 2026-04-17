@@ -315,6 +315,8 @@ export default defineConfig(
 );
 ```
 
+### AI Prompt
+
 Use this prompt for migrating:
 
 ```text
