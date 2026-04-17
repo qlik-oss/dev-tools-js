@@ -9,6 +9,10 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "scripts": {
+    "format:check": "oxfmt --check .",
+    "format:write": "oxfmt ."
+  },
   "dependencies": {
     "prettier-plugin-organize-imports": "^4.3.0",
     "prettier-plugin-packagejson": "^3.0.2",

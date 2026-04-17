@@ -20,6 +20,8 @@
   },
   "scripts": {
     "check-types": "tsc --noEmit",
+    "format:check": "oxfmt --check .",
+    "format:write": "oxfmt .",
     "test": "vitest run && ./test/verify-configs.sh"
   },
   "dependencies": {

@@ -11,6 +11,10 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "scripts": {
+    "format:check": "oxfmt --check .",
+    "format:write": "oxfmt ."
+  },
   "peerDependencies": {
     "oxfmt": ">=0.38.0"
   },
