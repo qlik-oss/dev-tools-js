@@ -15,6 +15,11 @@
 ### Major Changes
 
 - Support ESLint 10
+## 1.4.30
+
+### Patch Changes
+
+- cf75cd0: chore: update npm dependencies
 
 ## 1.4.29
 
