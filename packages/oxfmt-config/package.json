@@ -13,7 +13,8 @@
   },
   "scripts": {
     "format:check": "oxfmt --check .",
-    "format:write": "oxfmt ."
+    "format:write": "oxfmt .",
+    "check-types": "tsc --noEmit"
   },
   "peerDependencies": {
     "oxfmt": ">=0.38.0"
