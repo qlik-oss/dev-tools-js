@@ -1,6 +1,6 @@
 # @qlik/prettier-config
 
-Prettier config to share among projects for consistent formatting. The config is based on prettier's default values except for `printWidth` which is set to 120. It also adds three plugins `prettier-plugin-organize-imports`, `prettier-plugin-packagejson` and `prettier-plugin-sh` to keep imports and `package.json` fields consistently sorted and to help you format shell scripts.
+Prettier config to share among projects for consistent formatting. The config is based on prettier's default values except for `printWidth` which is set to 120. It also adds three plugins `prettier-plugin-organize-imports`, and `prettier-plugin-packagejson` to keep imports and `package.json` fields consistently sorted.
 
 ## usage
 
