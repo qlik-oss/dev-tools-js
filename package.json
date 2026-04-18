@@ -15,9 +15,9 @@
     "test": "turbo run test"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.30.0",
+    "@changesets/cli": "^2.31.0",
     "@qlik/oxfmt-config": "workspace:^",
-    "oxfmt": "^0.44.0",
+    "oxfmt": "^0.45.0",
     "turbo": "^2.9.6"
   },
   "engines": {

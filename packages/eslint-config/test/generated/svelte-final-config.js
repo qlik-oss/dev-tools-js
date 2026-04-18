@@ -35,6 +35,7 @@ export default [
         "AudioNode": false,
         "AudioParam": false,
         "AudioParamMap": false,
+        "AudioPlaybackStats": false,
         "AudioProcessingEvent": false,
         "AudioScheduledSourceNode": false,
         "AudioSinkInfo": false,
@@ -723,6 +724,7 @@ export default [
         "SVGUnitTypes": false,
         "SVGUseElement": false,
         "SVGViewElement": false,
+        "Sanitizer": false,
         "Scheduler": false,
         "Scheduling": false,
         "Screen": false,
@@ -802,6 +804,9 @@ export default [
         "TextUpdateEvent": false,
         "TimeEvent": false,
         "TimeRanges": false,
+        "TimelineTrigger": false,
+        "TimelineTriggerRange": false,
+        "TimelineTriggerRangeList": false,
         "ToggleEvent": false,
         "Touch": false,
         "TouchEvent": false,
@@ -2331,6 +2336,7 @@ export default [
         "AudioNode": false,
         "AudioParam": false,
         "AudioParamMap": false,
+        "AudioPlaybackStats": false,
         "AudioProcessingEvent": false,
         "AudioScheduledSourceNode": false,
         "AudioSinkInfo": false,
@@ -3019,6 +3025,7 @@ export default [
         "SVGUnitTypes": false,
         "SVGUseElement": false,
         "SVGViewElement": false,
+        "Sanitizer": false,
         "Scheduler": false,
         "Scheduling": false,
         "Screen": false,
@@ -3098,6 +3105,9 @@ export default [
         "TextUpdateEvent": false,
         "TimeEvent": false,
         "TimeRanges": false,
+        "TimelineTrigger": false,
+        "TimelineTriggerRange": false,
+        "TimelineTriggerRangeList": false,
         "ToggleEvent": false,
         "Touch": false,
         "TouchEvent": false,
@@ -3479,9 +3489,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.58.1"
+            "version": "8.58.2"
           },
-          "version": "8.58.1"
+          "version": "8.58.2"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -4709,7 +4719,7 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.58.1"
+            "version": "8.58.2"
           }
         }
       }

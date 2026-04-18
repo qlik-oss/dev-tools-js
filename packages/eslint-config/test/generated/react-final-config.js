@@ -35,6 +35,7 @@ export default [
         "AudioNode": false,
         "AudioParam": false,
         "AudioParamMap": false,
+        "AudioPlaybackStats": false,
         "AudioProcessingEvent": false,
         "AudioScheduledSourceNode": false,
         "AudioSinkInfo": false,
@@ -723,6 +724,7 @@ export default [
         "SVGUnitTypes": false,
         "SVGUseElement": false,
         "SVGViewElement": false,
+        "Sanitizer": false,
         "Scheduler": false,
         "Scheduling": false,
         "Screen": false,
@@ -802,6 +804,9 @@ export default [
         "TextUpdateEvent": false,
         "TimeEvent": false,
         "TimeRanges": false,
+        "TimelineTrigger": false,
+        "TimelineTriggerRange": false,
+        "TimelineTriggerRangeList": false,
         "ToggleEvent": false,
         "Touch": false,
         "TouchEvent": false,
@@ -2440,7 +2445,6 @@ export default [
       "quote-props": "off",
       "quotes": 0,
       "radix": "error",
-      "react-hooks/component-hook-factories": "error",
       "react-hooks/config": "error",
       "react-hooks/error-boundaries": "error",
       "react-hooks/exhaustive-deps": "error",
@@ -2842,6 +2846,7 @@ export default [
         "AudioNode": false,
         "AudioParam": false,
         "AudioParamMap": false,
+        "AudioPlaybackStats": false,
         "AudioProcessingEvent": false,
         "AudioScheduledSourceNode": false,
         "AudioSinkInfo": false,
@@ -3530,6 +3535,7 @@ export default [
         "SVGUnitTypes": false,
         "SVGUseElement": false,
         "SVGViewElement": false,
+        "Sanitizer": false,
         "Scheduler": false,
         "Scheduling": false,
         "Screen": false,
@@ -3609,6 +3615,9 @@ export default [
         "TextUpdateEvent": false,
         "TimeEvent": false,
         "TimeRanges": false,
+        "TimelineTrigger": false,
+        "TimelineTriggerRange": false,
+        "TimelineTriggerRangeList": false,
         "ToggleEvent": false,
         "Touch": false,
         "TouchEvent": false,
@@ -3994,9 +4003,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.58.1"
+            "version": "8.58.2"
           },
-          "version": "8.58.1"
+          "version": "8.58.2"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
@@ -5326,7 +5335,6 @@ export default [
       "quote-props": "off",
       "quotes": 0,
       "radix": "error",
-      "react-hooks/component-hook-factories": "error",
       "react-hooks/config": "error",
       "react-hooks/error-boundaries": "error",
       "react-hooks/exhaustive-deps": "error",
@@ -7020,9 +7028,9 @@ export default [
         "parser": {
           "meta": {
             "name": "typescript-eslint/parser",
-            "version": "8.58.1"
+            "version": "8.58.2"
           },
-          "version": "8.58.1"
+          "version": "8.58.2"
         },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
