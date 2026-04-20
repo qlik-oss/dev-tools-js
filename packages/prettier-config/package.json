@@ -1,6 +1,6 @@
 {
   "name": "@qlik/prettier-config",
-  "version": "0.4.37",
+  "version": "1.0.0",
   "description": "Qlik's shared Prettier config",
   "license": "ISC",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
