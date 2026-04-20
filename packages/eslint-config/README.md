@@ -320,6 +320,10 @@ export default defineConfig(
 );
 ```
 
+If you are using jest the `eslint-plugin-jest` has been removed, so you may want to add it to your config.
+Add `eslint-plugin-jest` to your npm dependencies and simply add a new section targeting your jest files with the plugin added.
+Look at the [plugin's documentation](https://www.npmjs.com/package/eslint-plugin-jest)
+
 ### AI Prompt
 
 Use this prompt for migrating:
@@ -335,7 +339,7 @@ Follow these steps carefully and explain changes where non-trivial:
 
 2. Install dependencies and ensure there are no version conflicts.
 
-3. Remove or update any constraints that block ESLint upgrades:
+3. Remove or update any constraints that block ESLint or upgrades:
    - `resolutions`, `overrides`, or pinned versions in `package.json`
    - `.ncurc.json` rules preventing upgrades
 
