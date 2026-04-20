@@ -8,7 +8,6 @@
     "node.json",
     "react.json",
     "recommended.json",
-    "svelte.json",
     "strictest.json",
     "vue.json"
   ],
@@ -18,7 +17,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "format:check": "cd ../.. && oxfmt --check 'packages/tsconfig' --ignore-unknown",
-    "format:write": "cd ../.. && oxfmt 'packages/tsconfig'"
+    "format:check": "oxfmt --check .",
+    "format:write": "oxfmt ."
   }
 }

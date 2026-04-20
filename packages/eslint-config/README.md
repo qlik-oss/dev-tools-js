@@ -2,46 +2,60 @@
 # @qlik/eslint-config
 
 Qlik's ESlint config for JavaScript/TypeScript environments with optional framework support.
+Built for ease of use and low config. It is built on standard configs from `@eslint/js` and `typescript-eslint`
+and their recommended configs. And it adds some extra support for `vitest` that will add lint rules for unit test
+based on standard settings. It is built for basically zero config and will "just work" for standard projects.
 
-## Migrating from 0.x
+## Migrating from v1->v2 ?
 
-1. Install latest `@qlik/eslint-config`
-2. Update to ESLint 9
-3. Rename your config to `eslint.config.js` (if you have `"type": "module"` in your package json) / `eslint.config.mjs` (if otherwise)
+Go to the [migration section](#migrating)
 
-example config that uses typescript, react, vitest, react-query plugin:
+## Quick Start
+
+Example `eslint.config.js` that uses typescript, react, vitest. Suitable for a bundler environment for react
+development and vitest unit testing.
 
 ```js
 // @ts-check
 import qlik from "@qlik/eslint-config";
-import pluginQuery from "@tanstack/eslint-plugin-query";
+import { defineConfig } from "eslint/config";
 
-export default qlik.compose(
+export default defineConfig(
   ...qlik.configs.react,
   ...qlik.configs.vitest,
-  ...pluginQuery.configs["flat/recommended"],
   {
     rules: {
       // Override rules if needed
     },
   },
-  // In its own object so it's global
+  // Put ignores in its own object so it's global
   {
-    ignores: ["dist", "node_modules", "script"],
+    ignores: ["dist", "script"],
   },
 );
 ```
 
-4. If you are not using typescript to build your project, then include all files `"include": [".*", "**/*"]` in the project's `tsconfig.json`
-5. Run your `lint` script
+Add another eslint plugin just like you would normally do.
 
-### v1 notable changes
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+import pluginQuery from "@tanstack/eslint-plugin-query";
+import { defineConfig } from "eslint/config";
 
-- Updates [`@typescript-eslint/typescript-eslint`](https://github.com/typescript-eslint/typescript-eslint) to v8, this brings
-a few new rules. See article for v8 <https://typescript-eslint.io/blog/announcing-typescript-eslint-v8>
-- Moves from [`eslint-plugin-import`](https://github.com/import-js/eslint-plugin-import) to [`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x).
-If you reference any of the `import/` rules you'll need to replace `import/` with `import-x/`.
-- Some stylistic rules have been disabled (for example `function` vs arrow functions)
+export default defineConfig([
+  ...qlik.configs.react,
+  ...qlik.configs.vitest,
+  pluginQuery.configs["flat/recommended"],
+  {
+    ignores: ["dist", "script", "my-special-no-linting.ts"],
+  },
+]);
+```
+
+## typescript
+
+When using typescript with `@qlik/eslint-config`, include all files that should be linted (e.g. `"include": [".*", "**/*"]`) in the project's `tsconfig.json` so that the files are picked up by the project service when linting.
 
 ## Usage
 
@@ -58,11 +72,12 @@ For a pure browser environment with a bundler and no specific framework use:
 ```js
 // @ts-check
 import qlik from "@qlik/eslint-config";
+import { defineConfig } from "eslint/config";
 
-export default qlik.compose(
+export default defineConfig(
   ...qlik.configs.recommended, // adds linting on .js, .jsx, .mjs, .cjs, .ts, .tsx, .cts, .mts files. use for pure browser environment
   {
-    ignores: ["dist", "npm", "node_modules"],
+    ignores: ["dist"],
   },
 );
 ```
@@ -72,11 +87,12 @@ Using React:
 ```js
 // @ts-check
 import qlik from "@qlik/eslint-config";
+import { defineConfig } from "eslint/config";
 
-export default qlik.compose(
+export default defineConfig(
   ...qlik.configs.react, // based on the recommended config and adds react linting on .jsx and .tsx files
   {
-    ignores: ["dist", "node_modules"],
+    ignores: ["dist"],
   },
 );
 ```
@@ -86,40 +102,12 @@ Using Pure ES modules in browser:
 ```js
 // @ts-check
 import qlik from "@qlik/eslint-config";
+import { defineConfig } from "eslint/config";
 
-export default qlik.compose(
+export default defineConfig(
   ...qlik.configs.esbrowser, // based on the recommended config and adds specific es module rules (file endings)
   {
-    ignores: ["dist", "node_modules"],
-  },
-);
-```
-
-Using Svelte:
-
-```js
-// @ts-check
-import qlik from "@qlik/eslint-config";
-
-export default qlik.compose(
-  ...qlik.configs.svelte, // based on the recommended config and adds svelte linting on .svelte files
-  {
-    ignores: ["dist", "node_modules"],
-  },
-);
-```
-
-Using React and Svelte:
-
-```js
-// @ts-check
-import qlik from "@qlik/eslint-config";
-
-export default qlik.compose(
-  ...qlik.configs.react,
-  ...qlik.configs.svelte,
-  {
-    ignores: ["dist", "node_modules"],
+    ignores: ["dist"],
   },
 );
 ```
@@ -129,11 +117,12 @@ Node environment:
 ```js
 // @ts-check
 import qlik from "@qlik/eslint-config";
+import { defineConfig } from "eslint/config";
 
-export default qlik.compose(
+export default defineConfig(
   ...qlik.configs.esm, // or qlik.configs.cjs for commonjs, recommended config with node environment enabled
   {
-    ignores: ["dist", "npm", "node_modules"],
+    ignores: ["dist"],
   },
 );
 ```
@@ -143,16 +132,37 @@ Additional configs that can be used in conjunction with the ones above:
 ```js
 // @ts-check
 import qlik from "@qlik/eslint-config";
+import { defineConfig } from "eslint/config";
 
-export default qlik.compose(
+export default defineConfig(
   ...qlik.configs.recommended,  // pure browser environment
   ...qlik.configs.vitest,       // enable vitest linting on files inside __test(s)__ folder
-  ...qlik.configs.jest,         // enable jest linting on files inside __test(s)__ folder, DON'T use together with vitest
   ...qlik.configs.playwright,   // enable playwright linting on files inside ./test(s) folder.
   {
-    ignores: ["dist", "npm", "node_modules"],
+    ignores: ["dist"],
   },
 );
+```
+
+What if the playwright test files are not in the default `./test` folder?
+
+```js
+// @ts-check
+import qlik from "@qlik/eslint-config";
+import { defineConfig } from "eslint/config";
+
+export default defineConfig(
+  ...qlik.configs.recommended, // pure browser environment
+  ...qlik.configs.vitest,      // enable vitest linting on files inside __test(s)__ folder
+  {
+    files: ["playwright/**/*.{js,jsx,ts,tsx}"], // will lint the files inside ./playwright folder with the playwright plugin
+    extends: [...qlik.configs.playwright],
+  },
+  {
+    ignores: ["dist"],
+  },
+);
+
 ```
 
 Example: Using React with vitest:
@@ -160,12 +170,13 @@ Example: Using React with vitest:
 ```js
 // @ts-check
 import qlik from "@qlik/eslint-config";
+import { defineConfig } from "eslint/config";
 
-export default qlik.compose(
-  ...qlik.configs.react, // based on the recommended config and adds react linting on .jsx and .tsx files
-  ...qlik.configs.vitest,       // enable vitest linting on files inside __test(s)__ folder
+export default defineConfig(
+  ...qlik.configs.react,  // based on the recommended config and adds react linting on .jsx and .tsx files
+  ...qlik.configs.vitest, // enable vitest linting on files inside __test(s)__ folder
   {
-    ignores: ["dist", "node_modules"],
+    ignores: ["dist"],
   },
 );
 ```
@@ -173,14 +184,15 @@ export default qlik.compose(
 ## Using the named exports configs
 
 The different configs are also accessible through named imports. These configs can be used in specific scenarios where more
-control of the configs are needed. The `extend` property can be used to apply a config on certain file patterns.
+control of the configs are needed. The `extends` property can be used to apply a config on certain file patterns.
 
 Example only use javascript rules with react
 
 ```js
-import qlik, { recommendedJS, reactJS } from "@qlik/eslint-config";
+import { reactJS } from "@qlik/eslint-config";
+import { defineConfig } from "eslint/config";
 
-export default qlik.compose(
+export default defineConfig(
   reactJS,
 )
 ```
@@ -188,9 +200,10 @@ export default qlik.compose(
 with typescript support
 
 ```js
-import qlik, { recommendedJS, reactJS } from "@qlik/eslint-config";
+import { reactJS, reactTS } from "@qlik/eslint-config";
+import { defineConfig } from "eslint/config";
 
-export default qlik.compose(
+export default defineConfig(
   reactJS,
   reactTS,
 )
@@ -200,210 +213,176 @@ This is equal to:
 
 ```js
 import qlik from "@qlik/eslint-config";
+import { defineConfig } from "eslint/config";
 
-export default qlik.compose(
+export default defineConfig(
   ...qlik.configs.react,
 )
 ```
 
-Using only javascript and svelte
-
-```js
-import qlik, { recommendedJS, svelteJS } from "@qlik/eslint-config";
-
-export default qlik.compose(
-  recommendedJS,
-  svelteJS,
-)
-```
-
-The single configs can be useful together with the `extend` property. Below shows an example of a config
+The single configs can be useful together with the `extends` property. Below shows an example of a config
 that wants to use lint rules for node environment on a part of the code base.
 
 ```js
-import qlik, { esmJS } from "@qlik/eslint-config";
+import qlik, { esmJS, cjsJS } from "@qlik/eslint-config";
+import { defineConfig } from "eslint/config";
 
-export default qlik.compose(
+export default defineConfig(
   // apply recommended config to all files
   ...qlik.configs.recommended,
-  // set node esm config on .js files inside the tools folder
   {
-    files: ["tools/**/*.js"],
-    extend: [esmJS],
+    // set node esm config on .mjs files inside the tools folder
+    files: ["tools/**/*.mjs"],
+    extends: [esmJS],
+  },
+  {
+    // set node commonJS config on .cjs files inside the tools folder
+    files: ["tools/**/*.cjs"],
+    extends: [cjsJS],
   },
 )
 
 ```
 
-This will take the configs in the `extend` array and perform a deep merge of whatever is defined in the object containing
-the `extend` property with the configs in the `extend` array and return them as separate configs. The deep merge has three
-exceptions. `files`, `ignores` and `globals` are always overwritten by the later config.
+## Migrating
 
-```js
-import qlik, { esmJS } from "@qlik/eslint-config";
+The biggest changes between v1 and v2 is the plugins used. Since a lot of plugins does not yet [support ESLint 10](https://github.com/eslint-config/airbnb-extended/issues/65) Some of the plugins was removed or replaced from v1.
 
-export default qlik.compose(
-  {
-    extend: [...qlik.configs.recommended], // contains two configs (recommendedJS and recommendedTS)
-    files: ["only_want_lint_here/**/*.js"],
-  },
-)
-```
+- `eslint-plugin-jsx-a11y` - Removed
+- `eslint-plugin-jest` - Removed
+- `eslint-plugin-playwright` - Removed
+- `eslint-plugin-svelte` - Removed
+- `eslint-plugin-react` - Replaced with [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react)
+- `eslint-plugin-react-hooks` - Replaced with [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react)
 
-This will result in two configs, each with the given file pattern like this:
+When migrating from v1 -> v2 do the following:
 
-```js
-export default [
-  {
-    ...recommendedJS config
-    files: ["only_want_lint_here/**/*.js"],
-  },
-  {
-    ...recommendedTS config
-    files: ["only_want_lint_here/**/*.js"],
-  }
-]
-```
+Automatic:
 
-### More examples with export
+Use the prompt [supplied below](#ai-prompt) and give to a co-pilot agent.
 
-One GOTCHA about the flat configs. If there's no `files` property in one of the configs in the config array it is applied to every file. So in the case of turning off a rule that belongs to specific config e.g. `@typescript/eslint`. The following
-approach can be problematic.
+Manual:
+
+1. Remove the `qlik.compose` function and replace it with `defineConfig`
+2. If you were using any of the removed plugins (e.g. eslint-plugin-jest) you will have to add it to the eslint config.
+3. This new config has a stricter set of rules applied, especially in the typescript files. Also, some rules might have been removed (removed plugins) or changed. So you might see new lint errors after migrating. But it's highlighting possible problems in the code so spend some time fixing the errors. Disabling rules should only be done when you have good reasons.
+
+Example of migration:
+
+old config:
 
 ```js
 // @ts-check
 import qlik from "@qlik/eslint-config";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 
 export default qlik.compose(
-  ...qlik.configs.recommended, // <-- typescript-eslint is applied to .ts files only
+  ...qlik.configs.react,
+  ...qlik.configs.vitest,
+  pluginQuery.configs["flat/recommended"],
   {
     rules: {
-      // I want to change this rule, but it is applied to all files so if I have a .js file somewhere getting linted I will get an ERROR about missing plugin.
-      "@typescript-eslint/method-signature-style": "off",
+      // Override rules if needed
     },
+  },
+  // In its own object so it's global
+  {
+    ignores: ["dist", "node_modules", "script"],
   },
 );
 ```
 
-This will have to be fine-tuned. However, it is recommended to not disable rules.
+1. add `import { defineConfig } from "eslint/config";`
+2. replace `qlik.compose` with `defineConfig`
+3. replace `extend` with `extends` (if present)
+
+new config:
 
 ```js
 // @ts-check
 import qlik from "@qlik/eslint-config";
+import pluginQuery from "@tanstack/eslint-plugin-query";
+import { defineConfig } from "eslint/config";
 
-export default qlik.compose(
-  ...qlik.configs.recommended, // <-- typescript-eslint is applied to .ts files only
+export default defineConfig(
+  ...qlik.configs.react,
+  ...qlik.configs.vitest,
+  pluginQuery.configs["flat/recommended"],
   {
-    files: ["**/*.ts"]
     rules: {
-      // typescript specific rules here
-      "@typescript-eslint/method-signature-style": "off",
+      // Override rules if needed
     },
   },
+  // In its own object so it's global
   {
-    rules: {
-      // these are fine, since they are applied to all files
-      "no-var": "off",
-      "import-x/no-unresolved": "off"
-    },
+    ignores: ["dist", "node_modules", "script"],
   },
 );
 ```
 
-Another GOTCHA can happen with the vitest and jest configs
+If you are using jest the `eslint-plugin-jest` has been removed, so you may want to add it to your config.
+Add `eslint-plugin-jest` to your npm dependencies and simply add a new section targeting your jest files with the plugin added.
+Look at the [plugin's documentation](https://www.npmjs.com/package/eslint-plugin-jest)
 
-```js
-// @ts-check
-import qlik from "@qlik/eslint-config";
+Same things applies to `eslint-plugin-playwright`
 
-export default qlik.compose(
-  ...qlik.configs.recommended,
-  qlik.configs.vitest, // <-- this is applied to files inside __test(s)__ folders by default for our convenience
-  {
-    rules: {
-      // I want to change this rule, but it doesn't work because it is applied to all files
-      "vitest/max-nested-describe": [
-        "error",
-        {
-          "max": 3
-        },
-      ],
-    },
-  },
-);
-```
+### AI Prompt
 
-Here the `extend` feature becomes helpful
+Use this prompt for migrating:
 
-```js
-// @ts-check
-import qlik from "@qlik/eslint-config";
+```text
+I want to migrate this project from ESLint v9 to ESLint v10 and update `@qlik/eslint-config` to v2 which supports ESLint v10.
 
-export default qlik.compose(
-  ...qlik.configs.recommended,
-  {
-    extend: [qlik.configs.vitest],
-    rules: {
-      // This will add or overwrite the rule in the default config
-      "vitest/max-nested-describe": [
-        "error",
-        {
-          "max": 3
-        },
-      ],
-    },
-  },
-);
-```
+The changes in `@qlik/eslint-config` from v1 -> v2 are mainly changes of which plugins are used.
 
-Example of changing the default file patterns on the vitest config.
+- `eslint-plugin-jsx-a11y` - Removed
+- `eslint-plugin-jest` - Removed
+- `eslint-plugin-playwright` - Removed
+- `eslint-plugin-svelte` - Removed
+- `eslint-plugin-react` - Replaced with [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react)
+- `eslint-plugin-react-hooks` - Replaced with [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react)
 
-```js
-// @ts-check
-import qlik from "@qlik/eslint-config";
+The default settings now also include stricter typescript rules.
 
-export default qlik.compose(
-  ...qlik.configs.recommended,  // pure browser environment, no framework config added
-  {
-    // adds vitest lint rules on the specified files with an altered rule
-    files: ['**/my_tests_are_here/*.spec.ts']
-    extend: [qlik.configs.vitest],
-    rules: {
-      "vitest/max-nested-describe": [
-        "error",
-        {
-          "max": 3
-        }
-      ]
-    }
-  },
-);
-```
+Follow these steps carefully and explain changes where non-trivial:
 
-This will result in a final config looking like this:
+1. Update dependencies:
+   - Set `eslint` to the latest version (v10)
+   - Set `@qlik/eslint-config` to the latest version (v2)
 
-```js
-export default [
-  {
-    ...recommendedJS config
-  },
-  {
-    ...recommendedTS config
-  },
-  {
-    files: ['**/my_tests_are_here/*.spec.ts'],
-    ...vitest config
-    rules: {
-      ... vitest config rules,
-      "vitest/max-nested-describe": [
-        "error",
-        {
-          "max": 3
-        }
-      ]
-    }
-  }
-]
+2. Install dependencies and ensure there are no version conflicts.
+
+3. Remove or update any constraints that block ESLint or upgrades:
+   - `resolutions`, `overrides`, or pinned versions in `package.json`
+   - `.ncurc.json` rules preventing upgrades
+
+4. Migrate ESLint config to be compatible with ESLint 10:
+   - Ensure flat config format is used (`eslint.config.js/ts`)
+   - Import `defineConfig` from `"eslint/config"`
+   - Replace any usage of `qlik.compose` with `defineConfig` where applicable
+   - Replace any usage of `extend` with `extends`
+   - Ensure plugins and configs are compatible with ESLint 10
+
+5. Run `npx eslint . --fix`
+
+6. Handle remaining issues:
+   - Prefer code fixes over disabling rules
+   - Only disable rules if absolutely necessary
+   - For every disabled rule, add a comment explaining why
+
+7. Validation:
+   - ESLint runs without errors
+   - No critical rules are disabled silently
+   - The project builds and tests still pass
+
+8. Output:
+   - Summary of changes made
+   - List of rules disabled (if any) with justification
+   - Any potential risks or follow-ups
+
+Important:
+- Do not make changes that alter runtime behavior or business logic.
+- If uncertain, ask before making destructive or unclear changes.
 ```
 
 <!-- prettier-ignore-end -->

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -11,6 +12,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
  */
 function JSONstringifyOrder(obj, space) {
   const allKeys = new Set();
+  // eslint-disable-next-line no-sequences
   JSON.stringify(obj, (key, value) => (allKeys.add(key), value));
   return JSON.stringify(obj, Array.from(allKeys).sort(), space);
 }
@@ -30,7 +32,6 @@ function parseConfig(configArray) {
             config.plugins[key] = `${key}-plugin`;
           }
           if (config.languageOptions?.parser) {
-            // @ts-expect-error - intentional to not include parser in the output
             config.languageOptions.parser = `${config.name || "unknown"}-parser`;
           }
         });
@@ -56,15 +57,6 @@ await fs.writeFile(recommendedConfig, `export default ${parseConfig(qlik.configs
 // react
 const reactConfig = path.resolve(__dirname, "generated/react-final-config.js");
 await fs.writeFile(reactConfig, `export default ${parseConfig(qlik.configs.react)}`);
-// svelte
-const svelteConfig = path.resolve(__dirname, "generated/svelte-final-config.js");
-await fs.writeFile(svelteConfig, `export default ${parseConfig(qlik.configs.svelte)}`);
 // vitest
 const vitestConfig = path.resolve(__dirname, "generated/vitest-final-config.js");
 await fs.writeFile(vitestConfig, `export default ${parseConfig(qlik.configs.vitest)}`);
-// jest
-const jestConfig = path.resolve(__dirname, "generated/jest-final-config.js");
-await fs.writeFile(jestConfig, `export default ${parseConfig(qlik.configs.jest)}`);
-// playwright
-const playwrightConfig = path.resolve(__dirname, "generated/playwright-final-config.js");
-await fs.writeFile(playwrightConfig, `export default ${parseConfig(qlik.configs.playwright)}`);

@@ -3,11 +3,8 @@
   "eslint.workingDirectories": [
     "packages/browserslist-config",
     "packages/eslint-config",
-    "packages/prettier-config",
     "packages/oxfmt-config",
-    "packages/tsconfig",
-    "test/test-react-svelte",
-    "test/test-react",
-    "test/test-base"
+    "packages/prettier-config",
+    "packages/tsconfig"
   ]
 }

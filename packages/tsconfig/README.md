@@ -6,7 +6,6 @@
 - `@qlik/tsconfig/strictest.json` Typescript recommended options, but with stricter checks.
 - `@qlik/tsconfig/node.js` Typescript recommended options for typescript projects targeted towards NodeJS.
 - `@qlik/tsconfig/react.json` Same as recommended with React support.
-- `@qlik/tsconfig/svelte.json` Same as recommended with Svelte support.
 
 For example, in a Parcel project, create a tsconfig.json:
 

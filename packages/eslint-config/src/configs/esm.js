@@ -2,29 +2,7 @@
 import prettier from "eslint-config-prettier";
 import globals from "globals";
 import { mergeConfigs } from "../utils/config.js";
-import nodeRules from "./rules/node.js";
-import { baseConfigJS, baseConfigTS } from "./shared/base.js";
-import { baseCjsJS, baseCjsTS } from "./shared/node.js";
-
-/**
- * @satisfies {import("../types/index.js").ESLintFlatConfig["rules"]}
- */
-const nodeEsmRules = {
-  ...nodeRules,
-  // modify rules for node esm here
-
-  // Ensure consistent use of file extension within the import path
-  // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/extensions.md
-  "import-x/extensions": [
-    "error",
-    "ignorePackages",
-    {
-      ts: "never",
-      mts: "never",
-      tsx: "never",
-    },
-  ],
-};
+import { baseCjsJS, baseCjsTS, baseEsmJS, baseEsmTS } from "./shared/node.js";
 
 /**
  * ESM config for javascript in node
@@ -32,7 +10,7 @@ const nodeEsmRules = {
  */
 const esmJS = mergeConfigs(
   // base it on the recommended javascript config
-  baseConfigJS,
+  baseEsmJS,
   // add qlik's recommended node esm config for javascript
   {
     name: "node-esm-js",
@@ -41,7 +19,9 @@ const esmJS = mergeConfigs(
       globals: globals.node,
       sourceType: "module",
     },
-    rules: nodeEsmRules,
+    rules: {
+      // modify javascript specific rules for node esm here if needed
+    },
   },
   prettier,
 );
@@ -52,7 +32,7 @@ const esmJS = mergeConfigs(
  */
 const esmTS = mergeConfigs(
   // base it on the recommended typescript config
-  baseConfigTS,
+  baseEsmTS,
   // add qlik's recommended node esm config for typescript
   {
     name: "node-esm-ts",
@@ -62,7 +42,6 @@ const esmTS = mergeConfigs(
       sourceType: "module",
     },
     rules: {
-      ...nodeEsmRules,
       // modify typescript specific rules for node esm here if needed
     },
   },

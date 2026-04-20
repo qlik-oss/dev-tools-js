@@ -12,8 +12,9 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "format:check": "cd ../.. && oxfmt --check 'packages/oxfmt-config'",
-    "format:write": "cd ../.. && oxfmt 'packages/oxfmt-config'"
+    "format:check": "oxfmt --check .",
+    "format:write": "oxfmt .",
+    "check-types": "tsc --noEmit"
   },
   "peerDependencies": {
     "oxfmt": ">=0.38.0"

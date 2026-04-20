@@ -6,25 +6,6 @@ import { baseConfigJS, baseConfigTS } from "./shared/base.js";
 import { baseCjsJS, baseCjsTS } from "./shared/node.js";
 
 /**
- * @satisfies {import("../types/index.js").ESLintFlatConfig["rules"]}
- */
-const browserEsmRules = {
-  // modify rules for browser esm here
-
-  // Ensure consistent use of file extension within the import path
-  // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/extensions.md
-  "import-x/extensions": [
-    "error",
-    "ignorePackages",
-    {
-      ts: "never",
-      mts: "never",
-      tsx: "never",
-    },
-  ],
-};
-
-/**
  * ESM config for javascript in browsers
  * @type {import("../types/index.js").ESLintFlatConfig}
  */
@@ -40,7 +21,6 @@ const esbrowserJS = mergeConfigs(
       sourceType: "module",
     },
     rules: {
-      ...browserEsmRules,
       // modify javascript specific rules for node esm here if needed
     },
   },
@@ -63,7 +43,6 @@ const esbrowserTS = mergeConfigs(
       sourceType: "module",
     },
     rules: {
-      ...browserEsmRules,
       // modify typescript specific rules for node esm here if needed
     },
   },

@@ -1,4 +1,3 @@
-import tsEslint from "typescript-eslint";
 import { merge } from "./merge.js";
 
 /**
@@ -18,5 +17,3 @@ export function mergeConfigs(...configs) {
   }
   return mergedConfig;
 }
-
-export const config = tsEslint.config;

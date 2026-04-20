@@ -1,21 +1,25 @@
 import js from "@eslint/js";
-import tsParser from "@typescript-eslint/parser";
-import eslintPluginImportX from "eslint-plugin-import-x";
+import { importX } from "eslint-plugin-import-x";
 import globals from "globals";
 import tsconfig from "typescript-eslint";
 import { mergeConfigs } from "../../utils/config.js";
-import eslintCoreRules from "../rules/eslint-core.js";
-import importXRules from "../rules/import-x.js";
-import typescriptRules from "../rules/typescript.js";
+import eslintCoreRules from "./default-rules/eslint-core.js";
+import typescriptRules from "./default-rules/typescript.js";
+import importXRules from "./default-rules/import-x.js";
 
 /**
+ * This is the base config that all other configs in this package extend from.
+ * It includes the recommended eslint rules and some basic settings for parsing
+ * modern javascript and typescript, as well as some of qlik's custom rules that
+ * are not specific to any framework or environment. This config is meant to be
+ * extended by other configs and not used directly.
  * @type {import("../../types/index.js").ESLintFlatConfig}
  */
 const baseConfig = mergeConfigs(
   // basic js config
   js.configs.recommended,
-  // import-x plugin config
-  eslintPluginImportX.flatConfigs.recommended,
+  // import-x recommended config
+  importX.flatConfigs.recommended,
   {
     languageOptions: {
       globals: globals.browser,
@@ -26,7 +30,7 @@ const baseConfig = mergeConfigs(
       sourceType: "module",
     },
     rules: {
-      // add our recommended rules
+      // add or modify recommended default rules
       ...eslintCoreRules,
       ...importXRules,
     },
@@ -34,6 +38,11 @@ const baseConfig = mergeConfigs(
 );
 
 /**
+ * This config is meant to be extended by javascript specific configs, it is not meant to be used directly.
+ * Note that we are using the typescript parser to parse javascript files as well,
+ * this is because it can handle all modern javascript syntax and features, and it
+ * allows us to have a single parser for both javascript and typescript configs.
+ * We can turn off typescript specific rules in the javascript configs if needed.
  * @type {import("../../types/index.js").ESLintFlatConfig}
  */
 const baseConfigJS = mergeConfigs(
@@ -44,24 +53,27 @@ const baseConfigJS = mergeConfigs(
 );
 
 /**
+ * This config is meant to be extended by typescript specific configs,
+ * it is not meant to be used directly.
  * @type {import("../../types/index.js").ESLintFlatConfig}
  */
 const baseConfigTS = mergeConfigs(
   // base it on base config
   baseConfig,
+  // typescript settings for import-x
+  importX.flatConfigs.typescript,
   // add recommended typescript config
-  ...tsconfig.configs.recommended,
-  // add import-x recommended typescript config
-  eslintPluginImportX.flatConfigs.typescript,
-  // add qlik's recommended typescript config
+  ...tsconfig.configs.recommendedTypeChecked,
   {
     languageOptions: {
       parserOptions: {
-        parser: tsParser,
         projectService: true,
       },
     },
-    rules: typescriptRules,
+    rules: {
+      ...typescriptRules,
+      // add qlik's recommended typescript config for typescript here if needed
+    },
   },
 );
 

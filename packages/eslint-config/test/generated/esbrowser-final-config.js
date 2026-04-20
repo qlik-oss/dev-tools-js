@@ -34,6 +34,7 @@ export default [
         "AudioNode": false,
         "AudioParam": false,
         "AudioParamMap": false,
+        "AudioPlaybackStats": false,
         "AudioProcessingEvent": false,
         "AudioScheduledSourceNode": false,
         "AudioSinkInfo": false,
@@ -722,6 +723,7 @@ export default [
         "SVGUnitTypes": false,
         "SVGUseElement": false,
         "SVGViewElement": false,
+        "Sanitizer": false,
         "Scheduler": false,
         "Scheduling": false,
         "Screen": false,
@@ -801,6 +803,9 @@ export default [
         "TextUpdateEvent": false,
         "TimeEvent": false,
         "TimeRanges": false,
+        "TimelineTrigger": false,
+        "TimelineTriggerRange": false,
+        "TimelineTriggerRangeList": false,
         "ToggleEvent": false,
         "Touch": false,
         "TouchEvent": false,
@@ -1392,20 +1397,12 @@ export default [
       "@typescript-eslint/type-annotation-spacing": "off",
       "array-bracket-newline": "off",
       "array-bracket-spacing": "off",
-      "array-callback-return": [
-        "error",
-        {
-          "allowImplicit": true
-        }
-      ],
       "array-element-newline": "off",
-      "arrow-body-style": "off",
       "arrow-parens": "off",
       "arrow-spacing": "off",
       "babel/object-curly-spacing": "off",
       "babel/quotes": 0,
       "babel/semi": "off",
-      "block-scoped-var": "error",
       "block-spacing": "off",
       "brace-style": "off",
       "camelcase": [
@@ -1413,12 +1410,6 @@ export default [
         {
           "ignoreDestructuring": false,
           "properties": "never"
-        }
-      ],
-      "class-methods-use-this": [
-        "warn",
-        {
-          "exceptMethods": []
         }
       ],
       "comma-dangle": "off",
@@ -1463,21 +1454,19 @@ export default [
       "function-paren-newline": "off",
       "generator-star": "off",
       "generator-star-spacing": "off",
-      "getter-return": [
-        "error",
-        {
-          "allowImplicit": true
-        }
-      ],
-      "grouped-accessor-pairs": "error",
+      "getter-return": "error",
       "implicit-arrow-linebreak": "off",
-      "import-x/consistent-type-specifier-style": "off",
       "import-x/default": "error",
       "import-x/export": "error",
       "import-x/extensions": [
         "error",
         "ignorePackages",
         {
+          "cjs": "never",
+          "cts": "never",
+          "js": "never",
+          "jsx": "never",
+          "mjs": "never",
           "mts": "never",
           "ts": "never",
           "tsx": "never"
@@ -1496,8 +1485,7 @@ export default [
       ],
       "import-x/no-deprecated": "warn",
       "import-x/no-duplicates": "error",
-      "import-x/no-dynamic-require": "error",
-      "import-x/no-empty-named-blocks": "off",
+      "import-x/no-dynamic-require": "warn",
       "import-x/no-extraneous-dependencies": [
         "off",
         {
@@ -1509,6 +1497,7 @@ export default [
             "tests/**",
             "spec/**",
             "**/__tests__/**",
+            "**/__test__/**",
             "**/__mocks__/**",
             "test.{js,jsx,ts,tsx}",
             "test-*.{js,jsx,ts,tsx}",
@@ -1542,19 +1531,16 @@ export default [
       ],
       "import-x/no-mutable-exports": "error",
       "import-x/no-named-as-default": "error",
-      "import-x/no-named-as-default-member": "off",
+      "import-x/no-named-as-default-member": "warn",
       "import-x/no-named-default": "error",
-      "import-x/no-nodejs-modules": "off",
       "import-x/no-relative-packages": "error",
       "import-x/no-self-import": "error",
       "import-x/no-unresolved": [
         "error",
         {
-          "caseSensitive": true,
           "commonjs": true
         }
       ],
-      "import-x/no-unused-modules": "error",
       "import-x/no-useless-path-segments": [
         "error",
         {
@@ -1562,7 +1548,6 @@ export default [
         }
       ],
       "import-x/no-webpack-loader-syntax": "error",
-      "import-x/prefer-default-export": "off",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -1570,10 +1555,6 @@ export default [
       "keyword-spacing": "off",
       "linebreak-style": "off",
       "lines-around-comment": 0,
-      "max-classes-per-file": [
-        "error",
-        1
-      ],
       "max-len": 0,
       "max-statements-per-line": "off",
       "multiline-ternary": "off",
@@ -1597,23 +1578,17 @@ export default [
       "no-arrow-condition": "off",
       "no-async-promise-executor": "error",
       "no-await-in-loop": "error",
-      "no-bitwise": "error",
-      "no-caller": "error",
       "no-case-declarations": "error",
       "no-class-assign": "error",
       "no-comma-dangle": "off",
       "no-compare-neg-zero": "error",
-      "no-cond-assign": [
-        "error",
-        "always"
-      ],
+      "no-cond-assign": "error",
       "no-confusing-arrow": 0,
       "no-console": "warn",
       "no-const-assign": "error",
       "no-constant-binary-expression": "error",
-      "no-constant-condition": "warn",
+      "no-constant-condition": "error",
       "no-constructor-return": "error",
-      "no-continue": "error",
       "no-control-regex": "error",
       "no-debugger": "error",
       "no-delete-var": "error",
@@ -1622,24 +1597,8 @@ export default [
       "no-dupe-else-if": "error",
       "no-dupe-keys": "error",
       "no-duplicate-case": "error",
-      "no-else-return": [
-        "error",
-        {
-          "allowElseIf": false
-        }
-      ],
       "no-empty": "error",
       "no-empty-character-class": "error",
-      "no-empty-function": [
-        "error",
-        {
-          "allow": [
-            "arrowFunctions",
-            "functions",
-            "methods"
-          ]
-        }
-      ],
       "no-empty-pattern": "error",
       "no-empty-static-block": "error",
       "no-eval": "error",
@@ -1647,37 +1606,21 @@ export default [
       "no-extend-native": "error",
       "no-extra-bind": "error",
       "no-extra-boolean-cast": "error",
-      "no-extra-label": "error",
       "no-extra-parens": "off",
       "no-extra-semi": "off",
       "no-fallthrough": "error",
       "no-floating-decimal": "off",
       "no-func-assign": "error",
-      "no-global-assign": [
-        "error",
-        {
-          "exceptions": []
-        }
-      ],
+      "no-global-assign": "error",
       "no-implied-eval": "error",
       "no-import-assign": "error",
       "no-inner-declarations": "error",
       "no-invalid-regexp": "error",
       "no-irregular-whitespace": "error",
-      "no-iterator": "error",
-      "no-label-var": "error",
-      "no-labels": [
-        "error",
-        {
-          "allowLoop": false,
-          "allowSwitch": false
-        }
-      ],
       "no-lone-blocks": "error",
       "no-lonely-if": "error",
       "no-loop-func": "error",
       "no-loss-of-precision": "error",
-      "no-magic-numbers": "off",
       "no-misleading-character-class": "error",
       "no-mixed-operators": 0,
       "no-mixed-spaces-and-tabs": "off",
@@ -1685,13 +1628,10 @@ export default [
         "error"
       ],
       "no-multi-spaces": "off",
-      "no-multi-str": "error",
       "no-multiple-empty-lines": "off",
       "no-nested-ternary": "error",
-      "no-new": "error",
       "no-new-func": "error",
       "no-new-native-nonconstructor": "error",
-      "no-new-wrappers": "error",
       "no-nonoctal-decimal-escape": "error",
       "no-obj-calls": "error",
       "no-object-constructor": "error",
@@ -2028,11 +1968,6 @@ export default [
         {
           "message": "Please use Object.defineProperty instead.",
           "property": "__defineSetter__"
-        },
-        {
-          "message": "Use the exponentiation operator (**) instead.",
-          "object": "Math",
-          "property": "pow"
         }
       ],
       "no-restricted-syntax": [
@@ -2051,12 +1986,7 @@ export default [
         "always"
       ],
       "no-script-url": "error",
-      "no-self-assign": [
-        "error",
-        {
-          "props": true
-        }
-      ],
+      "no-self-assign": "error",
       "no-self-compare": "error",
       "no-sequences": "error",
       "no-setter-return": "error",
@@ -2070,9 +2000,9 @@ export default [
       "no-this-before-super": "error",
       "no-throw-literal": "error",
       "no-trailing-spaces": "off",
+      "no-unassigned-vars": "error",
       "no-undef": "error",
       "no-undef-init": "error",
-      "no-underscore-dangle": "off",
       "no-unexpected-multiline": 0,
       "no-unmodified-loop-condition": "error",
       "no-unneeded-ternary": [
@@ -2106,14 +2036,8 @@ export default [
       ],
       "no-unused-labels": "error",
       "no-unused-private-class-members": "error",
-      "no-unused-vars": [
-        "error",
-        {
-          "args": "after-used",
-          "ignoreRestSiblings": true,
-          "vars": "all"
-        }
-      ],
+      "no-unused-vars": "error",
+      "no-useless-assignment": "error",
       "no-useless-backreference": "error",
       "no-useless-call": "error",
       "no-useless-catch": "error",
@@ -2157,7 +2081,6 @@ export default [
       ],
       "operator-linebreak": "off",
       "padded-blocks": "off",
-      "prefer-arrow-callback": "off",
       "prefer-const": [
         "error",
         {
@@ -2184,6 +2107,7 @@ export default [
       "prefer-rest-params": "error",
       "prefer-spread": "error",
       "prefer-template": "error",
+      "preserve-caught-error": "error",
       "quote-props": "off",
       "quotes": 0,
       "radix": "error",
@@ -2203,7 +2127,6 @@ export default [
       "react/jsx-space-before-closing": "off",
       "react/jsx-tag-spacing": "off",
       "react/jsx-wrap-multilines": "off",
-      "require-atomic-updates": "error",
       "require-yield": "error",
       "rest-spread-spacing": "off",
       "semi": "off",
@@ -2323,6 +2246,7 @@ export default [
         "AudioNode": false,
         "AudioParam": false,
         "AudioParamMap": false,
+        "AudioPlaybackStats": false,
         "AudioProcessingEvent": false,
         "AudioScheduledSourceNode": false,
         "AudioSinkInfo": false,
@@ -3011,6 +2935,7 @@ export default [
         "SVGUnitTypes": false,
         "SVGUseElement": false,
         "SVGViewElement": false,
+        "Sanitizer": false,
         "Scheduler": false,
         "Scheduling": false,
         "Screen": false,
@@ -3090,6 +3015,9 @@ export default [
         "TextUpdateEvent": false,
         "TimeEvent": false,
         "TimeRanges": false,
+        "TimelineTrigger": false,
+        "TimelineTriggerRange": false,
+        "TimelineTriggerRangeList": false,
         "ToggleEvent": false,
         "Touch": false,
         "TouchEvent": false,
@@ -3468,13 +3396,6 @@ export default [
       },
       "parser": "@qlik/eslint-config/esbrowser-ts-parser",
       "parserOptions": {
-        "parser": {
-          "meta": {
-            "name": "typescript-eslint/parser",
-            "version": "8.58.1"
-          },
-          "version": "8.58.1"
-        },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
       },
@@ -3668,21 +3589,15 @@ export default [
       "@stylistic/wrap-iife": "off",
       "@stylistic/wrap-regex": "off",
       "@stylistic/yield-star-spacing": "off",
+      "@typescript-eslint/await-thenable": "error",
       "@typescript-eslint/ban-ts-comment": "error",
       "@typescript-eslint/block-spacing": "off",
       "@typescript-eslint/brace-style": "off",
-      "@typescript-eslint/class-methods-use-this": [
-        "warn",
-        {
-          "exceptMethods": []
-        }
-      ],
       "@typescript-eslint/comma-dangle": "off",
       "@typescript-eslint/comma-spacing": "off",
       "@typescript-eslint/consistent-type-exports": "error",
       "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/default-param-last": "error",
-      "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/func-call-spacing": "off",
       "@typescript-eslint/indent": "off",
       "@typescript-eslint/key-spacing": "off",
@@ -3715,25 +3630,28 @@ export default [
         }
       ],
       "@typescript-eslint/no-array-constructor": "error",
+      "@typescript-eslint/no-array-delete": "error",
+      "@typescript-eslint/no-base-to-string": "error",
       "@typescript-eslint/no-confusing-void-expression": "error",
       "@typescript-eslint/no-duplicate-enum-values": "error",
+      "@typescript-eslint/no-duplicate-type-constituents": "error",
       "@typescript-eslint/no-dynamic-delete": "error",
       "@typescript-eslint/no-empty-object-type": "error",
       "@typescript-eslint/no-explicit-any": "error",
       "@typescript-eslint/no-extra-non-null-assertion": "error",
       "@typescript-eslint/no-extra-parens": "off",
       "@typescript-eslint/no-extra-semi": "off",
-      "@typescript-eslint/no-extraneous-class": "error",
       "@typescript-eslint/no-floating-promises": [
         "error",
         {
           "ignoreIIFE": true
         }
       ],
+      "@typescript-eslint/no-for-in-array": "error",
+      "@typescript-eslint/no-implied-eval": "error",
       "@typescript-eslint/no-import-type-side-effects": "error",
       "@typescript-eslint/no-invalid-void-type": "error",
       "@typescript-eslint/no-loop-func": "error",
-      "@typescript-eslint/no-magic-numbers": "off",
       "@typescript-eslint/no-meaningless-void-operator": "error",
       "@typescript-eslint/no-misused-new": "error",
       "@typescript-eslint/no-misused-promises": [
@@ -3748,6 +3666,7 @@ export default [
       "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
       "@typescript-eslint/no-non-null-assertion": "error",
       "@typescript-eslint/no-redeclare": "error",
+      "@typescript-eslint/no-redundant-type-constituents": "error",
       "@typescript-eslint/no-require-imports": "error",
       "@typescript-eslint/no-restricted-imports": [
         "off",
@@ -3763,66 +3682,65 @@ export default [
       "@typescript-eslint/no-shadow": "error",
       "@typescript-eslint/no-this-alias": "error",
       "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
-      "@typescript-eslint/no-unnecessary-condition": "off",
+      "@typescript-eslint/no-unnecessary-condition": "error",
       "@typescript-eslint/no-unnecessary-parameter-property-assignment": "error",
       "@typescript-eslint/no-unnecessary-qualifier": "error",
       "@typescript-eslint/no-unnecessary-template-expression": "error",
       "@typescript-eslint/no-unnecessary-type-arguments": "error",
+      "@typescript-eslint/no-unnecessary-type-assertion": "error",
       "@typescript-eslint/no-unnecessary-type-constraint": "error",
-      "@typescript-eslint/no-unnecessary-type-parameters": "off",
+      "@typescript-eslint/no-unsafe-argument": "error",
+      "@typescript-eslint/no-unsafe-assignment": "error",
+      "@typescript-eslint/no-unsafe-call": "error",
       "@typescript-eslint/no-unsafe-declaration-merging": "error",
+      "@typescript-eslint/no-unsafe-enum-comparison": "error",
       "@typescript-eslint/no-unsafe-function-type": "error",
+      "@typescript-eslint/no-unsafe-member-access": "error",
+      "@typescript-eslint/no-unsafe-return": "error",
+      "@typescript-eslint/no-unsafe-unary-minus": "error",
       "@typescript-eslint/no-unused-expressions": "error",
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/no-useless-constructor": "error",
-      "@typescript-eslint/no-useless-empty-export": "error",
       "@typescript-eslint/no-wrapper-object-types": "error",
       "@typescript-eslint/object-curly-spacing": "off",
+      "@typescript-eslint/only-throw-error": "error",
       "@typescript-eslint/prefer-as-const": "error",
       "@typescript-eslint/prefer-enum-initializers": "error",
-      "@typescript-eslint/prefer-for-of": "off",
       "@typescript-eslint/prefer-literal-enum-member": "error",
       "@typescript-eslint/prefer-namespace-keyword": "error",
+      "@typescript-eslint/prefer-promise-reject-errors": "error",
       "@typescript-eslint/prefer-reduce-type-parameter": "error",
       "@typescript-eslint/prefer-return-this-type": "error",
       "@typescript-eslint/quotes": 0,
-      "@typescript-eslint/require-array-sort-compare": "error",
-      "@typescript-eslint/return-await": "error",
+      "@typescript-eslint/require-await": "error",
+      "@typescript-eslint/restrict-plus-operands": "error",
+      "@typescript-eslint/restrict-template-expressions": "error",
       "@typescript-eslint/semi": "off",
       "@typescript-eslint/space-before-blocks": "off",
       "@typescript-eslint/space-before-function-paren": "off",
       "@typescript-eslint/space-infix-ops": "off",
-      "@typescript-eslint/strict-boolean-expressions": "off",
       "@typescript-eslint/switch-exhaustiveness-check": "error",
       "@typescript-eslint/triple-slash-reference": "error",
       "@typescript-eslint/type-annotation-spacing": "off",
+      "@typescript-eslint/unbound-method": "error",
       "@typescript-eslint/unified-signatures": "error",
       "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
       "array-bracket-newline": "off",
       "array-bracket-spacing": "off",
-      "array-callback-return": [
-        "error",
-        {
-          "allowImplicit": true
-        }
-      ],
       "array-element-newline": "off",
-      "arrow-body-style": "off",
       "arrow-parens": "off",
       "arrow-spacing": "off",
       "babel/object-curly-spacing": "off",
       "babel/quotes": 0,
       "babel/semi": "off",
-      "block-scoped-var": "error",
       "block-spacing": "off",
       "brace-style": "off",
       "camelcase": "off",
-      "class-methods-use-this": "off",
       "comma-dangle": "off",
       "comma-spacing": "off",
       "comma-style": "off",
       "computed-property-spacing": "off",
-      "consistent-return": "error",
+      "consistent-return": "off",
       "constructor-super": "off",
       "curly": 0,
       "default-case": [
@@ -3861,15 +3779,18 @@ export default [
       "generator-star": "off",
       "generator-star-spacing": "off",
       "getter-return": "off",
-      "grouped-accessor-pairs": "error",
       "implicit-arrow-linebreak": "off",
-      "import-x/consistent-type-specifier-style": "off",
       "import-x/default": "error",
       "import-x/export": "error",
       "import-x/extensions": [
         "error",
         "ignorePackages",
         {
+          "cjs": "never",
+          "cts": "never",
+          "js": "never",
+          "jsx": "never",
+          "mjs": "never",
           "mts": "never",
           "ts": "never",
           "tsx": "never"
@@ -3888,8 +3809,7 @@ export default [
       ],
       "import-x/no-deprecated": "warn",
       "import-x/no-duplicates": "error",
-      "import-x/no-dynamic-require": "error",
-      "import-x/no-empty-named-blocks": "off",
+      "import-x/no-dynamic-require": "warn",
       "import-x/no-extraneous-dependencies": [
         "off",
         {
@@ -3901,6 +3821,7 @@ export default [
             "tests/**",
             "spec/**",
             "**/__tests__/**",
+            "**/__test__/**",
             "**/__mocks__/**",
             "test.{js,jsx,ts,tsx}",
             "test-*.{js,jsx,ts,tsx}",
@@ -3934,19 +3855,16 @@ export default [
       ],
       "import-x/no-mutable-exports": "error",
       "import-x/no-named-as-default": "error",
-      "import-x/no-named-as-default-member": "off",
+      "import-x/no-named-as-default-member": "warn",
       "import-x/no-named-default": "error",
-      "import-x/no-nodejs-modules": "off",
       "import-x/no-relative-packages": "error",
       "import-x/no-self-import": "error",
       "import-x/no-unresolved": [
         "error",
         {
-          "caseSensitive": true,
           "commonjs": true
         }
       ],
-      "import-x/no-unused-modules": "error",
       "import-x/no-useless-path-segments": [
         "error",
         {
@@ -3954,7 +3872,6 @@ export default [
         }
       ],
       "import-x/no-webpack-loader-syntax": "error",
-      "import-x/prefer-default-export": "off",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -3962,10 +3879,6 @@ export default [
       "keyword-spacing": "off",
       "linebreak-style": "off",
       "lines-around-comment": 0,
-      "max-classes-per-file": [
-        "error",
-        1
-      ],
       "max-len": 0,
       "max-statements-per-line": "off",
       "multiline-ternary": "off",
@@ -3989,23 +3902,17 @@ export default [
       "no-arrow-condition": "off",
       "no-async-promise-executor": "error",
       "no-await-in-loop": "error",
-      "no-bitwise": "error",
-      "no-caller": "error",
       "no-case-declarations": "error",
       "no-class-assign": "off",
       "no-comma-dangle": "off",
       "no-compare-neg-zero": "error",
-      "no-cond-assign": [
-        "error",
-        "always"
-      ],
+      "no-cond-assign": "error",
       "no-confusing-arrow": 0,
       "no-console": "warn",
       "no-const-assign": "off",
       "no-constant-binary-expression": "error",
-      "no-constant-condition": "warn",
+      "no-constant-condition": "error",
       "no-constructor-return": "error",
-      "no-continue": "error",
       "no-control-regex": "error",
       "no-debugger": "error",
       "no-delete-var": "error",
@@ -4014,24 +3921,8 @@ export default [
       "no-dupe-else-if": "error",
       "no-dupe-keys": "off",
       "no-duplicate-case": "error",
-      "no-else-return": [
-        "error",
-        {
-          "allowElseIf": false
-        }
-      ],
       "no-empty": "error",
       "no-empty-character-class": "error",
-      "no-empty-function": [
-        "error",
-        {
-          "allow": [
-            "arrowFunctions",
-            "functions",
-            "methods"
-          ]
-        }
-      ],
       "no-empty-pattern": "error",
       "no-empty-static-block": "error",
       "no-eval": "error",
@@ -4039,37 +3930,21 @@ export default [
       "no-extend-native": "error",
       "no-extra-bind": "error",
       "no-extra-boolean-cast": "error",
-      "no-extra-label": "error",
       "no-extra-parens": "off",
       "no-extra-semi": "off",
       "no-fallthrough": "error",
       "no-floating-decimal": "off",
       "no-func-assign": "off",
-      "no-global-assign": [
-        "error",
-        {
-          "exceptions": []
-        }
-      ],
-      "no-implied-eval": "error",
+      "no-global-assign": "error",
+      "no-implied-eval": "off",
       "no-import-assign": "off",
       "no-inner-declarations": "error",
       "no-invalid-regexp": "error",
       "no-irregular-whitespace": "error",
-      "no-iterator": "error",
-      "no-label-var": "error",
-      "no-labels": [
-        "error",
-        {
-          "allowLoop": false,
-          "allowSwitch": false
-        }
-      ],
       "no-lone-blocks": "error",
       "no-lonely-if": "error",
       "no-loop-func": "off",
       "no-loss-of-precision": "error",
-      "no-magic-numbers": "off",
       "no-misleading-character-class": "error",
       "no-mixed-operators": 0,
       "no-mixed-spaces-and-tabs": "off",
@@ -4077,14 +3952,11 @@ export default [
         "error"
       ],
       "no-multi-spaces": "off",
-      "no-multi-str": "error",
       "no-multiple-empty-lines": "off",
       "no-nested-ternary": "error",
-      "no-new": "error",
       "no-new-func": "error",
       "no-new-native-nonconstructor": "off",
       "no-new-symbol": "off",
-      "no-new-wrappers": "error",
       "no-nonoctal-decimal-escape": "error",
       "no-obj-calls": "off",
       "no-object-constructor": "error",
@@ -4415,11 +4287,6 @@ export default [
         {
           "message": "Please use Object.defineProperty instead.",
           "property": "__defineSetter__"
-        },
-        {
-          "message": "Use the exponentiation operator (**) instead.",
-          "object": "Math",
-          "property": "pow"
         }
       ],
       "no-restricted-syntax": [
@@ -4437,14 +4304,8 @@ export default [
         "error",
         "always"
       ],
-      "no-return-await": "off",
       "no-script-url": "error",
-      "no-self-assign": [
-        "error",
-        {
-          "props": true
-        }
-      ],
+      "no-self-assign": "error",
       "no-self-compare": "error",
       "no-sequences": "error",
       "no-setter-return": "off",
@@ -4456,11 +4317,11 @@ export default [
       "no-tabs": 0,
       "no-template-curly-in-string": "error",
       "no-this-before-super": "off",
-      "no-throw-literal": "error",
+      "no-throw-literal": "off",
       "no-trailing-spaces": "off",
+      "no-unassigned-vars": "error",
       "no-undef": "off",
       "no-undef-init": "error",
-      "no-underscore-dangle": "off",
       "no-unexpected-multiline": 0,
       "no-unmodified-loop-condition": "error",
       "no-unneeded-ternary": [
@@ -4488,6 +4349,7 @@ export default [
       "no-unused-labels": "error",
       "no-unused-private-class-members": "error",
       "no-unused-vars": "off",
+      "no-useless-assignment": "error",
       "no-useless-backreference": "error",
       "no-useless-call": "error",
       "no-useless-catch": "error",
@@ -4531,18 +4393,12 @@ export default [
       ],
       "operator-linebreak": "off",
       "padded-blocks": "off",
-      "prefer-arrow-callback": "off",
       "prefer-const": "error",
       "prefer-exponentiation-operator": "error",
       "prefer-numeric-literals": "error",
       "prefer-object-has-own": "error",
       "prefer-object-spread": "error",
-      "prefer-promise-reject-errors": [
-        "error",
-        {
-          "allowEmptyReject": true
-        }
-      ],
+      "prefer-promise-reject-errors": "off",
       "prefer-regex-literals": [
         "error",
         {
@@ -4552,6 +4408,7 @@ export default [
       "prefer-rest-params": "error",
       "prefer-spread": "error",
       "prefer-template": "error",
+      "preserve-caught-error": "error",
       "quote-props": "off",
       "quotes": 0,
       "radix": "error",
@@ -4571,7 +4428,7 @@ export default [
       "react/jsx-space-before-closing": "off",
       "react/jsx-tag-spacing": "off",
       "react/jsx-wrap-multilines": "off",
-      "require-atomic-updates": "error",
+      "require-await": "off",
       "require-yield": "error",
       "rest-spread-spacing": "off",
       "semi": "off",
@@ -4988,20 +4845,12 @@ export default [
       "@typescript-eslint/type-annotation-spacing": "off",
       "array-bracket-newline": "off",
       "array-bracket-spacing": "off",
-      "array-callback-return": [
-        "error",
-        {
-          "allowImplicit": true
-        }
-      ],
       "array-element-newline": "off",
-      "arrow-body-style": "off",
       "arrow-parens": "off",
       "arrow-spacing": "off",
       "babel/object-curly-spacing": "off",
       "babel/quotes": 0,
       "babel/semi": "off",
-      "block-scoped-var": "error",
       "block-spacing": "off",
       "brace-style": "off",
       "camelcase": [
@@ -5009,12 +4858,6 @@ export default [
         {
           "ignoreDestructuring": false,
           "properties": "never"
-        }
-      ],
-      "class-methods-use-this": [
-        "warn",
-        {
-          "exceptMethods": []
         }
       ],
       "comma-dangle": "off",
@@ -5059,15 +4902,8 @@ export default [
       "function-paren-newline": "off",
       "generator-star": "off",
       "generator-star-spacing": "off",
-      "getter-return": [
-        "error",
-        {
-          "allowImplicit": true
-        }
-      ],
-      "grouped-accessor-pairs": "error",
+      "getter-return": "error",
       "implicit-arrow-linebreak": "off",
-      "import-x/consistent-type-specifier-style": "off",
       "import-x/default": "error",
       "import-x/export": "error",
       "import-x/extensions": [
@@ -5097,8 +4933,7 @@ export default [
       ],
       "import-x/no-deprecated": "warn",
       "import-x/no-duplicates": "error",
-      "import-x/no-dynamic-require": "error",
-      "import-x/no-empty-named-blocks": "off",
+      "import-x/no-dynamic-require": "warn",
       "import-x/no-extraneous-dependencies": [
         "off",
         {
@@ -5110,6 +4945,7 @@ export default [
             "tests/**",
             "spec/**",
             "**/__tests__/**",
+            "**/__test__/**",
             "**/__mocks__/**",
             "test.{js,jsx,ts,tsx}",
             "test-*.{js,jsx,ts,tsx}",
@@ -5143,19 +4979,16 @@ export default [
       ],
       "import-x/no-mutable-exports": "error",
       "import-x/no-named-as-default": "error",
-      "import-x/no-named-as-default-member": "off",
+      "import-x/no-named-as-default-member": "warn",
       "import-x/no-named-default": "error",
-      "import-x/no-nodejs-modules": "off",
       "import-x/no-relative-packages": "error",
       "import-x/no-self-import": "error",
       "import-x/no-unresolved": [
         "error",
         {
-          "caseSensitive": true,
           "commonjs": true
         }
       ],
-      "import-x/no-unused-modules": "error",
       "import-x/no-useless-path-segments": [
         "error",
         {
@@ -5163,7 +4996,6 @@ export default [
         }
       ],
       "import-x/no-webpack-loader-syntax": "error",
-      "import-x/prefer-default-export": "off",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -5171,10 +5003,6 @@ export default [
       "keyword-spacing": "off",
       "linebreak-style": "off",
       "lines-around-comment": 0,
-      "max-classes-per-file": [
-        "error",
-        1
-      ],
       "max-len": 0,
       "max-statements-per-line": "off",
       "multiline-ternary": "off",
@@ -5198,23 +5026,17 @@ export default [
       "no-arrow-condition": "off",
       "no-async-promise-executor": "error",
       "no-await-in-loop": "error",
-      "no-bitwise": "error",
-      "no-caller": "error",
       "no-case-declarations": "error",
       "no-class-assign": "error",
       "no-comma-dangle": "off",
       "no-compare-neg-zero": "error",
-      "no-cond-assign": [
-        "error",
-        "always"
-      ],
+      "no-cond-assign": "error",
       "no-confusing-arrow": 0,
       "no-console": "off",
       "no-const-assign": "error",
       "no-constant-binary-expression": "error",
-      "no-constant-condition": "warn",
+      "no-constant-condition": "error",
       "no-constructor-return": "error",
-      "no-continue": "error",
       "no-control-regex": "error",
       "no-debugger": "error",
       "no-delete-var": "error",
@@ -5223,24 +5045,8 @@ export default [
       "no-dupe-else-if": "error",
       "no-dupe-keys": "error",
       "no-duplicate-case": "error",
-      "no-else-return": [
-        "error",
-        {
-          "allowElseIf": false
-        }
-      ],
       "no-empty": "error",
       "no-empty-character-class": "error",
-      "no-empty-function": [
-        "error",
-        {
-          "allow": [
-            "arrowFunctions",
-            "functions",
-            "methods"
-          ]
-        }
-      ],
       "no-empty-pattern": "error",
       "no-empty-static-block": "error",
       "no-eval": "error",
@@ -5248,37 +5054,21 @@ export default [
       "no-extend-native": "error",
       "no-extra-bind": "error",
       "no-extra-boolean-cast": "error",
-      "no-extra-label": "error",
       "no-extra-parens": "off",
       "no-extra-semi": "off",
       "no-fallthrough": "error",
       "no-floating-decimal": "off",
       "no-func-assign": "error",
-      "no-global-assign": [
-        "error",
-        {
-          "exceptions": []
-        }
-      ],
+      "no-global-assign": "error",
       "no-implied-eval": "error",
       "no-import-assign": "error",
       "no-inner-declarations": "error",
       "no-invalid-regexp": "error",
       "no-irregular-whitespace": "error",
-      "no-iterator": "error",
-      "no-label-var": "error",
-      "no-labels": [
-        "error",
-        {
-          "allowLoop": false,
-          "allowSwitch": false
-        }
-      ],
       "no-lone-blocks": "error",
       "no-lonely-if": "error",
       "no-loop-func": "error",
       "no-loss-of-precision": "error",
-      "no-magic-numbers": "off",
       "no-misleading-character-class": "error",
       "no-mixed-operators": 0,
       "no-mixed-spaces-and-tabs": "off",
@@ -5286,13 +5076,10 @@ export default [
         "error"
       ],
       "no-multi-spaces": "off",
-      "no-multi-str": "error",
       "no-multiple-empty-lines": "off",
       "no-nested-ternary": "error",
-      "no-new": "error",
       "no-new-func": "error",
       "no-new-native-nonconstructor": "error",
-      "no-new-wrappers": "error",
       "no-nonoctal-decimal-escape": "error",
       "no-obj-calls": "error",
       "no-object-constructor": "error",
@@ -5629,11 +5416,6 @@ export default [
         {
           "message": "Please use Object.defineProperty instead.",
           "property": "__defineSetter__"
-        },
-        {
-          "message": "Use the exponentiation operator (**) instead.",
-          "object": "Math",
-          "property": "pow"
         }
       ],
       "no-restricted-syntax": [
@@ -5652,12 +5434,7 @@ export default [
         "always"
       ],
       "no-script-url": "error",
-      "no-self-assign": [
-        "error",
-        {
-          "props": true
-        }
-      ],
+      "no-self-assign": "error",
       "no-self-compare": "error",
       "no-sequences": "error",
       "no-setter-return": "error",
@@ -5671,9 +5448,9 @@ export default [
       "no-this-before-super": "error",
       "no-throw-literal": "error",
       "no-trailing-spaces": "off",
+      "no-unassigned-vars": "error",
       "no-undef": "error",
       "no-undef-init": "error",
-      "no-underscore-dangle": "off",
       "no-unexpected-multiline": 0,
       "no-unmodified-loop-condition": "error",
       "no-unneeded-ternary": [
@@ -5707,14 +5484,8 @@ export default [
       ],
       "no-unused-labels": "error",
       "no-unused-private-class-members": "error",
-      "no-unused-vars": [
-        "error",
-        {
-          "args": "after-used",
-          "ignoreRestSiblings": true,
-          "vars": "all"
-        }
-      ],
+      "no-unused-vars": "error",
+      "no-useless-assignment": "error",
       "no-useless-backreference": "error",
       "no-useless-call": "error",
       "no-useless-catch": "error",
@@ -5758,7 +5529,6 @@ export default [
       ],
       "operator-linebreak": "off",
       "padded-blocks": "off",
-      "prefer-arrow-callback": "off",
       "prefer-const": [
         "error",
         {
@@ -5785,6 +5555,7 @@ export default [
       "prefer-rest-params": "error",
       "prefer-spread": "error",
       "prefer-template": "error",
+      "preserve-caught-error": "error",
       "quote-props": "off",
       "quotes": 0,
       "radix": "error",
@@ -5804,7 +5575,6 @@ export default [
       "react/jsx-space-before-closing": "off",
       "react/jsx-tag-spacing": "off",
       "react/jsx-wrap-multilines": "off",
-      "require-atomic-updates": "error",
       "require-yield": "error",
       "rest-spread-spacing": "off",
       "semi": "off",
@@ -5981,13 +5751,6 @@ export default [
       },
       "parser": "@qlik/eslint-config/browser-esm-cts-parser",
       "parserOptions": {
-        "parser": {
-          "meta": {
-            "name": "typescript-eslint/parser",
-            "version": "8.58.1"
-          },
-          "version": "8.58.1"
-        },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
       },
@@ -6181,21 +5944,15 @@ export default [
       "@stylistic/wrap-iife": "off",
       "@stylistic/wrap-regex": "off",
       "@stylistic/yield-star-spacing": "off",
+      "@typescript-eslint/await-thenable": "error",
       "@typescript-eslint/ban-ts-comment": "error",
       "@typescript-eslint/block-spacing": "off",
       "@typescript-eslint/brace-style": "off",
-      "@typescript-eslint/class-methods-use-this": [
-        "warn",
-        {
-          "exceptMethods": []
-        }
-      ],
       "@typescript-eslint/comma-dangle": "off",
       "@typescript-eslint/comma-spacing": "off",
       "@typescript-eslint/consistent-type-exports": "error",
       "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/default-param-last": "error",
-      "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/func-call-spacing": "off",
       "@typescript-eslint/indent": "off",
       "@typescript-eslint/key-spacing": "off",
@@ -6228,25 +5985,28 @@ export default [
         }
       ],
       "@typescript-eslint/no-array-constructor": "error",
+      "@typescript-eslint/no-array-delete": "error",
+      "@typescript-eslint/no-base-to-string": "error",
       "@typescript-eslint/no-confusing-void-expression": "error",
       "@typescript-eslint/no-duplicate-enum-values": "error",
+      "@typescript-eslint/no-duplicate-type-constituents": "error",
       "@typescript-eslint/no-dynamic-delete": "error",
       "@typescript-eslint/no-empty-object-type": "error",
       "@typescript-eslint/no-explicit-any": "error",
       "@typescript-eslint/no-extra-non-null-assertion": "error",
       "@typescript-eslint/no-extra-parens": "off",
       "@typescript-eslint/no-extra-semi": "off",
-      "@typescript-eslint/no-extraneous-class": "error",
       "@typescript-eslint/no-floating-promises": [
         "error",
         {
           "ignoreIIFE": true
         }
       ],
+      "@typescript-eslint/no-for-in-array": "error",
+      "@typescript-eslint/no-implied-eval": "error",
       "@typescript-eslint/no-import-type-side-effects": "error",
       "@typescript-eslint/no-invalid-void-type": "error",
       "@typescript-eslint/no-loop-func": "error",
-      "@typescript-eslint/no-magic-numbers": "off",
       "@typescript-eslint/no-meaningless-void-operator": "error",
       "@typescript-eslint/no-misused-new": "error",
       "@typescript-eslint/no-misused-promises": [
@@ -6261,6 +6021,7 @@ export default [
       "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
       "@typescript-eslint/no-non-null-assertion": "error",
       "@typescript-eslint/no-redeclare": "error",
+      "@typescript-eslint/no-redundant-type-constituents": "error",
       "@typescript-eslint/no-require-imports": "error",
       "@typescript-eslint/no-restricted-imports": [
         "off",
@@ -6276,66 +6037,65 @@ export default [
       "@typescript-eslint/no-shadow": "error",
       "@typescript-eslint/no-this-alias": "error",
       "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
-      "@typescript-eslint/no-unnecessary-condition": "off",
+      "@typescript-eslint/no-unnecessary-condition": "error",
       "@typescript-eslint/no-unnecessary-parameter-property-assignment": "error",
       "@typescript-eslint/no-unnecessary-qualifier": "error",
       "@typescript-eslint/no-unnecessary-template-expression": "error",
       "@typescript-eslint/no-unnecessary-type-arguments": "error",
+      "@typescript-eslint/no-unnecessary-type-assertion": "error",
       "@typescript-eslint/no-unnecessary-type-constraint": "error",
-      "@typescript-eslint/no-unnecessary-type-parameters": "off",
+      "@typescript-eslint/no-unsafe-argument": "error",
+      "@typescript-eslint/no-unsafe-assignment": "error",
+      "@typescript-eslint/no-unsafe-call": "error",
       "@typescript-eslint/no-unsafe-declaration-merging": "error",
+      "@typescript-eslint/no-unsafe-enum-comparison": "error",
       "@typescript-eslint/no-unsafe-function-type": "error",
+      "@typescript-eslint/no-unsafe-member-access": "error",
+      "@typescript-eslint/no-unsafe-return": "error",
+      "@typescript-eslint/no-unsafe-unary-minus": "error",
       "@typescript-eslint/no-unused-expressions": "error",
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/no-useless-constructor": "error",
-      "@typescript-eslint/no-useless-empty-export": "error",
       "@typescript-eslint/no-wrapper-object-types": "error",
       "@typescript-eslint/object-curly-spacing": "off",
+      "@typescript-eslint/only-throw-error": "error",
       "@typescript-eslint/prefer-as-const": "error",
       "@typescript-eslint/prefer-enum-initializers": "error",
-      "@typescript-eslint/prefer-for-of": "off",
       "@typescript-eslint/prefer-literal-enum-member": "error",
       "@typescript-eslint/prefer-namespace-keyword": "error",
+      "@typescript-eslint/prefer-promise-reject-errors": "error",
       "@typescript-eslint/prefer-reduce-type-parameter": "error",
       "@typescript-eslint/prefer-return-this-type": "error",
       "@typescript-eslint/quotes": 0,
-      "@typescript-eslint/require-array-sort-compare": "error",
-      "@typescript-eslint/return-await": "error",
+      "@typescript-eslint/require-await": "error",
+      "@typescript-eslint/restrict-plus-operands": "error",
+      "@typescript-eslint/restrict-template-expressions": "error",
       "@typescript-eslint/semi": "off",
       "@typescript-eslint/space-before-blocks": "off",
       "@typescript-eslint/space-before-function-paren": "off",
       "@typescript-eslint/space-infix-ops": "off",
-      "@typescript-eslint/strict-boolean-expressions": "off",
       "@typescript-eslint/switch-exhaustiveness-check": "error",
       "@typescript-eslint/triple-slash-reference": "error",
       "@typescript-eslint/type-annotation-spacing": "off",
+      "@typescript-eslint/unbound-method": "error",
       "@typescript-eslint/unified-signatures": "error",
       "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
       "array-bracket-newline": "off",
       "array-bracket-spacing": "off",
-      "array-callback-return": [
-        "error",
-        {
-          "allowImplicit": true
-        }
-      ],
       "array-element-newline": "off",
-      "arrow-body-style": "off",
       "arrow-parens": "off",
       "arrow-spacing": "off",
       "babel/object-curly-spacing": "off",
       "babel/quotes": 0,
       "babel/semi": "off",
-      "block-scoped-var": "error",
       "block-spacing": "off",
       "brace-style": "off",
       "camelcase": "off",
-      "class-methods-use-this": "off",
       "comma-dangle": "off",
       "comma-spacing": "off",
       "comma-style": "off",
       "computed-property-spacing": "off",
-      "consistent-return": "error",
+      "consistent-return": "off",
       "constructor-super": "off",
       "curly": 0,
       "default-case": [
@@ -6374,9 +6134,7 @@ export default [
       "generator-star": "off",
       "generator-star-spacing": "off",
       "getter-return": "off",
-      "grouped-accessor-pairs": "error",
       "implicit-arrow-linebreak": "off",
-      "import-x/consistent-type-specifier-style": "off",
       "import-x/default": "error",
       "import-x/export": "error",
       "import-x/extensions": [
@@ -6406,8 +6164,7 @@ export default [
       ],
       "import-x/no-deprecated": "warn",
       "import-x/no-duplicates": "error",
-      "import-x/no-dynamic-require": "error",
-      "import-x/no-empty-named-blocks": "off",
+      "import-x/no-dynamic-require": "warn",
       "import-x/no-extraneous-dependencies": [
         "off",
         {
@@ -6419,6 +6176,7 @@ export default [
             "tests/**",
             "spec/**",
             "**/__tests__/**",
+            "**/__test__/**",
             "**/__mocks__/**",
             "test.{js,jsx,ts,tsx}",
             "test-*.{js,jsx,ts,tsx}",
@@ -6452,19 +6210,16 @@ export default [
       ],
       "import-x/no-mutable-exports": "error",
       "import-x/no-named-as-default": "error",
-      "import-x/no-named-as-default-member": "off",
+      "import-x/no-named-as-default-member": "warn",
       "import-x/no-named-default": "error",
-      "import-x/no-nodejs-modules": "off",
       "import-x/no-relative-packages": "error",
       "import-x/no-self-import": "error",
       "import-x/no-unresolved": [
         "error",
         {
-          "caseSensitive": true,
           "commonjs": true
         }
       ],
-      "import-x/no-unused-modules": "error",
       "import-x/no-useless-path-segments": [
         "error",
         {
@@ -6472,7 +6227,6 @@ export default [
         }
       ],
       "import-x/no-webpack-loader-syntax": "error",
-      "import-x/prefer-default-export": "off",
       "indent": "off",
       "indent-legacy": "off",
       "jsx-quotes": "off",
@@ -6480,10 +6234,6 @@ export default [
       "keyword-spacing": "off",
       "linebreak-style": "off",
       "lines-around-comment": 0,
-      "max-classes-per-file": [
-        "error",
-        1
-      ],
       "max-len": 0,
       "max-statements-per-line": "off",
       "multiline-ternary": "off",
@@ -6507,23 +6257,17 @@ export default [
       "no-arrow-condition": "off",
       "no-async-promise-executor": "error",
       "no-await-in-loop": "error",
-      "no-bitwise": "error",
-      "no-caller": "error",
       "no-case-declarations": "error",
       "no-class-assign": "off",
       "no-comma-dangle": "off",
       "no-compare-neg-zero": "error",
-      "no-cond-assign": [
-        "error",
-        "always"
-      ],
+      "no-cond-assign": "error",
       "no-confusing-arrow": 0,
       "no-console": "off",
       "no-const-assign": "off",
       "no-constant-binary-expression": "error",
-      "no-constant-condition": "warn",
+      "no-constant-condition": "error",
       "no-constructor-return": "error",
-      "no-continue": "error",
       "no-control-regex": "error",
       "no-debugger": "error",
       "no-delete-var": "error",
@@ -6532,24 +6276,8 @@ export default [
       "no-dupe-else-if": "error",
       "no-dupe-keys": "off",
       "no-duplicate-case": "error",
-      "no-else-return": [
-        "error",
-        {
-          "allowElseIf": false
-        }
-      ],
       "no-empty": "error",
       "no-empty-character-class": "error",
-      "no-empty-function": [
-        "error",
-        {
-          "allow": [
-            "arrowFunctions",
-            "functions",
-            "methods"
-          ]
-        }
-      ],
       "no-empty-pattern": "error",
       "no-empty-static-block": "error",
       "no-eval": "error",
@@ -6557,37 +6285,21 @@ export default [
       "no-extend-native": "error",
       "no-extra-bind": "error",
       "no-extra-boolean-cast": "error",
-      "no-extra-label": "error",
       "no-extra-parens": "off",
       "no-extra-semi": "off",
       "no-fallthrough": "error",
       "no-floating-decimal": "off",
       "no-func-assign": "off",
-      "no-global-assign": [
-        "error",
-        {
-          "exceptions": []
-        }
-      ],
-      "no-implied-eval": "error",
+      "no-global-assign": "error",
+      "no-implied-eval": "off",
       "no-import-assign": "off",
       "no-inner-declarations": "error",
       "no-invalid-regexp": "error",
       "no-irregular-whitespace": "error",
-      "no-iterator": "error",
-      "no-label-var": "error",
-      "no-labels": [
-        "error",
-        {
-          "allowLoop": false,
-          "allowSwitch": false
-        }
-      ],
       "no-lone-blocks": "error",
       "no-lonely-if": "error",
       "no-loop-func": "off",
       "no-loss-of-precision": "error",
-      "no-magic-numbers": "off",
       "no-misleading-character-class": "error",
       "no-mixed-operators": 0,
       "no-mixed-spaces-and-tabs": "off",
@@ -6595,14 +6307,11 @@ export default [
         "error"
       ],
       "no-multi-spaces": "off",
-      "no-multi-str": "error",
       "no-multiple-empty-lines": "off",
       "no-nested-ternary": "error",
-      "no-new": "error",
       "no-new-func": "error",
       "no-new-native-nonconstructor": "off",
       "no-new-symbol": "off",
-      "no-new-wrappers": "error",
       "no-nonoctal-decimal-escape": "error",
       "no-obj-calls": "off",
       "no-object-constructor": "error",
@@ -6933,11 +6642,6 @@ export default [
         {
           "message": "Please use Object.defineProperty instead.",
           "property": "__defineSetter__"
-        },
-        {
-          "message": "Use the exponentiation operator (**) instead.",
-          "object": "Math",
-          "property": "pow"
         }
       ],
       "no-restricted-syntax": [
@@ -6955,14 +6659,8 @@ export default [
         "error",
         "always"
       ],
-      "no-return-await": "off",
       "no-script-url": "error",
-      "no-self-assign": [
-        "error",
-        {
-          "props": true
-        }
-      ],
+      "no-self-assign": "error",
       "no-self-compare": "error",
       "no-sequences": "error",
       "no-setter-return": "off",
@@ -6974,11 +6672,11 @@ export default [
       "no-tabs": 0,
       "no-template-curly-in-string": "error",
       "no-this-before-super": "off",
-      "no-throw-literal": "error",
+      "no-throw-literal": "off",
       "no-trailing-spaces": "off",
+      "no-unassigned-vars": "error",
       "no-undef": "off",
       "no-undef-init": "error",
-      "no-underscore-dangle": "off",
       "no-unexpected-multiline": 0,
       "no-unmodified-loop-condition": "error",
       "no-unneeded-ternary": [
@@ -7006,6 +6704,7 @@ export default [
       "no-unused-labels": "error",
       "no-unused-private-class-members": "error",
       "no-unused-vars": "off",
+      "no-useless-assignment": "error",
       "no-useless-backreference": "error",
       "no-useless-call": "error",
       "no-useless-catch": "error",
@@ -7049,18 +6748,12 @@ export default [
       ],
       "operator-linebreak": "off",
       "padded-blocks": "off",
-      "prefer-arrow-callback": "off",
       "prefer-const": "error",
       "prefer-exponentiation-operator": "error",
       "prefer-numeric-literals": "error",
       "prefer-object-has-own": "error",
       "prefer-object-spread": "error",
-      "prefer-promise-reject-errors": [
-        "error",
-        {
-          "allowEmptyReject": true
-        }
-      ],
+      "prefer-promise-reject-errors": "off",
       "prefer-regex-literals": [
         "error",
         {
@@ -7070,6 +6763,7 @@ export default [
       "prefer-rest-params": "error",
       "prefer-spread": "error",
       "prefer-template": "error",
+      "preserve-caught-error": "error",
       "quote-props": "off",
       "quotes": 0,
       "radix": "error",
@@ -7089,7 +6783,7 @@ export default [
       "react/jsx-space-before-closing": "off",
       "react/jsx-tag-spacing": "off",
       "react/jsx-wrap-multilines": "off",
-      "require-atomic-updates": "error",
+      "require-await": "off",
       "require-yield": "error",
       "rest-spread-spacing": "off",
       "semi": "off",

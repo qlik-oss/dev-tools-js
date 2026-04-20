@@ -10,14 +10,12 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "format:check": "cd ../.. && oxfmt --check 'packages/prettier-config'",
-    "format:write": "cd ../.. && oxfmt 'packages/prettier-config'"
+    "format:check": "oxfmt --check .",
+    "format:write": "oxfmt ."
   },
   "dependencies": {
     "prettier-plugin-organize-imports": "^4.3.0",
-    "prettier-plugin-packagejson": "^3.0.2",
-    "prettier-plugin-sh": "^0.18.1",
-    "prettier-plugin-svelte": "^3.5.1"
+    "prettier-plugin-packagejson": "^3.0.2"
   },
   "peerDependencies": {
     "prettier": ">=3.0.0"

@@ -1,53 +1,10 @@
 // @ts-check
 import globals from "globals";
 import { mergeConfigs } from "../../utils/config.js";
-import nodeRules from "../rules/node.js";
 import { baseConfigJS, baseConfigTS } from "./base.js";
+import nodeRules from "./default-rules/node.js";
 
-/**
- * @satisfies {import("../../types/index.js").ESLintFlatConfig['rules']}
- */
-const cjsRules = {
-  ...nodeRules,
-  // modify rules for node commonjs here
-};
-
-/**
- * CJS config for javascript in node
- * @type {import("../../types/index.js").ESLintFlatConfig}
- */
-const baseCjsJS = mergeConfigs(
-  // base it on the recommended javascript config
-  baseConfigJS,
-  // add qlik's recommended node commonjs config for javascript
-  {
-    languageOptions: {
-      globals: globals.node,
-      sourceType: "commonjs",
-    },
-    rules: cjsRules,
-  },
-);
-
-/**
- * CJS config for typescript in node
- * @type {import("../../types/index.js").ESLintFlatConfig}
- */
-const baseCjsTS = mergeConfigs(
-  // base it on the recommended typescript config
-  baseConfigTS,
-  // add qlik's recommended node commonjs config for typescript
-  {
-    languageOptions: {
-      globals: globals.node,
-      sourceType: "commonjs",
-    },
-    rules: {
-      ...cjsRules,
-      // modify ts specific rules for node here
-    },
-  },
-);
+// TODO use eslint-plugin-n https://github.com/eslint-community/eslint-plugin-n
 
 /**
  * @satisfies {import("../../types/index.js").ESLintFlatConfig["rules"]}
@@ -70,6 +27,48 @@ const nodeEsmRules = {
 };
 
 /**
+ * CJS config for javascript in node
+ * @type {import("../../types/index.js").ESLintFlatConfig}
+ * This config is meant to be extended by javascript specific configs, it is not meant to be used directly.
+ */
+const baseCjsJS = mergeConfigs(
+  // base it on the recommended javascript config
+  baseConfigJS,
+  // add qlik's recommended node commonjs config for javascript
+  {
+    languageOptions: {
+      globals: globals.node,
+      sourceType: "commonjs",
+    },
+    rules: {
+      ...nodeRules,
+      // modify javascript specific rules for node cjs here if needed
+    },
+  },
+);
+
+/**
+ * CJS config for typescript in node
+ * This config is meant to be extended by typescript specific configs, it is not meant to be used directly.
+ * @type {import("../../types/index.js").ESLintFlatConfig}
+ */
+const baseCjsTS = mergeConfigs(
+  // base it on the recommended typescript config
+  baseConfigTS,
+  // add qlik's recommended node commonjs config for typescript
+  {
+    languageOptions: {
+      globals: globals.node,
+      sourceType: "commonjs",
+    },
+    rules: {
+      ...nodeRules,
+      // modify typescript specific rules for node cjs here if needed
+    },
+  },
+);
+
+/**
  * ESM config for javascript in node
  * @type {import("../../types/index.js").ESLintFlatConfig}
  */
@@ -82,7 +81,11 @@ const baseEsmJS = mergeConfigs(
       globals: globals.node,
       sourceType: "module",
     },
-    rules: nodeEsmRules,
+    rules: {
+      ...nodeRules,
+      ...nodeEsmRules,
+      // modify javascript specific rules for node esm here if needed
+    },
   },
 );
 
@@ -100,6 +103,7 @@ const baseEsmTS = mergeConfigs(
       sourceType: "module",
     },
     rules: {
+      ...nodeRules,
       ...nodeEsmRules,
       // modify typescript specific rules for node esm here if needed
     },
