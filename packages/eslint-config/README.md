@@ -324,12 +324,25 @@ If you are using jest the `eslint-plugin-jest` has been removed, so you may want
 Add `eslint-plugin-jest` to your npm dependencies and simply add a new section targeting your jest files with the plugin added.
 Look at the [plugin's documentation](https://www.npmjs.com/package/eslint-plugin-jest)
 
+Same things applies to `eslint-plugin-playwright`
+
 ### AI Prompt
 
 Use this prompt for migrating:
 
 ```text
 I want to migrate this project from ESLint v9 to ESLint v10 and update `@qlik/eslint-config` to v2 which supports ESLint v10.
+
+The changes in `@qlik/eslint-config` from v1 -> v2 are mainly changes of which plugins are used.
+
+- `eslint-plugin-jsx-a11y` - Removed
+- `eslint-plugin-jest` - Removed
+- `eslint-plugin-playwright` - Removed
+- `eslint-plugin-svelte` - Removed
+- `eslint-plugin-react` - Replaced with [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react)
+- `eslint-plugin-react-hooks` - Replaced with [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react)
+
+The default settings now also include somewhat stricter typescript rules.
 
 Follow these steps carefully and explain changes where non-trivial:
 
