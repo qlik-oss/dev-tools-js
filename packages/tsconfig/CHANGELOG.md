@@ -1,5 +1,13 @@
 # @qlik/tsconfig
 
+## 1.0.0
+
+### Major Changes
+
+- 3bf3c27: BREAKING CHANGE
+
+  Removes `@qlik/tsconfig/svelte.json`. This config will no longer support svelte.
+
 ## 0.3.1
 
 ### Patch Changes
