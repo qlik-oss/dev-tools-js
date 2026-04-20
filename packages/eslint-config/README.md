@@ -342,7 +342,7 @@ The changes in `@qlik/eslint-config` from v1 -> v2 are mainly changes of which p
 - `eslint-plugin-react` - Replaced with [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react)
 - `eslint-plugin-react-hooks` - Replaced with [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react)
 
-The default settings now also include somewhat stricter typescript rules.
+The default settings now also include stricter typescript rules.
 
 Follow these steps carefully and explain changes where non-trivial:
 
