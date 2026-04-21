@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 2.0.1
+
+### Patch Changes
+
+- 3e8ffb1: Use flat config typescript resolver for import-x-plugin
+
 ## 2.0.0
 
 ### Major Changes
@@ -7,6 +13,7 @@
 - 3bf3c27: BREAKING CHANGES
 
   `@qlik/eslint-config` now supports ESLint 10
+
   - `eslint-plugin-jsx-a11y` - Removed
   - `eslint-plugin-jest` - Removed
   - `eslint-plugin-playwright` - Removed
