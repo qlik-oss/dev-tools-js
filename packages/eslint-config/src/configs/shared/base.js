@@ -1,5 +1,6 @@
 import js from "@eslint/js";
-import { importX } from "eslint-plugin-import-x";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
+import { createNodeResolver, importX } from "eslint-plugin-import-x";
 import globals from "globals";
 import tsconfig from "typescript-eslint";
 import { mergeConfigs } from "../../utils/config.js";
@@ -69,6 +70,12 @@ const baseConfigTS = mergeConfigs(
       parserOptions: {
         projectService: true,
       },
+    },
+    settings: {
+      // Use import-x resolver-next for TypeScript and keep node resolution as fallback.
+      "import-x/resolver-next": [createTypeScriptImportResolver({ alwaysTryTypes: true }), createNodeResolver()],
+      // Disable legacy resolver config from the import-x TypeScript preset.
+      "import-x/resolver": false,
     },
     rules: {
       ...typescriptRules,

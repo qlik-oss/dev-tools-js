@@ -4698,9 +4698,17 @@ export default [
           ".mts"
         ]
       },
-      "import-x/resolver": {
-        "typescript": true
-      },
+      "import-x/resolver": false,
+      "import-x/resolver-next": [
+        {
+          "interfaceVersion": 3,
+          "name": "eslint-import-resolver-typescript"
+        },
+        {
+          "interfaceVersion": 3,
+          "name": "eslint-plugin-import-x:node"
+        }
+      ],
       "react-x": {
         "importSource": "react",
         "polymorphicPropName": "as",
