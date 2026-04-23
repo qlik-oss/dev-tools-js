@@ -71,7 +71,8 @@ export default [
     "files": [
       "**/__test__/**/*.{ts,tsx}",
       "**/__tests__/**/*.{ts,tsx}",
-      "mocks/**/*.ts"
+      "mocks/**/*.ts",
+      "**/*.{test,spec}.{ts,tsx}"
     ],
     "name": "@qlik/eslint-config/vitest-ts",
     "plugins": {
