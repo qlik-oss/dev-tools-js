@@ -13,7 +13,6 @@
 - 3bf3c27: BREAKING CHANGES
 
   `@qlik/eslint-config` now supports ESLint 10
-
   - `eslint-plugin-jsx-a11y` - Removed
   - `eslint-plugin-jest` - Removed
   - `eslint-plugin-playwright` - Removed

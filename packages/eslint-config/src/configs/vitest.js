@@ -34,7 +34,7 @@ const vitestTS = mergeConfigs(
   // add qlik's recommended vitest config
   {
     name: "vitest-ts",
-    files: ["**/__test__/**/*.{ts,tsx}", "**/__tests__/**/*.{ts,tsx}", "mocks/**/*.ts"],
+    files: ["**/__test__/**/*.{ts,tsx}", "**/__tests__/**/*.{ts,tsx}", "mocks/**/*.ts", "**/*.{test,spec}.{ts,tsx}"],
     rules: {
       // turn off/modify rules that suitable for tests in TypeScript
 
