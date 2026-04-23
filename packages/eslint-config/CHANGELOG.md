@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 2.0.2
+
+### Patch Changes
+
+- 9dc588f: Add additional files for vitest config for loosening up strictness in test files
+
 ## 2.0.1
 
 ### Patch Changes
@@ -13,6 +19,7 @@
 - 3bf3c27: BREAKING CHANGES
 
   `@qlik/eslint-config` now supports ESLint 10
+
   - `eslint-plugin-jsx-a11y` - Removed
   - `eslint-plugin-jest` - Removed
   - `eslint-plugin-playwright` - Removed
