@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 2.0.3
+
+### Patch Changes
+
+- 1a76152: Cover more test files for vitest automatically
+
 ## 2.0.2
 
 ### Patch Changes
