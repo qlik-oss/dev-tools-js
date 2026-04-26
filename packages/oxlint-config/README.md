@@ -64,7 +64,7 @@ export default defineConfig({
 
 ## Migration From ESLint
 
-Use the workspace prompt at [`.github/prompts/migrate-to-oxlint.prompt.md`](https://github.com/qlik-oss/dev-tools-js/blob/main/.github/prompts/migrate-to-oxlint.prompt.md), or copy the prompt below into a Copilot agent chat. It is modeled after the ESLint 9 to 10 migration prompt in `@qlik/eslint-config`, but it focuses on modernization and deletion rather than config translation.
+Use the workspace prompt at [`.github/prompts/migrate-to-oxlint.prompt.md`](../../.github/prompts/migrate-to-oxlint.prompt.md), or copy the prompt below into a Copilot agent chat. It is modeled after the ESLint 9 to 10 migration prompt in `@qlik/eslint-config`, but it focuses on modernization and deletion rather than config translation.
 
 ### AI Prompt
 
@@ -150,7 +150,7 @@ Some ESLint behavior is intentionally not carried forward:
 
 ## Development
 
-Snapshot files in [`packages/oxlint-config/test/generated/`](https://github.com/qlik-oss/dev-tools-js/tree/main/packages/oxlint-config/test/generated) show the fully resolved rule set for each preset as printed by `oxlint --print-config`.
+Snapshot files in [`packages/oxlint-config/test/generated/`](./test/generated) show the fully resolved rule set for each preset as printed by `oxlint --print-config`.
 
 ```sh
 pnpm test
