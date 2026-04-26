@@ -153,17 +153,17 @@ import { defineConfig } from "oxlint";
 const testingLibraryRules = testingLibrary.configs["flat/react"]?.rules ?? {};
 
 export default defineConfig({
-   extends: [qlik.recommended],
-   ignorePatterns: ["node_modules/**", "dist/**", "coverage/**", "build/**"],
-   overrides: [
-      {
-         files: ["**/*.{test,spec}.{js,jsx,ts,tsx}"],
-         jsPlugins: ["eslint-plugin-testing-library"],
-         rules: {
-            ...testingLibraryRules,
-         },
+  extends: [qlik.recommended],
+  ignorePatterns: ["node_modules/**", "dist/**", "coverage/**", "build/**"],
+  overrides: [
+    {
+      files: ["**/*.{test,spec}.{js,jsx,ts,tsx}"],
+      jsPlugins: ["eslint-plugin-testing-library"],
+      rules: {
+        ...testingLibraryRules,
       },
-   ],
+    },
+  ],
 });
 ```
 
@@ -171,16 +171,16 @@ export default defineConfig({
 
 Some ESLint behavior is intentionally not carried forward:
 
-| ESLint behavior                                      | oxlint decision                                                                                                     |
-| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `eslint-plugin-jsx-a11y`                             | Removed from the current ESLint config, so it is not included here. Add project-local a11y rules only when needed.  |
-| `eslint-plugin-jest`                                 | Removed. Vitest is the shared test target.                                                                          |
-| `camelcase` / `@typescript-eslint/naming-convention` | No native oxlint equivalent. Prefer TypeScript API design and code review over a heavy naming rule.                 |
-| `@typescript-eslint/method-signature-style`          | No native oxlint equivalent. Not worth a JS plugin by default.                                                      |
-| `no-restricted-properties`                           | No native oxlint equivalent. Use project-specific rules only for concrete migration hazards.                        |
-| `no-restricted-syntax`                               | No broad native selector rule. The config keeps the important native equivalents such as `no-labels` and `no-with`. |
-| `import-x/no-unresolved`                             | Not enabled. TypeScript, bundlers, and package managers are better sources of truth for resolution failures.        |
-| `import-x/no-extraneous-dependencies`                | Still project-specific and intentionally off, matching the current ESLint config.                                   |
+| ESLint behavior                                      | oxlint decision                                                                                                                                                                                                                                                                                                  |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `eslint-plugin-jsx-a11y`                             | Removed from the current ESLint config, so it is not included here. Add project-local a11y rules only when needed.                                                                                                                                                                                               |
+| `eslint-plugin-jest`                                 | Removed. Vitest is the shared test target.                                                                                                                                                                                                                                                                       |
+| `camelcase` / `@typescript-eslint/naming-convention` | No native oxlint equivalent. Prefer TypeScript API design and code review over a heavy naming rule.                                                                                                                                                                                                              |
+| `@typescript-eslint/method-signature-style`          | No native oxlint equivalent. Not worth a JS plugin by default.                                                                                                                                                                                                                                                   |
+| `no-restricted-properties`                           | No native oxlint equivalent. Use project-specific rules only for concrete migration hazards.                                                                                                                                                                                                                     |
+| `no-restricted-syntax`                               | No broad native selector rule. The config keeps the important native equivalents such as `no-labels` and `no-with`.                                                                                                                                                                                              |
+| `import-x/no-unresolved`                             | Not enabled. TypeScript, bundlers, and package managers are better sources of truth for resolution failures.                                                                                                                                                                                                     |
+| `import-x/no-extraneous-dependencies`                | Still project-specific and intentionally off, matching the current ESLint config.                                                                                                                                                                                                                                |
 | `eslint-plugin-testing-library`                      | Use it through `jsPlugins` in project-local test overrides. Oxlint does not provide shared presets for JS plugins, so either enable the wanted rules explicitly or import/spread the plugin's recommended/default rules into the override. Keep ESLint only if the plugin still depends on unsupported behavior. |
 
 ## Development
