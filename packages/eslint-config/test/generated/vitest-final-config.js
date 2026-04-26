@@ -1,9 +1,9 @@
 export default [
   {
     "files": [
-      "**/__test__/**/*.{js,jsx}",
-      "**/__tests__/**/*.{js,jsx}",
-      "mocks/**/*.js"
+      "**/__test{,s}__/**/*.{js,jsx}",
+      "**/{test{,s},mock{,s}}/**/*.js",
+      "**/*.{test,spec}.{js,jsx}"
     ],
     "name": "@qlik/eslint-config/vitest-js",
     "plugins": {
@@ -69,9 +69,8 @@ export default [
   },
   {
     "files": [
-      "**/__test__/**/*.{ts,tsx}",
-      "**/__tests__/**/*.{ts,tsx}",
-      "mocks/**/*.ts",
+      "**/__test{,s}__/**/*.{ts,tsx}",
+      "**/{test{,s},mock{,s}}/**/*.ts",
       "**/*.{test,spec}.{ts,tsx}"
     ],
     "name": "@qlik/eslint-config/vitest-ts",
