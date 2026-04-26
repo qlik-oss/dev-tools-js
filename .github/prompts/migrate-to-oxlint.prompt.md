@@ -59,6 +59,7 @@ Follow these steps carefully and explain changes where non-trivial:
    - summarize removed rules, retained exceptions, and any follow-up risks
 
 Important:
+
 - Be opinionated and modern.
 - Prefer deletion over preserving historical config.
 - Prefer native oxlint over JS plugins.
