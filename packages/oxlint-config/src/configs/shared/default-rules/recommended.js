@@ -128,7 +128,7 @@ const rules = {
   "import/no-empty-named-blocks": "off",
   "import/no-mutable-exports": "error",
   "import/no-named-default": "error",
-  "import/no-unassigned-import": "off",
+  "import/no-unassigned-import": "error",
   "import/no-webpack-loader-syntax": "error",
 
   "typescript/consistent-type-exports": "error",
@@ -166,8 +166,8 @@ const rules = {
   "typescript/use-unknown-in-catch-callback-variable": "error",
 
   "unicorn/consistent-function-scoping": "off",
-  "unicorn/no-array-sort": "off",
-  "unicorn/no-useless-fallback-in-spread": "off",
+  "unicorn/no-array-sort": "error",
+  "unicorn/no-useless-fallback-in-spread": "error",
   "unicorn/require-module-specifiers": "off",
 };
 
