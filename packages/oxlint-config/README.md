@@ -71,7 +71,7 @@ Use the workspace prompt at [`.github/prompts/migrate-to-oxlint.prompt.md`](../.
 ```text
 I want to migrate this project from ESLint / @qlik/eslint-config to oxlint using @qlik/oxlint-config.
 
-Use the current @qlik/eslint-config behavior as the source of truth for linting intent, but do not mechanically port ESLint rule names. Prefer native oxlint rules and built-in oxlint plugins. Use JS plugins only when a missing rule is still valuable enough to justify the compatibility cost.
+Use the current @qlik/eslint-config behavior as the source of truth for linting intent, but do not mechanically port ESLint rule names. Prefer native oxlint rules and built-in oxlint plugins. When native coverage is missing, prefer Oxlint `jsPlugins` over keeping a parallel ESLint run when the plugin works in Oxlint.
 
 Follow these steps carefully and explain changes where non-trivial:
 
@@ -87,34 +87,40 @@ Follow these steps carefully and explain changes where non-trivial:
    - obsolete legacy rule that should be removed
    - formatting rule that belongs in oxfmt/prettier instead of oxlint
    - project-specific policy that should remain explicit
-   - unsupported rule that may require keeping ESLint or adding a JS plugin
+   - unsupported rule that may require `jsPlugins`, or only if that still fails, a temporary ESLint fallback
 
 3. Update dependencies:
    - add oxlint and @qlik/oxlint-config
+   - keep ESLint plugin packages that will be loaded through `jsPlugins`
    - remove ESLint packages only when no remaining rule requires ESLint
    - remove obsolete plugins, resolvers, compatibility packages, and pinned overrides
 
 4. Create oxlint.config.ts using @qlik/oxlint-config:
    - import qlik from "@qlik/oxlint-config"
    - import { defineConfig } from "oxlint"
+   - add root `ignorePatterns` for repo-wide exclusions such as `node_modules/**`, `dist/**`, `coverage/**`, and `build/**` when applicable
    - compose qlik.recommended, qlik.react, qlik.esm, qlik.cjs, or qlik.vitest as appropriate
+   - use project-local `jsPlugins` or override-level `jsPlugins` for plugin gaps such as `eslint-plugin-testing-library`
+   - if a JS plugin has no Oxlint preset, either handwrite the rules you want or import/spread the plugin's recommended/default rules into the override `rules`
    - keep overrides small and tied to real file groups
    - do not recreate ESLint parser/resolver settings unless oxlint actually needs them
 
 5. Clean up scripts and CI:
    - replace eslint commands with oxlint commands
+   - migrate repo-wide ignore behavior to root `ignorePatterns`, or use `--ignore-path` / `--ignore-pattern` only when a CLI-only workflow still needs it
    - use oxlint --fix where appropriate
    - use --deny-warnings or --max-warnings 0 only if the previous CI behavior required it
    - keep prettier/oxfmt as separate formatting checks
 
 6. Handle remaining lint failures:
    - prefer code fixes over rule disables
-   - delete stale eslint-disable comments or convert only the ones still needed
+   - delete stale eslint-disable comments or convert only the ones still needed to `oxlint-disable` or config-based ignores
    - for every disabled oxlint rule, add a short justification
    - avoid runtime behavior changes unless explicitly required and reviewed
 
 7. Decide whether ESLint still needs to run:
-   - keep ESLint temporarily only for high-value unsupported rules
+   - prefer `jsPlugins` for high-value gaps before keeping ESLint, including `eslint-plugin-testing-library`
+   - keep ESLint temporarily only for plugins that still do not run correctly in Oxlint, depend on unsupported APIs, require custom file formats, or rely on type-aware plugin behavior that Oxlint cannot cover yet
    - document why each remaining ESLint rule/plugin is still needed
    - add a follow-up to remove it when oxlint gains native support
 
@@ -127,9 +133,38 @@ Follow these steps carefully and explain changes where non-trivial:
 Important:
 - Be opinionated and modern.
 - Prefer deletion over preserving historical config.
-- Prefer native oxlint over JS plugins.
+- Prefer native oxlint first, then `jsPlugins`, and only keep ESLint when neither is viable.
 - Prefer oxlint defaults and categories over explicit rule lists.
+- Keep repo-wide ignores explicit in root `ignorePatterns`.
 - Do not preserve rules only because they existed in the old ESLint setup.
+```
+
+## Project-local JS plugins and ignores
+
+When a project still needs an ESLint plugin that Oxlint does not ship natively, prefer `jsPlugins` in the project-local config before keeping a parallel ESLint run. `eslint-plugin-testing-library` is known to work this way. Because Oxlint does not provide shared presets for JS plugins, either enable the specific rules you want or import and spread the plugin's recommended/default rules into the override's `rules`.
+
+Use root `ignorePatterns` for repo-wide exclusions such as `node_modules/**`, `dist/**`, `coverage/**`, and `build/**` so the same ignore list applies in local runs, editors, and CI.
+
+```ts
+import qlik from "@qlik/oxlint-config";
+import testingLibrary from "eslint-plugin-testing-library";
+import { defineConfig } from "oxlint";
+
+const testingLibraryRules = testingLibrary.configs["flat/react"]?.rules ?? {};
+
+export default defineConfig({
+   extends: [qlik.recommended],
+   ignorePatterns: ["node_modules/**", "dist/**", "coverage/**", "build/**"],
+   overrides: [
+      {
+         files: ["**/*.{test,spec}.{js,jsx,ts,tsx}"],
+         jsPlugins: ["eslint-plugin-testing-library"],
+         rules: {
+            ...testingLibraryRules,
+         },
+      },
+   ],
+});
 ```
 
 ## Rule Coverage Notes
@@ -146,7 +181,7 @@ Some ESLint behavior is intentionally not carried forward:
 | `no-restricted-syntax`                               | No broad native selector rule. The config keeps the important native equivalents such as `no-labels` and `no-with`. |
 | `import-x/no-unresolved`                             | Not enabled. TypeScript, bundlers, and package managers are better sources of truth for resolution failures.        |
 | `import-x/no-extraneous-dependencies`                | Still project-specific and intentionally off, matching the current ESLint config.                                   |
-| `eslint-plugin-testing-library`                      | No native oxlint equivalent in this shared config. Keep ESLint temporarily if these diagnostics are required.       |
+| `eslint-plugin-testing-library`                      | Use it through `jsPlugins` in project-local test overrides. Oxlint does not provide shared presets for JS plugins, so either enable the wanted rules explicitly or import/spread the plugin's recommended/default rules into the override. Keep ESLint only if the plugin still depends on unsupported behavior. |
 
 ## Development
 
