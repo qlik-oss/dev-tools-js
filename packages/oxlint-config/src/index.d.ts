@@ -1,6 +1,6 @@
 import type { OxlintConfig } from "oxlint";
 
-declare const configs: {
+type Configs = {
   cjs: OxlintConfig;
   esbrowser: OxlintConfig;
   esm: OxlintConfig;
@@ -9,8 +9,8 @@ declare const configs: {
   vitest: OxlintConfig;
 };
 
-declare const qlikOxlintConfig: typeof configs & {
-  configs: typeof configs;
+declare const qlikOxlintConfig: Configs & {
+  configs: Configs;
 };
 
 export default qlikOxlintConfig;

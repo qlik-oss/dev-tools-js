@@ -30,42 +30,44 @@ const configs = qlik.configs;
 const dummyFile = path.resolve(__dirname, "_print-config-dummy.js");
 await fs.writeFile(dummyFile, "");
 
-for (const [name, config] of Object.entries(configs)) {
-  const configFile = path.resolve(__dirname, `_print-config-${name}.mjs`);
+await Promise.all(
+  Object.entries(configs).map(async ([name, config]) => {
+    const configFile = path.resolve(__dirname, `_print-config-${name}.mjs`);
 
-  await fs.writeFile(
-    configFile,
-    [
-      `import { defineConfig } from "oxlint";`,
-      `const preset = ${JSON.stringify(config, null, 2)};`,
-      `export default defineConfig(preset);`,
-    ].join("\n"),
-  );
+    await fs.writeFile(
+      configFile,
+      [
+        `import { defineConfig } from "oxlint";`,
+        `const preset = ${JSON.stringify(config, null, 2)};`,
+        `export default defineConfig(preset);`,
+      ].join("\n"),
+    );
 
-  let resolved;
-  try {
-    resolved = execSync(`../node_modules/.bin/oxlint --config "${configFile}" --print-config "${dummyFile}"`, {
-      cwd: __dirname,
-      encoding: "utf8",
-    });
-  } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
-    console.error(`Failed to resolve config for "${name}":`, message);
-    process.exitCode = 1;
-    continue;
-  } finally {
-    await fs.rm(configFile, { force: true });
-  }
+    let resolved;
+    try {
+      resolved = execSync(`../node_modules/.bin/oxlint --config "${configFile}" --print-config "${dummyFile}"`, {
+        cwd: __dirname,
+        encoding: "utf8",
+      });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      console.error(`Failed to resolve config for "${name}":`, message);
+      process.exitCode = 1;
+      return;
+    } finally {
+      await fs.rm(configFile, { force: true });
+    }
 
-  // Pretty-print the JSON with sorted keys for stable diffs
-  const parsed = JSON.parse(resolved);
-  const sorted = sortKeys(parsed);
-  const pretty = JSON.stringify(sorted, null, 2);
+    // Pretty-print the JSON with sorted keys for stable diffs
+    const parsed = JSON.parse(resolved);
+    const sorted = sortKeys(parsed);
+    const pretty = JSON.stringify(sorted, null, 2);
 
-  const outFile = path.resolve(generatedDir, `${name}-final-config.json`);
-  await fs.writeFile(outFile, pretty + "\n");
-  console.log(`  ✓  ${name} → test/generated/${name}-final-config.json`);
-}
+    const outFile = path.resolve(generatedDir, `${name}-final-config.json`);
+    await fs.writeFile(outFile, `${pretty}\n`);
+    console.log(`  ✓  ${name} → test/generated/${name}-final-config.json`);
+  }),
+);
 
 // Clean up the shared dummy file
 await fs.rm(dummyFile, { force: true });
