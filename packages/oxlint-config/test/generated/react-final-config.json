@@ -570,7 +570,7 @@
     "react/no-this-in-sfc": "deny",
     "react/no-unsafe": "warn",
     "react/no-will-update-set-state": "warn",
-    "react/react-in-jsx-scope": "deny",
+    "react/react-in-jsx-scope": "allow",
     "react/rules-of-hooks": "deny",
     "react/style-prop-object": "deny",
     "react/void-dom-elements-no-children": "deny",
