@@ -9,7 +9,7 @@ const rules = {
   "react/no-danger-with-children": "error",
   "react/no-direct-mutation-state": "error",
   "react/no-find-dom-node": "error",
-  "react/react-in-jsx-scope": "error",
+  "react/react-in-jsx-scope": "off",
   "react/no-render-return-value": "error",
   "react/no-string-refs": "error",
   "react/no-unsafe": "warn",
