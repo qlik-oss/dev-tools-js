@@ -11,6 +11,7 @@ This monorepo uses [turborepo](https://turbo.build/repo) as a build system and [
 - packages
   - [browserslist-config](./packages/browserslist-config/README.md): a config to share target browsers between different front-end tools.
   - [eslint-config](./packages/eslint-config/README.md): Qlik's ESLint config for typescript projects.
+  - [oxlint-config](./packages/oxlint-config/README.md): Qlik's oxlint config for modern JS/TS projects.
   - [prettier-config](./packages/prettier-config/README.md): Qlik's Prettier config.
   - [tsconfig](./packages/tsconfig/README.md): compiler [options](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) Useful settings for compiling typeScript projects.
 

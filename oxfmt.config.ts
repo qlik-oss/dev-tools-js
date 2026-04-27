@@ -5,5 +5,5 @@ import { defineConfig } from "oxfmt";
 // it directly from package.json instead of in a config file.
 export default defineConfig({
   ...config,
-  ignorePatterns: ["**/test/generated", "pnpm-lock.yaml"],
+  ignorePatterns: ["**/test/generated", "**/CHANGELOG.md", "pnpm-lock.yaml", ".changeset/"],
 });
