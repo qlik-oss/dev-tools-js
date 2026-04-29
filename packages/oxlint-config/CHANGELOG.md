@@ -1,5 +1,11 @@
 # @qlik/oxlint-config
 
+## 0.2.0
+
+### Minor Changes
+
+- 3ab2760: feat: add `no-console` and `no-empty-object-type` rules to configurations
+
 ## 0.1.2
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@qlik/oxfmt-config",
-  "version": "0.1.5",
+  "version": "0.1.4",
   "description": "Qlik's shared oxfmt config",
   "license": "ISC",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
