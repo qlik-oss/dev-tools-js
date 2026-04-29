@@ -155,6 +155,7 @@ const rules = {
   "typescript/no-unsafe-assignment": "error",
   "typescript/no-unsafe-call": "error",
   "typescript/no-unsafe-member-access": "error",
+  "typescript/no-unsafe-type-assertion": "off",
   "typescript/no-unsafe-return": "error",
   "typescript/no-useless-constructor": "error",
   "typescript/no-empty-object-type": "error",

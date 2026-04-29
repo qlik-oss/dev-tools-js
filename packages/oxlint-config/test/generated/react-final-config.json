@@ -636,7 +636,7 @@
     "typescript/no-unsafe-enum-comparison": "deny",
     "typescript/no-unsafe-member-access": "deny",
     "typescript/no-unsafe-return": "deny",
-    "typescript/no-unsafe-type-assertion": "deny",
+    "typescript/no-unsafe-type-assertion": "allow",
     "typescript/no-unsafe-unary-minus": "deny",
     "typescript/no-useless-default-assignment": "deny",
     "typescript/no-useless-empty-export": "deny",
