@@ -1,5 +1,11 @@
 # @qlik/oxlint-config
 
+## 0.3.0
+
+### Minor Changes
+
+- 349467b: Enable typed oxlint defaults and document the updated oxlint migration guidance.
+
 ## 0.2.0
 
 ### Minor Changes
