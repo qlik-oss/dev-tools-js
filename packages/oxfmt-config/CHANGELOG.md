@@ -1,5 +1,11 @@
 # @qlik/oxfmt-config
 
+## 0.1.5
+
+### Patch Changes
+
+- 3ab2760: feat: add `no-console` and `no-empty-object-type` rules to configurations
+
 ## 0.1.4
 
 ### Patch Changes
