@@ -26,8 +26,17 @@ const commonjsEnv = {
   commonjs: true,
 };
 
+/** @type {Pick<import("oxlint").OxlintConfig, "options">} */
+const typedLinting = {
+  options: {
+    typeAware: true,
+    typeCheck: true,
+  },
+};
+
 /** @type {import("oxlint").OxlintConfig} */
 const baseBrowserConfig = {
+  ...typedLinting,
   plugins: basePlugins,
   env: browserEnv,
   categories,
@@ -36,6 +45,7 @@ const baseBrowserConfig = {
 
 /** @type {import("oxlint").OxlintConfig} */
 const baseNodeConfig = {
+  ...typedLinting,
   plugins: basePlugins,
   env: nodeEnv,
   categories,

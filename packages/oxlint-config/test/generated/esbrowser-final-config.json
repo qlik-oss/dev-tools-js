@@ -9,6 +9,10 @@
   },
   "globals": {},
   "ignorePatterns": [],
+  "options": {
+    "typeAware": true,
+    "typeCheck": true
+  },
   "overrides": [
     {
       "env": {
