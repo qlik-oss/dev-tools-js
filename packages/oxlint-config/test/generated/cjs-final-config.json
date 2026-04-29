@@ -559,6 +559,7 @@
     "typescript/no-duplicate-enum-values": "deny",
     "typescript/no-duplicate-type-constituents": "deny",
     "typescript/no-dynamic-delete": "deny",
+    "typescript/no-empty-object-type": "deny",
     "typescript/no-explicit-any": "deny",
     "typescript/no-extra-non-null-assertion": "deny",
     "typescript/no-extraneous-class": "deny",
