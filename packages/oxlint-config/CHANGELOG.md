@@ -1,5 +1,11 @@
 # @qlik/oxlint-config
 
+## 0.3.1
+
+### Patch Changes
+
+- 6b4da1f: fix: disable overly strict 'typescript/no-unsafe-type-assertion' rule
+
 ## 0.3.0
 
 ### Minor Changes
