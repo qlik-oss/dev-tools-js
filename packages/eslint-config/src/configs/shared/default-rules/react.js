@@ -17,6 +17,7 @@
  */
 const rules = {
   // Add or modify react specific rules here if needed - use https://beta.eslint-react.xyz/docs/rules/overview for reference
+  "@eslint-react/no-array-index-key": "error",
 };
 
 export default rules;
