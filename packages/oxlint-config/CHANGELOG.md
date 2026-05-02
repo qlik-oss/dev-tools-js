@@ -1,5 +1,12 @@
 # @qlik/oxlint-config
 
+## 0.3.2
+
+### Patch Changes
+
+- bf58f2e: chore: update npm dependencies
+- 3c32ec1: Enable react/no-array-index-key in the oxlint React preset and disable import/no-unassigned-import in the esm oxlint preset.
+
 ## 0.3.1
 
 ### Patch Changes
