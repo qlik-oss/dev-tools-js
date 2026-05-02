@@ -104,7 +104,7 @@
     "import/no-named-as-default-member": "deny",
     "import/no-named-default": "deny",
     "import/no-self-import": "deny",
-    "import/no-unassigned-import": "deny",
+    "import/no-unassigned-import": "allow",
     "import/no-webpack-loader-syntax": "deny",
     "new-cap": [
       "deny",
