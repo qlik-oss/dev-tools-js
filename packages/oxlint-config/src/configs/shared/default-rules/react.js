@@ -16,6 +16,7 @@ const rules = {
   "react/no-will-update-set-state": "warn",
   "react/rules-of-hooks": "error",
   "react/void-dom-elements-no-children": "error",
+  "react/no-array-index-key": "error",
 };
 
 export default rules;

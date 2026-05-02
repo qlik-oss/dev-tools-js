@@ -565,6 +565,7 @@
     "react/jsx-no-undef": "deny",
     "react/jsx-no-useless-fragment": "warn",
     "react/jsx-props-no-spread-multi": "deny",
+    "react/no-array-index-key": "deny",
     "react/no-children-prop": "deny",
     "react/no-danger": "warn",
     "react/no-danger-with-children": "deny",
