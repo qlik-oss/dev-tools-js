@@ -1,6 +1,6 @@
 {
   "name": "@qlik/oxlint-config",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Qlik's oxlint configs",
   "license": "ISC",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
