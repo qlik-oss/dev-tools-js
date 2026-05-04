@@ -18,6 +18,7 @@ const vitestJS = mergeConfigs(
     files: ["**/__test{,s}__/**/*.{js,jsx}", "**/{test{,s},mock{,s}}/**/*.js", "**/*.{test,spec}.{js,jsx}"],
     rules: {
       // turn off/modify rules that suitable for tests in JavaScript
+      "no-await-in-loop": "off",
     },
   },
 );
@@ -37,7 +38,7 @@ const vitestTS = mergeConfigs(
     files: ["**/__test{,s}__/**/*.{ts,tsx}", "**/{test{,s},mock{,s}}/**/*.ts", "**/*.{test,spec}.{ts,tsx}"],
     rules: {
       // turn off/modify rules that suitable for tests in TypeScript
-
+      "no-await-in-loop": "off",
       // turn off all the rules that are too strict for tests, and warn on any explicit any types
       "@typescript-eslint/no-unsafe-assignment": "off",
       "@typescript-eslint/no-unsafe-member-access": "off",
