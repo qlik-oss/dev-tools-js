@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 2.0.6
+
+### Patch Changes
+
+- 624cd10: Turn off no-await-in-loop in vitest config
+
 ## 2.0.5
 
 ### Patch Changes
