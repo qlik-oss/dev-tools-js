@@ -97,12 +97,10 @@ function getRulesTableRows(output: string): string[] {
     }
 
     if (/^\s+\|/u.test(line) && rows.length > 0) {
-      rows[rows.length - 1] += line.trimStart();
-      return rows;
+      return [...rows.slice(0, -1), `${rows.at(-1)}${line.trimStart()}`];
     }
 
-    rows.push(line);
-    return rows;
+    return [...rows, line];
   }, []);
 }
 
