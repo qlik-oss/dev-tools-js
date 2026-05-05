@@ -1,5 +1,15 @@
 # @qlik/oxlint-config
 
+## 0.5.0
+
+### Minor Changes
+
+- 40286b6: feat(oxlint-config): add warning-level Jest and Vitest rules
+
+### Patch Changes
+
+- e2a111e: fix: apply jest and vitest presets correctly when extending configs
+
 ## 0.4.0
 
 ### Minor Changes
