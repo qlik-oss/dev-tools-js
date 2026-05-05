@@ -97,7 +97,8 @@ function getRulesTableRows(output: string): string[] {
     }
 
     if (/^\s+\|/u.test(line) && rows.length > 0) {
-      return [...rows.slice(0, -1), `${rows.at(-1)}${line.trimStart()}`];
+      const previousRow = rows[rows.length - 1];
+      return [...rows.slice(0, -1), `${previousRow}${line.trimStart()}`];
     }
 
     return [...rows, line];
