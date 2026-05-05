@@ -3,6 +3,8 @@
 /** @type {NonNullable<import("oxlint").OxlintConfig["rules"]>} */
 const rules = {
   "vitest/consistent-each-for": "error",
+  "vitest/consistent-test-filename": "warn",
+  "vitest/consistent-test-it": "warn",
   "vitest/expect-expect": "error",
   "vitest/hoisted-apis-on-top": "error",
   "vitest/no-commented-out-tests": "error",
@@ -10,6 +12,14 @@ const rules = {
   "vitest/no-conditional-tests": "error",
   "vitest/no-disabled-tests": "error",
   "vitest/no-focused-tests": "error",
+  "vitest/no-identical-title": "warn",
+  "vitest/prefer-called-exactly-once-with": "warn",
+  "vitest/prefer-called-once": "warn",
+  "vitest/prefer-called-times": "warn",
+  "vitest/prefer-to-be-falsy": "warn",
+  "vitest/prefer-to-be-object": "warn",
+  "vitest/prefer-to-be-truthy": "warn",
+  "vitest/prefer-to-contain": "warn",
   "vitest/require-awaited-expect-poll": "error",
   "vitest/require-local-test-context-for-concurrent-snapshots": "error",
   "vitest/require-mock-type-parameters": "off",
