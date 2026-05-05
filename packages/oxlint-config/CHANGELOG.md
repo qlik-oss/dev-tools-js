@@ -1,5 +1,11 @@
 # @qlik/oxlint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- 32f519e: feat: add jest config, fix scoping for test rules
+
 ## 0.3.3
 
 ### Patch Changes
