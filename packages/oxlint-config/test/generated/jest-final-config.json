@@ -62,7 +62,6 @@
         "jest/valid-expect": "deny",
         "jest/valid-expect-in-promise": "deny",
         "jest/valid-title": "deny",
-        "no-console": "allow",
         "typescript/no-explicit-any": "warn",
         "typescript/no-non-null-assertion": "allow",
         "typescript/no-unsafe-argument": "allow",

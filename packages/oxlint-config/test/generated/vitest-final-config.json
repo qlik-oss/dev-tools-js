@@ -49,7 +49,6 @@
         "vitest"
       ],
       "rules": {
-        "no-console": "allow",
         "typescript/no-explicit-any": "warn",
         "typescript/no-non-null-assertion": "allow",
         "typescript/no-unsafe-argument": "allow",

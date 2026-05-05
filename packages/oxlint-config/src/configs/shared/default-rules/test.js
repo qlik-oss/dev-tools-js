@@ -2,7 +2,6 @@
 
 /** @type {import("oxlint").OxlintConfig["rules"]} */
 const rules = {
-  "no-console": "off",
   "typescript/no-explicit-any": "warn",
   "typescript/no-non-null-assertion": "off",
   "typescript/no-unsafe-argument": "off",

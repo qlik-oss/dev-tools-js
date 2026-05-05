@@ -163,7 +163,7 @@ describe("preset extension resolution", () => {
     );
     const diagnostics = getDiagnostics(result);
 
-    expect(diagnostics).not.toContain("eslint(no-console):warning");
+    expect(diagnostics).toContain("eslint(no-console):warning");
     expect(diagnostics).toContain("typescript-eslint(no-explicit-any):warning");
   });
 
@@ -183,10 +183,11 @@ describe("preset extension resolution", () => {
     const result = await lintWithPresets(
       ["recommended", "react", "jest"],
       "src/jest-only.test.ts",
-      'it.skip("skipped", () => {});\n',
+      'it.skip("skipped", () => {});\nconsole.log("still warn");\n',
     );
     const diagnostics = getDiagnostics(result);
 
+    expect(diagnostics).toContain("eslint(no-console):warning");
     expect(diagnostics).toContain("eslint-plugin-jest(no-disabled-tests):error");
     expect(diagnostics).not.toContain("eslint-plugin-vitest(no-disabled-tests):error");
   });
