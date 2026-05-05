@@ -1,5 +1,11 @@
 # @qlik/oxlint-config
 
+## 0.5.2
+
+### Patch Changes
+
+- dbdd04f: fix: disable conflicting stylistic rules
+
 ## 0.5.1
 
 ### Patch Changes
