@@ -1,6 +1,6 @@
 // @ts-check
 
-/** @type {import("oxlint").OxlintConfig["rules"]} */
+/** @type {NonNullable<import("oxlint").OxlintConfig["rules"]>} */
 const rules = {
   "react/exhaustive-deps": "warn",
   "react/jsx-no-comment-textnodes": "warn",

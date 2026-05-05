@@ -1,28 +1,29 @@
 // @ts-check
-import testRules from "./shared/default-rules/test.js";
+import jestRules from "./shared/default-rules/jest.js";
 import vitestRules from "./shared/default-rules/vitest.js";
 import { baseBrowserConfig, commonjsOverride } from "./shared/base.js";
 import { vitestPlugins } from "./shared/plugins.js";
-import testFiles from "./shared/test-files.js";
+import { createScopedTestRunnerPreset } from "./shared/test-preset.js";
 
-/** @type {NonNullable<import("oxlint").OxlintConfig["overrides"]>[number]} */
-const vitestOverride = {
-  files: testFiles,
-  plugins: vitestPlugins,
-  env: {
-    ...baseBrowserConfig.env,
-    vitest: true,
-  },
-  rules: {
-    ...testRules,
-    ...vitestRules,
-  },
-};
+/** @type {NonNullable<import("oxlint").OxlintConfig["rules"]>} */
+const conflictingJestRules = Object.fromEntries(
+  Object.keys(vitestRules)
+    .map((rule) => rule.replace(/^vitest\//u, ""))
+    .filter((ruleName) => `jest/${ruleName}` in jestRules)
+    .map((ruleName) => [`jest/${ruleName}`, "off"]),
+);
 
 /** @type {import("oxlint").OxlintConfig} */
-const vitest = {
-  ...baseBrowserConfig,
-  overrides: [commonjsOverride, vitestOverride],
-};
+const vitest = createScopedTestRunnerPreset({
+  baseConfig: baseBrowserConfig,
+  commonjsOverride,
+  plugins: vitestPlugins,
+  rootRules: vitestRules,
+  runnerRules: {
+    ...vitestRules,
+    ...conflictingJestRules,
+  },
+  runnerEnvName: "vitest",
+});
 
 export default vitest;

@@ -1,6 +1,6 @@
 // @ts-check
 
-/** @type {import("oxlint").OxlintConfig["rules"]} */
+/** @type {NonNullable<import("oxlint").OxlintConfig["rules"]>} */
 const rules = {
   "vitest/consistent-each-for": "error",
   "vitest/expect-expect": "error",

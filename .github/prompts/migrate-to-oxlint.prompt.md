@@ -36,6 +36,10 @@ Follow these steps carefully and explain changes where non-trivial:
    - keep the config as small as technically possible: usually `extends`, `ignorePatterns`, and a few targeted overrides are enough
    - keep the shared preset defaults for `options: { typeAware: true, typeCheck: true }` unless there is a deliberate repo-specific reason to relax them
    - add root `ignorePatterns` for repo-wide exclusions such as `node_modules/**`, `dist/**`, `coverage/**`, and `build/**` when applicable
+   - for native test-runner coverage, prefer adding the shared `qlik.vitest` or `qlik.jest` preset to the root `extends` array; those presets already scope their test-only behavior internally
+   - do not unpack `qlik.vitest` or `qlik.jest` into copied `env`, `plugins`, or `rules` inside a repo-local override; keep repo-specific test overrides additive
+   - `oxlint` does not support `overrides[].extends`, so compose shared test presets at the root instead of trying to nest them
+   - do not rely on `env` alone for Jest or Vitest migrations; `env` enables globals, but the native test rules should come from the shared preset or from explicit rules
    - use project-local `jsPlugins` or override-level `jsPlugins` for plugin gaps such as `eslint-plugin-testing-library`
    - if a JS plugin has no Oxlint preset, either handwrite the rules you want or import/spread the plugin's recommended/default rules into the override `rules`
    - keep overrides small and tied to real file groups
@@ -57,6 +61,7 @@ Follow these steps carefully and explain changes where non-trivial:
    - avoid runtime behavior changes unless explicitly required and reviewed
 
 7. Decide whether ESLint still needs to run:
+   - prefer the shared `qlik.vitest` or `qlik.jest` preset at the root for native test-runner coverage before reaching for JS plugins for test-only gaps
    - prefer `jsPlugins` for high-value gaps before keeping ESLint, including `eslint-plugin-testing-library`
    - keep ESLint temporarily only for plugins that still do not run correctly in Oxlint, depend on unsupported APIs, require custom file formats, or rely on type-aware plugin behavior that Oxlint still cannot cover even with `typeAware` and `typeCheck` enabled
    - document why each remaining ESLint rule/plugin is still needed

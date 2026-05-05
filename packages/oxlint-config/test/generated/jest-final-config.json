@@ -30,6 +30,29 @@
       }
     },
     {
+      "env": null,
+      "files": [
+        "**/*.{js,jsx,ts,tsx,cjs,cts,mjs,mts}"
+      ],
+      "globals": null,
+      "plugins": null,
+      "rules": {
+        "jest/expect-expect": "allow",
+        "jest/no-commented-out-tests": "allow",
+        "jest/no-conditional-expect": "allow",
+        "jest/no-disabled-tests": "allow",
+        "jest/no-export": "allow",
+        "jest/no-focused-tests": "allow",
+        "jest/no-standalone-expect": "allow",
+        "jest/prefer-snapshot-hint": "allow",
+        "jest/require-to-throw-message": "allow",
+        "jest/valid-describe-callback": "allow",
+        "jest/valid-expect": "allow",
+        "jest/valid-expect-in-promise": "allow",
+        "jest/valid-title": "allow"
+      }
+    },
+    {
       "env": {
         "browser": true,
         "builtin": true,
@@ -41,13 +64,7 @@
         "**/*.{test,spec}.{js,jsx,ts,tsx}"
       ],
       "globals": null,
-      "plugins": [
-        "unicorn",
-        "typescript",
-        "oxc",
-        "import",
-        "jest"
-      ],
+      "plugins": null,
       "rules": {
         "jest/expect-expect": "deny",
         "jest/no-commented-out-tests": "deny",
@@ -77,7 +94,8 @@
     "unicorn",
     "typescript",
     "oxc",
-    "import"
+    "import",
+    "jest"
   ],
   "rules": {
     "array-callback-return": [
@@ -150,6 +168,19 @@
     "import/no-self-import": "deny",
     "import/no-unassigned-import": "deny",
     "import/no-webpack-loader-syntax": "deny",
+    "jest/expect-expect": "deny",
+    "jest/no-commented-out-tests": "deny",
+    "jest/no-conditional-expect": "deny",
+    "jest/no-disabled-tests": "deny",
+    "jest/no-export": "deny",
+    "jest/no-focused-tests": "deny",
+    "jest/no-standalone-expect": "deny",
+    "jest/prefer-snapshot-hint": "deny",
+    "jest/require-to-throw-message": "deny",
+    "jest/valid-describe-callback": "deny",
+    "jest/valid-expect": "deny",
+    "jest/valid-expect-in-promise": "deny",
+    "jest/valid-title": "deny",
     "new-cap": [
       "deny",
       [

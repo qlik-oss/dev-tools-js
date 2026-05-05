@@ -10,7 +10,7 @@ const restrictedBrowserGlobals = [
   })),
 ];
 
-/** @type {import("oxlint").OxlintConfig["rules"]} */
+/** @type {NonNullable<import("oxlint").OxlintConfig["rules"]>} */
 const rules = {
   "array-callback-return": ["error", { allowImplicit: true }],
   eqeqeq: ["error", "always", { null: "ignore" }],
