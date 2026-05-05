@@ -12,8 +12,6 @@ const rules = {
   "jest/no-standalone-expect": "error",
   "jest/prefer-snapshot-hint": "error",
   "jest/prefer-to-contain": "warn",
-  "jest/prefer-to-have-been-called": "warn",
-  "jest/prefer-to-have-been-called-times": "warn",
   "jest/prefer-to-have-length": "warn",
   "jest/require-to-throw-message": "error",
   "jest/valid-describe-callback": "error",
