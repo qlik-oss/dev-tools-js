@@ -17,8 +17,8 @@ type OxlintLintResult = {
   diagnostics: OxlintDiagnostic[];
 };
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const packageRoot = path.resolve(__dirname, "..");
+const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
+const packageRoot = path.resolve(currentDirectory, "..");
 const oxlintBin = path.resolve(packageRoot, "node_modules/.bin/oxlint");
 
 let tempDir: string;
