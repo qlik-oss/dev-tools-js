@@ -125,6 +125,21 @@ function isRuleEnabled(output: string, ruleName: string, source: string): boolea
   return cells[3] === "✅";
 }
 
+function getStableRulesCommandEnv(): NodeJS.ProcessEnv {
+  const environment: NodeJS.ProcessEnv = {
+    ...process.env,
+    COLUMNS: "220",
+    NO_COLOR: "1",
+    TERM: "xterm-256color",
+  };
+
+  // `oxlint --rules` changes its captured output in CI mode, which hides the rows this test asserts on.
+  delete environment.CI;
+  delete environment.GITHUB_ACTIONS;
+
+  return environment;
+}
+
 async function lintWithConfig(config: TestOxlintConfig, filePath: string, contents: string): Promise<OxlintLintResult> {
   const runId = fileCounter++;
   const configFile = path.join(tempDir, `config-${runId}.json`);
@@ -180,11 +195,7 @@ describe("preset extension resolution", () => {
     return execFileSync(oxlintBin, ["--rules", "--config", configFile], {
       cwd: packageRoot,
       encoding: "utf8",
-      env: {
-        ...process.env,
-        COLUMNS: "220",
-        NO_COLOR: "1",
-      },
+      env: getStableRulesCommandEnv(),
       stdio: ["ignore", "pipe", "pipe"],
     });
   }
