@@ -5,8 +5,7 @@
   },
   "env": {
     "browser": true,
-    "builtin": true,
-    "vitest": true
+    "builtin": true
   },
   "globals": {},
   "ignorePatterns": [],
@@ -32,6 +31,8 @@
     },
     {
       "env": {
+        "browser": true,
+        "builtin": true,
         "vitest": true
       },
       "files": [
@@ -40,16 +41,32 @@
         "**/*.{test,spec}.{js,jsx,ts,tsx}"
       ],
       "globals": null,
-      "plugins": null,
-      "rules": {}
+      "plugins": [
+        "unicorn",
+        "typescript",
+        "oxc",
+        "import",
+        "vitest"
+      ],
+      "rules": {
+        "no-console": "allow",
+        "typescript/no-explicit-any": "warn",
+        "typescript/no-non-null-assertion": "allow",
+        "typescript/no-unsafe-argument": "allow",
+        "typescript/no-unsafe-assignment": "allow",
+        "typescript/no-unsafe-call": "allow",
+        "typescript/no-unsafe-member-access": "allow",
+        "typescript/no-unsafe-return": "allow",
+        "typescript/unbound-method": "allow",
+        "vitest/require-mock-type-parameters": "allow"
+      }
     }
   ],
   "plugins": [
     "unicorn",
     "typescript",
     "oxc",
-    "import",
-    "vitest"
+    "import"
   ],
   "rules": {
     "array-callback-return": [
@@ -122,19 +139,6 @@
     "import/no-self-import": "deny",
     "import/no-unassigned-import": "deny",
     "import/no-webpack-loader-syntax": "deny",
-    "jest/expect-expect": "deny",
-    "jest/no-commented-out-tests": "deny",
-    "jest/no-conditional-expect": "deny",
-    "jest/no-disabled-tests": "deny",
-    "jest/no-export": "deny",
-    "jest/no-focused-tests": "deny",
-    "jest/no-standalone-expect": "deny",
-    "jest/prefer-snapshot-hint": "deny",
-    "jest/require-to-throw-message": "deny",
-    "jest/valid-describe-callback": "deny",
-    "jest/valid-expect": "deny",
-    "jest/valid-expect-in-promise": "deny",
-    "jest/valid-title": "deny",
     "new-cap": [
       "deny",
       [
@@ -158,7 +162,7 @@
     "no-class-assign": "deny",
     "no-compare-neg-zero": "deny",
     "no-cond-assign": "deny",
-    "no-console": "allow",
+    "no-console": "warn",
     "no-const-assign": "deny",
     "no-constant-binary-expression": "deny",
     "no-constant-condition": "deny",
@@ -597,7 +601,7 @@
     "typescript/no-duplicate-type-constituents": "deny",
     "typescript/no-dynamic-delete": "deny",
     "typescript/no-empty-object-type": "deny",
-    "typescript/no-explicit-any": "warn",
+    "typescript/no-explicit-any": "deny",
     "typescript/no-extra-non-null-assertion": "deny",
     "typescript/no-extraneous-class": "deny",
     "typescript/no-floating-promises": "deny",
@@ -619,7 +623,7 @@
     "typescript/no-mixed-enums": "deny",
     "typescript/no-non-null-asserted-nullish-coalescing": "deny",
     "typescript/no-non-null-asserted-optional-chain": "deny",
-    "typescript/no-non-null-assertion": "allow",
+    "typescript/no-non-null-assertion": "deny",
     "typescript/no-redundant-type-constituents": "deny",
     "typescript/no-this-alias": "deny",
     "typescript/no-unnecessary-boolean-literal-compare": "deny",
@@ -632,13 +636,13 @@
     "typescript/no-unnecessary-type-constraint": "deny",
     "typescript/no-unnecessary-type-conversion": "deny",
     "typescript/no-unnecessary-type-parameters": "deny",
-    "typescript/no-unsafe-argument": "allow",
-    "typescript/no-unsafe-assignment": "allow",
-    "typescript/no-unsafe-call": "allow",
+    "typescript/no-unsafe-argument": "deny",
+    "typescript/no-unsafe-assignment": "deny",
+    "typescript/no-unsafe-call": "deny",
     "typescript/no-unsafe-declaration-merging": "deny",
     "typescript/no-unsafe-enum-comparison": "deny",
-    "typescript/no-unsafe-member-access": "allow",
-    "typescript/no-unsafe-return": "allow",
+    "typescript/no-unsafe-member-access": "deny",
+    "typescript/no-unsafe-return": "deny",
     "typescript/no-unsafe-type-assertion": "allow",
     "typescript/no-unsafe-unary-minus": "deny",
     "typescript/no-useless-default-assignment": "deny",
@@ -662,7 +666,7 @@
     "typescript/restrict-template-expressions": "deny",
     "typescript/switch-exhaustiveness-check": "deny",
     "typescript/triple-slash-reference": "deny",
-    "typescript/unbound-method": "allow",
+    "typescript/unbound-method": "deny",
     "typescript/unified-signatures": "deny",
     "typescript/use-unknown-in-catch-callback-variable": "deny",
     "unicode-bom": [
@@ -694,20 +698,6 @@
     "unicorn/require-post-message-target-origin": "deny",
     "use-isnan": "deny",
     "valid-typeof": "deny",
-    "vitest/consistent-each-for": "deny",
-    "vitest/expect-expect": "deny",
-    "vitest/hoisted-apis-on-top": "deny",
-    "vitest/no-commented-out-tests": "deny",
-    "vitest/no-conditional-expect": "deny",
-    "vitest/no-conditional-tests": "deny",
-    "vitest/no-disabled-tests": "deny",
-    "vitest/no-focused-tests": "deny",
-    "vitest/require-awaited-expect-poll": "deny",
-    "vitest/require-local-test-context-for-concurrent-snapshots": "deny",
-    "vitest/require-mock-type-parameters": "allow",
-    "vitest/valid-expect": "deny",
-    "vitest/valid-title": "deny",
-    "vitest/warn-todo": "deny",
     "yoda": "deny"
   },
   "settings": {

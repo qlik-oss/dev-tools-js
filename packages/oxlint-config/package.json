@@ -20,7 +20,7 @@
     "check-types": "tsc --noEmit",
     "format:check": "oxfmt --check .",
     "format:write": "oxfmt .",
-    "test": "./test/verify-configs.sh",
+    "test": "vitest run && ./test/verify-configs.sh",
     "test:update": "./test/update-configs.sh"
   },
   "dependencies": {

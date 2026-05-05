@@ -8,16 +8,15 @@ const testFiles = [
   "**/*.{test,spec}.{js,jsx,ts,tsx}",
 ];
 
-/** @type {import("oxlint").OxlintConfig} */
-const vitest = {
-  ...baseBrowserConfig,
+/** @type {NonNullable<import("oxlint").OxlintConfig["overrides"]>[number]} */
+const vitestOverride = {
+  files: testFiles,
   plugins: vitestPlugins,
   env: {
     ...baseBrowserConfig.env,
     vitest: true,
   },
   rules: {
-    ...baseBrowserConfig.rules,
     "no-console": "off",
     "typescript/no-explicit-any": "warn",
     "typescript/no-non-null-assertion": "off",
@@ -29,15 +28,12 @@ const vitest = {
     "typescript/unbound-method": "off",
     "vitest/require-mock-type-parameters": "off",
   },
-  overrides: [
-    commonjsOverride,
-    {
-      files: testFiles,
-      env: {
-        vitest: true,
-      },
-    },
-  ],
+};
+
+/** @type {import("oxlint").OxlintConfig} */
+const vitest = {
+  ...baseBrowserConfig,
+  overrides: [commonjsOverride, vitestOverride],
 };
 
 export default vitest;
