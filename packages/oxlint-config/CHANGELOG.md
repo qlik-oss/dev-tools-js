@@ -1,5 +1,11 @@
 # @qlik/oxlint-config
 
+## 0.5.1
+
+### Patch Changes
+
+- dc4026c: fix: disable new nitty test related rules
+
 ## 0.5.0
 
 ### Minor Changes
