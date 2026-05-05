@@ -5,6 +5,9 @@ const basePlugins = ["unicorn", "typescript", "oxc", "import"];
 const reactPlugins = [...basePlugins, "react"];
 
 /** @type {NonNullable<import("oxlint").OxlintConfig["plugins"]>} */
+const jestPlugins = [...basePlugins, "jest"];
+
+/** @type {NonNullable<import("oxlint").OxlintConfig["plugins"]>} */
 const vitestPlugins = [...basePlugins, "vitest"];
 
-export { basePlugins, reactPlugins, vitestPlugins };
+export { basePlugins, reactPlugins, jestPlugins, vitestPlugins };

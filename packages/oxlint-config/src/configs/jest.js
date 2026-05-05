@@ -1,28 +1,28 @@
 // @ts-check
+import jestRules from "./shared/default-rules/jest.js";
 import testRules from "./shared/default-rules/test.js";
-import vitestRules from "./shared/default-rules/vitest.js";
 import { baseBrowserConfig, commonjsOverride } from "./shared/base.js";
-import { vitestPlugins } from "./shared/plugins.js";
+import { jestPlugins } from "./shared/plugins.js";
 import testFiles from "./shared/test-files.js";
 
 /** @type {NonNullable<import("oxlint").OxlintConfig["overrides"]>[number]} */
-const vitestOverride = {
+const jestOverride = {
   files: testFiles,
-  plugins: vitestPlugins,
+  plugins: jestPlugins,
   env: {
     ...baseBrowserConfig.env,
-    vitest: true,
+    jest: true,
   },
   rules: {
     ...testRules,
-    ...vitestRules,
+    ...jestRules,
   },
 };
 
 /** @type {import("oxlint").OxlintConfig} */
-const vitest = {
+const jest = {
   ...baseBrowserConfig,
-  overrides: [commonjsOverride, vitestOverride],
+  overrides: [commonjsOverride, jestOverride],
 };
 
-export default vitest;
+export default jest;

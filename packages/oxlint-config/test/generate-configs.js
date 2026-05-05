@@ -25,14 +25,15 @@ await fs.mkdir(generatedDir, { recursive: true });
  * Configs to snapshot.
  */
 const configs = qlik.configs;
-
-// Reusable dummy file for --print-config (just needs to exist)
-const dummyFile = path.resolve(__dirname, "_print-config-dummy.js");
-await fs.writeFile(dummyFile, "");
+const testConfigNames = new Set(["jest", "vitest"]);
 
 await Promise.all(
   Object.entries(configs).map(async ([name, config]) => {
     const configFile = path.resolve(__dirname, `_print-config-${name}.mjs`);
+    const dummyExtension = testConfigNames.has(name) ? ".test.tsx" : ".js";
+    const dummyFile = path.resolve(__dirname, `_print-config-${name}-dummy${dummyExtension}`);
+
+    await fs.writeFile(dummyFile, "");
 
     await fs.writeFile(
       configFile,
@@ -55,6 +56,7 @@ await Promise.all(
       process.exitCode = 1;
       return;
     } finally {
+      await fs.rm(dummyFile, { force: true });
       await fs.rm(configFile, { force: true });
     }
 
@@ -68,9 +70,6 @@ await Promise.all(
     console.log(`  ✓  ${name} → test/generated/${name}-final-config.json`);
   }),
 );
-
-// Clean up the shared dummy file
-await fs.rm(dummyFile, { force: true });
 
 /**
  * Recursively sorts object keys for a stable representation.
