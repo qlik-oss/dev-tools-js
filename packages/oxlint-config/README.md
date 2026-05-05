@@ -33,6 +33,7 @@ The same presets are also available under `qlik.configs` for parity with `@qlik/
 | `esbrowser`   | Explicit browser ESM projects; currently equivalent to `recommended`        |
 | `esm`         | Node.js ESM projects and tooling                                            |
 | `cjs`         | Node.js CommonJS projects and tooling                                       |
+| `jest`        | Jest test files or test-focused lint runs                                   |
 | `react`       | React projects using oxlint's native React rules                            |
 | `vitest`      | Vitest test files or test-focused lint runs                                 |
 
@@ -57,7 +58,7 @@ export default defineConfig({
 
 - Prefer native oxlint rules and built-in oxlint plugins.
 - Do not use JS plugins in the shared config. Add project-local JS plugins only for gaps that are genuinely important to that project.
-- Preserve oxlint's default native plugin set (`unicorn`, `typescript`, `oxc`) when enabling `import`, `react`, or `vitest`.
+- Preserve oxlint's default native plugin set (`unicorn`, `typescript`, `oxc`) when enabling `import`, `jest`, `react`, or `vitest`.
 - Use oxlint categories for broad bug-finding intent, then list only rules that differ from defaults or represent explicit Qlik policy.
 - Prefer modern code rules over legacy compatibility rules.
 - Keep CommonJS support scoped to CommonJS files and Node-focused presets.
@@ -191,7 +192,7 @@ With `typeAware` and `typeCheck` enabled, the shared presets intentionally stay 
 | ESLint behavior                                      | oxlint decision                                                                                                                                                                                                                                                                                                  |
 | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `eslint-plugin-jsx-a11y`                             | Removed from the current ESLint config, so it is not included here. Add project-local a11y rules only when needed.                                                                                                                                                                                               |
-| `eslint-plugin-jest`                                 | Removed. Vitest is the shared test target.                                                                                                                                                                                                                                                                       |
+| `eslint-plugin-jest`                                 | Use the shared `jest` preset for Jest repos. The `vitest` preset keeps Vitest rules explicit so Jest rules do not leak in through native plugin defaults.                                                                                                                                                        |
 | `camelcase` / `@typescript-eslint/naming-convention` | No native oxlint equivalent. Prefer TypeScript API design and code review over a heavy naming rule.                                                                                                                                                                                                              |
 | `@typescript-eslint/method-signature-style`          | No native oxlint equivalent. Not worth a JS plugin by default.                                                                                                                                                                                                                                                   |
 | `no-restricted-properties`                           | No native oxlint equivalent. Use project-specific rules only for concrete migration hazards.                                                                                                                                                                                                                     |

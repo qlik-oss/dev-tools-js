@@ -25,11 +25,12 @@ await fs.mkdir(generatedDir, { recursive: true });
  * Configs to snapshot.
  */
 const configs = qlik.configs;
+const testConfigNames = new Set(["jest", "vitest"]);
 
 await Promise.all(
   Object.entries(configs).map(async ([name, config]) => {
     const configFile = path.resolve(__dirname, `_print-config-${name}.mjs`);
-    const dummyExtension = name === "vitest" ? ".test.tsx" : ".js";
+    const dummyExtension = testConfigNames.has(name) ? ".test.tsx" : ".js";
     const dummyFile = path.resolve(__dirname, `_print-config-${name}-dummy${dummyExtension}`);
 
     await fs.writeFile(dummyFile, "");

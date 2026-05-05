@@ -33,7 +33,7 @@
       "env": {
         "browser": true,
         "builtin": true,
-        "vitest": true
+        "jest": true
       },
       "files": [
         "**/__test{,s}__/**/*.{js,jsx,ts,tsx}",
@@ -46,9 +46,22 @@
         "typescript",
         "oxc",
         "import",
-        "vitest"
+        "jest"
       ],
       "rules": {
+        "jest/expect-expect": "deny",
+        "jest/no-commented-out-tests": "deny",
+        "jest/no-conditional-expect": "deny",
+        "jest/no-disabled-tests": "deny",
+        "jest/no-export": "deny",
+        "jest/no-focused-tests": "deny",
+        "jest/no-standalone-expect": "deny",
+        "jest/prefer-snapshot-hint": "deny",
+        "jest/require-to-throw-message": "deny",
+        "jest/valid-describe-callback": "deny",
+        "jest/valid-expect": "deny",
+        "jest/valid-expect-in-promise": "deny",
+        "jest/valid-title": "deny",
         "no-console": "allow",
         "typescript/no-explicit-any": "warn",
         "typescript/no-non-null-assertion": "allow",
@@ -57,21 +70,7 @@
         "typescript/no-unsafe-call": "allow",
         "typescript/no-unsafe-member-access": "allow",
         "typescript/no-unsafe-return": "allow",
-        "typescript/unbound-method": "allow",
-        "vitest/consistent-each-for": "deny",
-        "vitest/expect-expect": "deny",
-        "vitest/hoisted-apis-on-top": "deny",
-        "vitest/no-commented-out-tests": "deny",
-        "vitest/no-conditional-expect": "deny",
-        "vitest/no-conditional-tests": "deny",
-        "vitest/no-disabled-tests": "deny",
-        "vitest/no-focused-tests": "deny",
-        "vitest/require-awaited-expect-poll": "deny",
-        "vitest/require-local-test-context-for-concurrent-snapshots": "deny",
-        "vitest/require-mock-type-parameters": "allow",
-        "vitest/valid-expect": "deny",
-        "vitest/valid-title": "deny",
-        "vitest/warn-todo": "deny"
+        "typescript/unbound-method": "allow"
       }
     }
   ],
