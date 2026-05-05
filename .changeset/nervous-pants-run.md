@@ -1,5 +1,5 @@
 ---
-"@qlik/oxlint-config": patch
+"@qlik/oxlint-config": minor
 ---
 
-fix: scope oxlint vitest rules to test files
+feat: add jest config, fix scoping for test rules
