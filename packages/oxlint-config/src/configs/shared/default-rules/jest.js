@@ -1,6 +1,6 @@
 // @ts-check
 
-/** @type {import("oxlint").OxlintConfig["rules"]} */
+/** @type {NonNullable<import("oxlint").OxlintConfig["rules"]>} */
 const rules = {
   "jest/expect-expect": "error",
   "jest/no-commented-out-tests": "error",

@@ -37,22 +37,18 @@ The same presets are also available under `qlik.configs` for parity with `@qlik/
 | `react`       | React projects using oxlint's native React rules                            |
 | `vitest`      | Vitest test files or test-focused lint runs                                 |
 
-Named exports are available when you want to attach a preset to a narrower file group via `extends`:
+Named exports are available when you prefer shorter imports, but the `jest` and `vitest` presets should still be added at the root. Those presets already scope their test-only behavior internally:
 
 ```ts
 import { recommended, vitest } from "@qlik/oxlint-config";
 import { defineConfig } from "oxlint";
 
 export default defineConfig({
-  extends: [recommended],
-  overrides: [
-    {
-      files: ["**/__test{,s}__/**/*", "**/*.{test,spec}.*"],
-      extends: [vitest],
-    },
-  ],
+  extends: [recommended, vitest],
 });
 ```
+
+Use project-local overrides only for extra repo-specific test rules. `oxlint` does not support `overrides[].extends`, so adding `jest` or `vitest` at the root is the supported way to compose these presets.
 
 ## Design Principles
 
@@ -208,6 +204,8 @@ With `typeAware` and `typeCheck` enabled, the shared presets intentionally stay 
 ## Development
 
 Snapshot files in [`packages/oxlint-config/test/generated/`](./test/generated) show the fully resolved rule set for each preset as printed by `oxlint --print-config`.
+
+`oxlint --rules` is also covered by the package tests so the `Enabled?` column stays aligned with the shared Jest and Vitest presets when they are added through a normal root `oxlint.config.ts` `extends` array.
 
 ```sh
 pnpm test

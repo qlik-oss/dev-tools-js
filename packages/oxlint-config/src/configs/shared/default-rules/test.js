@@ -1,6 +1,6 @@
 // @ts-check
 
-/** @type {import("oxlint").OxlintConfig["rules"]} */
+/** @type {NonNullable<import("oxlint").OxlintConfig["rules"]>} */
 const rules = {
   "typescript/no-explicit-any": "warn",
   "typescript/no-non-null-assertion": "off",
