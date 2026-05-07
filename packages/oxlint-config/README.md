@@ -78,81 +78,146 @@ I want to migrate this project from ESLint / @qlik/eslint-config to oxlint using
 
 Use the current @qlik/eslint-config behavior as the source of truth for linting intent, but do not mechanically port ESLint rule names. Prefer native oxlint rules and built-in oxlint plugins. When native coverage is missing, prefer Oxlint `jsPlugins` over keeping a parallel ESLint run when the plugin works in Oxlint.
 
-Follow these steps carefully and explain changes where non-trivial:
+Primary migration goals:
+
+* End up with the smallest maintainable config possible.
+* Prefer `extends` over copied rule lists.
+* Prefer native oxlint behavior and defaults over explicit config.
+* Reduce migration churn and avoid unnecessary rewrites.
+* Preserve runtime behavior unless a change is clearly required.
+* Minimize noise from legacy areas by scoping overrides locally.
+* Prefer temporarily disabling high-volume low-value rules over mass refactors.
+* Keep the repository validating cleanly at the end.
+
+The ideal end-state is:
+
+* a very small oxlint.config.ts
+* shared presets selectively imported from `@qlik/oxlint-config`
+* a compact `extends` array such as recommended/react/vitest or recommended/react/jest
+* minimal root-level rules
+* minimal overrides
+* repo-wide ignores handled through `ignorePatterns`
+* JS plugins only where native oxlint coverage is missing
+* overrides scoped to real file groups or legacy folders
+* legacy exceptions kept local instead of polluting the root config
+* no copied shared preset rule lists unless technically necessary
+
+Prefer configurations that feel modern, compact, and easy to reason about.
+
+Follow these steps carefully and explain non-trivial changes:
 
 1. Inspect the current ESLint setup:
-   - eslint.config.js/ts or legacy .eslintrc files
-   - package.json scripts and dependencies
-   - ignore files and inline eslint-disable comments
-   - test runner split by file group, such as Vitest vs Jest, plus any test-only plugins
-   - project-specific rules, plugins, resolvers, parser options, and overrides
+
+   * eslint.config.js/ts or legacy .eslintrc files
+   * package.json scripts and dependencies
+   * ignore files and inline eslint-disable comments
+   * test runner split by file group, such as Vitest vs Jest, plus any test-only plugins
+   * project-specific rules, plugins, resolvers, parser options, and overrides
 
 2. Classify the existing rules:
-   - native oxlint equivalent
-   - covered by oxlint defaults or categories
-   - obsolete legacy rule that should be removed
-   - formatting rule that belongs in oxfmt/prettier instead of oxlint
-   - project-specific policy that should remain explicit
-   - unsupported rule that may require `jsPlugins`, or only if that still fails, a temporary ESLint fallback
+
+   * native oxlint equivalent
+   * covered by oxlint defaults or categories
+   * obsolete legacy rule that should be removed
+   * formatting rule that belongs in oxfmt/prettier instead of oxlint
+   * project-specific policy that should remain explicit
+   * unsupported rule that may require `jsPlugins`, or only if that still fails, a temporary ESLint fallback
 
 3. Update dependencies:
-   - add oxlint, @qlik/oxlint-config, and oxlint-tsgolint
-   - keep ESLint plugin packages that will be loaded through `jsPlugins`
-   - remove ESLint packages only when no remaining rule requires ESLint
-   - remove obsolete plugins, resolvers, compatibility packages, and pinned overrides
+
+   * add oxlint, @qlik/oxlint-config, and oxlint-tsgolint
+   * keep ESLint plugin packages that will be loaded through `jsPlugins`
+   * remove ESLint packages only when no remaining rule requires ESLint
+   * remove obsolete plugins, resolvers, compatibility packages, and pinned overrides
+   * aggressively remove dead lint infrastructure
 
 4. Create oxlint.config.ts using @qlik/oxlint-config:
-   - import qlik from "@qlik/oxlint-config"
-   - import { defineConfig } from "oxlint"
-   - prefer a compact root `extends` array such as `[qlik.recommended, qlik.react]`; do not expand shared presets into copied rule lists
-   - keep the config as small as technically possible: usually `extends`, `ignorePatterns`, and a few targeted overrides are enough
-   - keep the shared preset defaults for `options: { typeAware: true, typeCheck: true }` unless there is a deliberate repo-specific reason to relax them
-   - add root `ignorePatterns` for repo-wide exclusions such as `node_modules/**`, `dist/**`, `coverage/**`, and `build/**` when applicable
-   - for native test-runner coverage, prefer adding the shared `qlik.vitest` or `qlik.jest` preset to the root `extends` array; those presets already scope their test-only behavior internally
-   - do not unpack `qlik.vitest` or `qlik.jest` into copied `env`, `plugins`, or `rules` inside a repo-local override; keep repo-specific test overrides additive
-   - `oxlint` does not support `overrides[].extends`, so compose shared test presets at the root instead of trying to nest them
-   - do not rely on `env` alone for Jest or Vitest migrations; `env` enables globals, but the native test rules should come from the shared preset or from explicit rules
-   - use project-local `jsPlugins` or override-level `jsPlugins` for plugin gaps such as `eslint-plugin-testing-library`
-   - if a JS plugin has no Oxlint preset, either handwrite the rules you want or import/spread the plugin's recommended/default rules into the override `rules`
-   - keep overrides small and tied to real file groups
-   - do not recreate ESLint parser/resolver settings unless oxlint actually needs them
 
-5. Clean up scripts and CI:
-   - replace eslint commands with oxlint commands
-   - migrate repo-wide ignore behavior to root `ignorePatterns`, or use `--ignore-path` / `--ignore-pattern` only when a CLI-only workflow still needs it
-   - use oxlint --fix where appropriate
-   - use --deny-warnings or --max-warnings 0 only if the previous CI behavior required it
-   - keep prettier/oxfmt as separate formatting checks
+   * import shared presets from `@qlik/oxlint-config`
+   * import `defineConfig` from `oxlint`
+   * prefer a compact root `extends` array
+   * do not expand shared presets into copied rule lists
+   * keep the config as small as technically possible
+   * do not redundantly configure `typeAware` or `typeCheck`; the shared presets already handle that
+   * add root `ignorePatterns` for repo-wide exclusions such as node_modules, dist, coverage, build, generated artifacts, etc.
+   * prefer shared `vitest` / `jest` presets instead of rebuilding test rules manually
+   * do not rely on `env` alone for Jest or Vitest migrations
+   * use `jsPlugins` only for actual coverage gaps
+   * if a JS plugin has no Oxlint preset, either:
+     * handwrite only the needed rules
+     * or import/spread the plugin's recommended/default rules into the override
+   * avoid recreating ESLint parser/resolver settings unless Oxlint actually needs them
+   * avoid cargo-culting historical config
 
-6. Handle remaining lint failures:
-   - prefer code fixes over rule disables
-   - delete stale `eslint-disable` comments first
-   - keep still-needed `eslint-disable` comments when there are many of them; oxlint already supports those directives
-   - if only a small number of still-needed directives remain, convert them to `oxlint-disable` during the migration, or use `@oxlint/migrate --replace-eslint-comments`
-   - for every disabled oxlint rule, add a short justification
-   - avoid runtime behavior changes unless explicitly required and reviewed
+5. Keep migration churn low:
 
-7. Decide whether ESLint still needs to run:
-   - prefer the shared `qlik.vitest` or `qlik.jest` preset at the root for native test-runner coverage before reaching for JS plugins for test-only gaps
-   - prefer `jsPlugins` for high-value gaps before keeping ESLint, including `eslint-plugin-testing-library`
-   - keep ESLint temporarily only for plugins that still do not run correctly in Oxlint, depend on unsupported APIs, require custom file formats, or rely on type-aware plugin behavior that Oxlint still cannot cover even with `typeAware` and `typeCheck` enabled
-   - document why each remaining ESLint rule/plugin is still needed
-   - add a follow-up to remove it when oxlint gains native support
+   * prefer config changes over invasive rewrites
+   * prefer targeted casts over elaborate type helper utilities
+   * avoid introducing helpers like `isRecord`, `isBoolean`, etc. unless genuinely justified
+   * if a rule produces a huge amount of low-value noise, disable it temporarily and document it
+   * easily fixable correctness/code-quality issues that genuinely improve the codebase should be fixed
+   * avoid broad stylistic rewrites unrelated to the migration
+   * do not rewrite working code just to satisfy strict lint purity
 
-8. Validate:
-   - run oxlint
-   - run formatting checks
-   - run tests and type checks used by the repository
-   - summarize removed rules, retained exceptions, and any follow-up risks
+6. Handle plugin gaps pragmatically:
+
+   * prefer native Oxlint support first
+   * then prefer `jsPlugins`
+   * common plugins such as testing-library or tanstack-query should preferably stay inside Oxlint via `jsPlugins`
+   * only keep ESLint temporarily for gaps Oxlint genuinely cannot cover yet
+   * document every remaining ESLint dependency and why it still exists
+   * add follow-up cleanup notes where relevant
+
+7. Clean up scripts and CI:
+
+   * replace eslint commands with oxlint commands
+   * migrate ignore behavior into root `ignorePatterns` where practical
+   * use oxlint --fix where appropriate
+   * keep prettier/oxfmt separate from linting
+   * use `--deny-warnings` or `--max-warnings 0` only if prior CI behavior required it
+
+8. Handle remaining lint failures:
+
+   * prefer code fixes over disables
+   * delete stale `eslint-disable` comments first
+   * keep still-needed `eslint-disable` comments if there are many of them; Oxlint already supports them
+   * if only a small number remain, optionally migrate them to `oxlint-disable`
+   * every disabled rule should have a short justification
+   * avoid runtime behavior changes unless explicitly required and reviewed
+
+9. Validate everything:
+
+   * run oxlint
+   * run formatting checks
+   * run tests
+   * run type checks
+   * ensure validation is fully clean before finishing
+   * do not stop with partial validation failures
+
+10. Summarize the migration:
+
+* removed rules/plugins/packages
+* retained exceptions and why
+* remaining ESLint usage, if any
+* follow-up risks or cleanup opportunities
+
+Additionally:
+
+* collect migration metrics and include them in the PR description
+* include a comparison table with before/after dependency counts, lint times, package reductions, remaining ESLint usage, etc.
+* highlight reductions in config complexity, duplicated tooling, and maintenance burden
 
 Important:
-- Be opinionated and modern.
-- Prefer deletion over preserving historical config.
-- Prefer native oxlint first, then `jsPlugins`, and only keep ESLint when neither is viable.
-- Prefer `extends` so the final oxlint config stays as small and readable as technically possible.
-- Prefer oxlint defaults and categories over explicit rule lists.
-- Keep repo-wide ignores explicit in root `ignorePatterns`.
-- Do not preserve rules only because they existed in the old ESLint setup.
+
+* Be opinionated and modern.
+* Prefer deletion over preserving historical config.
+* Prefer native oxlint first, then `jsPlugins`, and only keep ESLint when neither is viable.
+* Prefer `extends` so the final oxlint config stays small and readable.
+* Prefer oxlint defaults and categories over explicit rule lists.
+* Keep repo-wide ignores explicit in root `ignorePatterns`.
+* Do not preserve rules only because they existed in the old ESLint setup.
+* Do not introduce unnecessary abstractions during the migration.
+* Optimize for a clean, understandable end-state with minimal code churn.
 ```
 
 ## Project-local JS plugins and ignores
