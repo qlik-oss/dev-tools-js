@@ -211,7 +211,7 @@ describe("preset extension resolution", () => {
       'it.skip("skipped", () => {});\n',
     );
 
-    expect(getDiagnostics(rootResult)).toContain("eslint-plugin-vitest(no-disabled-tests):warning");
+    expect(getDiagnostics(rootResult)).toContain("vitest(no-disabled-tests):warning");
     expect(overrideResult.diagnostics).toHaveLength(0);
   });
 
@@ -224,7 +224,7 @@ describe("preset extension resolution", () => {
     const diagnostics = getDiagnostics(result);
 
     expect(diagnostics).toContain("eslint(no-console):warning");
-    expect(diagnostics).toContain("typescript-eslint(no-explicit-any):error");
+    expect(diagnostics).toContain("typescript(no-explicit-any):error");
   });
 
   it("applies vitest-specific relaxations only to matching test files", async () => {
@@ -236,7 +236,7 @@ describe("preset extension resolution", () => {
     const diagnostics = getDiagnostics(result);
 
     expect(diagnostics).toContain("eslint(no-console):warning");
-    expect(diagnostics).toContain("typescript-eslint(no-explicit-any):warning");
+    expect(diagnostics).toContain("typescript(no-explicit-any):warning");
   });
 
   it("keeps only Vitest plugin rules in the vitest preset", async () => {
@@ -247,8 +247,8 @@ describe("preset extension resolution", () => {
     );
     const diagnostics = getDiagnostics(result);
 
-    expect(diagnostics).toContain("eslint-plugin-vitest(no-disabled-tests):error");
-    expect(diagnostics).not.toContain("eslint-plugin-jest(no-disabled-tests):error");
+    expect(diagnostics).toContain("vitest(no-disabled-tests):error");
+    expect(diagnostics).not.toContain("jest(no-disabled-tests):error");
   });
 
   it("exposes Jest plugin rules through the jest preset", async () => {
@@ -260,8 +260,8 @@ describe("preset extension resolution", () => {
     const diagnostics = getDiagnostics(result);
 
     expect(diagnostics).toContain("eslint(no-console):warning");
-    expect(diagnostics).toContain("eslint-plugin-jest(no-disabled-tests):error");
-    expect(diagnostics).not.toContain("eslint-plugin-vitest(no-disabled-tests):error");
+    expect(diagnostics).toContain("jest(no-disabled-tests):error");
+    expect(diagnostics).not.toContain("vitest(no-disabled-tests):error");
   });
 
   it("still allows console usage in CommonJS files", async () => {
