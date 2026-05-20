@@ -67,7 +67,7 @@ In practice, that means the native `typescript/*` rules active under typed linti
 
 ## Migration From ESLint
 
-Use the workspace prompt at [`.github/prompts/migrate-to-oxlint.prompt.md`](../../.github/prompts/migrate-to-oxlint.prompt.md), or copy the prompt below into a Copilot agent chat. It is modeled after the ESLint 9 to 10 migration prompt in `@qlik/eslint-config`, but it focuses on modernization and deletion rather than config translation.
+Copy the prompt below into a Copilot agent chat. It is modeled after the ESLint 9 to 10 migration prompt in `@qlik/eslint-config`, but it focuses on modernization and deletion rather than config translation.
 
 Prefer a compact root config that mostly uses `extends`. In most migrations, the final `oxlint.config.ts` should be only a handful of lines plus `ignorePatterns` and any genuinely project-specific overrides.
 
