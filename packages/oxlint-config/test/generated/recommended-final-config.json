@@ -152,6 +152,7 @@
     "no-extra-boolean-cast": "deny",
     "no-func-assign": "deny",
     "no-global-assign": "deny",
+    "no-implied-eval": "deny",
     "no-import-assign": "deny",
     "no-inner-declarations": "deny",
     "no-invalid-regexp": "deny",
