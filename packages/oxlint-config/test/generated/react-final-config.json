@@ -677,6 +677,7 @@
     ],
     "unicorn/consistent-function-scoping": "allow",
     "unicorn/no-accessor-recursion": "deny",
+    "unicorn/no-array-fill-with-reference-type": "deny",
     "unicorn/no-array-reverse": "deny",
     "unicorn/no-array-sort": "deny",
     "unicorn/no-await-in-promise-methods": "deny",
