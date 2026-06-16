@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 2.0.12
+
+### Patch Changes
+
+- ef712cb: chore: update deps
+
 ## 2.0.11
 
 ### Patch Changes
