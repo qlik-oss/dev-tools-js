@@ -1,5 +1,11 @@
 # @qlik/oxlint-config
 
+## 0.6.2
+
+### Patch Changes
+
+- ef712cb: chore: update deps
+
 ## 0.6.1
 
 ### Patch Changes
