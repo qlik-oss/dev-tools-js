@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Qlik's shared Prettier config",
   "license": "ISC",
-  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
+  "repository": "git+https://github.com/qlik-oss/dev-tools-js.git",
   "main": "./prettier.config.js",
   "publishConfig": {
     "access": "public",
