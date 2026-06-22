@@ -3,7 +3,10 @@
   "version": "0.6.2",
   "description": "Qlik's oxlint configs",
   "license": "ISC",
-  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qlik-oss/dev-tools-js.git"
+  },
   "files": [
     "src"
   ],

@@ -3,7 +3,10 @@
   "version": "2.0.13",
   "description": "Qlik's ESLint configs",
   "license": "ISC",
-  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qlik-oss/dev-tools-js.git"
+  },
   "files": [
     "src",
     "!**/__tests__"

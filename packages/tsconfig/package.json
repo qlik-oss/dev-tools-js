@@ -3,7 +3,10 @@
   "version": "1.0.1",
   "description": "Useful compiler options for compiling a TypeScript project",
   "license": "ISC",
-  "repository": "git@github.com:qlik-oss/dev-tools-js.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qlik-oss/dev-tools-js.git"
+  },
   "files": [
     "node.json",
     "react.json",
