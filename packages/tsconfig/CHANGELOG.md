@@ -1,5 +1,11 @@
 # @qlik/tsconfig
 
+## 1.0.1
+
+### Patch Changes
+
+- 39a25e6: Add "types": "node" in compilerOptions for node config
+
 ## 1.0.0
 
 ### Major Changes
