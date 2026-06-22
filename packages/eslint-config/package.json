@@ -1,6 +1,6 @@
 {
   "name": "@qlik/eslint-config",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "Qlik's ESLint configs",
   "license": "ISC",
   "repository": "git@github.com:qlik-oss/dev-tools-js.git",
@@ -25,7 +25,7 @@
     "test": "vitest run && ./test/verify-configs.sh"
   },
   "dependencies": {
-    "@eslint-react/eslint-plugin": "^5.9.0",
+    "@eslint-react/eslint-plugin": "^5.9.1",
     "@eslint/js": "^10.0.1",
     "@typescript-eslint/utils": "^8.61.1",
     "@vitest/eslint-plugin": "^1.6.20",
