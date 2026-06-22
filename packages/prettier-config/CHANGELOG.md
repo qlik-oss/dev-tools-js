@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 1.0.1
+
+### Patch Changes
+
+- fd307f4: Add types to package
+
 ## 1.0.0
 
 ### Major Changes
