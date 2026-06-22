@@ -1,5 +1,11 @@
 # @qlik/oxlint-config
 
+## 0.6.3
+
+### Patch Changes
+
+- 9549105: Update repository metadata from an SSH URL to the public git+https Git URL
+
 ## 0.6.2
 
 ### Patch Changes
