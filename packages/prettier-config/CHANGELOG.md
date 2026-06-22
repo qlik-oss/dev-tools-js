@@ -1,5 +1,11 @@
 # @qlik/prettier-config
 
+## 1.0.2
+
+### Patch Changes
+
+- 9549105: Update repository metadata from an SSH URL to the public git+https Git URL
+
 ## 1.0.1
 
 ### Patch Changes

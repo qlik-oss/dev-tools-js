@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 2.0.14
+
+### Patch Changes
+
+- 9549105: Update repository metadata from an SSH URL to the public git+https Git URL
+
 ## 2.0.13
 
 ### Patch Changes
