@@ -7,6 +7,20 @@ const esm = {
   rules: {
     ...baseNodeConfig.rules,
     "import/no-unassigned-import": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "always",
+        cjs: "never",
+        mjs: "always",
+        jsx: "never",
+        ts: "never",
+        cts: "never",
+        mts: "never",
+        tsx: "never",
+      },
+    ],
   },
   overrides: [commonjsOverride],
 };

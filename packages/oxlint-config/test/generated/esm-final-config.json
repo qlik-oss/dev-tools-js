@@ -77,9 +77,9 @@
         {
           "cjs": "never",
           "cts": "never",
-          "js": "never",
+          "js": "always",
           "jsx": "never",
-          "mjs": "never",
+          "mjs": "always",
           "mts": "never",
           "ts": "never",
           "tsx": "never"
