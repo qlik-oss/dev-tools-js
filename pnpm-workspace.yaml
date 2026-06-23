@@ -2,3 +2,5 @@ packages:
   - packages/*
 onlyBuiltDependencies:
   - esbuild
+overrides:
+  js-yaml@<=4.1.1: '>=4.2.0'

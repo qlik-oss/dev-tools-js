@@ -1,5 +1,29 @@
 # @qlik/eslint-config
 
+## 2.0.14
+
+### Patch Changes
+
+- 9549105: Update repository metadata from an SSH URL to the public git+https Git URL
+
+## 2.0.13
+
+### Patch Changes
+
+- 39a25e6: Update npm dependencies
+
+## 2.0.12
+
+### Patch Changes
+
+- ef712cb: chore: update deps
+
+## 2.0.11
+
+### Patch Changes
+
+- b412ed4: chore: update npm dependencies
+
 ## 2.0.10
 
 ### Patch Changes

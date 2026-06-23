@@ -1,5 +1,11 @@
 # @qlik/browserslist-config
 
+## 3.0.1
+
+### Patch Changes
+
+- 9549105: Update repository metadata from an SSH URL to the public git+https Git URL
+
 ## 3.0.0
 
 ### Major Changes
