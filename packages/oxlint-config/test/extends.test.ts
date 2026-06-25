@@ -212,6 +212,16 @@ describe("preset extension resolution", () => {
     expect(getDiagnostics(result)).not.toContain("eslint(no-restricted-globals):error");
   });
 
+  it("restricts legacy global properties from the ESLint preset", async () => {
+    const result = await lintWithPresets(
+      ["recommended", "react"],
+      "src/restricted-properties.ts",
+      "window.isFinite(1);\n({}).__defineGetter__('value', () => 1);\n",
+    );
+
+    expect(getDiagnostics(result)).toContain("eslint(no-restricted-properties):error");
+  });
+
   it.each([
     {
       preset: "vitest" as const,
