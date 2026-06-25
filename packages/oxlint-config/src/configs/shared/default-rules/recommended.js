@@ -1,13 +1,8 @@
 // @ts-check
-import confusingBrowserGlobals from "confusing-browser-globals";
 
 const restrictedBrowserGlobals = [
   { name: "isFinite", message: "Use Number.isFinite instead" },
   { name: "isNaN", message: "Use Number.isNaN instead" },
-  ...confusingBrowserGlobals.map((name) => ({
-    name,
-    message: `Use window.${name} instead`,
-  })),
 ];
 
 /** @type {NonNullable<import("oxlint").OxlintConfig["rules"]>} */
