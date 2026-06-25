@@ -1,5 +1,12 @@
 # @qlik/oxlint-config
 
+## 0.6.4
+
+### Patch Changes
+
+- 6e2080b: Stop restricting confusing browser globals in the oxlint preset to avoid false positives on shadowed callback parameters with oxlint 1.71.0, and port the ESLint preset's restricted global-property list.
+- 71c2cba: ann/esm addition
+
 ## 0.6.3
 
 ### Patch Changes
