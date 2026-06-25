@@ -1,13 +1,8 @@
 // @ts-check
-import confusingBrowserGlobals from "confusing-browser-globals";
 
 const restrictedBrowserGlobals = [
   { name: "isFinite", message: "Use Number.isFinite instead" },
   { name: "isNaN", message: "Use Number.isNaN instead" },
-  ...confusingBrowserGlobals.map((name) => ({
-    name,
-    message: `Use window.${name} instead`,
-  })),
 ];
 
 /** @type {NonNullable<import("oxlint").OxlintConfig["rules"]>} */
@@ -46,6 +41,52 @@ const rules = {
     },
   ],
   "no-restricted-globals": ["error", ...restrictedBrowserGlobals],
+  "no-restricted-properties": [
+    "error",
+    {
+      object: "arguments",
+      property: "callee",
+      message: "arguments.callee is deprecated",
+    },
+    {
+      object: "global",
+      property: "isFinite",
+      message: "Please use Number.isFinite instead",
+    },
+    {
+      object: "self",
+      property: "isFinite",
+      message: "Please use Number.isFinite instead",
+    },
+    {
+      object: "window",
+      property: "isFinite",
+      message: "Please use Number.isFinite instead",
+    },
+    {
+      object: "global",
+      property: "isNaN",
+      message: "Please use Number.isNaN instead",
+    },
+    {
+      object: "self",
+      property: "isNaN",
+      message: "Please use Number.isNaN instead",
+    },
+    {
+      object: "window",
+      property: "isNaN",
+      message: "Please use Number.isNaN instead",
+    },
+    {
+      property: "__defineGetter__",
+      message: "Please use Object.defineProperty instead.",
+    },
+    {
+      property: "__defineSetter__",
+      message: "Please use Object.defineProperty instead.",
+    },
+  ],
   "no-restricted-exports": [
     "error",
     {

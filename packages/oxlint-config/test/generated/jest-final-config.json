@@ -303,238 +303,54 @@
         {
           "message": "Use Number.isNaN instead",
           "name": "isNaN"
+        }
+      ]
+    ],
+    "no-restricted-properties": [
+      "deny",
+      [
+        {
+          "message": "arguments.callee is deprecated",
+          "object": "arguments",
+          "property": "callee"
         },
         {
-          "message": "Use window.addEventListener instead",
-          "name": "addEventListener"
+          "message": "Please use Number.isFinite instead",
+          "object": "global",
+          "property": "isFinite"
         },
         {
-          "message": "Use window.blur instead",
-          "name": "blur"
+          "message": "Please use Number.isFinite instead",
+          "object": "self",
+          "property": "isFinite"
         },
         {
-          "message": "Use window.close instead",
-          "name": "close"
+          "message": "Please use Number.isFinite instead",
+          "object": "window",
+          "property": "isFinite"
         },
         {
-          "message": "Use window.closed instead",
-          "name": "closed"
+          "message": "Please use Number.isNaN instead",
+          "object": "global",
+          "property": "isNaN"
         },
         {
-          "message": "Use window.confirm instead",
-          "name": "confirm"
+          "message": "Please use Number.isNaN instead",
+          "object": "self",
+          "property": "isNaN"
         },
         {
-          "message": "Use window.defaultStatus instead",
-          "name": "defaultStatus"
+          "message": "Please use Number.isNaN instead",
+          "object": "window",
+          "property": "isNaN"
         },
         {
-          "message": "Use window.defaultstatus instead",
-          "name": "defaultstatus"
+          "message": "Please use Object.defineProperty instead.",
+          "property": "__defineGetter__"
         },
         {
-          "message": "Use window.event instead",
-          "name": "event"
-        },
-        {
-          "message": "Use window.external instead",
-          "name": "external"
-        },
-        {
-          "message": "Use window.find instead",
-          "name": "find"
-        },
-        {
-          "message": "Use window.focus instead",
-          "name": "focus"
-        },
-        {
-          "message": "Use window.frameElement instead",
-          "name": "frameElement"
-        },
-        {
-          "message": "Use window.frames instead",
-          "name": "frames"
-        },
-        {
-          "message": "Use window.history instead",
-          "name": "history"
-        },
-        {
-          "message": "Use window.innerHeight instead",
-          "name": "innerHeight"
-        },
-        {
-          "message": "Use window.innerWidth instead",
-          "name": "innerWidth"
-        },
-        {
-          "message": "Use window.length instead",
-          "name": "length"
-        },
-        {
-          "message": "Use window.location instead",
-          "name": "location"
-        },
-        {
-          "message": "Use window.locationbar instead",
-          "name": "locationbar"
-        },
-        {
-          "message": "Use window.menubar instead",
-          "name": "menubar"
-        },
-        {
-          "message": "Use window.moveBy instead",
-          "name": "moveBy"
-        },
-        {
-          "message": "Use window.moveTo instead",
-          "name": "moveTo"
-        },
-        {
-          "message": "Use window.name instead",
-          "name": "name"
-        },
-        {
-          "message": "Use window.onblur instead",
-          "name": "onblur"
-        },
-        {
-          "message": "Use window.onerror instead",
-          "name": "onerror"
-        },
-        {
-          "message": "Use window.onfocus instead",
-          "name": "onfocus"
-        },
-        {
-          "message": "Use window.onload instead",
-          "name": "onload"
-        },
-        {
-          "message": "Use window.onresize instead",
-          "name": "onresize"
-        },
-        {
-          "message": "Use window.onunload instead",
-          "name": "onunload"
-        },
-        {
-          "message": "Use window.open instead",
-          "name": "open"
-        },
-        {
-          "message": "Use window.opener instead",
-          "name": "opener"
-        },
-        {
-          "message": "Use window.opera instead",
-          "name": "opera"
-        },
-        {
-          "message": "Use window.outerHeight instead",
-          "name": "outerHeight"
-        },
-        {
-          "message": "Use window.outerWidth instead",
-          "name": "outerWidth"
-        },
-        {
-          "message": "Use window.pageXOffset instead",
-          "name": "pageXOffset"
-        },
-        {
-          "message": "Use window.pageYOffset instead",
-          "name": "pageYOffset"
-        },
-        {
-          "message": "Use window.parent instead",
-          "name": "parent"
-        },
-        {
-          "message": "Use window.print instead",
-          "name": "print"
-        },
-        {
-          "message": "Use window.removeEventListener instead",
-          "name": "removeEventListener"
-        },
-        {
-          "message": "Use window.resizeBy instead",
-          "name": "resizeBy"
-        },
-        {
-          "message": "Use window.resizeTo instead",
-          "name": "resizeTo"
-        },
-        {
-          "message": "Use window.screen instead",
-          "name": "screen"
-        },
-        {
-          "message": "Use window.screenLeft instead",
-          "name": "screenLeft"
-        },
-        {
-          "message": "Use window.screenTop instead",
-          "name": "screenTop"
-        },
-        {
-          "message": "Use window.screenX instead",
-          "name": "screenX"
-        },
-        {
-          "message": "Use window.screenY instead",
-          "name": "screenY"
-        },
-        {
-          "message": "Use window.scroll instead",
-          "name": "scroll"
-        },
-        {
-          "message": "Use window.scrollbars instead",
-          "name": "scrollbars"
-        },
-        {
-          "message": "Use window.scrollBy instead",
-          "name": "scrollBy"
-        },
-        {
-          "message": "Use window.scrollTo instead",
-          "name": "scrollTo"
-        },
-        {
-          "message": "Use window.scrollX instead",
-          "name": "scrollX"
-        },
-        {
-          "message": "Use window.scrollY instead",
-          "name": "scrollY"
-        },
-        {
-          "message": "Use window.self instead",
-          "name": "self"
-        },
-        {
-          "message": "Use window.status instead",
-          "name": "status"
-        },
-        {
-          "message": "Use window.statusbar instead",
-          "name": "statusbar"
-        },
-        {
-          "message": "Use window.stop instead",
-          "name": "stop"
-        },
-        {
-          "message": "Use window.toolbar instead",
-          "name": "toolbar"
-        },
-        {
-          "message": "Use window.top instead",
-          "name": "top"
+          "message": "Please use Object.defineProperty instead.",
+          "property": "__defineSetter__"
         }
       ]
     ],

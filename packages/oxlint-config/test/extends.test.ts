@@ -4,7 +4,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import qlik from "../src/index.js";
+import qlik, { recommended } from "../src/index.js";
 
 const presetNames = ["recommended", "react", "jest", "vitest"] as const;
 const testFiles = [
@@ -90,56 +90,6 @@ function getDiagnostics(result: OxlintLintResult): string[] {
   return result.diagnostics.map((diagnostic) => `${diagnostic.code}:${diagnostic.severity}`);
 }
 
-function getRulesTableRows(output: string): string[] {
-  return output.split("\n").reduce<string[]>((rows, line) => {
-    if (!line.includes("|")) {
-      return rows;
-    }
-
-    if (/^\s+\|/u.test(line) && rows.length > 0) {
-      const previousRow = rows[rows.length - 1];
-      return [...rows.slice(0, -1), `${previousRow}${line.trimStart()}`];
-    }
-
-    return [...rows, line];
-  }, []);
-}
-
-function isRuleEnabled(output: string, ruleName: string, source: string): boolean {
-  const ruleRow = getRulesTableRows(output).find((candidate) => {
-    const cells = candidate
-      .split("|")
-      .slice(1, -1)
-      .map((cell) => cell.trim());
-    return cells[0] === ruleName && cells[1] === source;
-  });
-
-  if (!ruleRow) {
-    throw new Error(`Missing rule row for ${source}/${ruleName}`);
-  }
-
-  const cells = ruleRow
-    .split("|")
-    .slice(1, -1)
-    .map((cell) => cell.trim());
-  return cells[3] === "✅";
-}
-
-function getStableRulesCommandEnv(): NodeJS.ProcessEnv {
-  const environment: NodeJS.ProcessEnv = {
-    ...process.env,
-    COLUMNS: "220",
-    NO_COLOR: "1",
-    TERM: "xterm-256color",
-  };
-
-  // `oxlint --rules` changes its captured output in CI mode, which hides the rows this test asserts on.
-  delete environment.CI;
-  delete environment.GITHUB_ACTIONS;
-
-  return environment;
-}
-
 async function lintWithConfig(config: TestOxlintConfig, filePath: string, contents: string): Promise<OxlintLintResult> {
   const runId = fileCounter++;
   const configFile = path.join(tempDir, `config-${runId}.json`);
@@ -177,28 +127,6 @@ async function lintWithPresets(
 }
 
 describe("preset extension resolution", () => {
-  async function listRulesWithPresets(extendsPresets: PresetName[]): Promise<string> {
-    const runId = fileCounter++;
-    const configFile = path.join(tempDir, `rules-config-${runId}.ts`);
-    const extendsList = extendsPresets.map((preset) => `qlik.${preset}`).join(", ");
-    const configContents = [
-      'import qlik from "../src/index.js";',
-      'import { defineConfig } from "oxlint";',
-      "",
-      "export default defineConfig({",
-      `  extends: [${extendsList}],`,
-      "});",
-    ].join("\n");
-
-    await fs.writeFile(configFile, `${configContents}\n`, "utf8");
-
-    return execFileSync(oxlintBin, ["--rules", "--config", configFile], {
-      cwd: packageRoot,
-      encoding: "utf8",
-      env: getStableRulesCommandEnv(),
-      stdio: ["ignore", "pipe", "pipe"],
-    });
-  }
   it("only gets the native Vitest default rules when the plugin is enabled at the root", async () => {
     const rootResult = await lintWithConfig(
       rootVitestPluginConfig,
@@ -270,22 +198,53 @@ describe("preset extension resolution", () => {
     expect(result.diagnostics).toHaveLength(0);
   });
 
+  it("does not restrict common callback parameter names as browser globals", async () => {
+    expect(recommended.rules?.["no-restricted-globals"]).not.toEqual(
+      expect.arrayContaining([expect.objectContaining({ name: "event" })]),
+    );
+
+    const result = await lintWithPresets(
+      ["recommended", "react"],
+      "src/event-handler.ts",
+      "function handleContextMenu(event: Event) {\n  event.preventDefault();\n}\nhandleContextMenu(new Event('contextmenu'));\n",
+    );
+
+    expect(getDiagnostics(result)).not.toContain("eslint(no-restricted-globals):error");
+  });
+
+  it("restricts legacy global properties from the ESLint preset", async () => {
+    const result = await lintWithPresets(
+      ["recommended", "react"],
+      "src/restricted-properties.ts",
+      "window.isFinite(1);\n({}).__defineGetter__('value', () => 1);\n",
+    );
+
+    expect(getDiagnostics(result)).toContain("eslint(no-restricted-properties):error");
+  });
+
   it.each([
     {
       preset: "vitest" as const,
-      ruleName: "require-awaited-expect-poll",
-      source: "vitest",
+      diagnostic: "vitest(expect-expect):error",
     },
     {
       preset: "jest" as const,
-      ruleName: "prefer-snapshot-hint",
-      source: "jest",
+      diagnostic: "jest(expect-expect):error",
     },
-  ])("marks $preset preset rules as enabled in oxlint --rules output", async ({ preset, ruleName, source }) => {
-    const withoutPresetRules = await listRulesWithPresets(["recommended", "react"]);
-    const withPresetRules = await listRulesWithPresets(["recommended", "react", preset]);
+  ])("enables $preset preset rules", async ({ preset, diagnostic }) => {
+    const contents = 'it("has no assertions", () => {});\n';
+    const withoutPresetResult = await lintWithPresets(
+      ["recommended", "react"],
+      `src/${preset}-disabled.test.ts`,
+      contents,
+    );
+    const withPresetResult = await lintWithPresets(
+      ["recommended", "react", preset],
+      `src/${preset}-disabled.test.ts`,
+      contents,
+    );
 
-    expect(isRuleEnabled(withoutPresetRules, ruleName, source)).toBe(false);
-    expect(isRuleEnabled(withPresetRules, ruleName, source)).toBe(true);
+    expect(getDiagnostics(withoutPresetResult)).not.toContain(diagnostic);
+    expect(getDiagnostics(withPresetResult)).toContain(diagnostic);
   });
 });
