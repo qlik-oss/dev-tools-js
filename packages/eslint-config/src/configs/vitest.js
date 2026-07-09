@@ -47,6 +47,7 @@ const vitestTS = mergeConfigs(
       "@typescript-eslint/no-unsafe-return": "off",
       "@typescript-eslint/unbound-method": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/require-await": "off",
       "@typescript-eslint/no-explicit-any": "warn",
     },
   },
