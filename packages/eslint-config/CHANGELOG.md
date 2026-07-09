@@ -1,5 +1,12 @@
 # @qlik/eslint-config
 
+## 2.0.16
+
+### Patch Changes
+
+- 2f274ef: Relax vitest config typescript strictness (require-await)
+- f8cbaa5: chore: update npm dependencies
+
 ## 2.0.15
 
 ### Patch Changes
