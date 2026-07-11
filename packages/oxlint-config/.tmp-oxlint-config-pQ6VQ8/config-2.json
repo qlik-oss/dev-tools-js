@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "/home/runner/work/dev-tools-js/dev-tools-js/packages/oxlint-config/.tmp-oxlint-config-pQ6VQ8/recommended.json",
+    "/home/runner/work/dev-tools-js/dev-tools-js/packages/oxlint-config/.tmp-oxlint-config-pQ6VQ8/react.json",
+    "/home/runner/work/dev-tools-js/dev-tools-js/packages/oxlint-config/.tmp-oxlint-config-pQ6VQ8/vitest.json"
+  ]
+}

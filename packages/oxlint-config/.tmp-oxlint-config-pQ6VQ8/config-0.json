@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "unicorn",
+    "typescript",
+    "oxc",
+    "import",
+    "vitest"
+  ],
+  "env": {
+    "browser": true,
+    "builtin": true,
+    "vitest": true
+  }
+}
