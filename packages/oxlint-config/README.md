@@ -33,9 +33,9 @@ The same presets are also available under `qlik.configs` for parity with `@qlik/
 | `esbrowser`   | Explicit browser ESM projects; currently equivalent to `recommended`        |
 | `esm`         | Node.js ESM projects and tooling                                            |
 | `cjs`         | Node.js CommonJS projects and tooling                                       |
-| `jest`        | Jest test files or test-focused lint runs (env-agnostic, composes with any base) |
+| `jest`        | Environment-agnostic Jest test rules; compose after a base preset           |
 | `react`       | React projects using oxlint's native React rules                            |
-| `vitest`      | Vitest test files or test-focused lint runs (env-agnostic, composes with any base) |
+| `vitest`      | Environment-agnostic Vitest test rules; compose after a base preset         |
 
 Named exports are available when you prefer shorter imports, but the `jest` and `vitest` presets should still be added at the root. Those presets already scope their test-only behavior internally:
 
@@ -104,7 +104,7 @@ The ideal end-state is:
 * legacy exceptions kept local instead of polluting the root config
 * no copied shared preset rule lists unless technically necessary
 
-Use `extends: [config1, config2]` in the final `oxlint.config.ts` for config reuse. Presets compose cleanly — test presets (vitest, jest) are environment-agnostic and won't override base env settings from esm/recommended. Type-aware rules are already scoped to TS files internally, so no JS override is needed.
+Use `extends: [config1, config2]` in the final `oxlint.config.ts` for config reuse. Put the base preset first and test presets last. Test presets only add test plugins, globals, and rules, so they preserve the base preset's environment and policies. Type-aware rules are already scoped to TS files internally, so no JS override is needed.
 
 Prefer configurations that feel modern, compact, and easy to reason about.
 

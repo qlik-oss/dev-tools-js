@@ -248,15 +248,33 @@ describe("preset extension resolution", () => {
     expect(getDiagnostics(withPresetResult)).toContain(diagnostic);
   });
 
+  it.each(["jest", "vitest"] as const)("$preset only adds test-runner configuration", (preset) => {
+    const config = qlik[preset];
+
+    expect(Object.keys(config).sort()).toEqual(["overrides", "plugins", "rules"]);
+    expect(config.rules).not.toHaveProperty("no-console");
+    expect(config.rules).not.toHaveProperty("import/extensions");
+  });
+
   it("does not fire type-aware rules on JS files", async () => {
     const result = await lintWithPresets(
       ["recommended"],
       "src/untyped.js",
-      "async function run() { fetch('/api'); }\nrun();\n",
+      [
+        "async function run() { fetch('/api'); }",
+        "run();",
+        "const value = {};",
+        "String(value);",
+        "class Counter { increment() {} }",
+        "const increment = new Counter().increment;",
+        "increment();",
+      ].join("\n"),
     );
     const diagnostics = getDiagnostics(result);
 
     expect(diagnostics).not.toContain("typescript(no-floating-promises):error");
+    expect(diagnostics).not.toContain("typescript(no-base-to-string):error");
+    expect(diagnostics).not.toContain("typescript(unbound-method):error");
   });
 
   it("still fires type-aware rules on TS files", async () => {
@@ -271,9 +289,14 @@ describe("preset extension resolution", () => {
   });
 
   it("does not override no-console when vitest is extended with esm", async () => {
-    const result = await lintWithPresets(["esm", "vitest"], "src/server.ts", 'console.log("startup");\n');
+    const result = await lintWithPresets(
+      ["esm", "vitest"],
+      "src/server.ts",
+      ['import "./setup";', 'import value from "./value";', "console.log(value);"].join("\n"),
+    );
     const diagnostics = getDiagnostics(result);
 
     expect(diagnostics).not.toContain("eslint(no-console):warning");
+    expect(diagnostics).not.toContain("import(no-unassigned-import):error");
   });
 });

@@ -77,11 +77,4 @@ const esmOverride = {
   env: nodeEnv,
 };
 
-export {
-  baseBrowserConfig,
-  baseNodeConfig,
-  baseCommonjsConfig,
-  commonjsOverride,
-  esmOverride,
-  jsFilesTypeAwareOff,
-};
+export { baseBrowserConfig, baseNodeConfig, baseCommonjsConfig, commonjsOverride, esmOverride, jsFilesTypeAwareOff };
