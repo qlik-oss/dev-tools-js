@@ -1,5 +1,5 @@
 // @ts-check
-import { baseNodeConfig, commonjsOverride } from "./shared/base.js";
+import { baseNodeConfig, commonjsOverride, jsFilesTypeAwareOff } from "./shared/base.js";
 
 /** @type {import("oxlint").OxlintConfig} */
 const esm = {
@@ -22,7 +22,7 @@ const esm = {
       },
     ],
   },
-  overrides: [commonjsOverride],
+  overrides: [commonjsOverride, jsFilesTypeAwareOff],
 };
 
 export default esm;

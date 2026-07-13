@@ -18,8 +18,6 @@ function disableRules(rules) {
  * then turns them back off for non-test files.
  *
  * @param {{
- *   baseConfig: import("oxlint").OxlintConfig,
- *   commonjsOverride: NonNullable<import("oxlint").OxlintConfig["overrides"]>[number],
  *   plugins: NonNullable<import("oxlint").OxlintConfig["plugins"]>,
  *   rootRules: NonNullable<import("oxlint").OxlintConfig["rules"]>,
  *   runnerRules: NonNullable<import("oxlint").OxlintConfig["rules"]>,
@@ -27,14 +25,7 @@ function disableRules(rules) {
  * }} options
  * @returns {import("oxlint").OxlintConfig}
  */
-function createScopedTestRunnerPreset({
-  baseConfig,
-  commonjsOverride,
-  plugins,
-  rootRules,
-  runnerRules,
-  runnerEnvName,
-}) {
+function createScopedTestRunnerPreset({ plugins, rootRules, runnerRules, runnerEnvName }) {
   const resetOverride = {
     files: lintedCodeFiles,
     rules: disableRules(rootRules),
@@ -43,7 +34,7 @@ function createScopedTestRunnerPreset({
   const runnerOverride = {
     files: testFiles,
     env: {
-      ...baseConfig.env,
+      builtin: true,
       [runnerEnvName]: true,
     },
     rules: {
@@ -53,13 +44,9 @@ function createScopedTestRunnerPreset({
   };
 
   return {
-    ...baseConfig,
     plugins,
-    rules: {
-      ...baseConfig.rules,
-      ...rootRules,
-    },
-    overrides: [commonjsOverride, resetOverride, runnerOverride],
+    rules: rootRules,
+    overrides: [resetOverride, runnerOverride],
   };
 }
 
