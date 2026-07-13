@@ -1,7 +1,6 @@
 // @ts-check
 import jestRules from "./shared/default-rules/jest.js";
 import vitestRules from "./shared/default-rules/vitest.js";
-import { baseBrowserConfig, commonjsOverride } from "./shared/base.js";
 import { vitestPlugins } from "./shared/plugins.js";
 import { createScopedTestRunnerPreset } from "./shared/test-preset.js";
 
@@ -15,8 +14,6 @@ const conflictingJestRules = Object.fromEntries(
 
 /** @type {import("oxlint").OxlintConfig} */
 const vitest = createScopedTestRunnerPreset({
-  baseConfig: baseBrowserConfig,
-  commonjsOverride,
   plugins: vitestPlugins,
   rootRules: vitestRules,
   runnerRules: {
