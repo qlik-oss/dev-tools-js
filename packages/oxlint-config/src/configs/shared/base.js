@@ -1,6 +1,7 @@
 // @ts-check
 import recommendedRules from "./default-rules/recommended.js";
 import { basePlugins } from "./plugins.js";
+import { jsFilesTypeAwareOff } from "./type-aware-rules.js";
 
 /** @type {NonNullable<import("oxlint").OxlintConfig["categories"]>} */
 const categories = {
@@ -76,4 +77,11 @@ const esmOverride = {
   env: nodeEnv,
 };
 
-export { baseBrowserConfig, baseNodeConfig, baseCommonjsConfig, commonjsOverride, esmOverride };
+export {
+  baseBrowserConfig,
+  baseNodeConfig,
+  baseCommonjsConfig,
+  commonjsOverride,
+  esmOverride,
+  jsFilesTypeAwareOff,
+};

@@ -33,9 +33,9 @@ The same presets are also available under `qlik.configs` for parity with `@qlik/
 | `esbrowser`   | Explicit browser ESM projects; currently equivalent to `recommended`        |
 | `esm`         | Node.js ESM projects and tooling                                            |
 | `cjs`         | Node.js CommonJS projects and tooling                                       |
-| `jest`        | Jest test files or test-focused lint runs                                   |
+| `jest`        | Jest test files or test-focused lint runs (env-agnostic, composes with any base) |
 | `react`       | React projects using oxlint's native React rules                            |
-| `vitest`      | Vitest test files or test-focused lint runs                                 |
+| `vitest`      | Vitest test files or test-focused lint runs (env-agnostic, composes with any base) |
 
 Named exports are available when you prefer shorter imports, but the `jest` and `vitest` presets should still be added at the root. Those presets already scope their test-only behavior internally:
 
@@ -62,6 +62,8 @@ Use project-local overrides only for extra repo-specific test rules. `oxlint` do
 ## Typed linting defaults
 
 All shared presets enable oxlint's `options.typeAware` and `options.typeCheck` settings. That keeps `@qlik/oxlint-config` close to the current `@qlik/eslint-config` TypeScript intent, which already relies on type-aware `typescript-eslint` rules plus TypeScript project-service diagnostics.
+
+Type-aware rules (e.g. `typescript/no-floating-promises`, `typescript/no-unsafe-*`, `typescript/no-unnecessary-condition`) are automatically scoped to TypeScript files (`**/*.{ts,tsx,mts,cts}`). They are disabled for plain JavaScript files via an internal override, so mixed JS/TS repos work out of the box without consumer-side boilerplate.
 
 In practice, that means the native `typescript/*` rules active under typed linting cover the same core areas as the current shared ESLint profile: type imports and exports, promise misuse, unnecessary conditions, unsafe operations, enum safety, return and void correctness, and switch exhaustiveness. The remaining intentional gaps are documented in [Rule Coverage Notes](#rule-coverage-notes).
 
@@ -93,7 +95,7 @@ The ideal end-state is:
 
 * a very small oxlint.config.ts
 * shared presets selectively imported from `@qlik/oxlint-config`
-* a compact `extends` array such as recommended/react/vitest or recommended/react/jest
+* a compact `extends` array such as `extends: [qlik.esm, qlik.vitest]` or `extends: [qlik.recommended, qlik.react, qlik.vitest]`
 * minimal root-level rules
 * minimal overrides
 * repo-wide ignores handled through `ignorePatterns`
@@ -101,6 +103,8 @@ The ideal end-state is:
 * overrides scoped to real file groups or legacy folders
 * legacy exceptions kept local instead of polluting the root config
 * no copied shared preset rule lists unless technically necessary
+
+Use `extends: [config1, config2]` in the final `oxlint.config.ts` for config reuse. Presets compose cleanly — test presets (vitest, jest) are environment-agnostic and won't override base env settings from esm/recommended. Type-aware rules are already scoped to TS files internally, so no JS override is needed.
 
 Prefer configurations that feel modern, compact, and easy to reason about.
 
@@ -135,10 +139,12 @@ Follow these steps carefully and explain non-trivial changes:
 
    * import shared presets from `@qlik/oxlint-config`
    * import `defineConfig` from `oxlint`
-   * prefer a compact root `extends` array
+   * use `extends: [qlik.esm, qlik.vitest]` (or similar) for config reuse — this is the preferred composition pattern
    * do not expand shared presets into copied rule lists
    * keep the config as small as technically possible
    * do not redundantly configure `typeAware` or `typeCheck`; the shared presets already handle that
+   * do not add overrides to disable type-aware rules for JS files; the shared presets already scope them to TS files internally
+   * test presets (vitest, jest) are environment-agnostic — they won't override `no-console` or env settings from the base preset
    * add root `ignorePatterns` for repo-wide exclusions such as node_modules, dist, coverage, build, generated artifacts, etc.
    * prefer shared `vitest` / `jest` presets instead of rebuilding test rules manually
    * do not rely on `env` alone for Jest or Vitest migrations

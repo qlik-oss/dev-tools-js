@@ -28,6 +28,35 @@
       "rules": {
         "no-console": "allow"
       }
+    },
+    {
+      "env": null,
+      "files": [
+        "**/*.{js,jsx,mjs,cjs}"
+      ],
+      "globals": null,
+      "plugins": null,
+      "rules": {
+        "typescript/await-thenable": "allow",
+        "typescript/consistent-type-exports": "allow",
+        "typescript/no-confusing-void-expression": "allow",
+        "typescript/no-deprecated": "allow",
+        "typescript/no-floating-promises": "allow",
+        "typescript/no-misused-promises": "allow",
+        "typescript/no-mixed-enums": "allow",
+        "typescript/no-unnecessary-condition": "allow",
+        "typescript/no-unnecessary-qualifier": "allow",
+        "typescript/no-unsafe-argument": "allow",
+        "typescript/no-unsafe-assignment": "allow",
+        "typescript/no-unsafe-call": "allow",
+        "typescript/no-unsafe-member-access": "allow",
+        "typescript/no-unsafe-return": "allow",
+        "typescript/prefer-promise-reject-errors": "allow",
+        "typescript/prefer-reduce-type-parameter": "allow",
+        "typescript/prefer-return-this-type": "allow",
+        "typescript/switch-exhaustiveness-check": "allow",
+        "typescript/use-unknown-in-catch-callback-variable": "allow"
+      }
     }
   ],
   "plugins": [

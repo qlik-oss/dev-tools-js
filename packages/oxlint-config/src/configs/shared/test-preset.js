@@ -1,6 +1,7 @@
 // @ts-check
 import testRules from "./default-rules/test.js";
 import testFiles from "./test-files.js";
+import { jsFilesTypeAwareOff } from "./type-aware-rules.js";
 
 /** @type {NonNullable<NonNullable<import("oxlint").OxlintConfig["overrides"]>[number]["files"]>} */
 const lintedCodeFiles = ["**/*.{js,jsx,ts,tsx,cjs,cts,mjs,mts}"];
@@ -14,8 +15,19 @@ function disableRules(rules) {
 }
 
 /**
+ * Environment-specific rules that test presets should not override.
+ * These belong to the base env config (esm, recommended, etc.) and
+ * should not be re-set by a test preset when composed via `extends`.
+ */
+const envSpecificRules = new Set(["no-console"]);
+
+/**
  * Turns test-runner rules on at the root so `oxlint --rules` reports them as enabled,
  * then turns them back off for non-test files.
+ *
+ * Test presets are environment-agnostic: they do not set `env` or override
+ * environment-specific rules (e.g. `no-console`) at the root level, so they
+ * compose cleanly with any base preset via `extends: [esm, vitest]`.
  *
  * @param {{
  *   baseConfig: import("oxlint").OxlintConfig,
@@ -35,6 +47,12 @@ function createScopedTestRunnerPreset({
   runnerRules,
   runnerEnvName,
 }) {
+  // Strip env-specific rules from the root so test presets don't override
+  // settings from base configs when composed via `extends`.
+  const baseRulesWithoutEnv = Object.fromEntries(
+    Object.entries(baseConfig.rules ?? {}).filter(([rule]) => !envSpecificRules.has(rule)),
+  );
+
   const resetOverride = {
     files: lintedCodeFiles,
     rules: disableRules(rootRules),
@@ -43,7 +61,7 @@ function createScopedTestRunnerPreset({
   const runnerOverride = {
     files: testFiles,
     env: {
-      ...baseConfig.env,
+      builtin: true,
       [runnerEnvName]: true,
     },
     rules: {
@@ -54,12 +72,14 @@ function createScopedTestRunnerPreset({
 
   return {
     ...baseConfig,
+    // Don't set env at root — let the extending base config own that.
+    env: undefined,
     plugins,
     rules: {
-      ...baseConfig.rules,
+      ...baseRulesWithoutEnv,
       ...rootRules,
     },
-    overrides: [commonjsOverride, resetOverride, runnerOverride],
+    overrides: [commonjsOverride, jsFilesTypeAwareOff, resetOverride, runnerOverride],
   };
 }
 

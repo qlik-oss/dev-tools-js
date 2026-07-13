@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import qlik, { recommended } from "../src/index.js";
 
-const presetNames = ["recommended", "react", "jest", "vitest"] as const;
+const presetNames = ["recommended", "react", "jest", "vitest", "esm"] as const;
 const testFiles = [
   "**/__test{,s}__/**/*.{js,jsx,ts,tsx}",
   "**/{test{,s},mock{,s}}/**/*.{js,jsx,ts,tsx}",
@@ -246,5 +246,34 @@ describe("preset extension resolution", () => {
 
     expect(getDiagnostics(withoutPresetResult)).not.toContain(diagnostic);
     expect(getDiagnostics(withPresetResult)).toContain(diagnostic);
+  });
+
+  it("does not fire type-aware rules on JS files", async () => {
+    const result = await lintWithPresets(
+      ["recommended"],
+      "src/untyped.js",
+      "async function run() { fetch('/api'); }\nrun();\n",
+    );
+    const diagnostics = getDiagnostics(result);
+
+    expect(diagnostics).not.toContain("typescript(no-floating-promises):error");
+  });
+
+  it("still fires type-aware rules on TS files", async () => {
+    const result = await lintWithPresets(
+      ["recommended"],
+      "src/typed.ts",
+      "async function run() { fetch('/api'); }\nrun();\n",
+    );
+    const diagnostics = getDiagnostics(result);
+
+    expect(diagnostics).toContain("typescript(no-floating-promises):error");
+  });
+
+  it("does not override no-console when vitest is extended with esm", async () => {
+    const result = await lintWithPresets(["esm", "vitest"], "src/server.ts", 'console.log("startup");\n');
+    const diagnostics = getDiagnostics(result);
+
+    expect(diagnostics).not.toContain("eslint(no-console):warning");
   });
 });
