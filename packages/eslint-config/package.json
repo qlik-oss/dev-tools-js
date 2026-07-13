@@ -1,6 +1,6 @@
 {
   "name": "@qlik/eslint-config",
-  "version": "2.0.14",
+  "version": "2.0.16",
   "description": "Qlik's ESLint configs",
   "license": "ISC",
   "repository": {
@@ -28,18 +28,18 @@
     "test": "vitest run && ./test/verify-configs.sh"
   },
   "dependencies": {
-    "@eslint-react/eslint-plugin": "^5.9.1",
+    "@eslint-react/eslint-plugin": "^5.10.3",
     "@eslint/js": "^10.0.1",
-    "@typescript-eslint/utils": "^8.61.1",
-    "@vitest/eslint-plugin": "^1.6.20",
+    "@typescript-eslint/utils": "^8.62.1",
+    "@vitest/eslint-plugin": "^1.6.21",
     "confusing-browser-globals": "^1.0.11",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-node": "^0.4.0",
     "eslint-import-resolver-typescript": "^4.4.5",
-    "eslint-plugin-import-x": "^4.16.2",
+    "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-testing-library": "^7.16.2",
-    "globals": "^17.6.0",
-    "typescript-eslint": "^8.61.1"
+    "globals": "^17.7.0",
+    "typescript-eslint": "^8.62.1"
   },
   "devDependencies": {
     "@types/confusing-browser-globals": "^1.0.3",
