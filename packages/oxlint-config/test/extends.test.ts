@@ -1,6 +1,7 @@
 import type { OxlintConfig } from "oxlint";
 import { execFileSync } from "node:child_process";
 import fs from "node:fs/promises";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
@@ -59,7 +60,7 @@ let fileCounter = 0;
 let presetPaths: Record<PresetName, string>;
 
 beforeAll(async () => {
-  tempDir = await fs.mkdtemp(path.join(packageRoot, ".tmp-oxlint-config-"));
+  tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "oxlint-config-"));
 
   presetPaths = Object.fromEntries(
     presetNames.map((preset) => [preset, path.join(tempDir, `${preset}.json`)]),
