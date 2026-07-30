@@ -1,6 +1,6 @@
 packages:
   - packages/*
+allowBuilds:
+  unrs-resolver: false
 onlyBuiltDependencies:
   - esbuild
-overrides:
-  js-yaml@<=4.1.1: '>=4.2.0'
