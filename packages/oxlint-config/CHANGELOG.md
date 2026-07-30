@@ -1,5 +1,11 @@
 # @qlik/oxlint-config
 
+## 0.7.1
+
+### Patch Changes
+
+- 7a2286f: Update dependencies
+
 ## 0.7.0
 
 ### Minor Changes

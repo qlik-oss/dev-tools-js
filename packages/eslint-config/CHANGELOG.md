@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 2.0.19
+
+### Patch Changes
+
+- 7a2286f: Update dependencies
+
 ## 2.0.18
 
 ### Patch Changes
