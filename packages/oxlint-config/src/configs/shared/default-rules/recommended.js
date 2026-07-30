@@ -40,7 +40,12 @@ const rules = {
       ],
     },
   ],
-  "no-restricted-globals": ["error", ...restrictedBrowserGlobals],
+  "no-restricted-globals": [
+    "error",
+    {
+      globals: restrictedBrowserGlobals,
+    },
+  ],
   "no-restricted-properties": [
     "error",
     {
