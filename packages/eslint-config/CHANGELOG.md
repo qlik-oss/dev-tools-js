@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 2.0.18
+
+### Patch Changes
+
+- ea59db1: chore: update npm dependencies
+
 ## 2.0.17
 
 ### Patch Changes
