@@ -262,12 +262,16 @@
       "deny",
       [
         {
-          "message": "Use Number.isFinite instead",
-          "name": "isFinite"
-        },
-        {
-          "message": "Use Number.isNaN instead",
-          "name": "isNaN"
+          "globals": [
+            {
+              "message": "Use Number.isFinite instead",
+              "name": "isFinite"
+            },
+            {
+              "message": "Use Number.isNaN instead",
+              "name": "isNaN"
+            }
+          ]
         }
       ]
     ],
@@ -380,6 +384,7 @@
     "oxc/bad-array-method-on-arguments": "deny",
     "oxc/bad-char-at-comparison": "deny",
     "oxc/bad-comparison-sequence": "deny",
+    "oxc/bad-match-all-arg": "deny",
     "oxc/bad-min-max-func": "deny",
     "oxc/bad-object-literal-comparison": "deny",
     "oxc/bad-replace-all-arg": "deny",
