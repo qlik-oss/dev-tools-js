@@ -22,6 +22,9 @@
   "peerDependencies": {
     "oxfmt": ">=0.38.0"
   },
+  "devDependencies": {
+    "oxfmt": "^0.62.0"
+  },
   "engines": {
     "node": ">=22.18.0"
   }
