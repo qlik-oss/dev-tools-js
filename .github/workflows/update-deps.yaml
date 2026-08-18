@@ -37,7 +37,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: update npm dependencies"
           committer: svc-pipeline <svc_pipeline@qlik.com>
           author: svc-pipeline <svc_pipeline@qlik.com>
