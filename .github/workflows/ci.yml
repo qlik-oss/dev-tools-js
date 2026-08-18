@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0 ## Needed for Changesets to find `main` branch
       ## https://github.com/changesets/changesets/issues/517
@@ -28,11 +28,11 @@ jobs:
         if: ${{ github.event.pull_request.title != 'Version Packages' }}
         run: git pull --force --no-tags origin main:main
       - name: Setup PNPM
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
       - name: Install Dependencies
         run: pnpm install

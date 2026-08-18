@@ -3,7 +3,8 @@ name: Release
 permissions:
   contents: write
   pull-requests: write
-  packages: write
+  packages: read
+  id-token: write
 
 on:
   push:
@@ -19,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Git Config
@@ -27,22 +28,20 @@ jobs:
           git config user.name "github-action"
           git config user.email "github-action@noreply.github.com"
       - name: Setup PNPM
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
+          registry-url: "https://registry.npmjs.org"
           cache: pnpm
       - name: Install Dependencies
         run: pnpm i
       - name: Create Release Pull Request or Publish to Qlik GitHub Packages npm registry
         id: changesets
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
-          setupGitUser: false
-          commit: "chore(release): version packages"
-          title: "chore(release): version packages"
-          publish: pnpm publish-packages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_CI_TOKEN }}
+          github-token: ${{ secrets.GH_ACCESS_TOKEN }}
+          commit-message: "chore(release): version packages"
+          pr-title: "chore(release): version packages"
+          publish-script: pnpm publish-packages
