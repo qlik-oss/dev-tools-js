@@ -1,5 +1,12 @@
 # @qlik/oxlint-config
 
+## 0.7.2
+
+### Patch Changes
+
+- 4fa171a: chore: update npm dependencies
+- 4fa171a: chore: update npm dependencies
+
 ## 0.7.1
 
 ### Patch Changes
