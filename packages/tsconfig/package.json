@@ -1,6 +1,6 @@
 {
   "name": "@qlik/tsconfig",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Useful compiler options for compiling a TypeScript project",
   "license": "ISC",
   "repository": {

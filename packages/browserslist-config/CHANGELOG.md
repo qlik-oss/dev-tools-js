@@ -1,5 +1,11 @@
 # @qlik/browserslist-config
 
+## 3.1.0
+
+### Minor Changes
+
+- 9d137bd: Bumping minor versions after comprimised packages has been unpublished
+
 ## 3.0.1
 
 ### Patch Changes

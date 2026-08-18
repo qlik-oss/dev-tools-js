@@ -1,5 +1,11 @@
 # @qlik/oxlint-config
 
+## 0.8.0
+
+### Minor Changes
+
+- 9d137bd: Bumping minor versions after comprimised packages has been unpublished
+
 ## 0.7.2
 
 ### Patch Changes

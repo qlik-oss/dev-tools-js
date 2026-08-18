@@ -1,5 +1,11 @@
 # @qlik/eslint-config
 
+## 2.1.0
+
+### Minor Changes
+
+- 9d137bd: Bumping minor versions after comprimised packages has been unpublished
+
 ## 2.0.20
 
 ### Patch Changes
