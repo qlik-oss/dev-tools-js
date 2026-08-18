@@ -1,5 +1,11 @@
 # @qlik/oxfmt-config
 
+## 0.2.0
+
+### Minor Changes
+
+- 9d137bd: Bumping minor versions after comprimised packages has been unpublished
+
 ## 0.1.6
 
 ### Patch Changes

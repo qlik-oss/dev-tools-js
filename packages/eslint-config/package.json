@@ -1,6 +1,6 @@
 {
   "name": "@qlik/eslint-config",
-  "version": "2.0.20",
+  "version": "2.1.0",
   "description": "Qlik's ESLint configs",
   "license": "ISC",
   "repository": {
