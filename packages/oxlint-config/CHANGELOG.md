@@ -1,5 +1,11 @@
 # @qlik/oxlint-config
 
+## 0.8.1
+
+### Patch Changes
+
+- 4753c82: chore: update npm dependencies
+
 ## 0.8.0
 
 ### Minor Changes
