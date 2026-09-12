@@ -16,13 +16,13 @@
     "test": "turbo run test"
   },
   "devDependencies": {
-    "@changesets/cli": "^3.0.1",
+    "@changesets/cli": "^3.0.2",
     "@qlik/eslint-config": "workspace:^",
     "@qlik/oxfmt-config": "workspace:^",
     "@qlik/tsconfig": "workspace:^",
-    "@types/node": "^26.4.1",
-    "eslint": "^10.9.1",
-    "oxfmt": "^0.66.0",
+    "@types/node": "^26.5.1",
+    "eslint": "^10.10.0",
+    "oxfmt": "^0.67.0",
     "turbo": "^2.10.12",
     "typescript": "^6.0.3",
     "vitest": "^5.0.0"
