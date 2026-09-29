@@ -175,7 +175,7 @@ const rules = {
   "import/no-empty-named-blocks": "off",
   "import/no-mutable-exports": "error",
   "import/no-named-default": "error",
-  "import/no-unassigned-import": "error",
+  "import/no-unassigned-import": ["error", { allow: ["**/*.css", "**/*.scss"] }],
   "import/no-webpack-loader-syntax": "error",
 
   "typescript/consistent-type-exports": "error",
