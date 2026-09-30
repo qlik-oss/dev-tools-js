@@ -1,5 +1,11 @@
 # @qlik/oxlint-config
 
+## 0.8.2
+
+### Patch Changes
+
+- 3487d4a: Allow unassigned import of .css and .scss
+
 ## 0.8.1
 
 ### Patch Changes
