@@ -454,6 +454,7 @@
     "typescript/no-extraneous-class": "deny",
     "typescript/no-floating-promises": "deny",
     "typescript/no-for-in-array": "deny",
+    "typescript/no-generated-empty-object-type": "deny",
     "typescript/no-implied-eval": "deny",
     "typescript/no-import-type-side-effects": "deny",
     "typescript/no-invalid-void-type": "deny",
