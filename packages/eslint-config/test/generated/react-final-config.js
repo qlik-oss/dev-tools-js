@@ -1217,6 +1217,9 @@ export default [
       },
       "parser": "@qlik/eslint-config/react-js-parser",
       "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        },
         "warnOnUnsupportedTypeScriptVersion": false
       },
       "sourceType": "module"
@@ -3543,6 +3546,9 @@ export default [
       },
       "parser": "@qlik/eslint-config/react-ts-parser",
       "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        },
         "projectService": true,
         "warnOnUnsupportedTypeScriptVersion": false
       },
