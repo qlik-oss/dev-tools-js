@@ -20,7 +20,7 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "oxfmt": "^0.74.0"
+    "oxfmt": "^0.75.0"
   },
   "peerDependencies": {
     "oxfmt": ">=0.38.0"
