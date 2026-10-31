@@ -538,6 +538,7 @@
     "typescript/no-unsafe-assignment": "deny",
     "typescript/no-unsafe-call": "deny",
     "typescript/no-unsafe-declaration-merging": "deny",
+    "typescript/no-unsafe-enum-assignment": "deny",
     "typescript/no-unsafe-enum-comparison": "deny",
     "typescript/no-unsafe-member-access": "deny",
     "typescript/no-unsafe-return": "deny",
