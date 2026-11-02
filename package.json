@@ -20,9 +20,9 @@
     "@qlik/eslint-config": "workspace:^",
     "@qlik/oxfmt-config": "workspace:^",
     "@qlik/tsconfig": "workspace:^",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "eslint": "^10.13.0",
-    "oxfmt": "^0.74.0",
+    "oxfmt": "^0.75.0",
     "turbo": "^2.11.10",
     "typescript": "^6.0.3",
     "vitest": "^5.0.5"
