@@ -589,6 +589,7 @@
     "unicorn/no-single-promise-in-promise-methods": "deny",
     "unicorn/no-thenable": "deny",
     "unicorn/no-unnecessary-await": "deny",
+    "unicorn/no-useless-error-capture-stack-trace": "deny",
     "unicorn/no-useless-fallback-in-spread": "deny",
     "unicorn/no-useless-length-check": "deny",
     "unicorn/no-useless-spread": "deny",
