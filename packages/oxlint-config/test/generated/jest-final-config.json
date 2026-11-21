@@ -1,5 +1,7 @@
 {
-  "categories": {},
+  "categories": {
+    "correctness": "warn"
+  },
   "env": {
     "builtin": true
   },
