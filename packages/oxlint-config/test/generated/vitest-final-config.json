@@ -1,5 +1,7 @@
 {
-  "categories": {},
+  "categories": {
+    "correctness": "warn"
+  },
   "env": {
     "builtin": true
   },
@@ -47,15 +49,6 @@
       "globals": null,
       "plugins": null,
       "rules": {
-        "jest/expect-expect": "allow",
-        "jest/no-commented-out-tests": "allow",
-        "jest/no-conditional-expect": "allow",
-        "jest/no-disabled-tests": "allow",
-        "jest/no-focused-tests": "allow",
-        "jest/no-identical-title": "allow",
-        "jest/prefer-to-contain": "allow",
-        "jest/valid-expect": "allow",
-        "jest/valid-title": "allow",
         "typescript/no-explicit-any": "warn",
         "typescript/no-non-null-assertion": "allow",
         "typescript/no-unsafe-argument": "allow",

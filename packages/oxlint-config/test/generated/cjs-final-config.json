@@ -87,32 +87,26 @@
   "rules": {
     "array-callback-return": [
       "deny",
-      [
-        {
-          "allowImplicit": true
-        }
-      ]
+      {
+        "allowImplicit": true
+      }
     ],
     "block-scoped-var": "deny",
     "constructor-super": "deny",
     "default-case": [
       "deny",
-      [
-        {
-          "commentPattern": "^no default$"
-        }
-      ]
+      {
+        "commentPattern": "^no default$"
+      }
     ],
     "default-case-last": "deny",
     "default-param-last": "deny",
     "eqeqeq": [
       "deny",
-      [
-        "always",
-        {
-          "null": "ignore"
-        }
-      ]
+      "always",
+      {
+        "null": "ignore"
+      }
     ],
     "for-direction": "deny",
     "func-names": "warn",
@@ -120,30 +114,26 @@
     "import/default": "deny",
     "import/extensions": [
       "deny",
-      [
-        "ignorePackages",
-        {
-          "cjs": "never",
-          "cts": "never",
-          "js": "never",
-          "jsx": "never",
-          "mjs": "never",
-          "mts": "never",
-          "ts": "never",
-          "tsx": "never"
-        }
-      ]
+      "ignorePackages",
+      {
+        "cjs": "never",
+        "cts": "never",
+        "js": "never",
+        "jsx": "never",
+        "mjs": "never",
+        "mts": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
     ],
     "import/namespace": "deny",
     "import/no-absolute-path": "deny",
     "import/no-amd": "deny",
     "import/no-cycle": [
       "deny",
-      [
-        {
-          "ignoreExternal": true
-        }
-      ]
+      {
+        "ignoreExternal": true
+      }
     ],
     "import/no-duplicates": "deny",
     "import/no-dynamic-require": "warn",
@@ -155,30 +145,26 @@
     "import/no-self-import": "deny",
     "import/no-unassigned-import": [
       "deny",
-      [
-        {
-          "allow": [
-            "**/*.css",
-            "**/*.scss"
-          ]
-        }
-      ]
+      {
+        "allow": [
+          "**/*.css",
+          "**/*.scss"
+        ]
+      }
     ],
     "import/no-webpack-loader-syntax": "deny",
     "new-cap": [
       "deny",
-      [
-        {
-          "capIsNew": false,
-          "capIsNewExceptions": [
-            "Immutable.Map",
-            "Immutable.Set",
-            "Immutable.List"
-          ],
-          "newIsCap": true,
-          "newIsCapExceptions": []
-        }
-      ]
+      {
+        "capIsNew": false,
+        "capIsNewExceptions": [
+          "Immutable.Map",
+          "Immutable.Set",
+          "Immutable.List"
+        ],
+        "newIsCap": true,
+        "newIsCapExceptions": []
+      }
     ],
     "no-alert": "deny",
     "no-array-constructor": "deny",
@@ -232,112 +218,102 @@
     "no-object-constructor": "deny",
     "no-param-reassign": [
       "deny",
-      [
-        {
-          "ignorePropertyModificationsFor": [
-            "prev",
-            "acc",
-            "accumulator",
-            "e",
-            "ctx",
-            "context",
-            "req",
-            "request",
-            "res",
-            "response",
-            "$scope",
-            "staticContext",
-            "sharedState",
-            "state"
-          ],
-          "props": true
-        }
-      ]
+      {
+        "ignorePropertyModificationsFor": [
+          "prev",
+          "acc",
+          "accumulator",
+          "e",
+          "ctx",
+          "context",
+          "req",
+          "request",
+          "res",
+          "response",
+          "$scope",
+          "staticContext",
+          "sharedState",
+          "state"
+        ],
+        "props": true
+      }
     ],
     "no-promise-executor-return": "deny",
     "no-proto": "deny",
     "no-redeclare": "deny",
     "no-restricted-exports": [
       "deny",
-      [
-        {
-          "restrictedNamedExports": [
-            "default",
-            "then"
-          ]
-        }
-      ]
+      {
+        "restrictedNamedExports": [
+          "default",
+          "then"
+        ]
+      }
     ],
     "no-restricted-globals": [
       "deny",
-      [
-        {
-          "globals": [
-            {
-              "message": "Use Number.isFinite instead",
-              "name": "isFinite"
-            },
-            {
-              "message": "Use Number.isNaN instead",
-              "name": "isNaN"
-            }
-          ]
-        }
-      ]
+      {
+        "globals": [
+          {
+            "message": "Use Number.isFinite instead",
+            "name": "isFinite"
+          },
+          {
+            "message": "Use Number.isNaN instead",
+            "name": "isNaN"
+          }
+        ]
+      }
     ],
     "no-restricted-properties": [
       "deny",
-      [
-        {
-          "message": "arguments.callee is deprecated",
-          "object": "arguments",
-          "property": "callee"
-        },
-        {
-          "message": "Please use Number.isFinite instead",
-          "object": "global",
-          "property": "isFinite"
-        },
-        {
-          "message": "Please use Number.isFinite instead",
-          "object": "self",
-          "property": "isFinite"
-        },
-        {
-          "message": "Please use Number.isFinite instead",
-          "object": "window",
-          "property": "isFinite"
-        },
-        {
-          "message": "Please use Number.isNaN instead",
-          "object": "global",
-          "property": "isNaN"
-        },
-        {
-          "message": "Please use Number.isNaN instead",
-          "object": "self",
-          "property": "isNaN"
-        },
-        {
-          "message": "Please use Number.isNaN instead",
-          "object": "window",
-          "property": "isNaN"
-        },
-        {
-          "message": "Please use Object.defineProperty instead.",
-          "property": "__defineGetter__"
-        },
-        {
-          "message": "Please use Object.defineProperty instead.",
-          "property": "__defineSetter__"
-        }
-      ]
+      {
+        "message": "arguments.callee is deprecated",
+        "object": "arguments",
+        "property": "callee"
+      },
+      {
+        "message": "Please use Number.isFinite instead",
+        "object": "global",
+        "property": "isFinite"
+      },
+      {
+        "message": "Please use Number.isFinite instead",
+        "object": "self",
+        "property": "isFinite"
+      },
+      {
+        "message": "Please use Number.isFinite instead",
+        "object": "window",
+        "property": "isFinite"
+      },
+      {
+        "message": "Please use Number.isNaN instead",
+        "object": "global",
+        "property": "isNaN"
+      },
+      {
+        "message": "Please use Number.isNaN instead",
+        "object": "self",
+        "property": "isNaN"
+      },
+      {
+        "message": "Please use Number.isNaN instead",
+        "object": "window",
+        "property": "isNaN"
+      },
+      {
+        "message": "Please use Object.defineProperty instead.",
+        "property": "__defineGetter__"
+      },
+      {
+        "message": "Please use Object.defineProperty instead.",
+        "property": "__defineSetter__"
+      }
     ],
     "no-return-assign": [
       "deny",
-      [
-        "always"
-      ]
+      "always"
     ],
     "no-script-url": "deny",
     "no-self-assign": "deny",
@@ -376,19 +352,15 @@
     "no-with": "deny",
     "object-shorthand": [
       "deny",
-      [
-        "always",
-        {
-          "avoidQuotes": true,
-          "ignoreConstructors": false
-        }
-      ]
+      "always",
+      {
+        "avoidQuotes": true,
+        "ignoreConstructors": false
+      }
     ],
     "operator-assignment": [
       "deny",
-      [
-        "always"
-      ]
+      "always"
     ],
     "oxc/approx-constant": "deny",
     "oxc/bad-array-method-on-arguments": "deny",
@@ -410,12 +382,10 @@
     "oxc/uninvoked-array-callback": "deny",
     "prefer-const": [
       "deny",
-      [
-        {
-          "destructuring": "any",
-          "ignoreReadBeforeAssign": true
-        }
-      ]
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": true
+      }
     ],
     "prefer-exponentiation-operator": "deny",
     "prefer-numeric-literals": "deny",
@@ -423,11 +393,9 @@
     "prefer-object-spread": "deny",
     "prefer-promise-reject-errors": [
       "deny",
-      [
-        {
-          "allowEmptyReject": true
-        }
-      ]
+      {
+        "allowEmptyReject": true
+      }
     ],
     "prefer-rest-params": "deny",
     "prefer-spread": "deny",
@@ -462,11 +430,9 @@
     "typescript/no-misused-new": "deny",
     "typescript/no-misused-promises": [
       "deny",
-      [
-        {
-          "checksConditionals": false
-        }
-      ]
+      {
+        "checksConditionals": false
+      }
     ],
     "typescript/no-misused-spread": "deny",
     "typescript/no-mixed-enums": "deny",
@@ -504,11 +470,9 @@
     "typescript/prefer-namespace-keyword": "deny",
     "typescript/prefer-promise-reject-errors": [
       "deny",
-      [
-        {
-          "allowEmptyReject": true
-        }
-      ]
+      {
+        "allowEmptyReject": true
+      }
     ],
     "typescript/prefer-reduce-type-parameter": "deny",
     "typescript/prefer-return-this-type": "deny",
@@ -521,9 +485,7 @@
     "typescript/use-unknown-in-catch-callback-variable": "deny",
     "unicode-bom": [
       "deny",
-      [
-        "never"
-      ]
+      "never"
     ],
     "unicorn/consistent-function-scoping": "allow",
     "unicorn/no-accessor-recursion": "deny",
