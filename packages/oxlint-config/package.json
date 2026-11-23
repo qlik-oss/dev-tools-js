@@ -1,6 +1,6 @@
 {
   "name": "@qlik/oxlint-config",
-  "version": "0.8.7",
+  "version": "0.8.8",
   "description": "Qlik's oxlint configs",
   "license": "ISC",
   "repository": {
