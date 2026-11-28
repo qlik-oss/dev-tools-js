@@ -27,8 +27,8 @@
     "test:update": "./test/update-configs.sh"
   },
   "devDependencies": {
-    "oxlint": "^1.94.0",
-    "oxlint-tsgolint": "^7.0.2007"
+    "oxlint": "^1.95.0",
+    "oxlint-tsgolint": "^7.0.2009"
   },
   "peerDependencies": {
     "oxlint": ">=1.61.0",
