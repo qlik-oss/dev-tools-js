@@ -1,5 +1,11 @@
 # @qlik/oxlint-config
 
+## 0.8.9
+
+### Patch Changes
+
+- ffb2a29: chore: update npm dependencies
+
 ## 0.8.8
 
 ### Patch Changes
